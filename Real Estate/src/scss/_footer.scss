@@ -1,0 +1,210 @@
+.footer {
+    background-color: $main-color;
+    color: $white-color;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    padding-bottom: 64px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+        background: linear-gradient(303.61deg, rgba(255, 255, 255, 0.06) 0.62%, rgba(255, 255, 255, 0) 90.78%);
+        width: 540px;
+        height: 540px;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    &:before {
+        top: -190px;
+        right: -190px;
+    }
+
+    &:after {
+        transform: rotate(-180deg);
+        bottom: -190px;
+        left: -190px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &-text {
+            padding-top: 70px;
+
+            p {
+                font-size: 24px;
+                opacity: 0.6;
+
+                margin-bottom: 18px;
+            }
+
+            &-title {
+                font-size: 48px;
+                line-height: 56px;
+            }
+
+            &-items {
+
+                &-mail {
+                    margin-top: 80px;
+                }
+    
+                &-phone,
+                &-address,
+                &-social {
+                    margin-top: 46px;
+                }
+    
+                &-social {
+    
+                    &-link {
+                        margin-right: 36px;
+                        cursor: pointer;
+    
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-form {
+            background-color: $white-color;
+            color: $gray-color-1;
+
+            margin-top: 34px;
+
+            padding: 50px 40px;
+
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+
+                width: 75%;
+                height: 120%;
+                background-color: $secondary-color;
+
+                top: -34px;
+                left: 50%;
+                margin-left: -37.5%;
+
+                z-index: -1;
+            }
+
+            &-title {
+                font-size: 32px;
+                margin-bottom: 55px;
+            }
+
+            &-letter {
+                display: flex;
+                flex-direction: column;
+
+                &-btn {
+                    cursor: pointer;
+                    outline: none;
+                    border: 0;
+
+                    background-color: $main-color;
+                    color: $white-color;
+                    font-size: 24px;
+
+                    padding: 24px 0;
+
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: lighten($main-color, 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 920px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-text {
+
+                &-items {
+                    display: flex;
+                    margin-top: 65px;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    &-mail,
+                    &-phone,
+                    &-address,
+                    &-social {
+                        margin-top: 0;
+                    }
+
+                    &-address,
+                    &-social {
+                        margin-top: 50px;
+                    }
+        
+                    &-mail,
+                    &-phone,
+                    &-address,
+                    &-social {
+                        width: 49%;
+                    }
+                }
+            }
+
+            &-form {
+
+                &-letter {
+
+                    &-message {
+                        height: 170px;
+                    }
+                }
+
+                &:after {
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        
+        &__content {
+
+            &-text {
+
+                &-items {
+                    flex-direction: column;
+                    margin-top: 10px;
+
+                    &-mail,
+                    &-phone,
+                    &-address,
+                    &-social {
+                        margin-top: 50px;
+                    }
+        
+                    &-mail,
+                    &-phone,
+                    &-address,
+                    &-social {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

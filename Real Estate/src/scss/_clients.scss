@@ -1,0 +1,209 @@
+.clients {
+
+    &__content {
+        display: flex;
+        position: relative;
+
+        margin-top: 40px;
+
+        &-img {
+            position: relative;
+
+            &-wrapper {
+                width: 460px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            &-items {
+                position: relative;
+                left: 0;
+                width: 1380px;
+
+                display: flex;
+
+                transition: left 0.5s;
+            }
+
+            &-btns {
+                position: absolute;
+                bottom: 27px;
+                right: -66px;
+            }
+        }
+
+        &-text {
+            width: 100%;
+            margin-left: 1%;
+
+            &-wrapper {
+                margin: 30px 0 0 70px;
+                position: relative;
+            }
+
+            &-items {
+                position: relative;
+            }
+
+            &-item {
+                position: absolute;
+
+                margin-right: 40px;
+                transition: opacity 0.5s;
+
+                opacity: 0;
+
+                &.clients__content-text-item-active {
+                    opacity: 1;
+                }
+
+                &-description {
+                    font-size: 24px;
+                    line-height: 36px;
+                    margin-top: 50px;
+                }
+    
+                &-author {
+                    display: flex;
+                    align-items: center;
+
+                    margin-top: 70px;
+
+                    &-img {
+                        margin-right: 30px;
+                    }
+
+                    &-name {
+                        font-size: 24px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            &-btns {
+                position: absolute;
+                bottom: 15%;
+                right: 5%;
+            }
+
+            &-btn {
+                cursor: pointer;
+
+                span {
+                    display: inline-block;
+                    width: 35px;
+                    height: 4px;
+                    background-color: $gray-color-5;
+    
+                    margin-left: 14px;
+    
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: darken($gray-color-5, 8%);
+                    }
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.clients-btn-active span {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1080px) {
+        
+        &__content {
+
+            &-text {
+
+                &-item {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1040px) {
+        
+        &__content {
+
+            &-text {
+
+                &-item {
+                    margin-right: 0;
+
+                    &-description {
+                        margin-top: 30px;
+                    }
+
+                    &-author {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-img {
+
+                &-btns {
+                    right: 0;
+                }
+            }
+
+            &-text {
+                margin-left: 0;
+
+                &-wrapper {
+                    margin: 50px 0 0 0;
+                }
+
+                &-items {
+                    height: 340px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        
+        &__content {
+
+            &-text {
+
+                &-btns {
+                    top: 2%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 540px) {
+        
+        &__content {
+
+            &-img {
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 700px) { @include media-get-clients-height-items(400px); }
+    @media (max-width: 550px) { @include media-get-clients-height-items(500px); }
+    @media (max-width: 425px) { @include media-get-clients-height-items(580px); }
+}
+
+
+// Media-get для блока - clients__content-text-btns
+
+@media (max-width: 1145px) { @include media-get-clients-btns(0%, 0%) }

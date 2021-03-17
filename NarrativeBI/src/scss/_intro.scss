@@ -1,0 +1,113 @@
+.intro {
+    position: relative;
+    background-color: $main-color-background;
+    padding: 28px*4 0 90px 0;
+
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 110px;
+
+        &-text {
+            color: $main-color-text;
+            max-width: 50%;
+
+            &-title {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+
+            &-description {
+                font-size:16px;
+                line-height: 1.8;
+                margin-bottom: 26px;
+            }
+        }
+
+        &-imgs {
+            position: absolute;
+            left: 48%;
+            top: 112px;
+
+            &-img-1 {
+                width: 90%;
+                margin-left: auto;
+                
+                img {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 860px) {
+        padding: 90px 0 60px 0;
+        
+        &__content {
+            margin-top: 30px;
+
+            &-text {
+                max-width: 55%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        &__content {
+            margin-top: 30px;
+
+            &-imgs {
+
+                &-img-1 {
+                    width: 84%;
+                    margin-left: auto;
+                    
+                    img {
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 658px) {
+
+        &__content {
+
+            &-text {
+                
+                &-title {
+                    font-size: 30px;
+                }
+            }
+
+            &-imgs {
+
+                &-img-1 {
+                    width: 82%;
+                }
+
+                top: 152px;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        &__content {
+
+            &-text {
+                max-width: 100%;
+                
+                &-title {
+                    font-size: 36px;
+                }
+            }
+
+            &-imgs {
+                display: none;
+            }
+        }
+    }
+}

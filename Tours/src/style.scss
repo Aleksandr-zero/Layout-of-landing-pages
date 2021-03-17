@@ -1,0 +1,84 @@
+
+// FONTS
+
+@import "scss/fonts";
+
+
+$color-btn: #009D98;
+$color-description: #7A7A7A;
+$color-overhead-link: #000000;
+$color-title: #130F40;
+$main-color-title: #083C4C;
+$color-border-input: #E3E3E3;
+$color-back: #e6f6f8;
+
+$white-color: #ffffff;
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background: $white-color;
+}
+
+a { text-decoration: none; }
+li { list-style: none; }
+
+button {
+    outline: none;
+    border: 0;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+
+// COMMON
+
+@import "scss/common";
+
+
+// HEADER
+
+@import "scss/header";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// SEEK
+
+@import "scss/seek";
+
+
+// ABOUT
+
+@import "scss/about";
+
+
+// FREE
+
+@import "scss/free";
+
+
+// COMPANY
+
+@import "scss/company";
+
+
+// FOOTER
+
+@import "scss/footer";

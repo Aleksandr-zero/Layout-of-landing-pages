@@ -1,0 +1,97 @@
+// FONTS
+
+@import "scss/fonts";
+
+
+// MIXINS
+
+@import "scss/mixins";
+
+
+$gray-color-1: #333333;
+$gray-color-2: #4F4F4F;
+$gray-color-3: #828282;
+$gray-color-4: #BDBDBD;
+$gray-color-5: #E0E0E0;
+$gray-color-6: #F2F2F2;
+
+$secondary-color: #82CDE5;
+$main-color: #003458;
+$main-color-back: #F2F9FB;
+$white-color: #ffffff;
+
+$reb-color-close: #FF5A4F;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: $gray-color-1;
+    font-family: "Metropolis", sans-serif;
+    font-weight: 400;
+    background: $white-color;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, li, ul, body {
+    margin: 0;
+    padding: 0;
+}
+
+ul { list-style: none; }
+
+h2 { font-weight: 800; }
+h3 { font-weight: 700; }
+h4 { font-weight: 600; }
+h5 { font-weight: 400; }
+
+a { text-decoration: none; }
+
+
+// COMMON
+
+@import "scss/common";
+
+
+// HEADER
+
+@import "scss/header";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// CHOOSE
+
+@import "scss/choose";
+
+
+// WEEKLY
+
+@import "scss/weekly";
+
+
+// PROPERTIES
+
+@import "scss/properties";
+
+
+// CLIENTS
+
+@import "scss/clients";
+
+
+// BLOG
+
+@import "scss/blog";
+
+
+// FOOTER
+
+@import "scss/footer";

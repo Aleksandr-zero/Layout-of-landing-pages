@@ -1,0 +1,30 @@
+// Media-get для блока - clients__content-text-btns
+
+@mixin media-get-clients-btns($bottom, $right) {
+    .clients {
+        &__content {
+            &-text {
+                &-btns {
+                    position: absolute;
+                    bottom: $bottom;
+                    right: $right;
+                }
+            }
+        }
+    }
+}
+
+
+// Media-get для блока - clients__content-text-items
+
+@mixin media-get-clients-height-items($height) {
+    &__content {
+
+        &-text {
+
+            &-items {
+                height: $height;
+            }
+        }
+    }
+}

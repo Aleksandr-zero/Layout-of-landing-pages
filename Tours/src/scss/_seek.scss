@@ -1,0 +1,100 @@
+.seek-travel {
+    background-color: $color-back;
+
+    &__container {
+        margin-left: auto;
+        margin-right: 4%;
+        max-width: 900px;
+
+        position: relative;
+        z-index: 1;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 110px;
+            height: 110px;
+            background-image: url("../img/seek-travel/points.svg");
+            left: -34px;
+            bottom: -34px;
+            z-index: -1;
+        }
+
+        &-content {
+
+            padding: 50px;
+            display: inline-block;
+            background-color: $white-color;
+            border-radius: 50px 5px;
+
+            &-form {
+                display: flex;
+
+                &-back-where,
+                &-back-when,
+                &-back-travel_type {
+                    margin-right: 20px;
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        right: 16px;
+                        top: 50%;
+
+                        width: 16px;
+                        height: 16px;
+
+                        transform: translate(0, -50%);
+                    }
+                }
+
+                &-back-where {
+                    &:before {
+                        background-image: url('../img/seek-travel/geolocation.svg');
+                    }
+                }
+
+                &-back-when {
+                    &:before {
+                        background-image: url('../img/seek-travel/date.svg');
+                    }
+                }
+
+                &-back-travel_type {
+                    &:before {
+                        background-image: url('../img/seek-travel/passenger.svg');
+                    }
+                }
+
+                &-where,
+                &-when,
+                &-travel_type {
+                    width: 100%;
+                    height: 50px;
+
+                    padding: 14px 34px 14px 20px;
+
+                    border: 1px solid $color-border-input;
+                    border-radius: 4px;
+
+                    background-color: $white-color;
+
+                    transition: border 0.2s, background-color 0.2s;
+
+                    &:focus {
+                        border: 1px solid $color-btn;
+                        background-color: darken($white-color, 1%);
+                    }
+                }
+
+                &-btn {
+                    height: 50px;
+                    font-weight: 600;
+
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

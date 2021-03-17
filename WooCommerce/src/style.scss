@@ -1,0 +1,213 @@
+@import "_fonts";
+
+
+$main-color: #272D4E;
+$main-color-btn: #7854F7;
+$main-color-link: #299EF3;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: $main-color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.imgs-main {
+    width: 100%
+}
+
+
+// HEADER
+
+@import "_header";
+
+
+// INTRO
+
+.intro {
+    padding-top: 260px;
+    background: linear-gradient(to bottom, #e6efff, #FFF);
+
+    &__container {
+        max-width: 70%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    &__content-text {
+
+        &-title {
+            font-size: 52px;
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+            word-spacing: 10px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+    
+        &-subtext {
+            color: #94A2B3;
+            font-size: 14px;
+        }
+    
+        &-back-btns {
+            display: flex;
+            margin-top: 30px;
+    
+            p {
+                margin: 20px 10px 0 10px;
+                font-weight: 500;
+                color: #94A2B3;
+            }
+        }
+    
+        &-btn-start {
+            color: #fff;
+            font-weight: 500;
+            padding: 20px 45px;
+            border-radius: 40px;
+            background-color: $main-color-btn;
+        }
+    
+        &-btn-customize {
+            font-weight: 700;
+            margin-top: 20px;
+            color: $main-color-link;
+    
+            span {
+                position: relative;
+    
+                &:after {
+                    position: absolute;
+                    content: "›";
+                    margin-left: 5px;
+                    color: $main-color-link;
+                }
+            }
+        }
+    }
+
+    &__content-imgs {
+        position: absolute;
+        right: 0;
+        width: 38%;
+
+        &-main {
+            max-width: 100%;
+            position: relative;
+            z-index: 1;
+
+            &-back-img-1 {
+                position: absolute;
+                max-width: 38%;
+                top: -50px;
+                left: -50px;
+                z-index: 2;
+
+                img {
+                    border-radius: 16px;
+                }
+            }
+        }
+
+        .intro__content-imgs-forms-payment {
+            border-radius: 16px;
+            background: #FFF;
+            max-width: 64%;
+            margin: 0 auto;
+            padding: 20px 30px;
+
+            position: absolute;
+            bottom: -26%;
+            left: 16%;
+
+            &-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                position: relative;
+                z-index: 10;
+
+                &:first-child {
+                    margin-top: 15px;
+                }
+
+                &-text {
+                    color: #94A2B3;
+                    font-size: 12px;
+                }
+
+                &-checkbox {
+                    position: relative;
+
+                    input {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                        margin: 10px 0 0 20px;
+                    }
+
+                    &-text {
+                        position: relative;
+                        padding: 0 0 0 60px;
+                        font-size: 0;
+                        cursor: pointer;
+                    }
+
+                    &-text:before {
+                        content: '';
+                        position: absolute;
+                        top: -4px;
+                        left: 0;
+                        width: 54px;
+                        height: 26px;
+                        border-radius: 13px;
+                        background: #DAE5F6;
+                        transition: 0.2s;
+                    }
+
+                    &-text:after {
+                        content: '';
+                        position: absolute;
+                        top: -1px;
+                        left: 5px;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 10px;
+                        background: #8161F7;
+                        transition: 0.2s;
+                    }
+
+                    input:checked + &-text:before {
+                        background: #70C217;
+                    }
+
+                    input:checked + &-text:after {
+                        left: 29px;
+                        background: #FFF;
+                    }   
+                }
+            }
+        }
+    }
+}
+

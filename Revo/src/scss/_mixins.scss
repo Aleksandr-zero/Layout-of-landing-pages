@@ -1,0 +1,9 @@
+@mixin part-back($z-index) {
+    position: absolute;
+    content: "";
+    background: $primary-color;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    z-index: $z-index;
+}

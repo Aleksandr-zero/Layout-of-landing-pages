@@ -1,0 +1,11 @@
+.company {
+    padding: 160px 0 30px 0;
+
+    &__content {
+
+        &-items {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

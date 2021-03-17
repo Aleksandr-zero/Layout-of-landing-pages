@@ -1,0 +1,278 @@
+// COMMON
+
+.wrapper {
+    position: relative;
+
+    @media (max-width: 748px) {
+        color: $white-color;
+    }
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+
+    @media (max-width: 1180px) {
+        margin: 0 40px;
+    }
+}
+
+.back-overhead {
+    display: flex;
+    align-items: center;
+
+    margin-top: 120px;
+    margin-bottom: 40px;
+
+    &-score {
+        font-size: 20px;
+        padding: 14px;
+        border: 2px $gray-color-1 solid;
+        border-radius: 50%;
+
+        margin-right: 40px;
+    }
+
+    &-title {
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+}
+
+.title-block {
+    font-size: 48px;
+    line-height: 56px;
+
+    @media (max-width: 800px) and (min-width: 601px) {
+        font-size: 44px;
+    }
+}
+
+
+.block-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-back-link {
+        margin-right: 3%;
+    }
+
+    &-link {
+        display: flex;
+        align-items: center;
+
+        font-size: 24px;
+        font-weight: 700;
+        color: $main-color;
+
+        padding: 38px 50px;
+        border: 2px $main-color solid;
+
+        transition: background-color 0.2s, color 0.2s, fill 0.2s;
+
+        svg {
+            margin-left: 24px;
+        }
+
+        &:hover {
+            background-color: $main-color;
+            color: $white-color;
+
+            path {
+                fill: $white-color;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        
+        &-back-link {
+            margin-right: 0;
+        }
+
+        &-link {
+            padding: 28px 34px;
+
+            svg {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: unset;
+
+        &-back-link {
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 600px) and (min-width: 500px) {
+
+        &-back-link {
+            width: 75%;
+        }
+
+        &-link {
+            font-size: 21px;
+        } 
+    }
+}
+
+
+.btn-prev,
+.btn-next {
+    cursor: pointer;
+    padding: 30px 24px 24px 30px;
+
+    transition: all ease 0.2s;
+
+    &.btn-passive {
+        background-color: $gray-color-3;
+        pointer-events: none;
+
+        path {
+            fill: $secondary-color;
+        }
+    }
+
+    &.btn-active {
+        background-color: $secondary-color;
+
+        &:hover {
+            background-color: darken($secondary-color, 8%);
+        }
+    }
+}
+
+.btn-prev {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+
+// HEADER
+
+.main-link-header {
+
+    position: relative;
+    
+    color: $gray-color-1;
+    font-size: 18px;
+
+    transition: color 0.4s;
+
+    padding: 6px;
+
+    &:hover {
+        color: $white-color;
+
+        &:before {
+            width: 100%;
+        }
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background-color: $main-color;
+
+        transition: width 0.4s;
+        z-index: -1;
+    }
+}
+
+.header-btn-register {
+
+    color: $main-color;
+    padding: 18px 30px;
+
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+        color: $white-color;
+        background-color: $main-color;
+    }
+}
+
+.header-btn-login {
+    color: $white-color;
+                
+    background-color: $main-color;
+    padding: 18px 40px;
+
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+        background-color: lighten($main-color, 8%);
+    }
+}
+
+
+// INTRO
+
+.search-content-box {
+    background-color: $main-color-back;
+
+    img {
+        margin-right: 20px;
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+
+        padding: 26px 110px 26px 28px;
+
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: darken($main-color-back, 10%);
+        }
+    }
+}
+
+
+// FOOTER
+
+.footer__content-text-link {
+    color: $white-color;
+    font-size: 24px;
+
+    transition: opacity 0.2s;
+
+    &:last-child {
+        line-height: 36px;
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.footer__content-form-input {
+    padding: 26px 32px;
+    background-color: $gray-color-6;
+
+    outline: none;
+    border: 0;
+
+    font-size: 18px;
+    resize: none;
+
+    margin-bottom: 32px;
+
+    transition: background-color 0.2s;
+
+    &:focus {
+        background-color: darken($gray-color-6, 10%)
+    }
+}

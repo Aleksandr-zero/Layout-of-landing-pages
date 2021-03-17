@@ -1,0 +1,106 @@
+@import "scss/_fonts";
+
+
+$fz-description: 16px;
+$fz-subtitle: 18px;
+$fz-title-block: 32px;
+$fz-text: 20px;
+
+
+$main-color-btn: #8D80D1;
+$main-color-text: #4B4A62;
+$additional-color-text: #DFDFE3;
+
+$main-color-background: #F1F0F9;
+$additional-color-background: #2B2A45;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: $fz-description;
+
+    &.stop-scrolling {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p, li, ul {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border: 0.5px solid #FFFEFE;
+    opacity: 0.1;
+    margin: 50px 0;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: "Space Grotesk"; }
+a { text-decoration: none; }
+
+
+// MIXIN
+
+$maxWidth: 1280;
+
+@mixin responsive-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (min-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+    }
+    
+    @media (max-width:768px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+    }
+}
+
+
+// COMMON
+
+@import "scss/common";
+
+
+// HEADER
+
+@import "scss/_header";
+
+
+// INTRO
+
+@import "scss/_intro";
+
+
+// INTERACT
+
+@import "scss/_interact";
+
+
+// STORY
+
+@import "scss/_story";
+
+
+// UNIQUE
+
+@import "scss/_unique";
+
+
+// QUALITY
+
+@import "scss/_quality";
+
+
+// FOOTER
+
+@import "scss/_footer";

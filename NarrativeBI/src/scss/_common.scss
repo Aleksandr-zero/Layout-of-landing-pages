@@ -1,0 +1,116 @@
+.container {
+    max-width: 72%;
+    margin: 0 auto;
+
+    @media (max-width: 950px) {
+        max-width: 80%;
+    }
+}
+
+.intro-block {
+    text-align: center;
+    padding-top: 12%;
+
+    &.intro-block-color-1 {
+        color: $main-color-text;
+    }
+
+    &.intro-block-color-2 {
+        color: $additional-color-text;
+    }
+
+    &-title {
+        @include responsive-font(32, 24);
+        line-height: 1.6;
+        margin-bottom: 5px;
+    }
+
+    &-subtext {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    @media (max-width: 768px) {
+        
+        &-subtext {
+            font-size: 14px;
+        }
+    }
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: $main-color-btn;
+    color: #fff;
+    border-radius: 6px;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: darken($main-color-btn, 5%);
+    }
+}
+
+.form-search {
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+
+    &-wrapper {
+        margin: 4px;
+        display: flex;
+    }
+
+    &-field {
+        border: 0;
+        padding: 10px 22px 10px 10px;
+        outline: none;
+        transition: background-color 0.2s;
+        border-radius: 6px;
+
+        margin-right: 4px;
+
+        &:focus {
+            background-color: darken(#fff, 10%);
+        }
+    }
+
+    &-btn {
+        border: 0;
+        outline: none;
+        cursor: pointer;
+
+        padding: 4px 14px;
+        font-size: 18px;
+        color: #fff;
+        transition: background-color 0.2s;
+
+        background-color: $main-color-btn;
+        border-radius: 6px;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: darken($main-color-btn, 5%);
+        }
+    }
+
+    @media (max-width: 440px) {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+
+        &-field {
+            margin-right: 0;
+        }
+
+        &-wrapper {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &-btn {
+            margin: 4px 4px 0 4px;
+        }
+    }
+}

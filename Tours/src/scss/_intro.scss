@@ -1,0 +1,23 @@
+.intro {
+    height: 640px;
+    background: url("../img/intro/intro-back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        &-title {
+            color: transparent;
+            -webkit-text-stroke: 1.5px $main-color-title;
+            font-size: 76px;
+            line-height: 86px;
+
+            span {
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

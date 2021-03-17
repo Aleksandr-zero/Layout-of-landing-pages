@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout of landing pages</title>
+</head>
+
+    <style>
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 4px;
+            background-color: #020406;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(146, 146, 146, 0.9);
+            border-radius: 8px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #0c1013;
+            font-family: sans-serif;
+            color: #fff;
+        }
+
+        /* Цвет ссылок */
+
+        .item-link-1 { border-bottom: 2px solid #8D80D1; }
+        .item-link-1:after { background-color: #8D80D1; }
+
+        .item-link-2 { border-bottom: 2px solid #003458; }
+        .item-link-2:after { background-color: #003458; }
+        
+        .item-link-3 { border-bottom: 2px solid #C7A17A; }
+        .item-link-3:after { background-color: #C7A17A; }
+
+        .item-link-4 { border-bottom: 2px solid #009D98; }
+        .item-link-4:after { background-color: #009D98; }
+
+
+        .content {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .content__title {
+            text-align: center;
+
+            margin: 30px 0 60px 0;
+        }
+
+        .content__items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .content__item {
+            max-width: 45%;
+            margin-bottom: 40px;
+        }
+
+        .content__item-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .content__item-genre {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content__item-link {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            padding: 6px;
+        }
+
+        .content__item-link:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            transition: width 0.4s;
+            z-index: -1;
+        }
+
+        .content__item-link:hover:after {
+            width: 100%;
+        }
+
+        .content__item-img {
+            max-width: 100%;
+            display: flex;
+        }
+
+    </style>
+
+<body>
+    
+    <div class="content">
+        <h1 class="content__title">
+            Layout of one-page sites of different categories
+        </h1>
+        <div class="content__items">
+
+            <div class="content__item">
+                <h2 class="content__item-title">
+                    <a href="NarrativeBI/index.html" class="content__item-link item-link-1">NarrativeBI</a>
+                </h2>
+                <h4 class="content__item-genre">Genre - data processing tool</h4>
+                <div class="content__item-back-img">
+                    <img src="NarrativeBI/examples/example-1.png" alt="" class="content__item-img">
+                    <img src="NarrativeBI/examples/example-2.png" alt="" class="content__item-img">
+                </div>
+            </div>
+
+            <div class="content__item">
+                <h2 class="content__item-title">
+                    <a href="Real Estate/index.html" class="content__item-link item-link-2">Real Estate</a>
+                </h2>
+                <h4 class="content__item-genre">Genre - search for housing</h4>
+                <div class="content__item-back-img">
+                    <img src="Real Estate/examples/example-1.png" alt="" class="content__item-img">
+                    <img src="Real Estate/examples/example-2.png" alt="" class="content__item-img">
+                </div>
+            </div>
+
+            <div class="content__item">
+                <h2 class="content__item-title">
+                    <a href="Revo/index.html" class="content__item-link item-link-3">Freebie Agency Coffee</a>
+                </h2>
+                <h4 class="content__item-genre">Genre - company products</h4>
+                <div class="content__item-back-img">
+                    <img src="Revo/examples/example-1.png" alt="" class="content__item-img">
+                    <img src="Revo/examples/example-2.png" alt="" class="content__item-img">
+                </div>
+            </div>
+
+            <div class="content__item">
+                <h2 class="content__item-title">
+                    <a href="Tours/index.html" class="content__item-link item-link-4">Tours</a>
+                </h2>
+                <h4 class="content__item-genre">Genre - travels</h4>
+                <div class="content__item-back-img">
+                    <img src="tours/examples/example-1.png" alt="" class="content__item-img">
+                    <img src="tours/examples/example-2.png" alt="" class="content__item-img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

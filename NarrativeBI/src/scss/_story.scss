@@ -1,0 +1,115 @@
+.story {
+    background-color: $additional-color-background;
+    padding-bottom: 170px;
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+
+        &-img {
+            position: relative;
+
+            img {
+                position: absolute;
+                left: -10%;
+                bottom: -10px;
+                width: 22%;
+                z-index: 5;
+            }
+        }
+
+        &-items {
+            width: 49%;
+            position: relative;
+        }
+
+        &-item {
+            background-color: #373552;
+            border-radius: 16px;
+            margin-bottom: 16px;
+
+            &.group-item-border-rb {
+                border-bottom-right-radius: 0;
+            }
+
+            &.group-item-border-rt {
+                border-top-right-radius: 0;
+            }
+
+            &-text {
+                padding: 60px 70px 50px 60px;
+            }
+
+            &-title {
+                font-size: 28px;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+
+            &-description {
+                color: $additional-color-text;
+                font-size: 16px;
+                line-height: 2;
+                opacity: 0.8;
+            }
+
+            &-img {
+               display: flex;
+               justify-content: flex-end;
+               position: relative;
+
+               &.group-item-img-center {
+                   justify-content: center;
+               }
+
+                img {
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 80px;
+
+        &__group {
+            display: block;
+            margin-top: 60px;
+
+            &-items {
+                width: 100%;
+            }
+
+            &-img {
+                img {
+                    left: -5%;
+                    width: 18%;
+                }
+            }
+
+            &-item {
+                &-text {
+                    padding: 12% 10% 12% 10%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+
+        &__group {
+
+            &-item {
+
+                &-title {
+                    font-size: 24px;
+                }
+
+                &-img {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
