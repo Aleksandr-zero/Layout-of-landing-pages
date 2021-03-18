@@ -1,0 +1,74 @@
+@media (max-width: 800px) {
+
+    .footer {
+
+        &__content {
+
+            &-text {
+
+                &-title {
+                    font-size: 44px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .properties {
+
+        &__content {
+
+            &-item {
+
+                &-back-img {
+
+                    &-btn {
+                        font-size: 22px;
+                    }
+                }
+
+                &-description {
+
+                    &-title,
+                    &-price {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .blog {
+
+        &__content {
+
+            &-img {
+
+                &-title-link {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 425px) {
+
+    .footer {
+
+        &__content {
+
+            &-text {
+
+                &-link,
+                p {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}

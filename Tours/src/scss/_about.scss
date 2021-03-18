@@ -1,6 +1,6 @@
 .about {
     padding-top: 140px;
-    padding-bottom: 130px;
+    padding-bottom: 135px;
     background-color: $color-back;
     position: relative;
 
@@ -33,23 +33,19 @@
             left: -10%;
         }
 
-        &:after {
-            position: absolute;
-            content: "";
-            background-image: url("../img/about/points.svg");
-            height: 50px;
-            width: 50px;
-            top: -24px;
-            left: -6px;
-            z-index: -1;
-        }
-
-        &-img {
-            width: 40%;
-            height: 50%;
-            margin: auto 0;
-
+        &-back-img {
             position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                background-image: url("../img/about/points.svg");
+                height: 50px;
+                width: 50px;
+                top: -24px;
+                left: -24px;
+                z-index: -1;
+            }
 
             &:after {
                 position: absolute;
@@ -60,7 +56,14 @@
                 right: -36px;
                 background-color: #FFC107;
                 border-radius: 10px;
+                z-index: -1;
             }
+        }
+
+        &-img {
+            // width: 40%;
+            // height: 50%;
+            margin: auto 0;
         }
 
         &-description {
@@ -89,6 +92,7 @@
             &-btn {
                 margin-top: 30px;
                 width: 140px;
+                padding: 10px 25px;
             }
         }
     }

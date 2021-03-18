@@ -1,0 +1,82 @@
+.deals {
+    margin-top: 100px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &-title {
+            font-size: 40px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        width: 1260px;
+        overflow: hidden;
+        margin: 48px auto 0 auto;
+
+        cursor: pointer;
+
+        &.deals__items-active {
+            cursor: grabbing;
+        }
+    }
+
+    &__item {
+        margin: 0 15px;
+
+        &-description {
+            padding: 28px 30px 0 30px;
+
+            &-date {
+                font-size: 24px;
+                color: $color-description;
+
+                position: relative;
+                margin-left: 42px;
+
+                display: flex;
+                align-items: center;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("../img/deals/date.svg");
+                    left: -36px;
+                }
+            }
+
+            &-title {
+                margin-top: 24px;
+
+                &-link {
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 34px;
+
+                    color: #000000;
+
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: $color-btn;
+                    }
+                }
+            }
+
+            &-house {
+                color: $color-description;
+                margin-top: 20px;
+            }
+
+            &-price {
+                color: $color-btn;
+                font-size: 36px;
+                margin-top: 30px;
+            }
+        }
+    }
+}

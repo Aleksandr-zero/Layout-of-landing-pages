@@ -128,6 +128,11 @@ propertiesContentSlider.addEventListener('mousemove', (e) => {
 })
 
 
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    console.log(1)
+} else null;
+
+
 // block - Client
 
 clientBtnPrev.addEventListener("click", () => {

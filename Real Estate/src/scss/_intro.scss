@@ -42,7 +42,9 @@
 
                         &-addresses {
                             position: absolute;
-                            margin-top: 20px;
+
+                            padding: 20px 10px;
+                            margin-top: 10px;
                             background-color: $white-color;
                             width: 100%;
 
@@ -55,14 +57,14 @@
                             transition: all 0.4s;
 
                             &::-webkit-scrollbar {
-                                width: 7px;
+                                width: 8px;
                                 height: 4px;
-                                background-color: #fff;
+                                background-color: $white-color;
                             }
                             
                             &::-webkit-scrollbar-thumb {
-                                background-color: rgba($secondary-color, 0.9);
-                                border-radius: 8px;
+                                background-color: $main-color;
+                                border-radius: 4px;
                             }
 
                             &.intro-content-box_2-addresses-active {
@@ -169,6 +171,7 @@
             &-text {
 
                 &-search {
+                    margin-top: 6%;
 
                     &-content {
                         flex-wrap: wrap;
@@ -188,6 +191,19 @@
                             margin-top: 12px;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        
+        &__content {
+
+            &-text {
+
+                &-description {
+                    margin-top: 22%;
                 }
             }
         }

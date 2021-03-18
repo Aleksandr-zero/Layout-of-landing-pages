@@ -206,4 +206,4 @@
 
 // Media-get для блока - clients__content-text-btns
 
-@media (max-width: 1145px) { @include media-get-clients-btns(0%, 0%) }
+@media (max-width: 1145px) { @include media-get-clients-btns(0%, 5%) }

@@ -109,6 +109,19 @@
                 display: flex;
                 flex-direction: column;
 
+                &-message {
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        height: 4px;
+                        background-color: #fff;
+                    }
+                    
+                    &::-webkit-scrollbar-thumb {
+                        background-color: rgba($secondary-color, 0.9);
+                        border-radius: 4px;
+                    }
+                }
+
                 &-btn {
                     cursor: pointer;
                     outline: none;
@@ -204,6 +217,16 @@
                         width: 100%;
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        
+        &__content {
+
+            &-form {
+                padding: 50px 20px;
             }
         }
     }
