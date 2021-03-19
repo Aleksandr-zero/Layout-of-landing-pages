@@ -162,22 +162,23 @@
     color: $gray-color-1;
     font-size: 18px;
 
-    transition: color 0.4s;
+    transition: color 0.5s;
 
     padding: 6px;
 
     &:hover {
         color: $white-color;
 
-        &:before {
-            width: 100%;
+        &:before,
+        &:after {
+            width: 50%;
         }
     }
 
-    &:before {
+    &:before,
+    &:after {
         position: absolute;
         content: "";
-        left: 0;
         top: 0;
         height: 100%;
         width: 0;
@@ -186,6 +187,9 @@
         transition: width 0.4s;
         z-index: -1;
     }
+
+    &:before { left: 0; }
+    &:after  { right: 0; }
 }
 
 .header-btn-register {

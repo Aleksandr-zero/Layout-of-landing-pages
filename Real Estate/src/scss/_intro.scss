@@ -70,12 +70,6 @@
                             &.intro-content-box_2-addresses-active {
                                 opacity: 1;
                                 max-height: 200px;
-
-                                .intro__content-text-search-content-box_2 {
-                                    svg {
-                                        transform: translate(0, -50%) rotate(-90deg);
-                                    }
-                                }
                             }
 
                             .search-content-box-content{
@@ -83,13 +77,19 @@
                             }
                         }
 
-                        svg {
+                        &-img {
                             position: absolute;
 
                             right: 30px;
                             top: 50%;
 
                             transform: translate(0, -50%) rotate(90deg);
+
+                            transition: transform 0.2s;
+
+                            &.intro-search-content-img-active {
+                                transform: translate(0, -50%) rotate(-90deg);
+                            }
                         }
                     }
 

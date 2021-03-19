@@ -1,13 +1,16 @@
 // block - Header
+
 const btnMenuHeaderOpen = document.querySelector(".header__content-back-btn");
 const btnMenuHeaderClose = document.querySelector(".header__content-nav_mobile-btn");
 const mobileNavMenu = document.querySelector(".header__content-nav_mobile");
+
 
 // block - Intro
 
 const introContentBox_2_btn = document.querySelector(".intro__content-text-search-content-box_2");
 const introContentBox_2 = document.querySelector(".intro__content-text-search-content-box_2-addresses");
 const introContentBoxItems = document.querySelectorAll(".search-content-box-2");
+const introContentBoxImg = document.querySelector(".intro__content-text-search-content-box_2-img");
 
 const introContentItems = document.querySelector(".intro__content-img-items");
 const introContentItemCount = document.querySelectorAll(".intro__content-img-item").length;
@@ -67,6 +70,7 @@ btnMenuHeaderClose.addEventListener("click", () => {
 
 introContentBox_2_btn.addEventListener("click", () => {
     introContentBox_2.classList.toggle("intro-content-box_2-addresses-active");
+    introContentBoxImg.classList.toggle("intro-search-content-img-active");
 });
 
 introContentBoxItems.forEach( (item) => {
@@ -98,12 +102,12 @@ introBtnNext.addEventListener("click", () => {
 
 // block - Properties
 
-propertiesContentSlider.addEventListener('mousedown', (e) => {
+propertiesContentSlider.addEventListener('mousedown', (event) => {
     isDown = true;
     
     propertiesContentSlider.classList.add('properties__content-items-active')
 
-    startX = e.pageX - propertiesContentSlider.offsetLeft;
+    startX = event.pageX - propertiesContentSlider.offsetLeft;
     scrollLeft = propertiesContentSlider.scrollLeft;
 })
 
@@ -117,19 +121,36 @@ propertiesContentSlider.addEventListener('mouseup', () => {
     propertiesContentSlider.classList.remove('properties__content-items-active')
 })
 
-propertiesContentSlider.addEventListener('mousemove', (e) => {
+propertiesContentSlider.addEventListener('mousemove', (event) => {
     if (!isDown) return //stop running it;
 
-    e.preventDefault();
-    let x = e.pageX - propertiesContentSlider.offsetLeft;
+    event.preventDefault();
+    let x = event.pageX - propertiesContentSlider.offsetLeft;
     let walk = x - startX;
 
     propertiesContentSlider.scrollLeft = scrollLeft - walk;
 })
 
+if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    
+    propertiesContentSlider.addEventListener('touchstart', (event) => {
+        isDown = true;
+    
+        startX = event.changedTouches[0].pageX - propertiesContentSlider.offsetLeft;
+        scrollLeft = propertiesContentSlider.scrollLeft;
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-    console.log(1)
+    }, false);
+
+    propertiesContentSlider.addEventListener('touchmove', (event) => {
+        if (!isDown) return //stop running it;
+
+        event.preventDefault();
+        let x = event.changedTouches[0].pageX - propertiesContentSlider.offsetLeft;
+        let walk = x - startX;
+    
+        propertiesContentSlider.scrollLeft = scrollLeft - walk;
+    }, false);
+
 } else null;
 
 
