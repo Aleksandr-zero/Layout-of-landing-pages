@@ -1,7 +1,6 @@
 .intro {
     height: 640px;
-    background: url("../img/intro/intro-back.png");
-    background-repeat: no-repeat;
+    background: url("../img/intro/intro-back.png") center no-repeat;
     background-size: cover;
 
     &__content {
@@ -17,6 +16,21 @@
 
             span {
                 letter-spacing: 2px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        
+        &__content {
+
+            &-title {
+                font-size: 56px;
+                line-height: 66px;
+
+                span {
+                    letter-spacing: 1.5px;
+                }
             }
         }
     }

@@ -3,6 +3,10 @@
 .container {
     max-width: 1050px;
     margin: 0 auto;
+
+    @media (max-width: 1080px) {
+        margin: 0 40px;
+    }
 }
 
 
@@ -19,5 +23,18 @@
 
     &:hover {
         background-color: darken($color-btn, 5%);
+    }
+}
+
+
+// HEADER
+
+.nav-link {
+    color: $color-overhead-link;
+
+    transition: color 0.2s;
+
+    &:hover {
+        color: $color-btn;
     }
 }

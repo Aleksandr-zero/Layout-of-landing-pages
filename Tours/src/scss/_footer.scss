@@ -1,7 +1,6 @@
 .footer {
     height: 900px;
-    background: url("../img/footer/footer-back.png");
-    background-repeat: no-repeat;
+    background: url("../img/footer/footer-back.png") center no-repeat;
     background-size: cover;
 
     hr {
@@ -75,6 +74,85 @@
             text-align: center;
             color: $white-color;
             margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 670px) {
+        
+        &__content {
+            padding-top: 590px;
+
+            &-item {
+                &:last-child {
+                    width: 160px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        height: 730px;
+        
+        &__content {
+            padding-top: 300px;
+
+            &-items {
+                flex-wrap: wrap;
+            }
+
+            &-item {
+                &:first-child,
+                &:nth-child(2) {
+                    width: 45%;
+                }
+
+                &:nth-child(2) {
+                    text-align: end;
+                }
+
+                &:last-child {
+                    margin-top: 30px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        
+        &__content {
+            padding-top: 90px;
+
+            &-item {
+
+                &:first-child {
+                    color: $color-description;
+
+                    .footer__content-item-description {
+
+                        &-link {
+                            color: $color-description;
+                        }
+
+                        &-icons-link {
+                            path {
+                                fill: $color-description;
+                            }
+                        }
+                    }
+                }
+
+                &:first-child,
+                &:nth-child(2),
+                &:last-child {
+                    width: 100%;
+                }
+
+                &:nth-child(2) {
+                    text-align: start;
+                    margin-top: 30px;
+                }
+            }
         }
     }
 }

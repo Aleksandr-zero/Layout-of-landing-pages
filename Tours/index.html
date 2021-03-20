@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/style.css">
     <title>Tours</title>
 </head>
 
 <body>
     
-    <header class="header">
+    <header class="header lock-padding">
         <div class="container">
             <div class="header__content">
                 <div class="header__content-logo">
@@ -19,25 +19,54 @@
                 <nav class="header__content-nav">
                     <ul class="header__content-nav-items">
                         <li class="header__content-nav-item">
-                            <a href="#" class="header__content-nav-item-link">Home</a>
+                            <a href="#" class="header__content-nav-item-link nav-link">Home</a>
                         </li>
                         <li class="header__content-nav-item">
-                            <a href="#" class="header__content-nav-item-link">About us</a>
+                            <a href="#" class="header__content-nav-item-link nav-link">About us</a>
                         </li>
                         <li class="header__content-nav-item">
-                            <a href="#" class="header__content-nav-item-link">Populer Destination</a>
+                            <a href="#" class="header__content-nav-item-link nav-link">Populer Destination</a>
                         </li>
                         <li class="header__content-nav-item">
-                            <a href="#" class="header__content-nav-item-link">Tour Packege</a>
+                            <a href="#" class="header__content-nav-item-link nav-link">Tour Packege</a>
                         </li>
                         <li class="header__content-nav-item">
-                            <a href="#" class="header__content-nav-item-link">Contact</a>
+                            <a href="#" class="header__content-nav-item-link nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
+                <div class="header__content-menu-btn">
+                    <a role="button" class="header__content-menu-btn-link">
+                        <span>Menu</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
+
+    <div class="header__content-mobile-nav">
+        <div class="header__content-mobile-nav-wrapper">
+            <div class="header__content-mobile-nav-content">
+                <ul class="header__content-mobile-nav-items">
+                    <li class="header__content-mobile-nav-item">
+                        <a href="#" class="header__content-mobile-nav-item-link nav-link">Home</a>
+                    </li>
+                    <li class="header__content-mobile-nav-item">
+                        <a href="#" class="header__content-mobile-nav-item-link nav-link">About us</a>
+                    </li>
+                    <li class="header__content-mobile-nav-item">
+                        <a href="#" class="header__content-mobile-nav-item-link nav-link">Populer Destination</a>
+                    </li>
+                    <li class="header__content-mobile-nav-item">
+                        <a href="#" class="header__content-mobile-nav-item-link nav-link">Tour Packege</a>
+                    </li>
+                    <li class="header__content-mobile-nav-item">
+                        <a href="#" class="header__content-mobile-nav-item-link nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div class="intro">
         <div class="container">
@@ -558,7 +587,7 @@
                         <label for="" class="free__content-message-form-label">
                             Email
                         </label>
-                        <input type="text" class="free__content-message-form-input">
+                        <input type="email" class="free__content-message-form-input">
                         <label for="" class="free__content-message-form-label">
                             Subject
                         </label>

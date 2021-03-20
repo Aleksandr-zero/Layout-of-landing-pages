@@ -26,4 +26,24 @@
             }
         }
     }
+
+    @media (max-width: 520px) {
+
+        &__content {
+
+            &-item {
+                width: 26%;
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        
+        &__content {
+
+            &-item {
+                width: 42%;
+            }
+        }
+    }
 }

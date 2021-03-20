@@ -1,10 +1,79 @@
+// Common
+
+const body = document.querySelector("body");
+const itemsLockPadding = document.querySelectorAll(".lock-padding");
+
+let timeout = 500;
+
+
+// block - header
+
+const menuBtn = document.querySelector(".header__content-menu-btn-link");
+const header = document.querySelector(".header");
+
+const mobileNav = document.querySelector(".header__content-mobile-nav");
+
+let scorePressed = 0;
+
+
+// block - curated
+
 const blockCuratedItems = document.querySelector(".curated__items");
-const blockCuratedItemCount = document.querySelectorAll(".curated__item").length;
+const blockCuratedItemCount = document.querySelectorAll(".curated__item");
+
 const curatedPrevBtn = document.querySelector(".curated__back-btn-prev");
 const curatedNextBtn = document.querySelector(".curated__back-btn-next");
 
+const curatedBackImgBtns = document.querySelectorAll(".curated__item-back-img-btn");
+
+
+// block - deals
 
 const blockDealsItems = document.querySelector(".deals__items");
+
+
+// block - header
+
+menuBtn.addEventListener("click", () => {
+    mobileNav.classList.toggle("mobile-nav-open");
+    menuBtn.classList.toggle("menu-btn-active");
+
+    let lockPaddingScroll = window.innerWidth - document.querySelector(".header__content-mobile-nav").offsetWidth;
+
+    add_removeLockPadding(rightPaddingCount = lockPaddingScroll);
+
+    if (scorePressed == 1) {
+        setTimeout(() => {
+            header.classList.remove("header-active");
+        }, 100);
+        scorePressed--;
+    } else { header.classList.add("header-active"); scorePressed++;};
+});
+
+function add_removeLockPadding(rightPaddingCount) {
+
+    if (scorePressed == 0) {
+        body.classList.toggle("stop-scrolling");
+        body.style.paddingRight = rightPaddingCount + "px"
+
+        for (let index = 0; index < itemsLockPadding.length; index++) {
+            const elementLock = itemsLockPadding[index];
+            elementLock.style.paddingRight = rightPaddingCount + "px";
+        };
+
+    } else {
+        setTimeout(() => {
+            for (let index = 0; index < itemsLockPadding.length; index++) {
+                const elementLock = itemsLockPadding[index];
+                elementLock.style.paddingRight = "0px";
+            };
+
+            body.classList.toggle("stop-scrolling");
+            body.style.paddingRight = "0px"
+
+        }, timeout);
+    };
+};
 
 
 // block - curated
@@ -12,8 +81,20 @@ const blockDealsItems = document.querySelector(".deals__items");
 let positionBlockCuratedLeft = 0;
 let positionBlockCuratedScore = 0;
 
+let widthBlockCuratedItems = blockCuratedItems.offsetWidth;
+let widthBlockCuratedItem = blockCuratedItemCount[0].offsetWidth;
+
+// используем 1260 так как у блока "deals__wrapper-items" заданная ширина - 1260px
+if (window.innerWidth < 1260) {
+    var positionLeftCount = 420 - (window.innerWidth) / 3 + 420;
+
+} else {
+    var positionLeftCount = 420;
+};
+
+
 curatedPrevBtn.addEventListener("click", () => {
-    pressesBtn(positionLeft = 420, positionScore = -1);
+    pressesBtn(positionLeft = positionLeftCount, positionScore = -1);
 
     if (positionBlockCuratedScore == 1) {
         positionBlockCuratedLeft -= 90;
@@ -21,7 +102,7 @@ curatedPrevBtn.addEventListener("click", () => {
 });
 
 curatedNextBtn.addEventListener("click", () => {
-    pressesBtn(positionLeft = -420, positionScore = 1);
+    pressesBtn(positionLeft = -positionLeftCount, positionScore = 1);
 
     if (positionBlockCuratedScore == 2) {
         positionBlockCuratedLeft += 90;
@@ -36,6 +117,12 @@ function pressesBtn(positionLeft, positionScore) {
 
     checkBtnPressed();
 }
+
+if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    curatedBackImgBtns.forEach( (itemBtn) => {
+        itemBtn.classList.add("curated__item-back-img-btn-phone");
+    });
+};
 
 function checkBtnPressed() {
     if (positionBlockCuratedScore == 0) {
@@ -54,6 +141,8 @@ function checkBtnPressed() {
 
 
 // block - deals
+
+blockDealsItems.scrollLeft = 630;
 
 let isDown = false;
 let startX;
@@ -87,3 +176,24 @@ blockDealsItems.addEventListener('mousemove', (e) => {
 
     blockDealsItems.scrollLeft = scrollLeft - walk;
 })
+
+if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    
+    blockDealsItems.addEventListener('touchstart', (event) => {
+        isDown = true;
+    
+        startX = event.touches[0].clientX - blockDealsItems.offsetLeft;
+        scrollLeft = blockDealsItems.scrollLeft;
+
+    }, false);
+
+    blockDealsItems.addEventListener('touchmove', (event) => {
+        if (!isDown) return //stop running it;
+
+        let x = event.touches[0].clientX - blockDealsItems.offsetLeft;
+        let walk = x - startX;
+    
+        blockDealsItems.scrollLeft = scrollLeft - walk * 1.5;
+    }, false);
+
+} else null;

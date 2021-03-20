@@ -97,4 +97,56 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        
+        &__container {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 660px) {
+        
+        &__container {
+
+            &-content {
+                padding: 50px 25px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        
+        &__container {
+
+            &-content {
+                padding: 40px 20px 30px 20px;
+
+                &-form {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    &-back-where,
+                    &-back-when,
+                    &-back-travel_type {
+                        margin-right: 0;
+                    }
+
+                    &-back-where,
+                    &-back-when {
+                        width: 47%;
+                    }
+
+                    &-back-travel_type {
+                        width: 100%;
+                        margin: 20px 0;
+                    }
+
+                    &-btn {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
 }

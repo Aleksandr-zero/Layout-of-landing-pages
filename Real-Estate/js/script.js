@@ -144,11 +144,10 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
     propertiesContentSlider.addEventListener('touchmove', (event) => {
         if (!isDown) return //stop running it;
 
-        event.preventDefault();
         let x = event.changedTouches[0].pageX - propertiesContentSlider.offsetLeft;
         let walk = x - startX;
     
-        propertiesContentSlider.scrollLeft = scrollLeft - walk;
+        propertiesContentSlider.scrollLeft = scrollLeft - walk * 1.5;
     }, false);
 
 } else null;

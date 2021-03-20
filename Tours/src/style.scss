@@ -28,6 +28,11 @@ body {
     font-weight: 400;
     font-size: 16px;
     background: $white-color;
+
+    &.stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 a { text-decoration: none; }
