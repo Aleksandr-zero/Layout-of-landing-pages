@@ -1,0 +1,88 @@
+.footer {
+    margin-top: 190px;
+    padding-top: 90px;
+    padding-bottom: 22px;
+
+    background-color: $color-back;
+
+    hr {
+        border: 0.5px solid #C4C4C4;
+        margin-top: 70px;
+    }
+
+    &__content {
+
+        &-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-item {
+
+            &-text {
+                line-height: 28px;
+                color: $color-description;
+
+                margin-top: 16px;
+            }
+
+            &-ttile {
+                font-size: 24px;
+                font-weight: 600;
+                color: $color-title;
+            }
+
+            &-description {
+                margin-top: 20px;
+
+                display: flex;
+                flex-direction: column;
+
+                &-link {
+                    color: $color-description;
+                    margin-top: 14px;
+
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: darken($color-description, 40%);
+                    }
+                }
+
+                &-social {
+                    display: flex;
+                    margin-top: 20px;
+
+                    &-link {
+                        width: 36px;
+                        height: 36px;
+
+                        margin-right: 8px;
+                        border-radius: 50%;
+                        background-color: #D5D5D5;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        transition: background-color 0.2s;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &:hover {
+                            background-color: $color-btn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+        color: $color-description;
+        margin-top: 16px;
+    }
+}

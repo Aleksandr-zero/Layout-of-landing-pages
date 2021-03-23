@@ -1,0 +1,80 @@
+.forget {
+    margin-top: 200px;
+
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-image: url("../img/common/points.svg");
+        width: 212px;
+        height: 153px;
+        top: -270px;
+        right: 0;
+        z-index: 1;
+    }
+
+    &__content {
+        text-align: center;
+
+        &-title {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            display: inline-flex;
+
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 1px;
+                width: 70%;
+                background-color: #C4C4C4;
+                top: 80px;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        &-text {
+            margin-top: 78px;
+
+            color: $color-description;
+            line-height: 28px;
+        }
+
+        &-back-form {
+            margin-top: 30px;
+        }
+
+        &-form {
+            display: flex;
+            justify-content: center;
+
+            height: 55px;
+
+            &-input {
+                padding: 0 28px;
+                width: 580px;
+
+                outline: none;
+                border: 0;
+
+                background-color: #EEEEEE;
+                border-top-left-radius: 20px;
+
+                transition: background-color 0.2s;
+
+                &:focus {
+                    background-color: darken(#EEEEEE, 10%);
+                }
+            }
+
+            &-btn {
+                border-top-left-radius: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}

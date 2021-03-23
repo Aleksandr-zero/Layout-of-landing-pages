@@ -1,0 +1,32 @@
+.about {
+    margin-top: 205px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &-back-img {
+            &:before {
+                top: -35px;
+                left: -35px;
+            }
+        }
+
+        &-description {
+            margin-left: 10%;
+            margin-top: 60px;
+            max-width: 540px;
+
+            &-text {
+                margin-top: 22px;
+
+                line-height: 30px;
+                color: $color-description;
+            }
+
+            &-back-btn {
+                margin-top: 46px;
+            }
+        }
+    }
+}

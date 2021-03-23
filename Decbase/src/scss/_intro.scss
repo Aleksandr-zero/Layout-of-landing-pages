@@ -1,0 +1,41 @@
+.intro {
+    padding-top: 175px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text {
+            margin-right: 3.5%;
+
+            &-title {
+                font-size: 72px;
+                line-height: 78px;
+                font-weight: 600;
+                font-family: "Poppins";
+
+                margin-top: 12px;
+            }
+
+            &-description {
+                line-height: 30px;
+                color: $color-description;
+
+                margin-top: 24px;
+            }
+
+            &-back-btn {
+                margin-top: 46px;
+            }
+        }
+
+        &-back-img {
+
+            &:before {
+                top: 35px;
+                right: -35px;
+            }
+        }
+    }
+}

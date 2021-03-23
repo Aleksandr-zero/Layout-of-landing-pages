@@ -213,6 +213,14 @@
     @media (max-width: 780px) {
 
         &:before { top: -5%; }
+
+        &__item {
+            width: 380px;
+
+            &-img {
+                width: 380px;
+            }
+        }
     }
 
     @media (max-width: 660px) {
@@ -235,5 +243,39 @@
                 margin-top: 25px;
             }
         } 
+    }
+
+    @media (max-width: 570px) {
+
+        &__item {
+            width: 360px;
+
+            &-img {
+                width: 360px;
+            }
+        }
+
+        &__back-btn {
+            margin-top: 80px;
+        }
+    }
+
+    @media (max-width: 450px) {
+
+        &__items {
+            margin: 0;
+        }
+
+        &__item {
+            width: 340px;
+
+            &-img {
+                width: 340px;
+            }
+        }
+
+        &__back-btn {
+            margin-top: 60px;
+        }
     }
 }

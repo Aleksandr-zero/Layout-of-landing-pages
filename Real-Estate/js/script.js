@@ -1,5 +1,7 @@
 // block - Header
 
+const header = document.querySelector(".header");
+
 const btnMenuHeaderOpen = document.querySelector(".header__content-back-btn");
 const btnMenuHeaderClose = document.querySelector(".header__content-nav_mobile-btn");
 const mobileNavMenu = document.querySelector(".header__content-nav_mobile");
@@ -56,6 +58,14 @@ let positionClientContent = 0;
 
 
 // block - Header
+
+window.addEventListener("scroll", () => {
+    if (pageYOffset >= 100) {
+        header.classList.add("header-active");
+    } else {
+        header.classList.remove("header-active");
+    };
+});
 
 btnMenuHeaderOpen.addEventListener("click", () => {
     mobileNavMenu.classList.add("mobile-nav-open");
@@ -147,7 +157,7 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
         let x = event.changedTouches[0].pageX - propertiesContentSlider.offsetLeft;
         let walk = x - startX;
     
-        propertiesContentSlider.scrollLeft = scrollLeft - walk * 1.5;
+        propertiesContentSlider.scrollLeft = scrollLeft - walk * 1.2;
     }, false);
 
 } else null;

@@ -13,8 +13,6 @@ const header = document.querySelector(".header");
 
 const mobileNav = document.querySelector(".header__content-mobile-nav");
 
-let scorePressed = 0;
-
 
 // block - curated
 
@@ -34,20 +32,43 @@ const blockDealsItems = document.querySelector(".deals__items");
 
 // block - header
 
+let scorePressed = 0;
+var positionHeader = "top";
+
+window.addEventListener("scroll", () => {
+
+    if (pageYOffset >= header.offsetHeight + 12) {
+        header.classList.add("header-active");
+        positionHeader = "bottom";
+    } else {
+        header.classList.remove("header-active");
+        positionHeader = "top";
+    };
+});
+
 menuBtn.addEventListener("click", () => {
     mobileNav.classList.toggle("mobile-nav-open");
     menuBtn.classList.toggle("menu-btn-active");
+    header.classList.toggle("header-active-not-shadow");
 
     let lockPaddingScroll = window.innerWidth - document.querySelector(".header__content-mobile-nav").offsetWidth;
 
     add_removeLockPadding(rightPaddingCount = lockPaddingScroll);
 
     if (scorePressed == 1) {
-        setTimeout(() => {
-            header.classList.remove("header-active");
-        }, 100);
+    
+        if (positionHeader == "top") {
+            setTimeout(() => {
+                header.classList.remove("header-active-pressed-btn");
+            }, 100);
+        };
+
         scorePressed--;
-    } else { header.classList.add("header-active"); scorePressed++;};
+    }
+    else if (scorePressed == 0 && positionHeader == "top") {
+        header.classList.add("header-active-pressed-btn");
+        scorePressed++;
+    };
 });
 
 function add_removeLockPadding(rightPaddingCount) {
@@ -85,12 +106,21 @@ let widthBlockCuratedItems = blockCuratedItems.offsetWidth;
 let widthBlockCuratedItem = blockCuratedItemCount[0].offsetWidth;
 
 // используем 1260 так как у блока "deals__wrapper-items" заданная ширина - 1260px
-if (window.innerWidth < 1260) {
-    var positionLeftCount = 420 - (window.innerWidth) / 3 + 420;
+if (window.innerWidth <= 1260 && 781 < window.innerWidth) {
+    var positionLeftCount = 420 - window.innerWidth / 3 + 420;
+} 
 
-} else {
-    var positionLeftCount = 420;
-};
+else if (window.innerWidth <= 780 && 571 < window.innerWidth) {
+    var positionLeftCount = 380 - window.innerWidth / 3 + 380;
+}
+
+else if (window.innerWidth <= 570 && 451 < window.innerWidth) {
+    var positionLeftCount = 360 - window.innerWidth / 3 + 360;
+}
+
+else if (window.innerWidth <= 450) {
+    var positionLeftCount = 340 - window.innerWidth / 3 + 340;
+} else  var positionLeftCount = 420;
 
 
 curatedPrevBtn.addEventListener("click", () => {
@@ -109,7 +139,9 @@ curatedNextBtn.addEventListener("click", () => {
     };
 });
 
+
 function pressesBtn(positionLeft, positionScore) {
+    console.log(positionLeft)
     positionBlockCuratedLeft += positionLeft 
     blockCuratedItems.style.left = positionBlockCuratedLeft + "px";
 
@@ -193,7 +225,7 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
         let x = event.touches[0].clientX - blockDealsItems.offsetLeft;
         let walk = x - startX;
     
-        blockDealsItems.scrollLeft = scrollLeft - walk * 1.5;
+        blockDealsItems.scrollLeft = scrollLeft - walk * 1.2;
     }, false);
 
 } else null;

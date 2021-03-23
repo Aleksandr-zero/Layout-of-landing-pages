@@ -1,0 +1,102 @@
+// COMMON
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+
+    @media (max-width: 1349px) {
+        margin: 0 40px;
+    }
+}
+
+
+.back-img {
+    position: relative;
+    width: 100%;
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 140px 0;
+        border: 2px solid $color-main;
+    }
+
+    &-photo {
+        border-radius: 140px 0;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.back-intro {
+
+    &-overtitle {
+        text-transform: uppercase;
+        color: $color-description;
+    }
+}
+
+
+.back-btn {
+    display: flex;
+}
+
+.btn {
+    font-weight: 700;
+    color: $white-color;
+    text-transform: uppercase;
+
+    padding: 10px 28px;
+    background-color: $color-btn;
+    border-radius: 20px 0px;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: darken($color-btn, 10%);
+    }
+}
+
+
+.btn-prev,
+.btn-next {
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+
+    transition: background-color 0.2s;
+    
+    pointer-events: none;
+
+    cursor: pointer;
+
+    &.btn-active {
+        background-color: $color-btn;
+        pointer-events: painted;
+
+        path {
+            stroke: $white-color;
+        }
+
+        &:hover {
+            background-color: darken($color-btn, 8%);
+        }
+    }
+}
+
+.btn-prev {
+    padding: 5px 12px 10px 15px;
+}
+
+.btn-next {
+    margin-left: 18px;
+    padding: 5px 14px 10px 17px;
+    
+    svg {
+        transform: rotate(180deg);
+    }
+}

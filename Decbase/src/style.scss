@@ -1,0 +1,113 @@
+
+// FONTS
+
+@import "scss/fonts";
+
+
+$color-main: #B0855B;
+$color-secondary: #CAA892;
+
+$white-color: #ffffff;
+$black-color: #000000;
+
+$color-btn: #37806B;
+$color-title: #212121;
+$color-back: #F8F8F8;
+$color-description: #646464;
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    background: $white-color;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 500;
+    font-family: "Poppins";
+    line-height: 48px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins";
+}
+
+a { text-decoration: none; }
+li { list-style: none; }
+
+button {
+    outline: none;
+    border: 0;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+
+// COMMON
+
+@import "scss/common";
+
+
+// HEADER
+
+@import "scss/header";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// SERVICE
+
+@import "scss/service";
+
+
+// ABOUT
+
+@import "scss/about";
+
+
+// MARKET
+
+@import "scss/market";
+
+
+// WORK
+
+@import "scss/work";
+
+
+// CLIENT
+
+@import "scss/client";
+
+
+// BLOG
+
+@import "scss/blog";
+
+
+// FORGET
+
+@import "scss/forget";
+
+
+// FOOTER
+
+@import "scss/footer";

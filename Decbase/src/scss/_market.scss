@@ -1,0 +1,58 @@
+.market {
+    margin-top: 224px;
+
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-image: url("../img/common/points.svg");
+        width: 212px;
+        height: 153px;
+        top: -130px;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-description {
+            margin-right: 11%;
+
+            &-years {
+                font-size: 240px;
+                line-height: 1;
+                font-weight: 900;
+                text-transform: uppercase;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                &.market__content-description-years-img {
+                    background-image: url("../img/market/back-number.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+
+            &-title {
+                font-size: 50px;
+                line-height: 65px;
+            }
+
+            &-back-btn {
+                margin-top: 35px;
+            }
+        }
+
+        &-back-img {
+            &:before {
+                top: 30px;
+                right: -30px;
+            }
+        }
+    }
+}

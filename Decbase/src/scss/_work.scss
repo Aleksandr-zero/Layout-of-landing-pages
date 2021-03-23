@@ -1,0 +1,101 @@
+.work {
+    margin-top: 180px;
+    padding: 80px 0 100px 0;
+    background-color: $color-back;
+
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-image: url("../img/common/points.svg");
+        width: 212px;
+        height: 153px;
+        top: -80px;
+        right: 0;
+        z-index: -1;
+    }
+
+    &__content {
+
+        &-title {
+            text-align: center;
+            line-height: 60px;
+        }
+
+        &-items {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 88px;
+        }
+
+        &-item {
+            padding: 50px;
+            background-color: $white-color;
+            box-shadow: 0px 13px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 40px 0px;
+
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                background-image: url("../img/common/curved-line.svg");
+                background-repeat: no-repeat;
+                right: -100%;
+                width: 100%;
+                height: 100%;
+            }
+
+            &:last-child {
+                &:before {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) {
+                padding: 50px 39px;
+
+                &:before {
+                    top: -50%;
+                    transform: rotateX(180deg);
+                }
+            }
+
+            &.work__content-item-position-top {
+                margin-bottom: 96px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    background-image: url("../img/common/curved-line.svg");
+                    background-repeat: no-repeat;
+                    top: 50%;
+                    right: -100%;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &.work__content-item-position-bottom {
+                margin-top: 96px;
+            }
+
+            &-description {
+                text-align: center;
+
+                &-number {
+                    font-size: 50px;
+                    font-weight: 700;
+                    color: $color-title;
+                }
+
+                &-specialization {
+                    font-size: 18px;
+                    color: $color-description;
+                }
+            }
+        }
+    }
+}

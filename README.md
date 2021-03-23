@@ -9,7 +9,7 @@ Genre - data processing tool
 ![alt text](NarrativeBI/examples/example-1.png)
 ![alt text](NarrativeBI/examples/example-2.png)
 
-### [Real Estate](https://aleksandr-zero.github.io/Layout-of-landing-pages/Real%20Estate/index.html)
+### [Real Estate](https://aleksandr-zero.github.io/Layout-of-landing-pages/Real-Estate/index.html)
 Genre - search for housing
 
 ![alt text](Real-Estate/examples/example-1.png)
