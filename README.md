@@ -26,3 +26,9 @@ Genre - travels
 
 ![alt text](Tours/examples/example-1.png)
 ![alt text](Tours/examples/example-2.png)
+
+### [Decbase](https://aleksandr-zero.github.io/Layout-of-landing-pages/Decbase/index.html)
+Genre - design
+
+![alt text](Decbase/examples/example-1.png)
+![alt text](Decbase/examples/example-2.png)

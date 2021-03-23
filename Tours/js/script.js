@@ -105,28 +105,40 @@ let positionBlockCuratedScore = 0;
 let widthBlockCuratedItems = blockCuratedItems.offsetWidth;
 let widthBlockCuratedItem = blockCuratedItemCount[0].offsetWidth;
 
+let scoreAdd_Dec = 0;
+let scoreTranslateX = 0;
+
 // используем 1260 так как у блока "deals__wrapper-items" заданная ширина - 1260px
 if (window.innerWidth <= 1260 && 781 < window.innerWidth) {
     var positionLeftCount = 420 - window.innerWidth / 3 + 420;
 } 
 
-else if (window.innerWidth <= 780 && 571 < window.innerWidth) {
-    var positionLeftCount = 380 - window.innerWidth / 3 + 380;
+else if (window.innerWidth <= 780 && 661 < window.innerWidth) {
+    var positionLeftCount = 390 - window.innerWidth / 3 + 390;
+}
+
+else if (window.innerWidth <= 660 && 571 < window.innerWidth) {
+    var positionLeftCount = 325 - window.innerWidth / 3 + 325
+    scoreAdd_Dec = 1;
 }
 
 else if (window.innerWidth <= 570 && 451 < window.innerWidth) {
-    var positionLeftCount = 360 - window.innerWidth / 3 + 360;
+    var positionLeftCount = 325 - window.innerWidth / 3 + 325;
+    scoreAdd_Dec = 1;
 }
 
 else if (window.innerWidth <= 450) {
-    var positionLeftCount = 340 - window.innerWidth / 3 + 340;
+    var positionLeftCount = 107;
+    scoreAdd_Dec = 1;
+    scoreTranslateX = 1;
+
 } else  var positionLeftCount = 420;
 
 
 curatedPrevBtn.addEventListener("click", () => {
     pressesBtn(positionLeft = positionLeftCount, positionScore = -1);
 
-    if (positionBlockCuratedScore == 1) {
+    if (positionBlockCuratedScore == 1 && scoreAdd_Dec == 0) {
         positionBlockCuratedLeft -= 90;
     };
 });
@@ -134,20 +146,30 @@ curatedPrevBtn.addEventListener("click", () => {
 curatedNextBtn.addEventListener("click", () => {
     pressesBtn(positionLeft = -positionLeftCount, positionScore = 1);
 
-    if (positionBlockCuratedScore == 2) {
+    if (positionBlockCuratedScore == 2 && scoreAdd_Dec == 0) {
         positionBlockCuratedLeft += 90;
     };
 });
 
 
 function pressesBtn(positionLeft, positionScore) {
-    console.log(positionLeft)
-    positionBlockCuratedLeft += positionLeft 
-    blockCuratedItems.style.left = positionBlockCuratedLeft + "px";
 
-    positionBlockCuratedScore += positionScore;
+    if (scoreTranslateX == 1) {
+        positionBlockCuratedLeft += positionLeft;
+        blockCuratedItems.style.transform = "translateX(" + positionBlockCuratedLeft + "%)";
 
-    checkBtnPressed();
+        positionBlockCuratedScore += positionScore;
+
+        checkBtnPressed(position = 5);
+
+    } else {
+        positionBlockCuratedLeft += positionLeft 
+        blockCuratedItems.style.left = positionBlockCuratedLeft + "px";
+    
+        positionBlockCuratedScore += positionScore;
+
+        checkBtnPressed(position = 0);
+    }
 }
 
 if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
@@ -156,7 +178,7 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
     });
 };
 
-function checkBtnPressed() {
+function checkBtnPressed(position) {
     if (positionBlockCuratedScore == 0) {
         curatedPrevBtn.classList.add("curated__back-btn-passive");
     }
@@ -165,9 +187,18 @@ function checkBtnPressed() {
         curatedPrevBtn.classList.remove("curated__back-btn-passive");
         curatedNextBtn.classList.remove("curated__back-btn-passive");
     }
-
-    else if (positionBlockCuratedScore == 3) {
+    
+    else if (position == 0) {
         curatedNextBtn.classList.add("curated__back-btn-passive");
+    }
+
+    else if (position == 5 && positionBlockCuratedScore == 4) {
+        curatedNextBtn.classList.add("curated__back-btn-passive");
+
+        if (positionBlockCuratedScore == 3) {
+            curatedPrevBtn.classList.remove("curated__back-btn-passive");
+            curatedNextBtn.classList.remove("curated__back-btn-passive");
+        }
     };
 };
 
