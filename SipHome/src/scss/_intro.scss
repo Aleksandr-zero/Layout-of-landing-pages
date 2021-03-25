@@ -21,8 +21,8 @@
             position: absolute;
             content: "";
             width: 86%;
-            height: 150%;
-            top: -140px;
+            height: 155%;
+            top: -160px;
             left: -120px;
             background-color: $primary-color;
             z-index: -1;
@@ -36,12 +36,13 @@
             bottom: -170px;
             left: -110px;
             width: 240px;
-            height: 170px;
+            height: 190px;
             z-index: -1;
         }
 
         &-description {
             max-width: 600px;
+            margin-top: 50px;
 
             &-title {
                 color: $white-color;
