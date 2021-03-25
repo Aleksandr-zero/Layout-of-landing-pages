@@ -55,4 +55,58 @@
             }
         }
     }
+
+    @media (max-width: 1024px) {
+        margin-top: 140px;
+        
+        &__content {
+
+            &-description {
+                margin-right: 0;
+            }
+
+            &-back-img {
+                width: 120%;
+            }
+        } 
+    }
+
+    @media (max-width: 850px) {
+        
+        &__content {
+
+            &-description {
+
+                &-years {
+                    font-size: 180px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-back-img {
+                width: 100%;
+
+                margin-top: 60px;
+            }
+        } 
+    }
+
+    @media (max-width: 560px) {
+
+        &__content {
+
+            &-back-img {
+                &:before {
+                    top: 20px;
+                    right: -20px;
+                }
+            }
+        }
+    }
 }

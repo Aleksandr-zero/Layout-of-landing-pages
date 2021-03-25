@@ -1,18 +1,94 @@
 @import "scss/_fonts";
 
 
+$white-color: #FFFFFF;
+
+$color-description: #606C84;
+$color-title: #262B35;
+$color-btn: #1ECE7A;
+$color-back: #ECF0F7;
+$color-back-intro_header: #FBFCFF;
+$color-back-input: #CCCCCC;
+
+$primary-color: #1C57C9;
+
+$color-back-icon-red: #F1C1C9;
+$color-back-icon-blue: #C5D7F2;
+$color-back-icon-green: #C5F2DC;
+$color-back-icon-yellow: #FAE3AF;
 
 
-
-body {
-    background-color: #FFF;
+* {
     margin: 0;
+    padding: 0;
 }
 
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white-color;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+h2 { font-size: 42px; }
+h3 { font-size: 16px; }
 
 
+// COMMON
+
+@import "scss/common";
 
 
 // HEADER
 
 @import "scss/header";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// THREAT
+
+@import "scss/threat";
+
+
+// FEATURES
+
+@import "scss/features";
+
+
+// UPDATE
+
+@import "scss/update";
+
+
+// SERVICES
+
+@import "scss/services";
+
+
+// RESTIMONIALS
+
+@import "scss/testimonials";
+
+
+// CONTACT
+
+@import "scss/contact";
+
+
+// FOOTER
+
+@import "scss/footer";

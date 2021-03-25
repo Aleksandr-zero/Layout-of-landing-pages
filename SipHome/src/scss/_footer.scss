@@ -1,0 +1,101 @@
+.footer {
+    margin-top: 190px;
+
+    &__content {
+
+        &-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-item {
+
+            &-description {
+                display: flex;
+                flex-direction: column;
+
+                &-title {
+                    font-weight: 700;
+                    font-size: 24px;
+
+                    margin-bottom: 18px;
+                }
+
+                &-back-logo {
+                    display: flex;
+                    align-items: center;
+
+                    &-title {
+                        color: $primary-color;
+                        font-size: 24px;
+
+                        margin-left: 12px;
+                    }
+                }
+
+                &-text {
+                    margin-top: 44px;
+                    font-size: 20px;
+                    font-weight: 400;
+
+                    &-2 {
+                        margin-top: 28px;
+                    }
+
+                    &-link {
+                        color: #000000;
+
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+                &-back-link {
+                    display: flex;
+                    align-items: center;
+
+                    margin-bottom: 18px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &-link {
+                    color: $color-description;
+                    font-size: 20px;
+                    font-weight: 600;
+
+                    margin-bottom: 18px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+
+                    &-icon {
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+
+        &-text {
+            font-size: 20px;
+            line-height: 30 / 20 *100%;
+
+            margin-top: 92px;
+            margin-bottom: 30px;
+
+            text-align: center;
+        }
+    }
+}

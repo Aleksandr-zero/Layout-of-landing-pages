@@ -1,0 +1,37 @@
+// COMMON
+
+.container {
+    max-width: 1190px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        margin: 0 40px;
+    }
+}
+
+
+.intro-back {
+
+    &-overtitle {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $primary-color;
+        letter-spacing: 8px;
+    }
+
+    &-title {
+        margin-top: 16px;
+        color: $color-title;
+    }
+}
+
+
+.color-back-icon-red    { background-color: $color-back-icon-red; }
+.color-back-icon-blue   { background-color: $color-back-icon-blue; }
+.color-back-icon-green  { background-color: $color-back-icon-green; }
+.color-back-icon-yellow { background-color: $color-back-icon-yellow; }
+
+
+.wrapper-services-testimonials {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -9.97%, $color-back 100%);
+}

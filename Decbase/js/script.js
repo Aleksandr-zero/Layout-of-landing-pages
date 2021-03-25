@@ -58,7 +58,7 @@ function pressedBtnService(positionLeft, scorePressed) {
 
 // block - client
 
-let widthBlockClientItem = blockClientItem.offsetWidth + 90;
+let widthBlockClientItem = blockClientItem.offsetWidth + 110;
 let positionLeftBlockClient = 0;
 let scorePressedBtnClient = 0;
 

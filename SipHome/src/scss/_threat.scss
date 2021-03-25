@@ -1,0 +1,27 @@
+.threat {
+    margin-top: 280px;
+
+    &__content {
+        color: $color-description;
+
+        max-width: 960px;
+
+        font-size: 20px;
+        font-style: italic;
+        line-height: 160%;
+        font-weight: 500;
+
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            background-image: url("../img/common/points-grey.svg");
+            top: -250px;
+            right: -330px;
+            width: 240px;
+            height: 340px;
+            z-index: -1;
+        }
+    }
+}

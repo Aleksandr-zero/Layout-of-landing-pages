@@ -15,6 +15,7 @@ $color-title: #212121;
 $color-back: #F8F8F8;
 $color-description: #646464;
 
+$maxWidth: 1280;
 
 *,
 *:before,
@@ -56,6 +57,11 @@ input,
 textarea {
     outline: none;
 }
+
+
+// MIXINS
+
+@import "scss/mixins";
 
 
 // COMMON

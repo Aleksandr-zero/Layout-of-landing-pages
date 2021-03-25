@@ -38,4 +38,46 @@
             }
         }
     }
+
+    @media (max-width: 1000px) and (min-width: 891px) {
+        
+        &__content {
+
+            &-back-img {
+                width: 120%;
+
+                &:before {
+                    border-radius: 70px 0;
+                }
+            }
+
+            &-img {
+                border-radius: 70px 0;
+            }
+        }
+    }
+
+    @media (max-width: 890px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-back-img {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        
+        &__content {
+
+            &-back-img {
+                &:before {
+                    top: 20px;
+                    right: -20px;
+                }
+            }
+        }
+    }
 }

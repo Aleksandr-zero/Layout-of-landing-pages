@@ -4,6 +4,7 @@
     &__content {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &-back-img {
             &:before {
@@ -14,7 +15,7 @@
 
         &-description {
             margin-left: 10%;
-            margin-top: 60px;
+            margin-bottom: 60px;
             max-width: 540px;
 
             &-text {
@@ -26,6 +27,50 @@
 
             &-back-btn {
                 margin-top: 46px;
+            }
+        }
+    }
+
+    @media (max-width: 1130px) {
+        
+        &__content {
+
+            &-description {
+                margin-left: 4%;
+                max-width: 50%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-top: 140px;
+        
+        &__content {
+            flex-direction: column;
+
+            &-back-img {
+                order: 1;
+                margin-top: 90px;
+            }
+
+            &-description {
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 630px) {
+        
+        &__content {
+
+            &-back-img {
+                margin-top: 80px;
+
+                &:before {
+                    top: -25px;
+                    left: -25px;
+                }
             }
         }
     }

@@ -1,0 +1,122 @@
+.intro {
+    padding-top: 62px;
+    margin-bottom: 160px;
+
+    padding-bottom: 60px;
+
+    background: $color-back-intro_header;
+
+    &.intro-active {
+        padding-top: 140px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        position: relative;
+        z-index: 5;
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 86%;
+            height: 150%;
+            top: -140px;
+            left: -120px;
+            background-color: $primary-color;
+            z-index: -1;
+            border-bottom-right-radius: 500px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            background-image: url("../img/common/points-white.svg");
+            bottom: -170px;
+            left: -110px;
+            width: 240px;
+            height: 170px;
+            z-index: -1;
+        }
+
+        &-description {
+            max-width: 600px;
+
+            &-title {
+                color: $white-color;
+                font-size: 56px;
+                line-height: 72 / 56 * 100%;
+
+                span {
+                    color: $color-btn;
+                }
+            }
+
+            &-text {
+                color: $white-color;
+                font-size: 20px;
+                line-height: 160%;
+                margin-top: 36px;
+            }
+
+            &-back-btn {
+                display: flex;
+                margin-top: 64px;
+            }
+
+            &-btn {
+                display: flex;
+
+                color: $white-color;
+                font-weight: 700;
+
+                padding: 13px 22px;
+                border: 1px solid $white-color;
+                border-radius: 2px;
+
+                transition: background-color 0.2s, border 0.2s;
+
+                &:hover {
+                    background-color: $color-btn;
+                    border: 1px solid $color-btn;
+                }
+
+                &:first-child {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        &-back-img {
+            width: 37%;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+                background-image: url("../img/intro/small.png");
+
+                width: 370px;
+                height: 250px;
+
+                bottom: -140px;
+                left: 170px;
+
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+
+                box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.16);
+            }
+        }
+
+        &-img {
+            border-radius: 24px;
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+
+            filter: drop-shadow(0px 16px 48px rgba(0, 0, 0, 0.16));
+        }
+    }
+}

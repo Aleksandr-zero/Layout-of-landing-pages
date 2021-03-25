@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
+    <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/style.css">
+
     <title>Decbase</title>
 </head>
 
@@ -15,7 +26,7 @@
         <div class="container">
             <div class="header__content">
                 <div class="header__content-back-logo">
-                    <img src="img/logo.svg" alt="logo" class="header__content-logo">
+                    <img src="img/logo/logo.svg" alt="logo" class="header__content-logo">
                 </div>
                 <div class="header__content-wrapper">
                     <nav class="header__content-nav">
@@ -46,6 +57,11 @@
                     <div class="header__content-back-btn">
                         <a href="#" class="header__content-btn">Sign Up</a>
                     </div>
+                </div>
+                <div class="header__content-back-btn-menu">
+                    <a role="button" class="header__content-btn-menu">
+                        <span>Menu</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -375,7 +391,9 @@
                             <img src="img/blog/blog-1.png" alt="cupboard" class="blog__content-item-img back-img-photo">
                         </div>
                         <div class="blog__content-item-description">
-                            <h2 class="blog__content-item-description-title">2020 Interior Design Trends</h2>
+                            <h2 class="blog__content-item-description-title">
+                                <a href="#" class="blog__content-item-description-title-link">2020 Interior Design Trends</a>
+                            </h2>
                             <div class="blog__content-item-description-text">
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -392,7 +410,9 @@
                             <img src="img/blog/blog-2.png" alt="cupboard" class="blog__content-item-img back-img-photo">
                         </div>
                         <div class="blog__content-item-description">
-                            <h2 class="blog__content-item-description-title">28 Notable Product at ARC Interior Design</h2>
+                            <h2 class="blog__content-item-description-title">
+                                <a href="#" class="blog__content-item-description-title-link">28 Notable Product at ARC Interior Design</a>
+                            </h2>
                             <div class="blog__content-item-description-text">
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -436,11 +456,11 @@
                 <div class="footer__content-items">
                     <div class="footer__content-item">
                         <div class="footer__content-item-back-logo">
-                            <img src="img/logo.svg" alt="logo" class="footer__content-itelogo">
+                            <img src="img/logo/logo.svg" alt="logo" class="footer__content-itelogo">
                         </div>
                         <div class="footer__content-item-text">
                             <p>
-                                But i must explain to you all this mistaken<br>idea of dencouncing pleasure.
+                                But i must explain to you all this mistaken idea of dencouncing pleasure.
                             </p>
                         </div>
                     </div>

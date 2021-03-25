@@ -77,4 +77,31 @@
             }
         }
     }
+
+    @media (max-width: 766px) {
+        margin-top: 25%;
+
+        &__content {
+
+            &-title {
+
+                &:after {
+                    top: 110px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 766px) {
+
+        &__content {
+
+            &-title {
+
+                &:after {
+                    top: 150px;
+                }
+            }
+        }
+    }
 }
