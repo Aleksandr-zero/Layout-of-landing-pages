@@ -32,3 +32,9 @@ Genre - design
 
 ![alt text](Decbase/examples/example-1.png)
 ![alt text](Decbase/examples/example-2.png)
+
+### [SipHome](https://aleksandr-zero.github.io/Layout-of-landing-pages/SipHome/index.html)
+Genre - smart house
+
+![alt text](SipHome/examples/example-1.png)
+![alt text](SipHome/examples/example-2.png)

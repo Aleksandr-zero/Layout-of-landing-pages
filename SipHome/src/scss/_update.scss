@@ -15,6 +15,17 @@
         background-image: url("../img/common/points-grey.svg");
     }
 
+    &:after {
+        position: absolute;
+        content: "";
+        width: 25%;
+        height: 100%;
+        right: 0;
+        top: -56px;
+        background-color: $primary-color;
+        z-index: -1;
+    }
+
     .update-content-wrapper {
         position: relative;
 
@@ -151,6 +162,13 @@
                     }
                 }
             }
+        }
+    }
+
+    @media (min-width: 2800px) {
+        
+        &:after {
+            width: 40%;
         }
     }
 }

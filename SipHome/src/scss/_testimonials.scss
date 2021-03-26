@@ -23,11 +23,15 @@
             padding: 20px 20px 78px 20px;
 
             position: relative;
+            left: 0;
+
+            transition: left 0.4s;
 
             &-btn {
                 position: absolute;
                 z-index: 1;
                 cursor: pointer;
+                pointer-events: none;
 
                 padding: 9px 10px;
                 background-color: rgba($color-title, 0.4);
@@ -36,7 +40,9 @@
                 top: 50%;
                 transform: translateY(-50%);
 
-                transition: background-color 0.2s;
+                opacity: 0.3;
+
+                transition: background-color 0.2s, opacity 0.2s;
 
                 &:hover {
                     background-color: rgba($color-title, 0.7)
@@ -52,6 +58,11 @@
 
                 &.testimonials-btn-next {
                     right: 0;
+                }
+
+                &.testimonials-content-items-btn-active {
+                    opacity: 1;
+                    pointer-events: painted;
                 }
             }
         }

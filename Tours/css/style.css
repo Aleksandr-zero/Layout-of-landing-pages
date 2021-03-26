@@ -1093,6 +1093,7 @@ textarea {
 
 .free__content-message-form-label {
   margin-bottom: 6px;
+  cursor: pointer;
 }
 
 .free__content-message-form-input {

@@ -6,8 +6,28 @@
 
     background: $color-back-intro_header;
 
+    position: relative;
+
     &.intro-active {
-        padding-top: 140px;
+        padding-top: 158px;
+
+        &.intro {
+
+            &:before {
+                top: -195px;
+            }
+        }
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 50%;
+        height: 136%;
+        top: -160px;
+        left: -120px;
+        background-color: $primary-color;
+        border-bottom-right-radius: 500px;
     }
 
     &__content {
@@ -33,7 +53,7 @@
             position: absolute;
             content: "";
             background-image: url("../img/common/points-white.svg");
-            bottom: -170px;
+            bottom: -200px;
             left: -110px;
             width: 240px;
             height: 190px;
