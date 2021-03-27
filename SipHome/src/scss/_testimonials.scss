@@ -81,6 +81,10 @@
 
             &:last-child {
                 margin-right: 0;
+
+                &.testimonials-content-item-pass {
+                    display: none;
+                }
             }
 
             &:after {
@@ -149,6 +153,16 @@
             &:hover {
                 background-color: lighten($color-description, 16%);
             }  
+        }
+    }
+
+    @media (max-width: 840px) {
+        
+        &__content {
+
+            &-item {
+                flex: 0 0 85%;
+            }
         }
     }
 }

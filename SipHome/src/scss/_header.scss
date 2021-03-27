@@ -12,25 +12,22 @@
         z-index: 20;
         top: 0;
 
-        padding: 18px;
+        padding: 18px 0;
+        background: $primary-color;
 
         width: 100%;
         box-shadow: 0px 3px 25px 2px rgba(0, 0, 0, 0.35);
 
-        .header__content-nav-item-link {
-            color: $color-title;
-        }
+        .header__content-back-login {
 
-        .header__content-back-logo {
-            svg {
-                path:last-child {
-                    fill: $primary-color;
+            &-sign-link,
+            &-start-link {
+                color: $white-color;
+
+                &:hover {
+                    color: $color-btn;
                 }
             }
-        }
-
-        .header__content-back-logo-title {
-            color: $color-title;
         }
     }
 
@@ -62,8 +59,6 @@
 
             &-items {
                 display: flex;
-
-                list-style: none;
             }
 
             &-item {
@@ -116,5 +111,79 @@
                 }
             }
         }
-    } 
+
+        &-back-btn {
+            display: none;
+
+            &-menu {
+                cursor: pointer;
+
+                font-size: 16px;
+                padding: 9px 20px;
+                font-weight: 700;
+                color: $white-color;
+
+                border: 1px solid $white-color;
+                border-radius: 3px;
+
+                transition: background-color 0.2s, border 0.2s;
+
+                &:hover {
+                    background-color: $color-btn;
+                    border: 1px solid $color-btn;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 980px) and (min-width: 841px) {
+        
+        &__content {
+
+            &-nav {
+
+                &-item {
+
+                    &:last-child {
+                        .header__content-nav-item-link {
+                            color: $color-title;
+
+                            &.header__content-nav-item-link-pass {
+                                color: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 900px) and (min-width: 841px) {
+        
+        &__content {
+
+            &-nav {
+
+                &-item {
+                    margin-right: 26px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        padding-top: 30px;
+        
+        &__content {
+
+            &-nav,
+            &-back-login {
+                display: none;
+            }
+
+            &-back-btn {
+                display: block;
+            }
+        }
+    }
 }

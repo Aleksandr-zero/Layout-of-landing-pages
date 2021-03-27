@@ -64,4 +64,14 @@
             }
         }
     }
+
+    @media (max-width: 840px) {
+    
+        &__content {
+
+            &-img {
+                width: 100%;
+            }
+        }
+    }
 }

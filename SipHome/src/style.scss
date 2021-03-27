@@ -9,6 +9,7 @@ $color-btn: #1ECE7A;
 $color-back: #ECF0F7;
 $color-back-intro_header: #FBFCFF;
 $color-back-input: #CCCCCC;
+$color-btn-close: #FF5A4F;
 
 $primary-color: #1C57C9;
 
@@ -36,7 +37,13 @@ body {
     font-size: 16px;
 
     overflow-x: hidden;
+
+    &.body-pass {
+        overflow: hidden;
+    }
 }
+
+ul, li { list-style: none; }
 
 a { text-decoration: none; }
 
@@ -52,6 +59,11 @@ h3 { font-size: 16px; }
 // HEADER
 
 @import "scss/header";
+
+
+// MOBILE NAV
+
+@import "scss/mobileNav";
 
 
 // INTRO

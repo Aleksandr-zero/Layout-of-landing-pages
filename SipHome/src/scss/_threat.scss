@@ -24,4 +24,25 @@
             z-index: -1;
         }
     }
+
+    @media (max-width: 1140px) {
+        
+        &__content {
+            &:after {
+                right: -140px;
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        margin-top: 200px;
+        text-align: center;
+
+        &__content {
+
+            &:after {
+                top: 60px;
+            }
+        } 
+    }
 }

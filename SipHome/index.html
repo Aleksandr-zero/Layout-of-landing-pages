@@ -57,9 +57,46 @@
                         <a href="#" class="header__content-back-login-start-link">Get Started</a>
                     </div>
                 </div>
+                <div class="header__content-back-btn">
+                    <a role="button" class="header__content-back-btn-menu">Menu</a>
+                </div>
             </div>
         </div>
     </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-nav__content">
+            <div class="mobile-nav__content-back-title_btn">
+                <h2 class="mobile-nav__content-title">Siphome Menu</h2>
+                <div class="mobile-nav__content-back-btn">
+                    <a role="button" class="mobile-nav__content-back-btn-close">Close</a>
+                </div>
+            </div>
+            <nav class="mobile-nav__content-wrapper-items">
+                <ul class="mobile-nav__content-items">
+                    <li class="mobile-nav__content-item">
+                        <a href="#" class="mobile-nav__content-item-link">Home</a>
+                    </li>
+                    <li class="mobile-nav__content-item">
+                        <a href="#" class="mobile-nav__content-item-link">Features</a>
+                    </li>
+                    <li class="mobile-nav__content-item">
+                        <a href="#" class="mobile-nav__content-item-link">Services</a>
+                    </li>
+                    <li class="mobile-nav__content-item">
+                        <a href="#" class="mobile-nav__content-item-link">Contact</a>
+                    </li>
+                    <li class="mobile-nav__content-item">
+                        <a href="#" class="mobile-nav__content-item-link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-nav__content-back-btns">
+                <a href="#" class="mobile-nav__content-btn">Get Started</a>
+                <a href="#" class="mobile-nav__content-btn">Sign In</a>
+            </div>
+        </div>
+    </div>
 
     <div class="intro">
         <div class="container">
@@ -166,7 +203,7 @@
     </div>
 
     <div class="update">
-        <div class="container">
+        <div class="update__container">
             <div class="update-content-wrapper">
                 <div class="update__content">
                     <div class="update__content-back-img">
@@ -458,12 +495,26 @@
                             <input type="text" id="contact-subject" placeholder="Enter subject" class="contact__content-form-input">
                         </div>
 
-
-                        <div class="contact__content-form-back-input">
-                            <label for="contact-job" class="contact__content-form-label">Select Job</label>
-                            <input type="text" id="contact-job" placeholder="Enter company name" class="contact__content-form-input">
+                        <h4 class="contact__content-form-label">Select Job</h4>
+                        <div class="contact__content-form-back-select-box">
+                            <div class="contact__content-form-options-container">
+                                <div class="contact__content-form-option">
+                                    <label for="select-1" class="contact__content-form-option-label">select 1</label>
+                                    <input type="radio" id="select-1" class="contact__content-form-option-input" >
+                                </div>
+                                <div class="contact__content-form-option">
+                                    <label for="select-2" class="contact__content-form-option-label">select 2</label>
+                                    <input type="radio" id="select-2" class="contact__content-form-option-input" >
+                                </div>
+                                <div class="contact__content-form-option">
+                                    <label for="select-3" class="contact__content-form-option-label">select 3</label>
+                                    <input type="radio" id="select-3" class="contact__content-form-option-input" >
+                                </div>
+                            </div>
+                            <div class="contact__content-form-selected">
+                                Please Select
+                            </div>
                         </div>
-
 
                         <div class="contact__content-form-back-input">
                             <label for="contact-company" class="contact__content-form-label">Company Name</label>

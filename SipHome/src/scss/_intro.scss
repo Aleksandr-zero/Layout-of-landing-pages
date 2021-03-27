@@ -140,4 +140,116 @@
             filter: drop-shadow(0px 16px 48px rgba(0, 0, 0, 0.16));
         }
     }
+
+    @media (max-width: 1100px) {
+        
+        &__content {
+            
+            &-description {
+                max-width: 55%;
+            }
+
+            &-back-img {
+                width: 50%;
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        
+        &__content {
+
+            &-back-img {
+                &:after {
+                    bottom: -80px;
+                    left: 35%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 920px) {
+        
+        &__content {
+
+            &-back-img {
+                &:after {
+                    bottom: -30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+
+        &.intro-active {
+            padding-top: 154px;
+    
+            &.intro {
+    
+                &:before {
+                    top: -195px;
+                }
+            }
+        }
+
+        &:before {
+            width: 100%;
+            left: 0;
+            border-bottom-right-radius: 320px;
+        }
+        
+        &__content {
+            justify-content: center;
+
+            &:before {
+                display: none;
+            }
+
+            &-description {
+                max-width: 90%;
+                text-align: center;
+
+                &-title {
+                    max-width: 90%;
+                    margin: 0 auto;
+                }
+
+                &-back-btn {
+                    justify-content: center;
+                }
+            }
+
+            &-back-img {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 770px) {
+        
+        &__content {
+
+            &-description {
+
+                &-title {
+                    max-width: 99%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+     
+        &__content {
+
+            &-description {
+                max-width: 100%;
+
+                &-title {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
 }

@@ -11,10 +11,6 @@
 
             &-back-img {
                 margin-top: 42px;
-            }   
-
-            &-img {
-
             }
         }
 
@@ -33,6 +29,8 @@
 
             &-label {
                 cursor: pointer;
+                font-size: 16px;
+                font-weight: 400;
             }
 
             &-input {
@@ -55,6 +53,100 @@
                 }
             }
 
+
+            &-back-select-box {
+                margin-bottom: 16px;
+                position: relative;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-options-container {
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                max-height: 0;
+
+                overflow: hidden;
+                background-color: $white-color;
+                border-radius: 3px;
+                border: 1px solid $color-back-input;
+
+                transition: all 0.4s;
+
+                &.contact-content-form-options-container-active {
+                    margin-top: 70px;
+                    opacity: 1;
+                    max-height: 150px;
+
+                    z-index: 10;
+
+                    .contact__content-form-selected {
+                        &:before {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            &-option {
+                cursor: pointer;
+                padding: 10px 20px;
+
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: $color-back-input;
+                }
+
+                &-label {
+                    cursor: pointer;
+                    border-radius: 3px;
+
+                    font-size: 18px;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                &-input {
+                    display: none;
+                }
+            }
+
+            &-selected {
+                cursor: pointer;
+                position: relative;
+
+                border: 1px solid $color-back-input;
+                border-radius: 3px;
+
+                font-size: 18px;
+                color: rgba(0, 0, 0, 0.8);
+
+                margin-top: 16px;
+                z-index: 10;
+
+                padding: 10px 20px;
+
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: $color-back-input;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    background-image: url("../img/contact/arrow.svg");
+                    width: 12px;
+                    height: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 26px;
+                }
+            }
+
+
             &-btn {
                 border: 0;
                 outline: none;
@@ -73,6 +165,61 @@
 
                 &:hover {
                     background-color: darken($color-btn, 10%);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 960px) {
+        
+        &__content {
+
+            &-back-intro {
+                margin-right: 10%;
+                max-width: 390px;
+            }
+
+            &-back-form {
+                width: 40%;
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        
+        &__content {
+            flex-direction: column;
+            align-items: center;
+
+            &-back-intro {
+                max-width: 420px;
+                margin-right: 0;
+                text-align: center;
+            }
+
+            &-back-form {
+                margin-top: 64px;
+                max-width: 100%;
+                width: 420px;
+            }
+
+            &-form {
+                &-btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        
+        &__content {
+
+            &-back-intro {
+                width: 100%;
+
+                &-img {
+                    width: 100%;
                 }
             }
         }
