@@ -1,0 +1,138 @@
+.intro {
+    margin-top: 100px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &-description {
+
+            &-title {
+                font-size: 44px;
+                font-family: "Inter";
+                color: $color-title;
+            }
+    
+            &-text {
+                margin-top: 20px;
+                color: $color-description;
+
+                font-size: 18px;
+                line-height: 22/18 * 100%;
+
+                font-family: "Gilroy";
+
+                max-width: 430px;
+            }
+    
+            &-back-btns {
+                margin-top: 40px;
+                display: flex;
+            }
+    
+            &-btn {
+                padding: 13px 0;
+                text-align: center;
+    
+                width: 157px;
+    
+                &:first-child {
+                    margin-right: 20px;
+                }
+            }
+
+            &-back-video {
+                margin-top: 60px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &-text {
+
+                    &-1 {
+                        color: $color-description;
+
+                        line-height: 22/16 * 100%;
+                    }
+
+                    &-2 {
+                        color: $color-description-video;
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            &-wrapper-video {
+                width: 140px;
+                height: 80px;
+                margin-right: 20px;
+
+                position: relative;
+                border-radius: 3px;
+
+                background-color: $color-back-video;
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    content: "";
+
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%, -50%);
+
+                    transition: all $animate-trans;
+                }
+
+                &:before {
+                    width: 40px;
+                    height: 40px;
+
+                    background-color: $white-color;
+                    border-radius: 50%;
+                }
+
+                &:after {
+                    cursor: pointer;
+
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 8px 0 8px 14px;
+                    border-color: transparent transparent transparent $color-back-video;
+
+                    transform: translate(-35%, -50%);
+                }
+
+                &:hover {
+
+                    .intro__content-description-video {
+                        background-color: lighten($color-back-video, 10%);
+                    }
+
+                    &:before { background-color: $color-btn; }
+                    &:after { border-color: transparent transparent transparent $white-color; }
+                }
+
+            }
+
+            &-video {
+                width: 140px;
+                height: 80px;
+                background-color: $color-back-video;
+
+                transition: background-color $animate-trans;
+
+                border-radius: 3px;
+
+                cursor: pointer;
+            }
+        }
+
+        &-back-img {
+            width: 50%;
+        }
+    }
+}

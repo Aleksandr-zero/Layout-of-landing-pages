@@ -1,0 +1,56 @@
+.header {
+    padding-top: 80px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-back-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        &-logo {
+            margin-right: 44px;
+        }
+
+        &-nav {
+
+            &-items {
+                display: flex;
+            }
+
+            &-item {
+                margin-right: 20px;
+
+                &-link {
+                    color: $color-nav-link;
+                    font-size: 12px;
+                    font-family: "Gilroy";
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+
+                    transition: $animate-trans;
+
+                    &:hover {
+                        color: $color-btn;
+                    }
+                }
+            }
+        }
+
+        &-back-sign {
+
+            &-in {
+                margin-right: 20px;
+            }
+
+            &-in,
+            &-up {
+                padding: 8px 24px;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@import "scss/fonts";
+
+
+$color-btn: #F2994A;
+$color-description: #8476AA;
+$color-description-title: #95A1BB;
+$color-title: #99EFD0;
+$color-nav-link: #B5B5B5;
+
+$color-back-gradient-1: #3B1D60;
+$color-back-gradient-2: #040D3E;
+
+$color-back: #0F1145;
+
+$color-back-video: #361C5D;
+$color-description-video: #6D6D78;
+
+$white-color: #ffffff;
+
+
+$animate-trans: 0.2s;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-back;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+h2 { font-size: 42px; }
+
+ul { list-style: none; }
+
+// COMMON
+
+@import "scss/common";
+
+
+// HEADER
+
+@import "scss/header";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// COMPANY
+
+@import "scss/company";
+
+
+// CHOICE
+
+@import "scss/choice";

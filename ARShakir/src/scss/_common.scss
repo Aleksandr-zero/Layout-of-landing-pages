@@ -1,0 +1,53 @@
+// COMMON
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.wrapper {
+    background: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
+}
+
+
+.btn {
+    color: $color-btn;
+    font-family: "Rubik";
+    font-weight: 500;
+    font-size: 12px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    border: 1px solid $color-btn;
+    border-radius: 4px;
+
+    transition: color $animate-trans, background-color $animate-trans;
+
+    &:hover {
+        color: $white-color;
+        background-color: $color-btn;
+    }
+}
+
+
+.back-intro {
+
+    &-title {
+        font-family: "Inter";
+        font-weight: 700;
+    
+        color: $color-title;
+    }
+
+    &-subtext {
+        font-family: "Gilroy";
+        line-height: 22/16 * 100%;
+        color: $color-description;
+    }
+
+    span {
+        color: $color-btn;
+    }
+}

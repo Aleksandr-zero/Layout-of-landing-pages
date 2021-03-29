@@ -252,4 +252,48 @@
             }
         }
     }
+
+    @media (max-width: 500px) {
+        
+        &__content {
+
+            &-description {
+                margin-top: 0;
+
+                &-title {
+                    font-size: 46px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 440px) {
+        &:before {
+            border-bottom-right-radius: 200px;
+        }
+
+        &__content {
+            &:after {
+                bottom: -220px;
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        padding-top: 40px;
+        
+        &__content {
+
+            &-description {
+
+                &-title {
+                    font-size: 32px;
+                }
+
+                &-text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }

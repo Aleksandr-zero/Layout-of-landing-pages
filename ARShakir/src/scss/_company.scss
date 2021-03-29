@@ -1,0 +1,14 @@
+.company {
+
+    &__items {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__item {
+
+        &-img {
+            opacity: 0.4;
+        }
+    }
+}

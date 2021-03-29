@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url("../fonts/Gilroy-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url("../fonts/Gilroy-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url("../fonts/Gilroy-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url("../fonts/Rubik-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url("../fonts/Rubik-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #0F1145;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  background: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
+}
+
+.btn {
+  color: #F2994A;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid #F2994A;
+  border-radius: 4px;
+  -webkit-transition: color 0.2s, background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  color: #ffffff;
+  background-color: #F2994A;
+}
+
+.back-intro-title {
+  font-family: "Inter";
+  font-weight: 700;
+  color: #99EFD0;
+}
+
+.back-intro-subtext {
+  font-family: "Gilroy";
+  line-height: 137.5%;
+  color: #8476AA;
+}
+
+.back-intro span {
+  color: #F2994A;
+}
+
+.header {
+  padding-top: 80px;
+}
+
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__content-back-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__content-logo {
+  margin-right: 44px;
+}
+
+.header__content-nav-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__content-nav-item {
+  margin-right: 20px;
+}
+
+.header__content-nav-item-link {
+  color: #B5B5B5;
+  font-size: 12px;
+  font-family: "Gilroy";
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.header__content-nav-item-link:hover {
+  color: #F2994A;
+}
+
+.header__content-back-sign-in {
+  margin-right: 20px;
+}
+
+.header__content-back-sign-in, .header__content-back-sign-up {
+  padding: 8px 24px;
+}
+
+.intro {
+  margin-top: 100px;
+}
+
+.intro__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.intro__content-description-title {
+  font-size: 44px;
+  font-family: "Inter";
+  color: #99EFD0;
+}
+
+.intro__content-description-text {
+  margin-top: 20px;
+  color: #8476AA;
+  font-size: 18px;
+  line-height: 122.22222%;
+  font-family: "Gilroy";
+  max-width: 430px;
+}
+
+.intro__content-description-back-btns {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.intro__content-description-btn {
+  padding: 13px 0;
+  text-align: center;
+  width: 157px;
+}
+
+.intro__content-description-btn:first-child {
+  margin-right: 20px;
+}
+
+.intro__content-description-back-video {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.intro__content-description-back-video-text-1 {
+  color: #8476AA;
+  line-height: 137.5%;
+}
+
+.intro__content-description-back-video-text-2 {
+  color: #6D6D78;
+  margin-top: 8px;
+}
+
+.intro__content-description-wrapper-video {
+  width: 140px;
+  height: 80px;
+  margin-right: 20px;
+  position: relative;
+  border-radius: 3px;
+  background-color: #361C5D;
+}
+
+.intro__content-description-wrapper-video:before, .intro__content-description-wrapper-video:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.intro__content-description-wrapper-video:before {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.intro__content-description-wrapper-video:after {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #361C5D;
+  -webkit-transform: translate(-35%, -50%);
+          transform: translate(-35%, -50%);
+}
+
+.intro__content-description-wrapper-video:hover .intro__content-description-video {
+  background-color: #4d2884;
+}
+
+.intro__content-description-wrapper-video:hover:before {
+  background-color: #F2994A;
+}
+
+.intro__content-description-wrapper-video:hover:after {
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.intro__content-description-video {
+  width: 140px;
+  height: 80px;
+  background-color: #361C5D;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.intro__content-back-img {
+  width: 50%;
+}
+
+.company__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.company__item-img {
+  opacity: 0.4;
+}
+
+.choice {
+  margin-top: 100px;
+  position: relative;
+}
+
+.choice:before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/choice/back.svg");
+  background-position: center;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.choice__content-back-intro {
+  text-align: center;
+}
+
+.choice__content-back-intro-subtext {
+  margin-top: 12px;
+}
+
+.choice__content-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.choice__content-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 30%;
+}
+
+.choice__content-item:first-child, .choice__content-item:nth-child(2), .choice__content-item:nth-child(3) {
+  margin-bottom: 44px;
+}
+
+.choice__content-item-back-img {
+  margin-right: 28px;
+}
+
+.choice__content-item-description-title {
+  font-size: 18px;
+  color: #99EFD0;
+}
+
+.choice__content-item-description-text {
+  color: #8476AA;
+  font-size: 14px;
+  line-height: 157.14286%;
+  margin-top: 10px;
+}

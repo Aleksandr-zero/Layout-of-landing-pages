@@ -2,7 +2,7 @@ const body = document.querySelector("body");
 
 let widtwWindowScroll = innerWidth - body.offsetWidth;
 let blocksStopScrolling = document.querySelectorAll(".lock-padding");
-let timeoutTransition = 200;
+let timeoutTransition = 200;   // Милисекунды
 
 
 // block - header
@@ -118,16 +118,55 @@ let widthTestimonialsContentItem = testimonialsContentItem.offsetWidth;
 let marginRightTestimonialsContentItem = getComputedStyle(testimonialsContentItem).marginRight;
 marginRightTestimonialsContentItem = Number(marginRightTestimonialsContentItem.replace("px", ""));
 
-checkResiveWidthWindow()
-window.addEventListener("resize", () => { checkResiveWidthWindow() });
+let sumUpForCentering = false;
+let sumUpForCenteringPoints = false;
+let subtractionPercentageScore = 1;
+let multiplicationPercentage_forentering = 8.25;
+
+// подсчитываем дополнительное расстояние и прибавляем к
+// positionLeft, для того чтобы отцентрировать слайдер
+let x = widthTestimonialsContentItem + marginRightTestimonialsContentItem;
+let subtractionPercentage = 0;
+
 
 function checkResiveWidthWindow() {
-    if (innerWidth <= 840) {
+
+    if (innerWidth <= 600) {
         testimonialsContentItemLast.classList.add("testimonials-content-item-pass");
-    } else {
+        sumUpForCentering = true;
+        sumUpForCenteringPoints = true;
+
+        multiplicationPercentage_forentering = 6.3; 
+        subtractionPercentage = x - (x - (x / 100 * multiplicationPercentage_forentering));
+
+        testimonialsContentItems.style.left = subtractionPercentage + "px";
+    }
+
+    else if (innerWidth <= 840) {
+        testimonialsContentItemLast.classList.add("testimonials-content-item-pass");
+        sumUpForCentering = true;
+        sumUpForCenteringPoints = true;
+
+        subtractionPercentage = x - (x - (x / 100 * multiplicationPercentage_forentering));
+        multiplicationPercentage_forentering = 8.25;
+
+        testimonialsContentItems.style.left = subtractionPercentage + "px";
+    }
+    
+    else {
         testimonialsContentItemLast.classList.remove("testimonials-content-item-pass");
+        sumUpForCentering = false;
+        sumUpForCenteringPoints = false;
+
+        testimonialsContentItems.style.left = "0px";
+
+        multiplicationPercentage_forentering = 0;
     };
 };
+
+
+checkResiveWidthWindow()
+window.addEventListener("resize", () => { checkResiveWidthWindow() });
 
 testimonialsBtnPrev.addEventListener("click", () => {
     pressedBtn(position = widthTestimonialsContentItem,
@@ -142,10 +181,22 @@ testimonialsBtnNext.addEventListener("click", () => {
                score = 1,
                scorePoint = 1);
 });
-
+let aaa = 0;
 function pressedBtn(position, marginRight, score, scorePoint) {
-    positionLeft += position;
-    positionLeft += marginRight;
+
+    if (sumUpForCentering) {
+        positionLeft += position + marginRight;
+
+        if (subtractionPercentageScore || aaa) {
+            positionLeft += subtractionPercentage;
+            subtractionPercentageScore = 0;
+            aaa = 0;
+        }
+
+    } else {
+        positionLeft += position;
+        positionLeft += marginRight;
+    }
 
     testimonialsContentItems.style.left = positionLeft + "px";
 
@@ -187,7 +238,13 @@ testimonialsBtnPoint_4.addEventListener("click", () => {
 });
 
 function pressedBtnPoint(positionLeft, positionScore, btnPoint) {
-    testimonialsContentItems.style.left = positionLeft + "px";
+
+    if (sumUpForCenteringPoints) {
+        testimonialsContentItems.style.left = positionLeft + subtractionPercentage + "px";
+        aaa++;
+    } else {
+        testimonialsContentItems.style.left = positionLeft + "px";
+    }
 
     positionScorePoint = positionScore;
 

@@ -38,3 +38,9 @@ Genre - smart house
 
 ![alt text](SipHome/examples/example-1.png)
 ![alt text](SipHome/examples/example-2.png)
+
+### [SipHome](https://aleksandr-zero.github.io/Layout-of-landing-pages/ARShakir/index.html)
+Genre - data processing company
+
+![alt text](ARShakir/examples/example-1.png)
+![alt text](ARShakir/examples/example-2.png)
