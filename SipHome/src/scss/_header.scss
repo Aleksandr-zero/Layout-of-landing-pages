@@ -67,6 +67,8 @@
                 &:last-child { margin-right: 0; }
 
                 &-link {
+                    cursor: pointer;
+
                     color: $white-color;
                     opacity: 0.6;
 

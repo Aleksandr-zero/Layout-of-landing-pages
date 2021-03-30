@@ -42,7 +42,19 @@
 
             &:after {
                 top: 60px;
+                right: -40px;
+                width: 160px;
             }
         } 
+    }
+
+    @media (max-width: 500px) {
+
+        &__content {
+
+            &:after {
+                display: none;
+            }
+        }
     }
 }

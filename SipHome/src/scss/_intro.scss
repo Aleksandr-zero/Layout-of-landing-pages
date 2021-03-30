@@ -257,6 +257,10 @@
         
         &__content {
 
+            &:after {
+                display: none;
+            }
+
             &-description {
                 margin-top: 0;
 
@@ -279,9 +283,20 @@
         }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 376px) {
         padding-top: 40px;
-        
+
+        &.intro-active {
+            padding-top: 130px;
+    
+            &.intro {
+    
+                &:before {
+                    top: -195px;
+                }
+            }
+        }
+
         &__content {
 
             &-description {

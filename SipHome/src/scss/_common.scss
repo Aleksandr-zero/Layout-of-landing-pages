@@ -45,6 +45,41 @@
 .color-back-icon-yellow { background-color: $color-back-icon-yellow; }
 
 
+.back-btns-points {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-point {
+
+    cursor: pointer;
+    color: transparent;
+    font-size: 0;
+
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color-description;
+
+    margin-right: 20px;
+
+    transition: background-color 0.2s;
+
+    &.btn-point-acive {
+        background-color: $primary-color;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        background-color: lighten($color-description, 16%);
+    }
+}
+
+
 .wrapper-services-testimonials {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) -9.97%, $color-back 100%);
 }

@@ -210,6 +210,10 @@
             display: none;
         }
 
+        &__container {
+            margin: 0;
+        }
+
         &-content-wrapper {
 
             &:before {
@@ -217,21 +221,22 @@
             }
 
             &:after {
-                right: -40px;
+                right: 0;
                 height: 150px;
                 bottom: 0;
+                width: 200px;
             }
         }
         
         &__content {
             flex-direction: column;
-            padding-bottom: 150px;
+            padding: 0 40px 150px 40px;
 
             &:before {
-                width: 150%;
+                width: 100%;
                 height: 60%;
 
-                left: -40px;
+                left: 0;
                 right: 0;
                 top: auto;
                 bottom: 0;
@@ -317,12 +322,23 @@
 
     @media (max-width: 670px) {
 
+        &-content-wrapper {
+            &:after {
+                right: 0;
+            }
+        }
+
         &__container {
             max-width: 100%;
             margin: 0;
         }
         
         &__content {
+
+            &:before {
+                width: 100%;
+                left: 0;
+            }
 
             &-back-img {
 
@@ -337,25 +353,12 @@
                     }
                 }
             }
-
-            &-description {
-                margin-left: 40px;
-                margin-right: 40px;
-            }
         }
     }
 
     @media (max-width: 540px) {
         
         &__content {
-
-            &-back-img {
-
-                &-wrapper {
-
-
-                }
-            }
 
             &-img {
                 width: 60%;
@@ -364,6 +367,12 @@
     }
 
     @media (max-width: 500px) {
+
+        &-content-wrapper {
+            &:after {
+                display: none;
+            }
+        }
         
         &__content {
 
@@ -393,6 +402,17 @@
     @media (max-width: 425px) {
 
         &__content {
+            padding: 0 0 150px 0;
+
+            &-back-img {
+
+                &-wrapper {
+                    &:before,
+                    &:after {
+                        left: 0;
+                    }
+                }
+            }
 
             &-description {
                 margin-left: 30px;

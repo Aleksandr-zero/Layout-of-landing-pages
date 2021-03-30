@@ -128,39 +128,6 @@
                 margin-top: 12px;
             }
         }
-
-        &-back-btns {
-            display: flex;
-            justify-content: center;
-        }
-
-        &-btn {
-            cursor: pointer;
-            color: transparent;
-            font-size: 0;
-
-            display: block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: $color-description;
-
-            margin-right: 20px;
-
-            transition: background-color 0.2s;
-
-            &.testimonials-btn-active {
-                background-color: $primary-color;
-            }
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            &:hover {
-                background-color: lighten($color-description, 16%);
-            }  
-        }
     }
 
     @media (max-width: 1200px) {

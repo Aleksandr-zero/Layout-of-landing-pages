@@ -7,8 +7,16 @@ let timeoutTransition = 200;   // Милисекунды
 
 // block - header
 const header = document.querySelector(".header");
+let heightHeader = header.offsetHeight;
+
 const navLinkItems = header.querySelectorAll(".header__content-nav-item-link")
 const navLinkItemLast = navLinkItems[navLinkItems.length - 1];
+
+const linksHome = document.querySelectorAll("#link-home");
+const linksFeatures = document.querySelectorAll("#link-features");
+const linksServices = document.querySelectorAll("#link-services");
+const linksContact = document.querySelectorAll("#link-contact");
+const linksFaq = document.querySelectorAll("#link-faq");
 
 const headerBtnMenu = document.querySelector(".header__content-back-btn-menu");
 
@@ -17,13 +25,35 @@ const headerBtnMenu = document.querySelector(".header__content-back-btn-menu");
 const mobileNav = document.querySelector(".mobile-nav");
 const mobileNavContent = document.querySelector(".mobile-nav__content");
 
+const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
-// block - intro
-const intro = document.querySelector(".intro");
 const btnMenuClose = document.querySelector(".mobile-nav__content-back-btn-close");
 
 
+// block - intro
+const intro = document.querySelector(".intro");
+
+
+// block - features
+const features = document.querySelector(".features");
+
+
+// block - services
+const services = document.querySelector(".services");
+
+const servicesItems = document.querySelector(".services__content-section-items");
+const servicesItemCount = servicesItems.querySelectorAll(".services__content-section-item");
+
+const servicesBtnsPoints = document.querySelectorAll(".services__content-btn");
+const servicesBtnPoint_1 = document.querySelector("#services-content-btn-1");
+const servicesBtnPoint_2 = document.querySelector("#services-content-btn-2");
+const servicesBtnPoint_3 = document.querySelector("#services-content-btn-3");
+const servicesBtnPoint_4 = document.querySelector("#services-content-btn-4");
+
+
 // block - testimonials
+const testimonials = document.querySelector(".testimonials");
+
 const testimonialsContentItems = document.querySelector(".testimonials__content-items");
 const testimonialsContentItem = document.querySelector(".testimonials__content-item");
 const testimonialsContentItemsCount = document.querySelectorAll(".testimonials__content-item");
@@ -40,6 +70,8 @@ const testimonialsBtnPoint_4 = document.querySelector("#testimonials-content-btn
 
 
 // block - contact
+const contact = document.querySelector(".contact");
+
 const contactSelectBox = document.querySelector(".contact__content-form-back-select-box");
 const contactSelectBoxContainer = document.querySelector(".contact__content-form-options-container"); 
 
@@ -80,7 +112,6 @@ headerBtnMenu.addEventListener("click", () => {
     for (let index = 0; index < blocksStopScrolling.length; index++) {
         const elementLock = blocksStopScrolling[index];
         elementLock.style.paddingRight = widtwWindowScroll + "px";
-        console.log(1);
     };
 
     body.style.paddingRight = widtwWindowScroll + "px";
@@ -92,75 +123,119 @@ headerBtnMenu.addEventListener("click", () => {
 btnMenuClose.addEventListener("click", () => {
     mobileNav.classList.remove("mobile-nav-active");
 
-    setTimeout(() => {
-
-        for (let index = 0; index < blocksStopScrolling.length; index++) {
-            const elementLock = blocksStopScrolling[index];
-            elementLock.style.paddingRight = "0px";
-        };
-
-        body.style.paddingRight = "0px";
-        body.classList.remove("body-pass");
-
-    }, timeoutTransition * 2);
+    setTimeout(() => { closeMobileNav() }, timeoutTransition * 2);
 });
+
+
+// block - services
+let widthItemServices = servicesItemCount[0].offsetWidth;
+let positionScoreServices = 0;
+let countForCenteringSliderServices = 0;
+let sumUpForCenteringSliderServices = false;
+
+servicesBtnPoint_1.addEventListener("click", () => {
+    pressedBtnServices(position = 0, score = 0, countCentereing = 0);
+});
+
+servicesBtnPoint_2.addEventListener("click", () => {
+    pressedBtnServices(position = -(widthItemServices + 20), score = 1, countCentereing = 5);
+});
+
+servicesBtnPoint_3.addEventListener("click", () => {
+    pressedBtnServices(position = -(widthItemServices + 20)*2, score = 2, countCentereing = 7);
+});
+
+servicesBtnPoint_4.addEventListener("click", () => {
+    pressedBtnServices(position = -(widthItemServices + 20)*3, score = 3, countCentereing = 9);
+});
+
+function pressedBtnServices(position, score, countCentereing) {
+
+    if (sumUpForCenteringSliderServices) {
+        countForCenteringSliderServices = countCentereing;
+    } else {
+        countForCenteringSliderServices = 0;
+    };
+    
+    servicesItems.style.left = position + countForCenteringSliderServices + "px";
+
+    positionScoreServices = score;
+    
+    chechPressedBtnPoint();
+}
+
+function chechPressedBtnPoint() {
+    servicesBtnsPoints.forEach( (btn) => {
+        if (btn.classList.contains("btn-point-acive")) {
+            btn.classList.remove("btn-point-acive");
+
+            servicesBtnsPoints[positionScoreServices].classList.add("btn-point-acive");
+        };
+    });
+};
 
 
 // block - testimonials
 let positionLeft = 0;
-let positionLeftPoint = 0;
-
-let positionPressedFirstScore = 1;
-let positionScore = 0;
-let positionScorePoint = 0;
+let positionScoreTestimonials = 0;
 
 let widthTestimonialsContentItem = testimonialsContentItem.offsetWidth;
 let marginRightTestimonialsContentItem = getComputedStyle(testimonialsContentItem).marginRight;
 marginRightTestimonialsContentItem = Number(marginRightTestimonialsContentItem.replace("px", ""));
 
 let sumUpForCentering = false;
-let sumUpForCenteringPoints = false;
-let subtractionPercentageScore = 1;
+
+let subtractionPercentageScore_1 = 1;
+let subtractionPercentageScore_2 = 1;
 let multiplicationPercentage_forentering = 8.25;
 
-// подсчитываем дополнительное расстояние и прибавляем к
-// positionLeft, для того чтобы отцентрировать слайдер
-let x = widthTestimonialsContentItem + marginRightTestimonialsContentItem;
 let subtractionPercentage = 0;
 
 
 function checkResiveWidthWindow() {
 
-    if (innerWidth <= 600) {
+    // подсчитываем дополнительное расстояние и прибавляем к
+    // positionLeft, для того чтобы отцентрировать слайдер
+    let x = widthTestimonialsContentItem + marginRightTestimonialsContentItem;
+
+    if (innerWidth <= 840 || innerWidth <= 600) {
         testimonialsContentItemLast.classList.add("testimonials-content-item-pass");
         sumUpForCentering = true;
-        sumUpForCenteringPoints = true;
 
-        multiplicationPercentage_forentering = 6.3; 
+        for (let index = 4; index < servicesItemCount.length; index++) {
+            const servicesItem = servicesItemCount[index];
+            servicesItem.classList.add("services-content-item-pass");
+        };
+
+        multiplicationPercentage_forentering = 8.25; 
         subtractionPercentage = x - (x - (x / 100 * multiplicationPercentage_forentering));
 
         testimonialsContentItems.style.left = subtractionPercentage + "px";
-    }
 
-    else if (innerWidth <= 840) {
-        testimonialsContentItemLast.classList.add("testimonials-content-item-pass");
-        sumUpForCentering = true;
-        sumUpForCenteringPoints = true;
-
-        subtractionPercentage = x - (x - (x / 100 * multiplicationPercentage_forentering));
-        multiplicationPercentage_forentering = 8.25;
-
-        testimonialsContentItems.style.left = subtractionPercentage + "px";
-    }
-    
-    else {
+    } else {
         testimonialsContentItemLast.classList.remove("testimonials-content-item-pass");
         sumUpForCentering = false;
-        sumUpForCenteringPoints = false;
+
+        for (let index = 4; index < servicesItemCount.length; index++) {
+            const servicesItem = servicesItemCount[index];
+            servicesItem.classList.remove("services-content-item-pass");
+        };
 
         testimonialsContentItems.style.left = "0px";
 
         multiplicationPercentage_forentering = 0;
+    };
+
+    if (innerWidth <= 600) {
+        multiplicationPercentage_forentering = 6;
+        subtractionPercentage = x - (x - (x / 100 * multiplicationPercentage_forentering));
+
+        testimonialsContentItems.style.left = subtractionPercentage + "px";
+    };
+
+    if (innerWidth <= 460) {
+        countForCenteringSliderServices = 6;
+        sumUpForCenteringSliderServices = true;
     };
 };
 
@@ -169,28 +244,29 @@ checkResiveWidthWindow()
 window.addEventListener("resize", () => { checkResiveWidthWindow() });
 
 testimonialsBtnPrev.addEventListener("click", () => {
-    pressedBtn(position = widthTestimonialsContentItem,
+    pressedBtnTestimonials(position = widthTestimonialsContentItem,
                marginRight = marginRightTestimonialsContentItem,
                score = -1,
                scorePoint = -1);
 });
 
 testimonialsBtnNext.addEventListener("click", () => {
-    pressedBtn(position = -widthTestimonialsContentItem,
+    pressedBtnTestimonials(position = -widthTestimonialsContentItem,
                marginRight = -marginRightTestimonialsContentItem,
                score = 1,
                scorePoint = 1);
 });
-let aaa = 0;
-function pressedBtn(position, marginRight, score, scorePoint) {
+
+
+function pressedBtnTestimonials(position, marginRight, score) {
 
     if (sumUpForCentering) {
         positionLeft += position + marginRight;
 
-        if (subtractionPercentageScore || aaa) {
+        if (subtractionPercentageScore_1 || subtractionPercentageScore_2) {
             positionLeft += subtractionPercentage;
-            subtractionPercentageScore = 0;
-            aaa = 0;
+            subtractionPercentageScore_1 = 0;
+            subtractionPercentageScore_2 = 0;
         }
 
     } else {
@@ -200,14 +276,13 @@ function pressedBtn(position, marginRight, score, scorePoint) {
 
     testimonialsContentItems.style.left = positionLeft + "px";
 
-    positionScore += score;
-    positionScorePoint += scorePoint;
+    positionScoreTestimonials += score;
 
     testimonialsBtnsPoints.forEach( (btn) => {
-        if (btn.classList.contains("testimonials-btn-active")) {
-            btn.classList.remove("testimonials-btn-active");
+        if (btn.classList.contains("btn-point-acive")) {
+            btn.classList.remove("btn-point-acive");
 
-            testimonialsBtnsPoints[positionScore].classList.add("testimonials-btn-active");
+            testimonialsBtnsPoints[positionScoreTestimonials].classList.add("btn-point-acive");
         };
     });
 
@@ -216,43 +291,43 @@ function pressedBtn(position, marginRight, score, scorePoint) {
 
 
 testimonialsBtnPoint_1.addEventListener("click", () => {
-    pressedBtnPoint(positionLeft = 0, positionScore = 0, btnPoint = testimonialsBtnPoint_1);
+    pressedBtnPoint(positionLeft = 0, positionScorePoint = 0, btnPoint = testimonialsBtnPoint_1);
 });
 
 testimonialsBtnPoint_2.addEventListener("click", () => {
     pressedBtnPoint(positionLeft = -(widthTestimonialsContentItem + marginRightTestimonialsContentItem),
-                    positionScore = 1,
+                    positionScorePoint = 1,
                     btnPoint = testimonialsBtnPoint_2);
 });
 
 testimonialsBtnPoint_3.addEventListener("click", () => {
     pressedBtnPoint(positionLeft = -(widthTestimonialsContentItem + marginRightTestimonialsContentItem)*2,
-                    positionScore = 2,
+                    positionScorePoint = 2,
                     btnPoint = testimonialsBtnPoint_3);
 });
 
 testimonialsBtnPoint_4.addEventListener("click", () => {
     pressedBtnPoint(positionLeft = -(widthTestimonialsContentItem + marginRightTestimonialsContentItem)*3,
-                    positionScore = 3,  
+                    positionScorePoint = 3,  
                     btnPoint = testimonialsBtnPoint_4);
 });
 
-function pressedBtnPoint(positionLeft, positionScore, btnPoint) {
+function pressedBtnPoint(positionLeft, positionScorePoint, btnPoint) {
 
-    if (sumUpForCenteringPoints) {
+    if (sumUpForCentering) {
         testimonialsContentItems.style.left = positionLeft + subtractionPercentage + "px";
-        aaa++;
+        subtractionPercentageScore_2++;
     } else {
         testimonialsContentItems.style.left = positionLeft + "px";
     }
 
-    positionScorePoint = positionScore;
+    positionScoreTestimonials = positionScorePoint;
 
     testimonialsBtnsPoints.forEach( (btn) => {
-        if (btn.classList.contains("testimonials-btn-active")) {
-            btn.classList.remove("testimonials-btn-active");
+        if (btn.classList.contains("btn-point-acive")) {
+            btn.classList.remove("btn-point-acive");
 
-            btnPoint.classList.add("testimonials-btn-active");
+            btnPoint.classList.add("btn-point-acive");
         };
     });
 
@@ -261,12 +336,12 @@ function pressedBtnPoint(positionLeft, positionScore, btnPoint) {
 
 
 function checkPressedBtn() {
-    if (positionScore == 0 || positionScorePoint == 0) {
+    if (positionScoreTestimonials == 0) {
         testimonialsBtnPrev.classList.remove("testimonials-content-items-btn-active");
         testimonialsBtnNext.classList.add("testimonials-content-items-btn-active")
     }
 
-    else if(positionScore == 3 || positionScorePoint == 3) {
+    else if(positionScoreTestimonials == 3) {
         testimonialsBtnNext.classList.remove("testimonials-content-items-btn-active");
         testimonialsBtnPrev.classList.add("testimonials-content-items-btn-active")
 
@@ -288,3 +363,56 @@ contactSelectBox.addEventListener("click", () => {
         });
     });
 });
+
+
+// COMMON
+
+bruteForceLinks(
+    arrayItemsLinks = [linksHome, linksFeatures, linksServices, linksContact, linksFaq],
+    blockItems = [header, features, services, contact, testimonials]
+)
+
+function closeMobileNav() {
+    mobileNav.classList.remove("mobile-nav-active");
+
+    for (let index = 0; index < blocksStopScrolling.length; index++) {
+        const elementLock = blocksStopScrolling[index];
+        elementLock.style.paddingRight = "0px";
+    };
+
+    body.style.paddingRight = "0px";
+    body.classList.remove("body-pass");
+}
+
+function ScrollToElement(element) {
+    window.scroll({
+        left: 0,
+        top: element.offsetTop - heightHeader,
+        behavior: "smooth",
+    })
+};
+
+function bruteForceLinks(arrayItemsLinks, blockItems) {
+    let score = 0;
+
+    for (let indexItem = 0; indexItem < arrayItemsLinks.length; indexItem++) {
+        
+        const itemsLinks = arrayItemsLinks[indexItem];
+
+        for (let indexLink = 0; indexLink < itemsLinks.length; indexLink++) {
+            const link = itemsLinks[indexLink];
+            const blockItem = blockItems[score];
+
+            link.addEventListener("click", () => {ScrollToElement(element = blockItem)});
+        };
+
+        score++;
+    };
+};
+
+
+// block - mobile nav
+for (let index = 0; index < mobileNavLinks.length; index++) {
+    const mobileLink = mobileNavLinks[index];
+    mobileLink.addEventListener("click", () => {closeMobileNav()});
+};

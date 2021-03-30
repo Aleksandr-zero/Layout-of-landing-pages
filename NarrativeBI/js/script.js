@@ -21,7 +21,6 @@ menuBtn.addEventListener("click", () => {
         for (let index = 0; index < blockLockPadding.length; index++) {
             const elementLock = blockLockPadding[index];
             elementLock.style.paddingRight = rightPaddingCount + "px";
-            console.log(elementLock)
         };
 
         body.style.paddingRight = rightPaddingCount + "px"

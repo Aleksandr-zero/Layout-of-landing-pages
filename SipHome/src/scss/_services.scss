@@ -1,6 +1,15 @@
 .services {
     margin-top: 115px;
 
+    &__container {
+        max-width: 1190px;
+        margin: 0 auto;
+    
+        @media (max-width: 1200px) {
+            margin: 0 40px;
+        }
+    }
+
     &__content {
 
         &-back-intro {
@@ -23,6 +32,10 @@
         &-section {
 
             &-items {
+                position: relative;
+                left: 0;
+
+                transition: left 0.4s;
 
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -41,6 +54,10 @@
                 border-radius: 16px;
 
                 padding: 20px 0 20px 24px;
+
+                &.services-content-item-pass {
+                    display: none;
+                }
 
                 &-back-img {
                     margin-right: 30px;
@@ -63,14 +80,87 @@
                 }
             }
         }
+
+        &-back-btns {
+            display: none;
+        }
     }
 
     @media (max-width: 840px) {
-    
+
+        &__container {
+            margin: 0;
+        }
+
         &__content {
+            margin: 0 40px;
 
             &-img {
                 width: 100%;
+            }
+
+            &-back-img {
+                margin: 0 40px;
+            }
+
+            &-section {
+                overflow: hidden;
+                padding-bottom: 48px;
+
+                &-items {
+                    display: flex;
+                }
+
+                &-item {
+                    flex: 0 0 43%;
+
+                    &:first-child {
+                        margin-left: 28%;
+                    }
+                }
+            }
+
+            &-back-btns {
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 670px) {
+        
+        &__content {
+
+            &-section {
+
+                &-item {
+                    flex: 0 0 60%;
+
+                    &:first-child {
+                        margin-left: 20%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 460px) {
+
+        &__content {
+            margin: 0 30px
+
+            &-back-img {
+                margin: 0 30px
+            }
+
+            &-section {
+
+                &-item {
+                    flex: 0 0 85%;
+
+                    &:first-child {
+                        margin-left: 6%;
+                    }
+                }
             }
         }
     }

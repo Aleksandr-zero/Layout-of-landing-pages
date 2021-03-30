@@ -78,6 +78,8 @@
             margin-bottom: 42px;
 
             &-link {
+                cursor: pointer;
+
                 color: $color-description;
                 font-size: 24px;
                 line-height: 1;
