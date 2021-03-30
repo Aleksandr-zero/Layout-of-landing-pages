@@ -10,11 +10,25 @@ let timeout = 500;
 
 const menuBtn = document.querySelector(".header__content-menu-btn-link");
 const header = document.querySelector(".header");
+let heightHeader = header.offsetHeight + 40;
 
 const mobileNav = document.querySelector(".header__content-mobile-nav");
 
+const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+const linksHome = document.querySelectorAll(".link-home");
+const linksAbout = document.querySelectorAll(".link-about");
+const linksPopulerDestination = document.querySelectorAll(".link-populer-destination");
+const linksTourPackage = document.querySelectorAll(".link-tour-packege");
+const linksContact = document.querySelectorAll(".link-contact");
+
+
+// block - about
+const about = document.querySelector(".about");
+
 
 // block - curated
+const curated = document.querySelector(".curated");
 
 const blockCuratedItems = document.querySelector(".curated__items");
 const blockCuratedItemCount = document.querySelectorAll(".curated__item");
@@ -26,14 +40,19 @@ const curatedBackImgBtns = document.querySelectorAll(".curated__item-back-img-bt
 
 
 // block - deals
+const deals = document.querySelector(".deals");
 
 const blockDealsItems = document.querySelector(".deals__items");
+
+
+// block - footer
+const footer = document.querySelector(".footer");
 
 
 // block - header
 
 let scorePressed = 0;
-var positionHeader = "top";
+let positionHeader = "top";
 
 window.addEventListener("scroll", () => {
 
@@ -68,34 +87,55 @@ menuBtn.addEventListener("click", () => {
     else if (scorePressed == 0 && positionHeader == "top") {
         header.classList.add("header-active-pressed-btn");
         scorePressed++;
-    };
+
+    } else {
+        scorePressed++;
+    }
 });
 
 function add_removeLockPadding(rightPaddingCount) {
 
     if (scorePressed == 0) {
-        body.classList.toggle("stop-scrolling");
-        body.style.paddingRight = rightPaddingCount + "px"
-
-        for (let index = 0; index < itemsLockPadding.length; index++) {
-            const elementLock = itemsLockPadding[index];
-            elementLock.style.paddingRight = rightPaddingCount + "px";
-        };
+        closeMobileNav(rightPadding = rightPaddingCount);
 
     } else {
         setTimeout(() => {
-            for (let index = 0; index < itemsLockPadding.length; index++) {
-                const elementLock = itemsLockPadding[index];
-                elementLock.style.paddingRight = "0px";
-            };
-
-            body.classList.toggle("stop-scrolling");
-            body.style.paddingRight = "0px"
-
+            closeMobileNav(rightPadding = 0);
         }, timeout);
     };
 };
 
+for (let index = 0; index < mobileNavLinks.length; index++) {
+    const mobileLink = mobileNavLinks[index];
+    let lockPaddingScroll = window.innerWidth - document.querySelector(".header__content-mobile-nav").offsetWidth;
+
+    mobileLink.addEventListener("click", () => {
+
+        add_removeLockPadding(rightPaddingCount = lockPaddingScroll);
+
+        mobileNav.classList.toggle("mobile-nav-open");
+        menuBtn.classList.toggle("menu-btn-active");
+
+        header.classList.toggle("header-active-not-shadow");
+
+        setTimeout(() => {
+            header.classList.remove("header-active-pressed-btn");
+        }, 100);
+
+        scorePressed--;
+    });
+};
+
+function closeMobileNav(rightPadding) {
+
+    for (let index = 0; index < itemsLockPadding.length; index++) {
+        const elementLock = itemsLockPadding[index];
+        elementLock.style.paddingRight = rightPadding + "px";
+    };
+
+    body.classList.toggle("stop-scrolling");
+    body.style.paddingRight = rightPadding + "px"
+}
 
 // block - curated
 
@@ -117,22 +157,29 @@ else if (window.innerWidth <= 780 && 661 < window.innerWidth) {
     var positionLeftCount = 390 - window.innerWidth / 3 + 390;
 }
 
-else if (window.innerWidth <= 660 && 571 < window.innerWidth) {
+else if (window.innerWidth <= 660 && 451 < window.innerWidth) {
     var positionLeftCount = 325 - window.innerWidth / 3 + 325
     scoreAdd_Dec = 1;
 }
 
-else if (window.innerWidth <= 570 && 451 < window.innerWidth) {
-    var positionLeftCount = 325 - window.innerWidth / 3 + 325;
-    scoreAdd_Dec = 1;
-}
-
-else if (window.innerWidth <= 450) {
+else if (window.innerWidth <= 450 && 376 < window.innerWidth) {
     var positionLeftCount = 107;
     scoreAdd_Dec = 1;
     scoreTranslateX = 1;
+}
 
-} else  var positionLeftCount = 420;
+else if (window.innerWidth <= 375 && 356 < window.innerWidth) {
+    var positionLeftCount = 108;
+    scoreAdd_Dec = 1;
+    scoreTranslateX = 1;
+}
+
+else if (window.innerWidth <= 355) {
+    var positionLeftCount = 108.5;
+    scoreAdd_Dec = 1;
+    scoreTranslateX = 1;
+
+}else  var positionLeftCount = 420;
 
 
 curatedPrevBtn.addEventListener("click", () => {
@@ -260,3 +307,36 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
     }, false);
 
 } else null;
+
+
+// block - common
+bruteForceLinks(
+    arrayItemsLinks = [linksHome, linksAbout, linksPopulerDestination, linksTourPackage, linksContact],
+    blockItems = [header, about, curated, deals, footer]
+)
+
+function ScrollToElement(element) {
+    window.scroll({
+        left: 0,
+        top: element.offsetTop - heightHeader,
+        behavior: "smooth",
+    })
+};
+
+function bruteForceLinks(arrayItemsLinks, blockItems) {
+    let score = 0;
+
+    for (let indexItem = 0; indexItem < arrayItemsLinks.length; indexItem++) {
+        
+        const itemsLinks = arrayItemsLinks[indexItem];
+
+        for (let indexLink = 0; indexLink < itemsLinks.length; indexLink++) {
+            const link = itemsLinks[indexLink];
+            const blockItem = blockItems[score];
+
+            link.addEventListener("click", () => {ScrollToElement(element = blockItem)});
+        };
+
+        score++;
+    };
+};

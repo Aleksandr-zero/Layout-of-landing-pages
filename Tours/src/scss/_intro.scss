@@ -12,7 +12,7 @@
             color: transparent;
             -webkit-text-stroke: 1.5px $main-color-title;
             font-size: 76px;
-            line-height: 86px;
+            line-height: 86/76 * 100%;
 
             span {
                 letter-spacing: 2px;
@@ -26,11 +26,20 @@
 
             &-title {
                 font-size: 56px;
-                line-height: 66px;
 
                 span {
                     letter-spacing: 1.5px;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+        
+        &__content {
+
+            &-title {
+                font-size: 52px;
             }
         }
     }

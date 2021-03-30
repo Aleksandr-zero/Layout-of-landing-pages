@@ -12,11 +12,11 @@ let heightHeader = header.offsetHeight;
 const navLinkItems = header.querySelectorAll(".header__content-nav-item-link")
 const navLinkItemLast = navLinkItems[navLinkItems.length - 1];
 
-const linksHome = document.querySelectorAll("#link-home");
-const linksFeatures = document.querySelectorAll("#link-features");
-const linksServices = document.querySelectorAll("#link-services");
-const linksContact = document.querySelectorAll("#link-contact");
-const linksFaq = document.querySelectorAll("#link-faq");
+const linksHome = document.querySelectorAll(".link-home");
+const linksFeatures = document.querySelectorAll(".link-features");
+const linksServices = document.querySelectorAll(".link-services");
+const linksContact = document.querySelectorAll(".link-contact");
+const linksFaq = document.querySelectorAll(".link-faq");
 
 const headerBtnMenu = document.querySelector(".header__content-back-btn-menu");
 
@@ -125,6 +125,11 @@ btnMenuClose.addEventListener("click", () => {
 
     setTimeout(() => { closeMobileNav() }, timeoutTransition * 2);
 });
+
+for (let index = 0; index < mobileNavLinks.length; index++) {
+    const mobileLink = mobileNavLinks[index];
+    mobileLink.addEventListener("click", () => {closeMobileNav()});
+};
 
 
 // block - services
@@ -408,11 +413,4 @@ function bruteForceLinks(arrayItemsLinks, blockItems) {
 
         score++;
     };
-};
-
-
-// block - mobile nav
-for (let index = 0; index < mobileNavLinks.length; index++) {
-    const mobileLink = mobileNavLinks[index];
-    mobileLink.addEventListener("click", () => {closeMobileNav()});
 };

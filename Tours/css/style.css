@@ -98,6 +98,7 @@ textarea {
 
 .nav-link {
   color: #000000;
+  cursor: pointer;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
 }
@@ -298,7 +299,7 @@ textarea {
   color: transparent;
   -webkit-text-stroke: 1.5px #083C4C;
   font-size: 76px;
-  line-height: 86px;
+  line-height: 113.15789%;
 }
 
 .intro__content-title span {
@@ -308,10 +309,15 @@ textarea {
 @media (max-width: 500px) {
   .intro__content-title {
     font-size: 56px;
-    line-height: 66px;
   }
   .intro__content-title span {
     letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .intro__content-title {
+    font-size: 52px;
   }
 }
 
@@ -1009,6 +1015,9 @@ textarea {
   }
   .curated__item-img {
     width: 92%;
+  }
+  .curated__item-description {
+    padding: 28px 50px 0 30px;
   }
   .curated__back-btn {
     margin-top: 60px;
