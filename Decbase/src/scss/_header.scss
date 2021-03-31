@@ -1,6 +1,6 @@
 .header {
     position: fixed;
-    z-index: 20;
+    z-index: 25;
 
     width: 100%;
     padding: 30px 0;
@@ -35,40 +35,11 @@
                 &:last-child {
                     margin-right: 0;
                 }
-
-                &-link {
-                    font-size: 16px;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    color: $color-title;
-
-                    transition: color 0.2s;
-
-                    &:hover {
-                        color: $color-description;
-                    }
-                }
             }
         }
 
         &-back-btn {
             margin-left: 55px;
-        }
-
-        &-btn {
-            font-size: 16px;
-            font-weight: 600;
-            color: $white-color;
-
-            background-color: $color-secondary;
-            padding: 5px 20px;
-            border-radius: 15px 0px;
-
-            transition: background-color 0.2s;
-
-            &:hover {
-                background-color: darken($color-secondary, 10%);
-            }
         }
 
         &-back-btn-menu {
@@ -100,10 +71,34 @@
                     height: 5px;
                     border-radius: 4px;
                     background-color: $color-main;
+
+                    transition: all 0.2s;
                 }
 
                 &:before { top: -8px; }
                 &:after { bottom: -8px; }
+            }
+
+            &.header-content-btn-menu-active {
+
+                span {
+                    background-color: transparent;
+
+                    &:before,
+                    &:after {
+                        width: 26px;
+                    }
+
+                    &:before {
+                        top: 2px;
+                        transform: rotate(45deg);
+                    }
+
+                    &:after {
+                        bottom: -2px;
+                        transform: rotate(-45deg);
+                    }
+                }
             }
         }
     }
@@ -125,7 +120,7 @@
         }
     }
 
-    @media (max-width: 896px) {
+    @media (max-width: 900px) {
         
         &__content {
 

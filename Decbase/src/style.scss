@@ -30,6 +30,10 @@ body {
     font-weight: 400;
     font-size: 18px;
     background: $white-color;
+
+    &.body-pass {
+        overflow: hidden;
+    }
 }
 
 h2 {
@@ -72,6 +76,11 @@ textarea {
 // HEADER
 
 @import "scss/header";
+
+
+// NAV-MOBILE
+
+@import "scss/navMobile";
 
 
 // INTRO

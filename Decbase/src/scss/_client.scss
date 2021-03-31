@@ -31,9 +31,9 @@
 
         &-item {
             display: flex;
-            flex: 0 0 46%;
+            flex: 0 0 45%;
 
-            margin-right: 110px;
+            margin-right: 9%;
 
             padding: 40px 40px 60px 40px;
 
@@ -47,6 +47,7 @@
                 top: 15px;
                 width: 32px;
                 height: 32px;
+                z-index: -1;
             }
 
             &:after {
@@ -61,6 +62,7 @@
                 background-color: $white-color;
                 box-shadow: 7px 7px 30px 5px rgba(66, 96, 84, 0.15);
                 border-radius: 70px 0px;
+                z-index: -2;
             }
 
             &:last-child {
@@ -94,6 +96,80 @@
                     color: $color-description;
 
                     margin-top: 8px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1140px) {
+        
+        &__content {
+
+            &-item {
+                flex: 0 0 48%;
+                margin-right: 2%;
+
+                &-description {
+
+                    &-title {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        
+        &__content {
+
+            &-item {
+                padding: 40px 20px 30px 20px;
+            }
+        }
+    }
+
+    @media (max-width: 910px) {
+        
+        &__content {
+
+            &-item {
+                flex: 0 0 98%;
+
+                &:after {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 750px) {
+        
+        &__content {
+
+            &-back-btn {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        
+        &__content {
+
+            &-item {
+                flex-direction: column;
+                text-align: center;
+
+                margin-right: 4%;
+
+                &:after {
+                    width: 98%;
+                }
+
+                &-back-img {
+                    margin-right: 0;
                 }
             }
         }

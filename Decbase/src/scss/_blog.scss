@@ -83,6 +83,10 @@
         }
     }
 
+    @media (max-width: 900px) {
+        margin-top: 80px;
+    }
+
     @media (max-width: 700px) {
 
         &__content {

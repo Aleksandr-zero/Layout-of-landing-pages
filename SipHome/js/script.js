@@ -1,3 +1,4 @@
+// COMMON
 const body = document.querySelector("body");
 
 let widtwWindowScroll = innerWidth - body.offsetWidth;
@@ -92,7 +93,7 @@ window.addEventListener("scroll", () => {
         navLinkItemLast.classList.add("header__content-nav-item-link-pass");
 
         blocksStopScrolling = document.querySelectorAll(".lock-padding");
-    
+
     } else {
         header.classList.remove("header-active");
         header.classList.remove("lock-padding");
@@ -120,16 +121,29 @@ headerBtnMenu.addEventListener("click", () => {
 
 
 // block - mobile-nav
-btnMenuClose.addEventListener("click", () => {
-    mobileNav.classList.remove("mobile-nav-active");
-
-    setTimeout(() => { closeMobileNav() }, timeoutTransition * 2);
-});
+btnMenuClose.addEventListener("click", () => { closeMobileNav(timeoutMultiplication = 2) });
 
 for (let index = 0; index < mobileNavLinks.length; index++) {
     const mobileLink = mobileNavLinks[index];
-    mobileLink.addEventListener("click", () => {closeMobileNav()});
+    mobileLink.addEventListener("click", () => { closeMobileNav(timeoutMultiplication = 2.5) });
 };
+
+function add_deleteLockPadding() {
+    for (let index = 0; index < blocksStopScrolling.length; index++) {
+        const elementLock = blocksStopScrolling[index];
+        elementLock.style.paddingRight = "0px";
+    };
+
+    body.style.paddingRight = "0px";
+    body.classList.remove("body-pass");
+}
+
+function closeMobileNav(timeoutMultiplication) {
+    mobileNav.classList.remove("mobile-nav-active");
+    setTimeout(() => {
+        add_deleteLockPadding()
+    }, timeoutTransition * timeoutMultiplication);
+}
 
 
 // block - services
@@ -376,18 +390,6 @@ bruteForceLinks(
     arrayItemsLinks = [linksHome, linksFeatures, linksServices, linksContact, linksFaq],
     blockItems = [header, features, services, contact, testimonials]
 )
-
-function closeMobileNav() {
-    mobileNav.classList.remove("mobile-nav-active");
-
-    for (let index = 0; index < blocksStopScrolling.length; index++) {
-        const elementLock = blocksStopScrolling[index];
-        elementLock.style.paddingRight = "0px";
-    };
-
-    body.style.paddingRight = "0px";
-    body.classList.remove("body-pass");
-}
 
 function ScrollToElement(element) {
     window.scroll({

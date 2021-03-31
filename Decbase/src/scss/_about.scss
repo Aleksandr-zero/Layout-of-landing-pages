@@ -1,5 +1,5 @@
 .about {
-    margin-top: 205px;
+    margin-top: 190px;
 
     &__content {
         display: flex;
@@ -43,7 +43,7 @@
     }
 
     @media (max-width: 768px) {
-        margin-top: 140px;
+        margin-top: 125px;
         
         &__content {
             flex-direction: column;
