@@ -1,0 +1,43 @@
+.project {
+    margin-top: 170px;
+
+    &__content {
+        text-align: center;
+
+        &-back-intro {
+            max-width: 770px;
+            margin: 0 auto;
+        }
+
+        &-back-btn {
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+        }
+    
+        &-btn {
+            padding: 17px 32px;
+        }
+
+        &-back-img {
+            width: 100%;
+            position: relative;
+            top: -100px;
+            z-index: -1;
+        }
+
+        &-img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        
+        &__content {
+
+            &-back-img {
+                top: -50px;
+            }
+        }
+    }
+}

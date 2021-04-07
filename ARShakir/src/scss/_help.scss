@@ -1,0 +1,145 @@
+.help {
+    margin-top: 125px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+    &:before {
+        position: absolute;
+        content: "";
+        background-image: url("../img/common/comets.svg");
+        width: 60%;
+        height: 100%;
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+        right: -450px;
+        top: 20%;
+        z-index: -1;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-description {
+            max-width: 480px;
+
+            &-title {
+                font-size: 26px;
+                line-height: 32/26 * 100%;
+                color: $color-title
+            }
+
+            &-text {
+                color: $color-description;
+                line-height: 22/16 * 100%;
+                margin-top: 32px;
+                font-family: "Gilroy";
+            }
+
+            &-items {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 48px;
+            }
+
+            &-item {
+                max-width: 47%;
+
+                &-img {
+                    height: 40px;
+                }
+
+                &-title {
+                    font-size: 16px;
+                    color: $color-title;
+                    margin-top: 16px;
+                }
+
+                &-text {
+                    color: $color-description;
+                    line-height: 22/16 * 100%;
+                    margin-top: 8px;
+                    font-family: "Gilroy";
+                }
+            }
+        }
+    }
+
+    @media (max-width: 920px) {
+        
+        &__content {
+
+            &-back-img {
+                width: 100%;
+            }
+
+            &-img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            &-description {
+                width: 90%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        
+        &__content {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &-back-img {
+                order: 1;
+            }
+
+            &-img {
+                width: 75%;
+                margin: 0 auto;
+            }
+
+            &-description {
+                width: 100%;
+                margin-bottom: 70px;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 590px) {
+        
+        &__content {
+
+            &-img {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        
+        &__content {
+
+            &-description {
+
+                &-items {
+                    flex-wrap: wrap;
+                }
+
+                &-item {
+                    max-width: 100%;
+
+                    &:first-child {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

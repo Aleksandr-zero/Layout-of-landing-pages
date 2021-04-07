@@ -46,10 +46,6 @@ const servicesItems = document.querySelector(".services__content-section-items")
 const servicesItemCount = servicesItems.querySelectorAll(".services__content-section-item");
 
 const servicesBtnsPoints = document.querySelectorAll(".services__content-btn");
-const servicesBtnPoint_1 = document.querySelector("#services-content-btn-1");
-const servicesBtnPoint_2 = document.querySelector("#services-content-btn-2");
-const servicesBtnPoint_3 = document.querySelector("#services-content-btn-3");
-const servicesBtnPoint_4 = document.querySelector("#services-content-btn-4");
 
 
 // block - testimonials
@@ -147,50 +143,279 @@ function closeMobileNav(timeoutMultiplication) {
 
 
 // block - services
-let widthItemServices = servicesItemCount[0].offsetWidth;
-let positionScoreServices = 0;
-let countForCenteringSliderServices = 0;
-let sumUpForCenteringSliderServices = false;
+checkResizeWindow();
 
-servicesBtnPoint_1.addEventListener("click", () => {
-    pressedBtnServices(position = 0, score = 0, countCentereing = 0);
+window.addEventListener("resize", () => {
+    checkResizeWindow();
+    checkResiveWidthWindow();
 });
 
-servicesBtnPoint_2.addEventListener("click", () => {
-    pressedBtnServices(position = -(widthItemServices + 20), score = 1, countCentereing = 5);
-});
+function checkResizeWindow() {
 
-servicesBtnPoint_3.addEventListener("click", () => {
-    pressedBtnServices(position = -(widthItemServices + 20)*2, score = 2, countCentereing = 7);
-});
+    if (innerWidth <= 840) {
 
-servicesBtnPoint_4.addEventListener("click", () => {
-    pressedBtnServices(position = -(widthItemServices + 20)*3, score = 3, countCentereing = 9);
-});
-
-function pressedBtnServices(position, score, countCentereing) {
-
-    if (sumUpForCenteringSliderServices) {
-        countForCenteringSliderServices = countCentereing;
-    } else {
-        countForCenteringSliderServices = 0;
-    };
-    
-    servicesItems.style.left = position + countForCenteringSliderServices + "px";
-
-    positionScoreServices = score;
-    
-    chechPressedBtnPoint();
-}
-
-function chechPressedBtnPoint() {
-    servicesBtnsPoints.forEach( (btn) => {
-        if (btn.classList.contains("btn-point-acive")) {
-            btn.classList.remove("btn-point-acive");
-
-            servicesBtnsPoints[positionScoreServices].classList.add("btn-point-acive");
+        for (let index = 4; index < servicesItemCount.length; index++) {
+            const servicesItem = servicesItemCount[index];
+            servicesItem.classList.add("services-content-item-pass");
         };
-    });
+
+
+        let slider = document.querySelector('.slider');
+        let sliderList = document.querySelector('.slider-list');
+        let sliderTrack = document.querySelector('.slider-track');
+        let slides = document.querySelectorAll('.slide');
+        
+        let slideWidth = slides[0].offsetWidth;
+        let slideIndex = 0;
+        
+        let marginRightSlide = getComputedStyle(slides[0]).marginRight;
+        marginRightSlide = Number(marginRightSlide.replace("px", ""));
+        
+        // число для центрироания слайдов
+        let sumCenteringCount_1 = 0;
+        let sumCenteringCount_2 = 0;
+        
+
+        // координаты, полученные при первом касании 
+        let posInit = 0;
+        let posX1 = 0;
+        
+        // разность posX1 и event.clientX. Будет считаться каждый раз при движении по экрану в swipeAction
+        let posX2 = 0;
+        
+        let posY1 = 0;
+        let posY2 = 0;
+        
+        let posFinal = 0;
+        
+        // переменные для отслеживания чтобы не скроллить вниз при захвате слайдера
+        let isSwipe = true;
+        let isScroll = true;
+        
+        
+        // разрешает двигать слайдер
+        let allowSwipe = true;
+        let transition = true;
+        
+        let nextTrf = 0;
+        let prevTrf = 0;
+        
+        let posThreshold = slides[0].offsetWidth * 0.35;
+        let trfRegExp = /([-0-9.]+(?=px))/;
+
+
+        add_deleteClassActive_Btn();
+
+
+        // вешаем события клика на кнопки
+        for (let index = 0; index < servicesBtnsPoints.length; index++) {
+            const btn = services.querySelector(`#btn-slider-${index + 1}`);
+
+            btn.addEventListener("click", () => {                
+                pressedBtnSlider(
+                    poisition = index * slideWidth,
+                    score = index
+                );
+            });
+        };
+
+        function pressedBtnSlider(poisition, score) {
+            sumCenteringCount_1 = marginRightSlide * score;
+            sumCenteringCount_2 = marginRightSlide * score;
+
+            sliderTrack.style.transform = `translate3d(-${poisition + sumCenteringCount_2}px, 0px, 0px)`;
+            slideIndex = score;
+            
+            add_deleteClassActive_Btn();
+        };
+
+        if (transition) {
+            sliderTrack.style.transition = 'transform .4s';
+        };
+
+        
+        getEvent = function() {
+            return (event.type.search('touch') !== -1) ? event.touches[0] : event;
+        };
+        
+        
+        // Продвигает слайдер
+        slide = function() {
+            if (transition) {
+                sliderTrack.style.transition = 'transform .4s';
+            };
+        
+            sliderTrack.style.transform = `translate3d(-${slideIndex * slideWidth + sumCenteringCount_1}px, 0px, 0px)`;
+        };
+        
+        
+        swipeStart = function() {
+            let evt = getEvent();
+        
+            if (allowSwipe) {
+         
+                transition = true;
+        
+                nextTrf = (slideIndex + 1) * -slideWidth;
+                prevTrf = (slideIndex - 1) * -slideWidth;
+        
+                // берем начальную позицию курсора по оси Х
+                posInit = posX1 = evt.clientX;
+                posY1 = evt.clientY;
+        
+                // убираем плавный переход, чтобы track двигался за курсором без задержки
+                // т.к. он будет включается в функции slide()
+                sliderTrack.style.transition = '';
+        
+                // и сразу начинаем отслеживать другие события на документе
+                document.addEventListener('touchmove', swipeAction);
+                document.addEventListener('touchend', swipeEnd);
+        
+                document.addEventListener('mousemove', swipeAction);
+                document.addEventListener('mouseup', swipeEnd);
+            };
+        };
+        
+        
+        swipeAction = function() {
+        
+            let evt = getEvent();
+        
+            // для более красивой записи возьмем в переменную текущее свойство transform
+            let styleTransform = sliderTrack.style.transform;
+        
+            // считываем трансформацию с помощью регулярного выражения и сразу превращаем в число
+            // Число показывающее сколько ты проскроллил слайдер
+            let transform =+ styleTransform.match(trfRegExp)[0];
+        
+            posX2 = posX1 - evt.clientX;
+            posX1 = evt.clientX;
+        
+            posY2 = posY1 - evt.clientY;
+            posY1 = evt.clientY;
+        
+            if (!isSwipe && !isScroll) {
+                let posY = Math.abs(posY2);
+        
+                if (posY > 7 || posX2 === 0) {
+                    isScroll = true;
+                    allowSwipe = false;
+                }
+        
+                else if (posY < 7) {
+                    isSwipe = true;
+                };
+            };
+        
+        
+            if (isSwipe) {
+        
+                // запрешает двигать слайдер в левую сторону так как первый слайд
+                if (slideIndex === 0) {
+        
+                    // запрешает двигать слайдер в левую сторону так как первый слайд
+                    if (posInit < posX1) {
+                        allowSwipe = false;
+                        return;
+                    };
+                };
+        
+                // запрет ухода вправо на последнем слайде
+                if (slideIndex === --slides.length) {
+        
+                    if (posInit > posX1) {
+                        allowSwipe = false;
+                        return;
+                    };
+                };
+        
+                if (posInit > posX1 && transform < nextTrf || posInit < posX1 && transform > prevTrf) {
+                    reachEdge();
+                    return;
+                };
+        
+                sliderTrack.style.transform = `translate3d(${transform - posX2}px, 0px, 0px)`;
+            };
+        };
+        
+        
+        swipeEnd = function() {
+        
+            // финальная позиция курсора
+            posFinal = posInit - posX1;
+        
+            isScroll = false;
+            isSwipe = false;
+        
+            document.removeEventListener('touchmove', swipeAction);
+            document.removeEventListener('mousemove', swipeAction);
+            document.removeEventListener('touchend', swipeEnd);
+            document.removeEventListener('mouseup', swipeEnd);
+        
+         
+            if (allowSwipe) {
+        
+                // возвращает false если мы не продвинули слайдер на половину ширины одного слайда
+                if ( Math.abs(posFinal) > posThreshold ) {
+        
+                    // НАЗАД
+                    if (posInit < posX1) {
+                        slideIndex--;
+                        sumCenteringCount_1 -= marginRightSlide;
+                    } 
+        
+                    // ВПЕРЁД
+                    if (posInit > posX1) {
+                        slideIndex++;
+                        sumCenteringCount_1 += marginRightSlide;
+                    };
+                };
+        
+                // если курсор двигался, то запускаем функцию переключения слайдов
+                if (posInit !== posX1) {
+                    allowSwipe = false;
+                    slide();
+                };
+            }
+        
+            else {
+                allowSwipe = true;
+            }
+
+            add_deleteClassActive_Btn();
+        };
+        
+        
+        // запрещает двигать слайдер если вышли за его пределы
+        reachEdge = function() {
+            transition = false;
+            swipeEnd();
+            allowSwipe = true;
+        };
+
+
+        function add_deleteClassActive_Btn() {
+            for (let index = 0; index < servicesBtnsPoints.length; index++) {
+                const btn = servicesBtnsPoints[index];
+
+                if (btn.classList.contains("btn-point-acive")) {
+                    btn.classList.remove("btn-point-acive");
+                };
+
+                servicesBtnsPoints[slideIndex].classList.add("btn-point-acive");
+            };
+        };
+        
+        
+        sliderTrack.style.transform = 'translate3d(0px, 0px, 0px)';
+        
+        sliderTrack.addEventListener('transitionend', () => allowSwipe = true);
+        slider.addEventListener('touchstart', swipeStart);
+        slider.addEventListener('mousedown', swipeStart);
+        
+    } else {
+        return;
+    };
 };
 
 
@@ -260,7 +485,6 @@ function checkResiveWidthWindow() {
 
 
 checkResiveWidthWindow()
-window.addEventListener("resize", () => { checkResiveWidthWindow() });
 
 testimonialsBtnPrev.addEventListener("click", () => {
     pressedBtnTestimonials(position = widthTestimonialsContentItem,
@@ -385,7 +609,6 @@ contactSelectBox.addEventListener("click", () => {
 
 
 // COMMON
-
 bruteForceLinks(
     arrayItemsLinks = [linksHome, linksFeatures, linksServices, linksContact, linksFaq],
     blockItems = [header, features, services, contact, testimonials]

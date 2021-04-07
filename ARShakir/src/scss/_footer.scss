@@ -1,0 +1,192 @@
+.footer {
+    margin-top: 140px;
+    padding-bottom: 100px;
+
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: -45px;
+        left: 0;
+        background-image: url("../img/footer/back.svg");
+        z-index: -1;
+    }
+
+    &__content {
+
+        &-back-intro {
+            display: flex;
+            justify-content: space-between;
+
+            &-title {
+                font-size: 26px;
+                color: $color-btn;
+            }
+
+            &-items {
+                display: flex;
+            }
+
+            &-item {
+                width: 40px;
+                height: 40px;
+                background-color: rgba(#979797, 0.1);
+
+                margin-right: 16px;
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                transition: background-color $animate-trans, box-shadow $animate-trans;
+
+                &:hover {
+                    background-color: $color-btn;
+                    box-shadow: -11.09px 18.13px 36.6483px rgba(242, 153, 74, 0.13);
+                }
+
+                &-link {
+                    padding: 10px 11px;
+                }
+            }
+        }
+
+        &-items {
+            margin-top: 94px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &-title {
+                color: $white-color;
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            &-link {
+                color: $white-color;
+                margin-bottom: 16px;
+
+                transition: color $animate-trans;
+
+                &:hover {
+                    color: $color-btn;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &-description {
+            display: flex;
+            justify-content: center;
+
+            margin-top: 120px;
+
+            &-text {
+                font-size: 14px;
+                color: $color-text-footer;
+
+                margin-right: 34px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 580px) {
+
+        &:before {
+            display: none;
+        }
+        
+        &__content {
+
+            &-items {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            &-item {
+                width: 45%;
+
+                &:first-child,
+                &:nth-child(2) {
+                    margin-bottom: 45px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding-bottom: 60px;
+        
+        &__content {
+
+            &-description {
+                flex-wrap: wrap;
+                text-align: center;
+
+                margin-top: 70px;
+
+                &-text {
+                    margin-right: 0;
+                    width: 100%;
+
+                    margin-bottom: 30px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        
+        &__content {
+
+            &-back-intro {
+                flex-wrap: wrap;
+
+                &-title {
+                    width: 100%;
+                }
+
+                &-items {
+                    margin-top: 30px;
+                }
+            }
+
+            &-items {
+                margin-top: 50px;
+            }
+
+            &-item {
+                width: 100%;
+                margin-bottom: 45px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

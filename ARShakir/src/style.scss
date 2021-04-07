@@ -6,6 +6,8 @@ $color-description: #8476AA;
 $color-description-title: #95A1BB;
 $color-title: #99EFD0;
 $color-nav-link: #B5B5B5;
+$color-input-text: #F6F6F6;
+$color-text-footer: #8D8D8D;
 
 $color-back-gradient-1: #3B1D60;
 $color-back-gradient-2: #040D3E;
@@ -37,8 +39,6 @@ body {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
-
-    overflow-x: hidden;
 }
 
 a { text-decoration: none; }
@@ -46,6 +46,7 @@ a { text-decoration: none; }
 h2 { font-size: 42px; }
 
 ul { list-style: none; }
+
 
 // COMMON
 
@@ -70,3 +71,38 @@ ul { list-style: none; }
 // CHOICE
 
 @import "scss/choice";
+
+
+// TRAFFIC
+
+@import "scss/traffic";
+
+
+// BUNCH
+
+@import "scss/bunch";
+
+
+// PROJECT
+
+@import "scss/project";
+
+
+// PROPERTY
+
+@import "scss/property";
+
+
+// HELP
+
+@import "scss/help";
+
+
+// REASONS
+
+@import "scss/reasons";
+
+
+// FOOTER
+
+@import "scss/footer";

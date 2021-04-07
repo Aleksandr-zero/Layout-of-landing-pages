@@ -644,6 +644,12 @@ textarea {
   overflow: hidden;
   margin: 48px auto 0 auto;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
   cursor: pointer;
 }
 

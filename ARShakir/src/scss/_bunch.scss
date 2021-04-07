@@ -1,0 +1,166 @@
+.bunch {
+    margin-top: 200px;
+
+    &__content {
+        text-align: center;
+
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            background-image: url("../img/common/comets.svg");
+            width: 100%;
+            height: 180%;
+            background-repeat: no-repeat;
+            left: -35%;
+            top: -115%;
+        }
+
+        &-back-intro {
+
+            &-title {
+                font-size: 36px;
+            }
+
+            &-subtext {
+                max-width: 430px;
+                margin: 32px auto 0 auto;
+            }
+        }
+
+        &-items {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 48px;
+        }
+
+        &-item {
+            max-width: 25%;
+
+            &-title {
+                font-size: 36px;
+                color: $color-title;
+            }
+
+            &-description {
+                color: $color-description;
+                line-height: 22/16 * 100%;
+                margin-top: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        
+        &__content {
+
+            &::before {
+                top: -85%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        
+        &__content {
+
+            &::before {
+                top: -75%;
+            }
+
+            &-item {
+                max-width: 30%;
+            }
+        }
+    }
+
+    @media (max-width: 690px) {
+        margin-top: 70px;
+
+        &__content {
+
+            &::before {
+                width: 130%;
+                height: 115%;
+                left: -70%;
+            }
+        }
+    }
+
+    @media (max-width: 620px) {
+        
+        &__content {
+
+            &::before {
+                top: -55%;
+                width: 150%;
+                left: -80%;
+                height: 100%;
+            }
+
+            &-items {
+                flex-wrap: wrap;
+            }
+
+            &-item {
+                max-width: 45%;
+
+                &:last-child {
+                    max-width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        
+        &__content {
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        
+        &__content {
+
+            &-back-intro {
+
+                &-title {
+                    font-size: 34px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 460px) {
+        
+        &__content {
+
+            &-item {
+                max-width: 100%;
+
+                &:first-child {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        
+        &__content {
+
+            &-back-intro {
+
+                &-title {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}

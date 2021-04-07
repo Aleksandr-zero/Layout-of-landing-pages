@@ -1,5 +1,4 @@
 // Common
-
 const body = document.querySelector("body");
 const itemsLockPadding = document.querySelectorAll(".lock-padding");
 
@@ -7,7 +6,6 @@ let timeout = 500;
 
 
 // block - header
-
 const menuBtn = document.querySelector(".header__content-menu-btn-link");
 const header = document.querySelector(".header");
 let heightHeader = header.offsetHeight + 40;
@@ -50,7 +48,6 @@ const footer = document.querySelector(".footer");
 
 
 // block - header
-
 let scorePressed = 0;
 let positionHeader = "top";
 
@@ -138,7 +135,6 @@ function closeMobileNav(rightPadding) {
 }
 
 // block - curated
-
 let positionBlockCuratedLeft = 0;
 let positionBlockCuratedScore = 0;
 
@@ -251,7 +247,6 @@ function checkBtnPressed(position) {
 
 
 // block - deals
-
 blockDealsItems.scrollLeft = 630;
 
 let isDown = false;
@@ -305,22 +300,21 @@ if (/Android|MeeGo|webOS|iPhone|iPad|iPod|BlackBerry|Fennec|BB|PlayBook|IEMobile
     
         blockDealsItems.scrollLeft = scrollLeft - walk * 1.2;
     }, false);
-
-} else null;
+};
 
 
 // block - common
 bruteForceLinks(
     arrayItemsLinks = [linksHome, linksAbout, linksPopulerDestination, linksTourPackage, linksContact],
     blockItems = [header, about, curated, deals, footer]
-)
+);
 
 function ScrollToElement(element) {
     window.scroll({
         left: 0,
         top: element.offsetTop - heightHeader,
         behavior: "smooth",
-    })
+    });
 };
 
 function bruteForceLinks(arrayItemsLinks, blockItems) {

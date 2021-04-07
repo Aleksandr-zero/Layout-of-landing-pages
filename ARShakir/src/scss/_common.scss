@@ -3,11 +3,20 @@
 .container {
     max-width: 1100px;
     margin: 0 auto;
+
+    @media (max-width: 1170px) {
+        margin: 0 40px;
+    }
+
+    @media (max-width: 450px) {
+        margin: 0 25px;
+    }
 }
 
 
 .wrapper {
-    background: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
+    background: linear-gradient(222.26deg, #3B1D60 10.22%, $color-back 58.28%);
+    overflow: hidden;
 }
 
 
@@ -23,11 +32,12 @@
     border: 1px solid $color-btn;
     border-radius: 4px;
 
-    transition: color $animate-trans, background-color $animate-trans;
+    transition: color $animate-trans, background-color $animate-trans, box-shadow $animate-trans;
 
     &:hover {
         color: $white-color;
         background-color: $color-btn;
+        box-shadow: -11.09px 18.13px 36.6483px rgba(242, 153, 74, 0.13);
     }
 }
 
@@ -44,10 +54,32 @@
     &-subtext {
         font-family: "Gilroy";
         line-height: 22/16 * 100%;
+        font-weight: 600;
         color: $color-description;
     }
 
     span {
         color: $color-btn;
+    }
+
+    @media (max-width: 768px) {
+        
+        &-title {
+            font-size: 38px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        
+        &-title {
+            font-size: 36px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        
+        &-title {
+            font-size: 32px;
+        }
     }
 }
