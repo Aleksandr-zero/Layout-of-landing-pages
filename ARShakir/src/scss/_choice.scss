@@ -48,10 +48,6 @@
                 margin-right: 28px;
             }
 
-            &-img {
-
-            }
-
             &-description {
 
                 &-title {
@@ -64,6 +60,37 @@
                     font-size: 14px;
                     line-height: 22/14 * 100%;
                     margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        
+        &__content {
+
+            &-item {
+                max-width: 47%;
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        
+        &__content {
+
+            &-item {
+                max-width: 100%;
+                flex-direction: column;
+                text-align: center;
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    margin-bottom: 44px;
+                }
+
+                &-back-img {
+                    margin-right: 0;
                 }
             }
         }

@@ -20,7 +20,7 @@
     <title>ARShakir</title>
 
 </head>
-<body>
+<body class="lock-padding">
 
     <div class="wrapper">
         <header class="header">
@@ -28,22 +28,23 @@
                 <div class="header__content">
                     <div class="header__content-back-logo">
                         <img src="img/logo/logo.svg" alt="logo" class="header__content-logo">
+                        <h3 class="header__content-back-logo-title">ARShakir</h3>
                         <nav class="header__content-nav">
                             <ul class="header__content-nav-items">
                                 <li class="header__content-nav-item">
-                                    <a href="#" class="header__content-nav-item-link">About</a>
+                                    <a href="#" class="header__content-nav-item-link nav-link">About</a>
                                 </li>
                                 <li class="header__content-nav-item">
-                                    <a href="#" class="header__content-nav-item-link">Gallery</a>
+                                    <a href="#" class="header__content-nav-item-link nav-link">Gallery</a>
                                 </li>
                                 <li class="header__content-nav-item">
-                                    <a href="#" class="header__content-nav-item-link">Pricing</a>
+                                    <a href="#" class="header__content-nav-item-link nav-link">Pricing</a>
                                 </li>
                                 <li class="header__content-nav-item">
-                                    <a href="#" class="header__content-nav-item-link">FAQ</a>
+                                    <a href="#" class="header__content-nav-item-link nav-link">FAQ</a>
                                 </li>
                                 <li class="header__content-nav-item">
-                                    <a href="#" class="header__content-nav-item-link">Benefits</a>
+                                    <a href="#" class="header__content-nav-item-link nav-link">Benefits</a>
                                 </li>
                             </ul>
                         </nav>
@@ -52,9 +53,42 @@
                         <a href="#" class="header__content-back-sign-in btn">Sign in</a>
                         <a href="#" class="header__content-back-sign-up btn">Sign up</a>
                     </div>
+                    <div class="header__content-back-btn">
+                        <a role="button" class="header__content-back-btn-menu">
+                            <span>Button</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
+
+        <div class="mobile-nav">
+            <div class="mobile-nav__content">
+                <nav class="mobile-nav__content-nav">
+                    <ul class="mobile-nav__content-nav-items">
+                        <li class="mobile-nav__content-nav-item">
+                            <a href="#" class="mobile-nav__content-nav-item-link nav-link">About</a>
+                        </li>
+                        <li class="mobile-nav__content-nav-item">
+                            <a href="#" class="mobile-nav__content-nav-item-link nav-link">Gallery</a>
+                        </li>
+                        <li class="mobile-nav__content-nav-item">
+                            <a href="#" class="mobile-nav__content-nav-item-link nav-link">Pricing</a>
+                        </li>
+                        <li class="mobile-nav__content-nav-item">
+                            <a href="#" class="mobile-nav__content-nav-item-link nav-link">FAQ</a>
+                        </li>
+                        <li class="mobile-nav__content-nav-item">
+                            <a href="#" class="mobile-nav__content-nav-item-link nav-link">Benefits</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-nav__content-back-sign">
+                    <a href="#" class="mobile-nav__content-back-sign-in btn">Sign in</a>
+                    <a href="#" class="mobile-nav__content-back-sign-up btn">Sign up</a>
+                </div>
+            </div>
+        </div>
     
         <div class="intro">
             <div class="container">
@@ -460,6 +494,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 

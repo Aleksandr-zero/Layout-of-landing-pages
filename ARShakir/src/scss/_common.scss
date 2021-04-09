@@ -83,3 +83,21 @@
         }
     }
 }
+
+
+// HEADER and MOBILE-NAV
+
+.nav-link {
+    color: $color-nav-link;
+    font-size: 12px;
+    font-family: "Gilroy";
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: $animate-trans;
+
+    &:hover {
+        color: $color-btn;
+    }
+}

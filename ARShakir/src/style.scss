@@ -39,6 +39,10 @@ body {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
+
+    &.body-pass {
+        overflow: hidden;
+    }
 }
 
 a { text-decoration: none; }
@@ -56,6 +60,11 @@ ul { list-style: none; }
 // HEADER
 
 @import "scss/header";
+
+
+// MOBILE-NAV
+
+@import "scss/mobileNav";
 
 
 // INTRO

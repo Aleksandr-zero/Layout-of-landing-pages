@@ -3,6 +3,22 @@
     z-index: 1;
     position: relative;
 
+    &.traffic-active {
+
+        .traffic__content {
+
+            .traffic__content-description {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+
+            .traffic__content-back-img {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
@@ -13,6 +29,9 @@
         &-description {
             max-width: 470px;
             margin-right: 20px;
+            transition: all $animate-trans * 2;
+            transform: translate(-55%, 0);
+            opacity: 0;
 
             &-back-intro {
 
@@ -29,6 +48,12 @@
             &-btn {
                 padding: 13px 30px;
             }
+        }
+
+        &-back-img {
+            transition: all $animate-trans * 2;
+            transform: translate(55%, 0);
+            opacity: 0;
         }
     }
 
@@ -66,6 +91,7 @@
     }
 
     @media (max-width: 690px) {
+        padding-top: 120px;
         
         &__content {
             flex-wrap: wrap;
