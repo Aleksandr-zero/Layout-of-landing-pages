@@ -1,0 +1,46 @@
+.mobile-nav {
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all $animation-trans * 2;
+
+    &.mobile-nav-active {
+        visibility: visible;
+        opacity: 1;
+        
+        .mobile-nav__content {
+            transform: translateY(-0);
+        }
+    }
+
+    &__content {
+        padding: 140px 0 40px 0;
+        background-color: $white-color;
+        text-align: center;
+        transform: translateY(-100%);
+
+        transition: all $animation-trans * 2;
+
+        &-item {
+            margin-bottom: 40px;
+
+            &-link {
+                cursor: pointer;
+
+                transition: color $animation-trans;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

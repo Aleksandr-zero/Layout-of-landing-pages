@@ -1,0 +1,195 @@
+.what-foreign-languages {
+
+    &__content {
+        max-width: 1090px;
+        margin: 0 auto;
+
+        &-back-imgs {
+            position: relative;
+            margin-right: 74px;
+        }
+
+        &-img {
+
+            &:first-child {
+                position: absolute;
+                top: 36px;
+                left: 28px;
+                z-index: -1;
+            }
+        }
+
+        &-description {
+            
+            &-items {
+                margin-top: 70px;
+                flex-wrap: wrap;
+            }
+
+            &-item {
+
+                &:nth-child(1),
+                &:nth-child(4) {
+                    width: 20%;
+                }
+
+                &:nth-child(2),
+                &:nth-child(5) {
+                    width: 30%;
+                }
+
+                &:nth-child(3),
+                &:nth-child(6) {
+                    width: 40%;
+                }
+
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    margin-top: 64px;
+                }
+
+                &-title {
+                    display: inline-block;
+                    position: relative;
+
+                    &.what-foreign-color-green {
+                        &::before { border-top: 4px dotted $secondary-color-1; }
+                        &::after  { background-color: $secondary-color-1; }
+                    }
+
+                    &.what-foreign-color-red {
+                        &::before { border-top: 4px dotted $color-what-number-4; }
+                        &::after  { background-color: $color-what-number-4; }
+                    }
+
+                    &.what-foreign-color-orange {
+                        &::before { border-top: 4px dotted $color-what-number-3; }
+                        &::after  { background-color: $color-what-number-3; }
+                    }
+
+                    &.what-foreign-color-yellow {
+                        &::before { border-top: 4px dotted $auxiliary-color-2; }
+                        &::after  { background-color: $auxiliary-color-2; }
+                    }
+
+                    &.what-foreign-color-emerald {
+                        &::before { border-top: 4px dotted $auxiliary-color-3; }
+                        &::after  { background-color: $auxiliary-color-3; }
+                    }
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        content: "";
+                    }
+
+                    &::before {
+                        width: 98%;
+                        top: -20px;
+                        width:100%;
+                    }
+
+                    &::after {
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        left: 0;
+                        top: -27px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1020px) {
+        
+        &__content {
+
+            &-back-imgs {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 930px) {
+        
+        &__content {
+
+            &-description {
+
+                &-item {
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        width: 45%;
+                    }
+
+                    &:nth-child(3) {
+                        margin-top: 64px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 810px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-back-imgs {
+                order: 1;
+                margin-top: 60px;
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        
+        &__content {
+
+            &-description {
+
+                &-item {
+                    &:nth-child(1),
+                    &:nth-child(4) {
+                        width: 20%;
+                    }
+    
+                    &:nth-child(2),
+                    &:nth-child(5) {
+                        width: 60%;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(6) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+        
+        &__content {
+
+            &-img {
+
+                &:first-child {
+                    width: 78%;
+                    height: 88%;
+                }
+
+                &:last-child {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

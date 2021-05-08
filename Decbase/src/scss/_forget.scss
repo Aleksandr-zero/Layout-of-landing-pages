@@ -90,6 +90,16 @@
         }
     }
 
+    @media (max-width: 460px) {
+        
+        &__content {
+
+            &-title {
+                font-size: 42px;
+            }
+        }
+    }
+
     @media (max-width: 380px) {
         
         &__content {

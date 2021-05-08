@@ -1,0 +1,40 @@
+.socials-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.socials {
+
+    &__items {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        margin-right: 26px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-back-phone {
+        margin-left: 32px;
+
+        &__link {
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 350px) {
+        
+        &__item {
+            margin-right: 20px;
+        }
+
+        &-back-phone {
+            margin-left: 26px;
+        }
+    }
+}

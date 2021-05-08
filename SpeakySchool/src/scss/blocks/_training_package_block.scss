@@ -1,0 +1,36 @@
+.training-package-block {
+    background-color: $primary-color-1;
+    border-radius: 30px;
+    max-width: 300px;
+
+    &__img {
+        display: block;
+        width: 100%;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    &__description {
+        text-align: center;
+        padding: 40px 0 60px 0;
+
+        &-text {
+
+            &-price {
+                font-size: 22px;
+                font-weight: 900;
+                line-height: 30/22 * 100%;
+                margin-top: 14px;
+
+                span {
+                    font-family: "NEXT ART";
+                }
+            }
+        }
+
+        &-back-btn {
+            justify-content: center;
+            margin-top: 36px;
+        }
+    }
+}

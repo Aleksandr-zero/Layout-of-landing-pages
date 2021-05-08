@@ -11,7 +11,7 @@
 
             &-title {
                 font-size: 72px;
-                line-height: 78px;
+                line-height: 78/72 * 100%;
                 font-weight: 600;
                 font-family: "Poppins";
 
@@ -62,8 +62,38 @@
         &__content {
             flex-direction: column;
 
+            &-text {
+                margin-right: 0;
+            }
+
             &-back-img {
                 margin-top: 60px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        
+        &__content {
+
+            &-text {
+
+                &-title {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 540px) {
+        
+        &__content {
+
+            &-text {
+
+                &-title {
+                    font-size: 48px;
+                }
             }
         }
     }

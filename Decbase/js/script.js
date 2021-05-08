@@ -178,9 +178,11 @@ function checkResizeWidnow() {
 
     if (window.innerWidth >= 911) {
         maximumClicksBtnService = 2;
+
     } else if (window.innerWidth <= 910 && 561 < window.innerWidth) {
         maximumClicksBtnService = 3;
         maximumClicksBtnClient = 3;
+
     } else if (window.innerWidth <= 560) {
         maximumClicksBtnService = 4;
         maximumClicksBtnClient = 3;

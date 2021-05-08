@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="apple-touch-icon" sizes="72x72" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
+    <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#E5E5E5">
+
+    <title>Залог недвижимости</title>
+</head>
+<body>
+
+    <header class="header lock-padding">
+        <div class="header__container">
+            <div class="header__content">
+                <a role="button" class="header__content-menu-btn">
+                    <span>Menu</span>
+                </a>
+                <div class="header__content-wrapper">
+                    <div class="header__content-back-img">
+                        <img src="img/logo/logo.svg" alt="logo" class="header__content-logo">
+                    </div>
+                    <nav class="header__content-nav">
+                        <ul class="header__content-nav-items">
+                            <li class="header__content-nav-item">
+                                <a role="button" class="header__content-nav-item-link nav-link nav-link-loan">Преимущества</a>
+                            </li>
+                            <li class="header__content-nav-item">
+                                <a role="button" class="header__content-nav-item-link nav-link nav-link-bid">Заявка на получение</a>
+                            </li>
+                            <li class="header__content-nav-item">
+                                <a role="button" class="header__content-nav-item-link nav-link nav-link-answers">Вопросы и ответы</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__content-other">
+                    <div class="header__content-other-back-phone">
+                        <h3 class="header__content-other-back-phone-title">
+                            <a href="#" class="header__content-other-back-phone-title-link">8 800 333 45 54</a>
+                        </h3>
+                        <div class="header__content-other-back-phone-description">
+                            <p>
+                                Звонок бесплатный 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="header__content-other-back-btn">
+                        <a href="#" class="header__content-other-btn">Заказать звонок</a>
+                    </div>
+                </div>
+                <div class="header__content-back-phone">
+                    <a href="#" class="header__content-back-phone-link">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.0115 22C16.7973 21.9993 16.5839 21.9753 16.3748 21.9283C12.3931 21.086 8.72493 19.1111 5.79244 16.2309C2.92252 13.3443 0.932083 9.66907 0.0619434 5.64986C-0.0406571 5.14894 -0.0154749 4.62945 0.135067 4.14137C0.28561 3.65329 0.556445 3.21304 0.921518 2.86298L3.4684 0.356097C3.59849 0.230289 3.75306 0.133948 3.92202 0.0733612C4.09097 0.0127745 4.27053 -0.0106958 4.44896 0.00448221C4.63396 0.0242202 4.8125 0.085167 4.972 0.183037C5.13151 0.280906 5.26811 0.413322 5.3722 0.570973L8.55581 5.38289C8.6752 5.5696 8.73283 5.79057 8.72022 6.01328C8.70761 6.23599 8.62543 6.44868 8.48577 6.62005L6.8876 8.57347C7.5241 10.0141 8.4255 11.3161 9.54273 12.4087C10.6527 13.5409 11.9647 14.4449 13.4076 15.0718L15.3878 13.4635C15.5542 13.3291 15.7565 13.2496 15.9681 13.2357C16.1796 13.2217 16.3903 13.2739 16.5721 13.3854L21.3794 16.5629C21.5444 16.6637 21.6849 16.8013 21.7905 16.9654C21.8961 17.1296 21.964 17.3161 21.9891 17.5109C22.0142 17.7057 21.9959 17.9038 21.9355 18.0903C21.8751 18.2768 21.7742 18.447 21.6404 18.588L19.1572 21.1014C18.8752 21.3884 18.5404 21.6156 18.1721 21.7698C17.8038 21.924 17.4094 22.0022 17.0115 22ZM4.34708 1.29374L1.80019 3.80062C1.59482 3.99632 1.44279 4.24332 1.35906 4.51732C1.27533 4.79132 1.26279 5.08289 1.32265 5.36336C2.13175 9.13484 3.99161 12.586 6.67748 15.2997C9.43716 18.0095 12.8891 19.8671 16.6358 20.6586C16.9194 20.7192 17.2133 20.707 17.4911 20.6229C17.7689 20.5388 18.022 20.3855 18.2276 20.1768L20.7108 17.6634L16.0691 14.5965L13.9425 16.3285C13.8611 16.3944 13.7651 16.439 13.663 16.4583C13.5609 16.4776 13.4558 16.471 13.3567 16.4392C11.5909 15.7739 9.99063 14.7177 8.67042 13.3463C7.30488 12.0422 6.24491 10.4396 5.56959 8.65812C5.54102 8.55027 5.54007 8.43671 5.56683 8.32837C5.59359 8.22004 5.64717 8.12057 5.7224 8.03954L7.44155 5.93636L4.34708 1.29374Z" fill="#00B4E3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-nav__content lock-padding">
+            <ul class="mobile-nav__content-items">
+                <li class="mobile-nav__content-item">
+                    <a role="button" class="mobile-nav__content-item-link nav-link nav-link-loan">Преимущества</a>
+                </li>
+                <li class="mobile-nav__content-item">
+                    <a role="button" class="mobile-nav__content-item-link nav-link nav-link-bid">Заявка на получение</a>
+                </li>
+                <li class="mobile-nav__content-item">
+                    <a role="button" class="mobile-nav__content-item-link nav-link nav-link-answers">Вопросы и ответы</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="button-back-home">
+        <a role="button" class="button-home">Btn</a>
+    </div>
+
+    <div class="intro">
+        <div class="intro__container">
+            <div class="intro__content">
+                <h1 class="intro__content-title">Займ под залог недвижимости в Москве <span>под 8% годовых</span></h1>
+                <div class="intro__content-text">
+                    <p>
+                        Для физических, юридических лиц и ИП
+                    </p>
+                </div>
+                <div class="intro__content-back-text">
+                    <div class="intro__content-back-text-description">
+                        <p>
+                            Выбаем займы физ. лицам и юр. лицам
+                        </p>
+                    </div>
+                </div>
+                <div class="intro__content-items">
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-img">
+                            <img src="img/common/like.svg" alt="like" class="intro__content-item-img">
+                        </div>
+                        <div class="intro__content-item-description">
+                            <p>
+                                100% одобрение с любой кредитной историей
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-img">
+                            <img src="img/common/time.svg" alt="time" class="intro__content-item-img">
+                        </div>
+                        <div class="intro__content-item-description">
+                            <p>
+                                Одобрение за 10 минут, выдаем деньги в день обращения
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-img">
+                            <img src="img/common/rate.svg" alt="rate" class="intro__content-item-img">
+                        </div>
+                        <div class="intro__content-item-description">
+                            <p>
+                                Ставка 8% годовых, без справок с работы и страховки
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-img">
+                            <img src="img/common/key.svg" alt="key" class="intro__content-item-img">
+                        </div>
+                        <div class="intro__content-item-description">
+                            <p>
+                                Без переоформления: используйте собственность как угодно
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-img">
+                            <img src="img/common/coins.svg" alt="coins" class="intro__content-item-img">
+                        </div>
+                        <div class="intro__content-item-description">
+                            <p>
+                                От 50 000 ₽ до 60 млн. ₽ на срок от 1 месяца до 20 лет
+                            </p>
+                        </div>
+                    </div>
+                    <div class="intro__content-item">
+                        <div class="intro__content-item-back-btn">
+                            <a href="#" class="intro__content-item-btn btn">Отправить заявку</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loan">
+        <div class="loan__container">
+            <div class="loan__content">
+                <div class="loan__content-back-intro back-intro">
+                    <h2 class="loan__content-back-intro-title back-intro-title">Преимущества займа под недвижимость</h2>
+                    <div class="loan__content-back-intro-description back-intro-description">
+                        <p>
+                            Получите деньги под залог недвижимости на самых выгодных условиях
+                        </p>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="loan__content-wrapper-items slider-list">
+                        <div class="loan__content-items slider-track">
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/common/coins.svg" alt="coins" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">Никаких требований к собственности</h3>
+                                </div>
+                                <ul class="loan__content-item-description">
+                                    <li class="loan__content-item-description-text-1">
+                                        <p>
+                                            Дадим займ даже если собственность в залоге или аресте
+                                        </p>
+                                    </li>
+                                    <li class="loan__content-item-description-text-2">
+                                        <p>
+                                            Подходит недвижимость любой ликвидности и состояния
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/common/like.svg" alt="like" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">Без страховок и штрафов</h3>
+                                </div>
+                                <div class="loan__content-item-description">
+                                    <div class="loan__content-item-description-text-1">
+                                        <p>
+                                            Досрочное погашение и продление займа без комиссий и переплат
+                                        </p>
+                                    </div>
+                                    <div class="loan__content-item-description-text-2">
+                                        <p>
+                                            У нас можно не страховать кредит и нет штрафов за просрочки
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/answers/questionnaire.svg" alt="questionnaire" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">100% одобрение займа</h3>
+                                </div>
+                                <div class="loan__content-item-description">
+                                    <div class="loan__content-item-description-text-1">
+                                        <p>
+                                            Одобряем даже с плохой кредитной историей, без подтверждения дохода
+                                        </p>
+                                    </div>
+                                    <div class="loan__content-item-description-text-2">
+                                        <p>
+                                            От 70 до 90% от рыночной стоимости недвижимости
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/common/time.svg" alt="time" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">Минимум вашего времени</h3>
+                                </div>
+                                <div class="loan__content-item-description">
+                                    <div class="loan__content-item-description-text-1">
+                                        <p>
+                                            Вам не нужно ходить по разным инстанциям, мы все сделаем за вас
+                                        </p>
+                                    </div>
+                                    <div class="loan__content-item-description-text-2">
+                                        <p>
+                                            Нужно всего 2 документа для физических лиц и 3 для юр. лиц
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/answers/Documents.svg" alt="Documents" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">Не рискуете потерять собственность</h3>
+                                </div>
+                                <div class="loan__content-item-description">
+                                    <div class="loan__content-item-description-text-1">
+                                        <p>
+                                            Строго по закону ФЗ 102 «О залоге», договор заключаем в присутствии государственного нотариуса
+                                        </p>
+                                    </div>
+                                    <div class="loan__content-item-description-text-2">
+                                        <p>
+                                            Вы остаетесь собственником, документы остаются у вас
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="loan__content-item slide">
+                                <div class="loan__content-item-back-intro">
+                                    <div class="loan__content-item-back-intro-back-img">
+                                        <img src="img/common/key.svg" alt="key" class="loan__content-item-back-intro-img">
+                                    </div>
+                                    <h3 class="loan__content-item-back-intro-title">Ваша собственность в вашем распоряжении</h3>
+                                </div>
+                                <div class="loan__content-item-description">
+                                    <div class="loan__content-item-description-text-1">
+                                        <p>
+                                            Можете сдавать вашу собственность, прописывать туда жильцов и тд.
+                                        </p>
+                                    </div>
+                                    <div class="loan__content-item-description-text-2">
+                                        <p>
+                                            Никогда не посещаем объект залога, даже при просрочках
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loan__content-back-btns-slider">
+                    <a role="button" id="btn-slider-1" class="loan__content-btn-slider btn-slider-active">Button</a>
+                    <a role="button" id="btn-slider-2" class="loan__content-btn-slider">Button</a>
+                    <a role="button" id="btn-slider-3" class="loan__content-btn-slider">Button</a>
+                    <a role="button" id="btn-slider-4" class="loan__content-btn-slider">Button</a>
+                    <a role="button" id="btn-slider-5" class="loan__content-btn-slider">Button</a>
+                    <a role="button" id="btn-slider-6" class="loan__content-btn-slider">Button</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bid">
+        <div class="bid__container">
+            <div class="bid__content">
+                <div class="bid__content-back-intro back-intro">
+                    <h2 class="bid__content-back-intro-title back-intro-title">Заявка на получение займа</h2>
+                    <div class="bid__content-back-intro-description back-intro-description">
+                        <p>
+                            100% одобрение через 20 минут, деньги в течение дня. Вы остаетесь владельцем собственности и пользуетесь ею
+                        </p>
+                    </div>
+                </div>
+                <div class="bid__content-back-form">
+                    <form id="bid-form" action="index.html" class="bid__content-form">
+                        <div class="bid__content-form-back-input">
+                            <input type="text" class="bid__content-form-input" placeholder="Ваше имя">
+                        </div>
+                        <div class="bid__content-form-back-input">
+                            <input type="text" class="bid__content-form-input input-phone" value="+7(___)___-____" placeholder="+7 (___) ___-__-__">
+                        </div>
+                        <div class="bid__content-form-back-input">
+                            <input type="text" class="bid__content-form-input" placeholder="Тип недвижимости">
+                        </div>
+                        <div class="bid__content-form-back-input">
+                            <input type="text" class="bid__content-form-input" placeholder="Сумма займа">
+                        </div>
+                    </form>
+                    <div class="bid__content-back-form-other">
+                        <button type="submit" form="bid-form" class="bid__content-back-form-other-btn btn">Получить одобрение</button>
+                        <div class="bid__content-back-form-other-description">
+                            <p>
+                                Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="answers">
+        <div class="container">
+            <div class="answers__content">
+                <div class="answers__content-back-intro back-intro">
+                    <h2 class="answers__content-back-intro-title back-intro-title">Ответы на популярные вопросы</h2>
+                    <h3 class="answers__content-back-intro-description back-intro-description">Квартира остается вашей — вы можете делать с ней, что угодно</h3>
+                </div>
+                <div class="answers__content-items">
+                    <div class="answers__content-item">
+                        <div class="answers__content-item-section">
+                            <div class="answers__content-item-section-back-btn">
+                                <a role="button" class="answers__content-item-section-btn"></a>
+                            </div>
+                            <h3 class="answers__content-item-section-title">Есть ли у вас недвижимость на продажу?</h3>
+                        </div>
+                        <div class="answers__content-item-description">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eaque similique id, ab minus aperiam numquam illum recusandae facere placeat.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa? Lorem ipsum dolor sit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="answers__content-item">
+                        <div class="answers__content-item-section">
+                            <div class="answers__content-item-section-back-btn">
+                                <a role="button" class="answers__content-item-section-btn"></a>
+                            </div>
+                            <h3 class="answers__content-item-section-title">Могу ли я заложить недвижимость другого человека?</h3>
+                        </div>
+                        <div class="answers__content-item-description">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo blanditiis, ut ducimus praesentium natus, totam saepe vero ipsum quaerat, mollitia molestias incidunt! Explicabo quae consequatur ipsum sequi, autem sed. Praesentium!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="answers__content-item">
+                        <div class="answers__content-item-section">
+                            <div class="answers__content-item-section-back-btn">
+                                <a role="button" class="answers__content-item-section-btn"></a>
+                            </div>
+                            <h3 class="answers__content-item-section-title">Вы работаете только в Москве??</h3>
+                        </div>
+                        <div class="answers__content-item-description">
+                            <p>
+                                Нет, мы работаем по всей России. Чтобы узнать адрес нашей компании в другом городе. Нажмите на ссылку с названием города в шапке сайта и выберете нужный вам город.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact__content">
+                <div class="contact__content-back-title">
+                    <h2 class="contact__content-title" id="contact-title">Контакты</h2>
+                </div>
+                <div class="contact__content-description">
+                    <div class="contact__content-description-items">
+                        <div class="contact__content-description-item">
+                            <h3 class="contact__content-description-item-title">Адрес:</h3>
+                            <a href="#" class="contact__content-description-item-link">Ленинградский проспект, 31Ас1</a>
+                        </div>
+                        <div class="contact__content-description-item">
+                            <h3 class="contact__content-description-item-title">Электронная почта:</h3>
+                            <a href="#" class="contact__content-description-item-link">info@autolombard-autozalog.ru</a>
+                        </div>
+                        <div class="contact__content-description-item">
+                            <h3 class="contact__content-description-item-title">Часы работы:</h3>
+                            <div class="contact__content-description-item-text">
+                                <p>
+                                    Ежедневно с 8:00 до 20:00. Прием заявок 24/7
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__content-items">
+                    <div class="footer__content-item">
+                        <div class="footer__content-item-back-img">
+                            <img src="img/logo/logo.svg" alt="logo" class="footer__content-item-img">
+                            <div class="footer__content-item-text" id="footer-subtext">
+                                <p>
+                                    «Залог Недвижимости» © 2020 год
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__content-wrapper-items">
+                        <div class="footer__content-item">
+                            <a href="#" class="footer__content-item-link">Займ под залог квартиры</a>
+                            <a href="#" class="footer__content-item-link">Займ под залог комнаты</a>
+                            <a href="#" class="footer__content-item-link">Займ под залог коммерческой недвижимости</a>
+                        </div>
+                        <div class="footer__content-item">
+                            <a href="#" class="footer__content-item-link">Займ под залог дома, коттеджа, таунхауса</a>
+                            <a href="#" class="footer__content-item-link">Займ под залог земельного участка</a>
+                            <a href="#" class="footer__content-item-link">Займ под залог гаража</a>
+                        </div>
+                        <div class="footer__content-item">
+                            <a href="#" class="footer__content-item-link">Займ под залог доли в недвижимости</a>
+                            <a href="#" class="footer__content-item-link">Рефинансирование кредита под залог недвижимости</a>
+                        </div>
+                    </div>
+                    <div class="footer__content-item">
+                        <h3 class="footer__content-item-back-phone-title">
+                            <a href="#" class="footer__content-item-back-phone-title-link">8 800 333 45 54</a>
+                        </h3>
+                        <div class="footer__content-item-text-phone">
+                            <p>
+                                Звонок бесплатный 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__text">
+            <div class="footer__text-description">
+                <p>
+                    Информация на сайте не является публичной офертой. Сервис «ПТС ЗАЙМ» оказывает содействие в подборе финансовых услуг
+                    компаний-партнеров и не является финансовым учреждением, банком, микрофинансовой организацией, лизинговой компанией,
+                    или ломбардом. Работа сайта autolombard-pts-zaim.ru не связана с осуществлением инвестиционной деятельности.
+                    Дополнительные и скрытые комиссии не взимаются. Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

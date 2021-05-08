@@ -1,0 +1,85 @@
+.what-we-do {
+    margin: 140px 0;
+    text-align: center;
+
+    &__content {
+        max-width: 880px;
+        margin: 0 auto;
+
+        &-items {
+            margin-top: 50px;
+        }
+
+        &-item {
+            flex: 0 0 18%;
+
+            &-back-number {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                justify-content: center;
+                margin: 0 auto;
+
+                &.what-we-do-item-back-number-color-1 { background-color: $secondary-color-1; }
+                &.what-we-do-item-back-number-color-2 { background-color: $color-what-number-2; }
+                &.what-we-do-item-back-number-color-3 { background-color: $color-what-number-3; }
+                &.what-we-do-item-back-number-color-4 { background-color: $color-what-number-4; }
+            }
+
+            &-number {
+                font-size: 40px;
+                line-height: 34/40 * 100%;
+                font-weight: 900;
+                font-family: "Next Art";
+                color: $white-color;
+            }
+
+            &-description {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 930px) {
+        
+        &__content {
+
+            &-item {
+                flex: 0 0 24%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin: 100px 0;
+        
+        &__content {
+
+            &-items {
+                flex-wrap: wrap;
+            }
+
+            &-item {
+                flex: 0 0 45%;
+
+                &:nth-child(3),
+                &:last-child {
+                    margin-top: 14px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 460px) {
+        
+        &__content {
+
+            &-item {
+
+                &-description {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

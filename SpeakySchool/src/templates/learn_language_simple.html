@@ -1,0 +1,39 @@
+<div class="learn-language-simple">
+    <div class="container">
+        <div class="learn-language-simple__wrapper container__wrapper">
+            @@if(padding_top == 70) {
+                <div class="learn-language-simple__content block-flex-justify-align learn-language-simple-content-pad-70">
+            }
+
+            @@if(padding_top == 100) {
+                <div class="learn-language-simple__content block-flex-justify-align learn-language-simple-content-pad-100">
+            }
+                @@if(abult) {
+                    <div class="learn-language-simple__content-description learn-language-simple-description-mr">
+                        <h2 class="learn-language-simple__content-description-title abult-title-learn-language header-with-background">@@title</h2>
+                }
+
+                @@if(abult == false) {
+                    <div class="learn-language-simple__content-description">
+                        <h2 class="learn-language-simple__content-description-title header-with-background">@@title</h2>
+                }
+                    @@if(text) {
+                        <div class="learn-language-simple__content-description-text">
+                            <p>
+                                А может быть язык вам нужен для путешествий? Для переезда в другую страну? Или у вас профессиональные цели и язык вам нужен для повышения? 
+                            </p>
+                        </div>
+                    }
+                    <div class="learn-language-simple__content-description-back-btn back-btn">
+                        <a role="button" class="learn-language-simple__content-description-btn btn-trial-lesson btn">Пробное занятие</a>
+                    </div>
+                </div>
+                <div class="learn-language-simple__content-back-imgs">
+                    @@for(let img = 0; img < arrImgs.length; img++) {
+                        <img src="` + arrImgs[img] + `" alt="" class="learn-language-simple__content-img">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

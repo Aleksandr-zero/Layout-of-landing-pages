@@ -1,0 +1,47 @@
+.check-radio-back {
+    position: relative;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    
+    label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border: 1px solid $secondary-color-1;
+            border-radius: 50%;
+            margin-right: 14px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+
+        &::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            opacity: 0;
+            border-radius: 50%;
+            position: absolute;
+            left: 3px;
+            transform: scale(0);
+            transition: all $animate;
+        }
+    }
+    
+    :checked + label::after {
+        opacity: 1;
+        transform: scale(1);
+        background-color: $secondary-color-1;
+    }
+}

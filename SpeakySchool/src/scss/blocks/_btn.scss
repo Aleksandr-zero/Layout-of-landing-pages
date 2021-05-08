@@ -1,0 +1,26 @@
+.back-btn {
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+
+    padding: 18px 38px;
+    color: $white-color;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+
+    background-color: $secondary-color-1;
+
+    transition: background-color $animate;
+
+    &:hover {
+        background-color: $secondary-color-active;
+    }
+
+    @media (max-width: 425px) {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <link rel="apple-touch-icon" sizes="60x60" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
+    <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Speaky School - Обучение детей оффлайн</title>
+
+</head>
+
+<body>
+    <div class="wrapper-header">
+        @@include("templates/header.html")
+        @@include("templates/mobile_nav.html")
+        @@include("templates/bell.html")
+    </div>
+
+    @@include("templates/intro.html", {
+        "title": "Изучение языков в нашей школе в г. Троицке",
+        "text": false,
+        "path_figures": "img/kidsOfflinePage/intro/figures.svg",
+        "path_photo": "img/kidsOfflinePage/intro/front-img.png",
+    })
+
+    @@include("templates/learn_languages.html", {
+        "mt": 100,
+        "title": "<span>У</span> <span>нас</span> <span>ваши</span> <span>дети</span> <span>могут</span> <span>выучить:</span>",
+    })
+
+    @@include("templates/your_child_can.html")
+
+    @@include("templates/learn_language_simple.html", {
+        "title": "<span>Выучить</span> <span>язык</span> <span>совсем</span> <span>несложно</span>",
+        "text": false,
+        "padding_top":  70,
+        "abult": false,
+        arrImgs: [
+            "img/kidsOfflinePage/learnLanguage/front-img.png",
+            "img/common/iconsLearningLanguageEasy/figures-back.svg",
+            "img/common/iconsLearningLanguageEasy/figures-front.svg",
+        ]
+    })
+
+    @@include("templates/achieving_results.html")
+
+    @@include("templates/what_foreign_languages.html", {
+        arrImgs: [
+            "img/kidsOfflinePage/foreignLanguages/front-img.png",
+            "img/kidsOfflinePage/foreignLanguages/figures.svg",
+        ],
+    })
+
+    @@include("templates/training_package_offline.html")
+
+    @@include("templates/trial_lesson.html")
+
+    <div class="wrapper-footer">
+        @@include("templates/payment_services.html")
+        @@include("templates/footer.html")
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

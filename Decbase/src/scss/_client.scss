@@ -1,5 +1,10 @@
 .client {
     margin-top: 160px;
+
+    &__container {
+        max-width: 1350px;
+        margin: 0 auto;
+    }
     
     &__content {
 
@@ -101,6 +106,12 @@
         }
     }
 
+    @media (max-width: 1430px) {
+        &__container {
+            margin: 0 40px;
+        }
+    }
+
     @media (max-width: 1140px) {
         
         &__content {
@@ -131,11 +142,28 @@
     }
 
     @media (max-width: 910px) {
+
+        &__container {
+            margin: 0 0 0 40px;
+        }
         
         &__content {
 
+            &-back-intro {
+                margin: 0 40px 0 0;
+            }
+
+            &-back-btn {
+                margin: 0 40px 0 0;
+            }
+
+            &-wrapper-items {
+                padding:  0 40px 0 0;
+            }
+
             &-item {
                 flex: 0 0 98%;
+                margin-right: 5%;
 
                 &:after {
                     width: 90%;
@@ -155,14 +183,22 @@
     }
 
     @media (max-width: 500px) {
+
+        &__container {
+            margin: 0;
+        }
         
         &__content {
+
+            &-wrapper-items {
+                padding: 0 40px;
+            }
 
             &-item {
                 flex-direction: column;
                 text-align: center;
 
-                margin-right: 4%;
+                margin-right: 10%;
 
                 &:after {
                     width: 98%;
@@ -171,6 +207,34 @@
                 &-back-img {
                     margin-right: 0;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        
+        &__content {
+
+            &-items {
+                margin-top: 65px;
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+
+        &__content {
+
+            &-back-intro {
+                margin: 0 25px;
+            }
+
+            &-back-btn {
+                margin: 30px 25px 0 25px;
+            }
+
+            &-wrapper-items {
+                padding: 0 25px;
             }
         }
     }

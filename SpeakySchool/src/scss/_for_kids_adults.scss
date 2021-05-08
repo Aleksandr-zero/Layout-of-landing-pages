@@ -1,0 +1,206 @@
+.for-kids-adults {
+
+    &.for-adults {
+        margin-top: 140px;
+    }
+
+    &__content {
+        max-width: 1040px;
+        margin: 0 auto;
+
+        &-back-imgs {
+            position: relative;
+            width: 76%;
+
+            &.for-kids-back-imgs {
+                margin-right: 100px;
+            }
+
+            &.for-adults-back-imgs {
+                margin-left: 100px;
+            }
+        }
+
+        &-img {
+
+            &:first-child {
+                display: block;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            &:last-child {
+                position: absolute;
+                top: 40px;
+                z-index: 1;
+                max-width: 73%;
+
+                &.for-kids-img {
+                    right: 50px;
+                }
+
+                &.for-adults-img {
+                    left: 50px;
+                }
+            }
+        }
+
+        &-description {
+
+            &-items {
+                margin-top: 30px;
+            }
+
+            &-item {
+
+                &:first-child {
+                    margin-right: 32px;
+                }
+                
+                &-title {
+                    margin-bottom: 20px;
+                }
+
+                &-text {
+                    margin-bottom: 14px;
+                    font-size: 16px;
+                    line-height: 26/16 * 100%;
+                    padding-left: 20px;
+
+                    position: relative;
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        background-color: $black-color;
+                        height: 1px;
+                    }
+
+                    &::before {
+                        width: 8px;
+                        transform: rotate(-45deg);
+                        top: 12px;
+                        left: 2px;
+                    }
+
+                    &::after {
+                        width: 4px;
+                        transform: rotate(-135deg);
+                        top: 13px;
+                        left: 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 980px) {
+
+        &.for-adults {
+            margin-top: 100px;
+        }
+        
+        &__content {
+
+            &-back-imgs {
+
+                &.for-kids-back-imgs {
+                    margin-right: 50px;
+                }
+    
+                &.for-adults-back-imgs {
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        
+        &__content {
+            flex-direction: column;
+
+            &-back-imgs {
+                order: -1;
+
+                &.for-kids-back-imgs,
+                &.for-adults-back-imgs {
+                    margin: 0;
+                }
+            }
+
+            &-img {
+
+                &:first-child {
+                    max-width: none;
+                }
+
+                &:last-child {
+                    max-width: none;
+                    width: 70%;
+                    top: 10%;
+                }
+            }
+
+            &-description {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    @media (max-width: 620px) {
+        
+        &__content {
+
+            &-back-imgs {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 495px) {
+        
+        &__content {
+
+            &-description {
+
+                &-items {
+                    flex-direction: column;
+                }
+
+                &-item {
+                    margin-right: 0;
+
+                    &:first-child {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        } 
+    }
+
+    @media (max-width: 425px) {
+        
+        &__content {
+
+            &-description {
+                
+                &-item {
+
+                    &-title {
+                        font-size: 16px;
+                    }
+
+                    &-text {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

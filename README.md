@@ -38,3 +38,15 @@ Genre - data processing company
 
 ![alt text](ARShakir/examples/example-1.png)
 ![alt text](ARShakir/examples/example-2.png)
+
+### [Залог](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/RealEstatePledge/index.html)
+Genre - financial services
+
+![alt text](RealEstatePledge/examples/example-1.png)
+![alt text](RealEstatePledge/examples/example-2.png)
+
+### [Speeky School](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/SpeakySchool/dist/index.html)
+Genre - foreign language School
+
+![alt text](SpeakySchool/examples/example-1.png)
+![alt text](SpeakySchool/examples/example-2.png)

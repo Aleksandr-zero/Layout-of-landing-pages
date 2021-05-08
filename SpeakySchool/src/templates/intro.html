@@ -1,0 +1,30 @@
+<div class="intro">
+    <div class="container container-nor-margin">
+        <div class="intro__content block-flex-justify">
+            <div class="intro__content-description">
+                <h1 class="intro__content-description-title">@@title</h1>
+                @@if(text) {
+                    <div class="intro__content-description-text">
+                        <p>
+                            @@text
+                        </p>
+                    </div>
+                }
+                <div class="intro__content-description-back-btn back-btn">
+                    <a role="button" class="intro__content-description-btn btn-trial-lesson btn">Пробное занятие</a>
+                </div>
+            </div>
+            <div class="intro__content-back-img">
+            
+                @@if(path_photo) {
+                    <img src="@@path_figures" alt="figures" class="intro__content-img-figures">
+                    <img src="@@path_photo" alt="person" class="intro__content-img-photo">
+                }
+
+                @@if(path_photo == false) {
+                    <img src="@@path_figures" alt="figures" class="intro__content-img">
+                }
+            </div>
+        </div>
+    </div>
+</div>

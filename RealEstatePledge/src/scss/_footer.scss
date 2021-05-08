@@ -1,0 +1,217 @@
+.footer {
+    padding: 40px 0 0 0;
+    background-color: $light-blue-color-2;
+    
+    &__content {
+        padding-bottom: 30px;
+
+        &-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-wrapper-items {
+            display: flex;
+            width: 55%;
+
+            .footer__content-item {
+                max-width: 210px;
+            }
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &:nth-child(even) {
+                margin: 0 10px;
+            }
+
+            &-img {
+                width: 200px;
+            }
+
+            &-text {
+                font-size: 14px;
+                line-height: 22/14 * 100%;
+                margin-top: 10px;
+            }
+
+            &-link {
+                font-size: 14px;
+                line-height: 24/14 * 100%;
+
+                margin-bottom: 8px;
+
+                transition: color $animation-trans;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-back-phone-title {
+                font-size: 30px;
+
+                &-link {
+                    color: $primary-color;
+
+                    transition: color $animation-trans;
+
+                    &:hover {
+                        color: darken($primary-color, 8%);
+                    }
+                }
+            }
+
+            &-text-phone {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 26/16 * 100%;
+                text-align: end;
+            }
+        }
+    }
+
+    &__text {
+        padding: 20px 0 26px 0;
+        background-color: $white-color;
+
+        &-description {
+            max-width: 1170px;
+            margin: 0 auto;
+
+            font-size: 12px;
+            line-height: 20/12 * 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 1250px) {
+        &__text {
+            &-description {
+                margin: 0 40px;
+            }
+        }
+    }
+
+    @media (max-width: 1160px) {
+        
+        &__content {
+
+            &-items {
+                flex-wrap: wrap;
+            }
+
+            &-wrapper-items {
+                width: 100%;
+                margin-top: 40px;
+                justify-content: space-between;
+
+                .footer__content-item {
+                    width: 33.3333%;
+
+                    &:nth-child(even) {
+                        margin: 0 8px;
+                    }
+                }
+            }
+
+            &-item {
+
+                &:first-child,
+                &:last-child {
+                    width: 45%;
+                }
+
+                &:first-child {
+                    order: -2;
+                }
+
+                &:last-child {
+                    order: -1;
+                }
+
+                &-back-phone {
+
+                    &-title {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 620px) {
+        
+        &__content {
+            text-align: center;
+
+            &-wrapper-items {
+                flex-wrap: wrap;
+
+                .footer__content-item {
+                    max-width: 100%;
+                    width: 100%;
+
+                    &:nth-child(even) {
+                        margin: 8px 0px;
+                    }
+                }
+            }
+
+            &-item {
+
+                &:first-child,
+                &:last-child {
+                    order: 0;
+                    width: 100%;
+                }
+
+                &-text {
+                    max-width: 200px;
+                    margin: 0 auto;
+                }
+
+                &-back-phone-title {
+                    margin-top: 25px;
+                }
+
+                &-back-phone-title,
+                &-text-phone {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 360px) {
+
+        &__text {
+
+            &-description {
+                margin: 0 15px;
+                line-height: 18/12 * 100%;
+            }
+        }
+
+        &__content {
+
+            &-item {
+
+                &-text {
+                    font-size: 12px;
+                    line-height: 20/12 * 100%;
+                }
+
+                &-link {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

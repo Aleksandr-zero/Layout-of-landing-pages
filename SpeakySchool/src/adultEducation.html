@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <link rel="apple-touch-icon" sizes="60x60" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
+    <link rel="mask-icon" href="img/logo/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Speaky School - обучение взрослых</title>
+
+</head>
+
+<body>
+    <div class="wrapper-header">
+        @@include("templates/header.html")
+        @@include("templates/mobile_nav.html")
+        @@include("templates/bell.html")
+    </div>
+
+    @@include("templates/intro.html", {
+        "title": "Эффективное изучение языков",
+        "text": "Прокачайте язык вместе с нами под любые цели",
+        "path_figures": "img/adultEducationPage/intro/figures.svg",
+        "path_photo": "img/adultEducationPage/intro/front-img.png",
+    })
+
+    @@include("templates/sections_photos.html", {
+        arrImgs: [
+            "img/adultEducationPage/sectionsPhotos/for-work.png",
+            "img/adultEducationPage/sectionsPhotos/for-yourself.png",
+            "img/adultEducationPage/sectionsPhotos/for-traveling.png"
+        ],
+        "mt": 100,
+    })
+
+    @@include("templates/learn_languages.html", {
+        "mt": 140,
+        "title": "<span>У</span> <span>нас</span> <span>вы</span> <span>можете</span> <span>выучить:</span>",
+    })
+
+    @@include("templates/what_we_do.html")
+
+    @@include("templates/total.html")
+
+    @@include("templates/learn_language_simple.html", {
+        "title": "<span>Все</span> <span>задачи</span> <span>выполнимы</span> <span>и</span> <span>интересны,</span> <span>когда</span> <span>они</span> <span>ясны</span> ",
+        "text": true,
+        "padding_top":  100,
+        "abult": true,
+        arrImgs: [
+            "img/adultEducationPage/learnLanguage/front-img.png",
+            "img/adultEducationPage/learnLanguage/figures-back.svg",
+            "img/adultEducationPage/learnLanguage/figures-front.svg",
+        ]
+    })
+
+    @@include("templates/training_package_adults.html")
+
+    @@include("templates/trial_lesson.html")
+
+    <div class="wrapper-footer">
+        @@include("templates/payment_services.html")
+        @@include("templates/footer.html")
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

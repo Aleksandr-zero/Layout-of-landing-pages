@@ -1,0 +1,118 @@
+// FONTS
+
+@import "scss/fonts";
+
+
+$primary-color: #00B4E3;
+$color-text: #3B3D46;
+
+$light-blue-color-1: #F1F7F8;
+$light-blue-color-2: #F4F9F9;
+
+$gray-color: #E6E6E6;
+$white-color: #ffffff;
+
+
+$animation-trans: 0.2s;
+$maxWidth: 1280;
+
+
+// MIXINS
+
+@import "scss/mixixns";
+
+
+// COMMON
+
+@import "scss/common";
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: $white-color;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $color-text;
+
+    animation: fade-in $animation-trans * 2.5 linear;
+
+    &.body-pass {
+        overflow: hidden;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0.1;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+ul, li { list-style: none; }
+
+a {
+    text-decoration: none;
+    color: $color-text;
+}
+
+h2 {
+    font-weight: 600;
+    line-height: 50/40 * 100%;
+
+    @include responsive-font(40, 20);
+}
+
+
+// HEADER
+
+@import "scss/header";
+
+
+// MOBLIE-NAV
+
+@import "scss/mobileNav";
+
+
+// INTRO
+
+@import "scss/intro";
+
+
+// LOAN
+
+@import "scss/loan";
+
+
+// BID
+
+@import "scss/bid";
+
+
+// ANSWERS
+
+@import "scss/answesr";
+
+
+// CONTACT
+
+@import "scss/contact";
+
+
+// FOOTER
+
+@import "scss/footer";

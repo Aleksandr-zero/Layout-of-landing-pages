@@ -1,0 +1,19 @@
+@mixin adaptive-training-package-content-btn($width-1, $width-2) {
+    &__content {
+
+        &-back-btns {
+
+            &-wrapper {
+                .training-package__content-btn {
+                    width: $width-1;
+                }
+
+                &:last-child {
+                    .training-package__content-btn {
+                        width: $width-2;
+                    }
+                }
+            }
+        }
+    }
+}

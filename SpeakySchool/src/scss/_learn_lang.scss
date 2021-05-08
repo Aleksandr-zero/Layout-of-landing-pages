@@ -1,0 +1,59 @@
+.learn-languages {
+    margin-bottom: 140px;
+
+    &.learn-languages-mt-140 { margin-top: 140px; }
+    &.learn-languages-mt-100 { margin-top: 100px; }
+    &.learn-languages-mt-70 { margin-top: 70px; }
+
+    &__content {
+        padding: 75px 40px;
+        max-width: 870px;
+        margin: 0 auto;
+
+        &-items {
+            margin-top: 40px;
+        }
+
+        &-item {
+
+            &-back-img {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 860px) {
+        
+        &__content {
+
+            &-items {
+                flex-wrap: wrap;
+            }
+
+            &-item {
+                width: 45%;
+
+                &:first-child,
+                &:nth-child(2) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 540px) {
+        background-color: $primary-color-1;
+        border-radius: 70px;
+        
+        &__content {
+
+            &-item {
+                width: 100%;
+
+                &:nth-child(3) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}

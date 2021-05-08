@@ -1,0 +1,20 @@
+@@if(mt == 20) {
+    <div class="sections-photos sections-photos-mt-20">
+}
+
+@@if(mt == 100) {
+    <div class="sections-photos sections-photos-mt-100">
+}
+
+    <div class="container">
+        <div class="sections-photos__content">
+            <div class="sections-photos__content-items block-flex">
+                @@for(let img = 0; img < arrImgs.length; img++) {
+                    <div class="sections-photos__content-item">
+                        <img src="` + arrImgs[img] + `" alt="" class="sections-photos__content-item-img">
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

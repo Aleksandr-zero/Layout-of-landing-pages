@@ -1,0 +1,13 @@
+.arrow {
+    &::before {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 5px;
+        transform: translateY(-50%);
+        background-image: url("../img/common/icons/arrow.svg"); 
+        background-repeat: no-repeat;
+    
+        transition: all $animate;
+    }
+}

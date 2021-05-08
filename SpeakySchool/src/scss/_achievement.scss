@@ -1,0 +1,150 @@
+.achieving-results {
+    margin: 140px 0;
+
+    &__container {
+        max-width: 1260px;
+        margin: 0 auto;
+    }
+
+    &__content {
+        text-align: center;
+
+        &-wrapper-items {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        &-items {
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+        }
+
+        &-item {
+            padding: 28px 28px;
+            background-color: $primary-color-1;
+            border-radius: 30px;
+            text-align: left;
+
+            max-width: 30%;
+
+            &:nth-child(2),
+            &:nth-child(5) {
+                max-width: 34%;
+            }
+
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-bottom: 40px;
+            }
+
+            &-description {
+                font-size: 16px;
+                line-height: 26/16 * 100%;
+
+                margin-top: 26px;
+            }
+        }
+    }
+
+    @media (max-width: 1340px) {
+        
+        &__container {
+            margin: 0 40px;
+        }
+    }
+
+    @media (max-width: 870px) {
+        
+        &__content {
+
+            &-item {
+                &:nth-child(2),
+                &:nth-child(5) {
+                    max-width: 30%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 770px) {
+        
+        &__content {
+
+            &-item {
+                max-width: 48%;
+
+                &:nth-child(2),
+                &:nth-child(5) {
+                    max-width: 48%;
+                }
+
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 630px) {
+        
+        &__content {
+            text-align: start;
+
+            &-slider {
+                user-select: none;
+                touch-action: pan-y;
+            }
+
+            &-wrapper-items {
+                overflow: hidden;
+            }
+
+            &-items {
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            &-item {
+                max-width: 100%;
+                flex: 0 0 70%;
+
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    margin-bottom: 0;
+                }
+
+                &:nth-child(2),
+                &:nth-child(5) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 375px) {
+        
+        &__container {
+            margin: 0;
+        }
+
+        &__content {
+
+            &-title {
+                margin-left: 20px;
+            }
+        }
+    }
+}
