@@ -419,91 +419,95 @@
         <div class="training-package__content">
             <h2 class="training-package__content-title header-with-background"><span>Пакеты</span> <span>обучения</span></h2>
             <h4 class="training-package__content-subtitle description-section">Выбирайте удобный формат встреч </h4>
-            <div class="training-package__content-back-btns-line block-flex">
-                <div class="training-package__content-back-btns-line-menu back-btns-line-menu-active">
-                    <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
-                        <a role="button" class="training-package__content-back-btns-line-menu-btn line-menu-btn-pass">Button</a>
-                        <div class="training-package__content-back-btns-line-menu-title description-section">Вид обучения</div>
-                    </div>
-                    <div class="training-package__content-back-btns-line-menu-content">
-                        <div class="training-package__content-back-btns-line-menu-content-wrapper">
-                            <div class="training-package__content-back-btns-line-menu-content-checks">
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-offline" type="radio" value="offline" name="radio">
-                                    <label for="training-package-radio-offline">Офлайн-занятия</label>
-                                </div>
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-online" type="radio" value="online" name="radio">
-                                    <label for="training-package-radio-online">Онлайн занятия</label>
+            <div class="training-package__content-back-btns-line slider">
+                <div class="slider-list">
+                    <div class="slider-track block-flex">
+                        <div class="training-package__content-back-btns-line-menu slide back-btns-line-menu-active">
+                            <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
+                                <a role="button" class="training-package__content-back-btns-line-menu-btn line-menu-btn-pass">Button</a>
+                                <div class="training-package__content-back-btns-line-menu-title description-section">Вид обучения</div>
+                            </div>
+                            <div class="training-package__content-back-btns-line-menu-content">
+                                <div class="training-package__content-back-btns-line-menu-content-wrapper">
+                                    <div class="training-package__content-back-btns-line-menu-content-checks">
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-offline" type="radio" value="offline" name="radio">
+                                            <label for="training-package-radio-offline">Офлайн-занятия</label>
+                                        </div>
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-online" type="radio" value="online" name="radio">
+                                            <label for="training-package-radio-online">Онлайн занятия</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="training-package__content-back-btns-line-menu">
-                    <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
-                        <a role="button" class="training-package__content-back-btns-line-menu-btn">Button</a>
-                        <div class="training-package__content-back-btns-line-menu-title description-section">Вид занятия</div>
-                    </div>
-                    <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-offline">
-                        <div class="training-package__content-back-btns-line-menu-content-wrapper">
-                            <div class="training-package__content-back-btns-line-menu-content-checks">
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-individual-lessons-offline" type="radio" value="individual-lessons-offline" name="radio_2">
-                                    <label for="training-package-radio-individual-lessons-offline">Индивидуальные уроки</label>
+                        <div class="training-package__content-back-btns-line-menu slide">
+                            <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
+                                <a role="button" class="training-package__content-back-btns-line-menu-btn">Button</a>
+                                <div class="training-package__content-back-btns-line-menu-title description-section">Вид занятия</div>
+                            </div>
+                            <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-offline">
+                                <div class="training-package__content-back-btns-line-menu-content-wrapper">
+                                    <div class="training-package__content-back-btns-line-menu-content-checks">
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-individual-lessons-offline" type="radio" value="individual-lessons-offline" name="radio_2">
+                                            <label for="training-package-radio-individual-lessons-offline">Индивидуальные уроки</label>
+                                        </div>
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-group-lessons-offline" type="radio" value="group-lessons-offline" name="radio_2">
+                                            <label for="training-package-radio-group-lessons-offline">Групповые уроки</label>
+                                        </div>
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-conversation-club-offline" type="radio" value="conversation-club-offline" name="radio_2">
+                                            <label for="training-package-radio-conversation-club-offline">Разговорный клуб</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-group-lessons-offline" type="radio" value="group-lessons-offline" name="radio_2">
-                                    <label for="training-package-radio-group-lessons-offline">Групповые уроки</label>
-                                </div>
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-conversation-club-offline" type="radio" value="conversation-club-offline" name="radio_2">
-                                    <label for="training-package-radio-conversation-club-offline">Разговорный клуб</label>
+                            </div>
+                            <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-online">
+                                <div class="training-package__content-back-btns-line-menu-content-wrapper">
+                                    <div class="training-package__content-back-btns-line-menu-content-checks">
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-individual-lessons-online" type="radio" value="individual-lessons-online" name="radio_3">
+                                            <label for="training-package-radio-individual-lessons-online">Индивидуальные уроки</label>
+                                        </div>
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-conversation-club-online" type="radio" value="conversation-club-online" name="radio_3">
+                                            <label for="training-package-radio-conversation-club-online">Разговорный клуб</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-online">
-                        <div class="training-package__content-back-btns-line-menu-content-wrapper">
-                            <div class="training-package__content-back-btns-line-menu-content-checks">
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-individual-lessons-online" type="radio" value="individual-lessons-online" name="radio_3">
-                                    <label for="training-package-radio-individual-lessons-online">Индивидуальные уроки</label>
-                                </div>
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-conversation-club-online" type="radio" value="conversation-club-online" name="radio_3">
-                                    <label for="training-package-radio-conversation-club-online">Разговорный клуб</label>
+                        <div class="training-package__content-back-btns-line-menu slide">
+                            <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
+                                <a role="button" class="training-package__content-back-btns-line-menu-btn">Button</a>
+                                <div class="training-package__content-back-btns-line-menu-title description-section">Длительность</div>
+                            </div>
+                            <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-offline">
+                                <div class="training-package__content-back-btns-line-menu-content-wrapper">
+                                    <div class="training-package__content-back-btns-line-menu-content-checks">
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <p>
+                                                60 минут
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="training-package__content-back-btns-line-menu">
-                    <div class="training-package__content-back-btns-line-menu-wrapper block-flex">
-                        <a role="button" class="training-package__content-back-btns-line-menu-btn">Button</a>
-                        <div class="training-package__content-back-btns-line-menu-title description-section">Длительность</div>
-                    </div>
-                    <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-offline">
-                        <div class="training-package__content-back-btns-line-menu-content-wrapper">
-                            <div class="training-package__content-back-btns-line-menu-content-checks">
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <p>
-                                        60 минут
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-online">
-                        <div class="training-package__content-back-btns-line-menu-content-wrapper">
-                            <div class="training-package__content-back-btns-line-menu-content-checks">
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-individual-lessons-conversation-club-1" type="radio" value="30-min" name="radio_4">
-                                    <label for="training-package-radio-individual-lessons-conversation-club-1">30 минут</label>
-                                </div>
-                                <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
-                                    <input id="training-package-radio-conversation-club-conversation-club-2" type="radio" value="60-min" name="radio_4">
-                                    <label for="training-package-radio-conversation-club-conversation-club-2">60 минут</label>
+                            <div class="training-package__content-back-btns-line-menu-content back-btns-line-menu-content-online">
+                                <div class="training-package__content-back-btns-line-menu-content-wrapper">
+                                    <div class="training-package__content-back-btns-line-menu-content-checks">
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-individual-lessons-conversation-club-1" type="radio" value="30-min" name="radio_4">
+                                            <label for="training-package-radio-individual-lessons-conversation-club-1">30 минут</label>
+                                        </div>
+                                        <div class="training-package__content-back-btns-line-menu-content-check check-radio-back">
+                                            <input id="training-package-radio-conversation-club-conversation-club-2" type="radio" value="60-min" name="radio_4">
+                                            <label for="training-package-radio-conversation-club-conversation-club-2">60 минут</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -511,8 +515,10 @@
                 </div>
             </div>
             <div style="height: 0;" class="training-package__content-wrapper-items">
-                <div class="training-package__content-items training-package__content-items-adults-offline offline-individual-lessons-offline-60-min block-flex-justify-align">
-                    <div class="training-package-block slide">
+                <div class="training-package__content-items slider training-package__content-items-adults-offline offline-individual-lessons-offline-60-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-4.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -526,7 +532,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-5.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -540,7 +546,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-6.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -554,9 +560,13 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="training-package__content-items training-package__content-items-adults-offline offline-group-lessons-offline-60-min block-flex-justify-align">
-                    <div class="training-package-block slide">
+                <div class="training-package__content-items slider training-package__content-items-adults-offline offline-group-lessons-offline-60-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-4.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -570,7 +580,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-5.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -584,7 +594,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-6.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -598,9 +608,13 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="justify-content: space-around;" class="training-package__content-items training-package__content-items-adults-offline offline-conversation-club-offline-60-min block-flex-align">
-                    <div class="training-package-block slide">
+                <div style="justify-content: space-around;" class="training-package__content-items training-package__content-items-adults-offline slider offline-conversation-club-offline-60-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-7.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -614,7 +628,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-8.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -628,10 +642,14 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="training-package__content-items training-package__content-items-adults-online online-individual-lessons-online-30-min block-flex-justify-align">
-                    <div class="training-package-block slide">
+                <div class="training-package__content-items training-package__content-items-adults-online slider online-individual-lessons-online-30-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-1.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -645,7 +663,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-2.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -659,7 +677,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-3.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -673,9 +691,13 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="training-package__content-items training-package__content-items-adults-online online-individual-lessons-online-60-min block-flex-justify-align">
-                    <div class="training-package-block slide">
+                <div class="training-package__content-items training-package__content-items-adults-online slider online-individual-lessons-online-60-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-4.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -689,7 +711,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-5.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -703,7 +725,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-6.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -717,9 +739,13 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="justify-content: space-around;" class="training-package__content-items training-package__content-items-adults-online online-conversation-club-online-60-min block-flex-align">
-                    <div class="training-package-block slide">
+                <div style="justify-content: space-around;" class="training-package__content-items training-package__content-items-adults-online slider online-conversation-club-online-60-min">
+                    <div class="slider-list">
+                        <div class="slider-track block-flex-align">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-7.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -733,7 +759,7 @@
         </div>
     </div>
 </div>
-                    <div class="training-package-block slide">
+                            <div class="training-package-block slide">
     <div class="training-package-block__back-img">
         <img src="img/common/trainingPackages/illustration-8.svg" alt="figures" class="training-package-block__img">
     </div>
@@ -747,6 +773,8 @@
         </div>
     </div>
 </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

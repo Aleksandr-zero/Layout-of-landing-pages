@@ -2523,8 +2523,6 @@ h2 {
 .training-package__content-back-btns-line {
   position: relative;
   margin-top: 86px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .training-package__content-back-btns-line::after {
@@ -2535,6 +2533,11 @@ h2 {
   background-color: #689C9A;
   top: 14px;
   left: 0;
+}
+
+.training-package__content-back-btns-line .slider-track {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .training-package__content-back-btns-line-menu {
@@ -2788,6 +2791,16 @@ h2 {
   }
 }
 
+@media (max-width: 800px) {
+  .training-package__content-back-btns-line-menu-content {
+    width: 190px;
+  }
+  .training-package__content-back-btns-line-menu-content-checks {
+    padding-left: 24px;
+    padding-right: 6px;
+  }
+}
+
 @media (max-width: 768px) {
   .training-package__content-back-btns-wrapper .training-package__content-btn {
     width: 45%;
@@ -2797,6 +2810,30 @@ h2 {
   }
   .training-package__content-items .training-package-block {
     margin-right: 60px;
+  }
+}
+
+@media (max-width: 720px) {
+  .training-package__content-back-btns-line::after {
+    left: -40px;
+    width: 125%;
+    z-index: -1;
+  }
+  .training-package__content-back-btns-line .slider-track {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .training-package__content-back-btns-line-menu {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 44%;
+            flex: 0 0 44%;
+  }
+  .training-package__content-back-btns-line-menu-content {
+    width: 200px;
+  }
+  .training-package__content-back-btns-line-menu-content-checks {
+    padding-left: 30px;
   }
 }
 
@@ -2812,6 +2849,23 @@ h2 {
   }
   .training-package__content-back-btns-wrapper:last-child .training-package__content-btn {
     width: 30%;
+  }
+  .training-package__content-btn.training-package-btn-slider {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    margin-right: 12px;
+  }
+  .training-package__content-btn.training-package-btn-slider:last-child {
+    margin-right: 0;
+  }
+  .training-package__content-back-btns-line-menu {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .training-package__content-back-btns-line-menu-content-checks {
+    padding-right: 8px;
   }
   .training-package__content-items .training-package-block {
     margin-right: 28px;

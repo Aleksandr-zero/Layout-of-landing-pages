@@ -496,7 +496,11 @@ if (trainingPackageBlockItemsOffline) {
     trainingPackageBlockItemsOfflineSliders.forEach((items) => {
         new SliderWithoutFight(items).run();
     });
-}
+    
+    if (document.querySelector(".training-package__content-back-btns")) {
+        new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
+    };
+};
 
 
 // block - teaching adults
@@ -677,6 +681,14 @@ if (trainingPackageBtnsLine) {
     
     trainingPackageMenuContentRadioBtn_Rest[5].addEventListener("click", pressedMenuContent_LessonDuration);
     trainingPackageMenuContentRadioBtn_Rest[6].addEventListener("click", pressedMenuContent_LessonDuration);
+
+    trainingPackageContentWrapperItems.querySelectorAll(".slider").forEach((slider) => {
+        new SliderWithoutFight(slider).run();
+    });
+
+    if (innerWidth <= 720) {
+        new SliderWithoutFight(document.querySelector(".training-package__content-back-btns-line")).run();
+    };
 };
 
 // slider - block achieving-results

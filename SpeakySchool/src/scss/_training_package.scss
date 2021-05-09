@@ -13,7 +13,6 @@
         &-back-btns-line {
             position: relative;
             margin-top: 86px;
-            justify-content: space-around;
 
             &::after {
                 position: absolute;
@@ -23,6 +22,10 @@
                 background-color: $auxiliary-color-4;
                 top: 14px;
                 left: 0;
+            }
+
+            .slider-track {
+                justify-content: space-around;
             }
 
             &-menu {
@@ -275,6 +278,27 @@
         }
     }
 
+    @media (max-width: 800px) {
+
+        &__content {
+
+            &-back-btns-line {
+
+                &-menu {
+
+                    &-content {
+                        width: 190px;
+
+                        &-checks {
+                            padding-left: 24px;
+                            padding-right: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width: 768px) {
         @include adaptive-training-package-content-btn(45%, 25%);
 
@@ -284,6 +308,37 @@
 
                 .training-package-block {
                     margin-right: 60px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 720px) {
+        
+        &__content {
+
+            &-back-btns-line {
+
+                &::after {
+                    left: -40px;
+                    width: 125%;
+                    z-index: -1;
+                }
+
+                .slider-track {
+                    justify-content: space-between;
+                }
+    
+                &-menu {
+                    flex: 0 0 44%;
+
+                    &-content {
+                        width: 200px;
+
+                        &-checks {
+                            padding-left: 30px;
+                        }
+                    }
                 }
             }
         }
@@ -308,6 +363,31 @@
         @include adaptive-training-package-content-btn(90%, 30%);
 
         &__content {
+
+            &-btn {
+                &.training-package-btn-slider {
+                    flex: 0 0 50%;
+                    margin-right: 12px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            &-back-btns-line {
+
+                &-menu {
+                    flex: 0 0 50%;
+
+                    &-content {
+                        
+                        &-checks {
+                            padding-right: 8px;
+                        }
+                    }
+                }
+            }
 
             &-items {
 
