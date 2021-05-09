@@ -1,4 +1,4 @@
-# Layout-of-landing-pages
+# Layout of landing pages
 
 ### Website layout
 [Main page](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/)
@@ -44,6 +44,8 @@ Genre - financial services
 
 ![alt text](RealEstatePledge/examples/example-1.png)
 ![alt text](RealEstatePledge/examples/example-2.png)
+
+# Layout of corporate site
 
 ### [Speeky School](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/SpeakySchool/dist/index.html)
 Genre - foreign language School
