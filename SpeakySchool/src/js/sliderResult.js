@@ -3,11 +3,11 @@ const achievingResults = document.querySelector(".achieving-results");
 
 if (achievingResults) {
     const achievingResultsSlider = achievingResults.querySelector('.slider');
-    const NewSlider = new Slider(achievingResultsSlider);
+    const NewSlider = new SliderWithoutFight(achievingResultsSlider);
 
     const checkResizeWindow = () => {
         if (innerWidth <= 630) {  
-            NewSlider.start();
+            NewSlider.run();
         };
     };
     

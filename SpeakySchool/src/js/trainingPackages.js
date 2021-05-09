@@ -99,7 +99,7 @@ if (trainingPackageWrapperItems && trainingPackageBlockItemsOnline.length) {
     });
 
     trainingPackageBlockItemsOnlineSliders.forEach((items) => {
-        new Slider(items).start();
+        new SliderWithoutFight(items).run();
     });
 };
 
@@ -149,7 +149,7 @@ if (trainingPackageBlockItemsOffline) {
     });
 
     trainingPackageBlockItemsOfflineSliders.forEach((items) => {
-        new Slider(items).start();
+        new SliderWithoutFight(items).run();
     });
 }
 
