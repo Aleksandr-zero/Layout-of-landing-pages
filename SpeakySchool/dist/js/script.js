@@ -119,7 +119,7 @@ const changes_TrialForms = (indexForm, forms, backFormItems) => {
 
         if (form.classList.contains("trial-lesson-form-active")) {
             form.classList.remove("trial-lesson-form-active");
-            
+
             if (indexForm) {
                 backFormItems.classList.add("back-form-items-active");
             } else {
@@ -159,7 +159,7 @@ const pressedBtnForm = (formBtns, formBtnsArray, forms, backFormItems) => {
         if (btn.classList.contains("trial-lesson-btn-active")) {
             btn.classList.remove("trial-lesson-btn-active");
             event.currentTarget.classList.add("trial-lesson-btn-active");
-            
+
             changes_TrialForms(
                 indexForm = formBtnsArray.indexOf(event.currentTarget),
                 forms = forms,
@@ -216,7 +216,7 @@ btnsTrialLesson.forEach((btn) => {
 });
 
 class SliderWithoutFight {
-        
+
     constructor(slider) {
         this.slider = slider;
         this.sliderTrack = this.slider.querySelector(".slider-track");
@@ -269,7 +269,7 @@ class SliderWithoutFight {
 
 
     swipeStart() {
-        /* 
+        /*
         При касании слайдера, записыает прошлое значение позиции, на
         котором остановился пользователь.
         */
@@ -322,7 +322,7 @@ class SliderWithoutFight {
 
         // если мы будем тянуть слайдер, когда уже начало или конец слайдер,
         // то мы будем перезаписыать переменню "positionFinal" на максимальную
-        // или минималбную позицию. 
+        // или минималбную позицию.
         if (this.positionFinal > this.maximumSwipingAtSlider) {
             this.positionFinal = this.maximumSwipingAtSlider;
 
@@ -341,6 +341,23 @@ class SliderWithoutFight {
         this.sliderTrack.addEventListener("touchmove",   () => { this.swipeAction(); }, { passive: true });
         this.sliderTrack.addEventListener("touchend",    () => { this.swipeEnd(); },    { passive: true });
     }
+};
+
+// slider - block achieving-results
+const achievingResults = document.querySelector(".achieving-results");
+
+if (achievingResults) {
+    const achievingResultsSlider = achievingResults.querySelector('.slider');
+    const NewSlider = new SliderWithoutFight(achievingResultsSlider);
+
+    const checkResizeWindow = () => {
+        if (innerWidth <= 630) {
+            NewSlider.run();
+        };
+    };
+
+    checkResizeWindow();
+    window.addEventListener("resize", checkResizeWindow);
 };
 
 // COMMON - page - teaching kids offline AND page - teaching kids online
@@ -362,7 +379,7 @@ const add_delectActiveClass_trainingPackageItem = (arrayItems, indexBlock, activ
     );
 
     setTimeout(() => {
-        arrayItems[indexBlock].classList.add(activeClass); 
+        arrayItems[indexBlock].classList.add(activeClass);
     }, timeout);
 };
 
@@ -378,7 +395,7 @@ if (trainingPackageWrapperItems) {
     trainingPackageBlockItemsOnline = trainingPackageWrapperItems.querySelectorAll(".training-package-content-items-online");
 
     trainingPackageBlockItemsOnlineSliders = trainingPackageWrapperItems.querySelectorAll('.slider');
-    
+
     trainingPackageWrappersBtnsOnline = document.querySelectorAll(".training-package__content-back-btns-wrapper");
 };
 
@@ -438,7 +455,7 @@ if (trainingPackageWrapperItems && trainingPackageBlockItemsOnline.length) {
     trainingPackageBtnsOnline_1.forEach((btn) => {
         btn.addEventListener("click", pressedTrainingPackageBtnOnline_1);
     });
-    
+
     trainingPackageBtnsOnline_2.forEach((btn) => {
         btn.addEventListener("click", pressedTrainingPackageBtnOnline_2);
     });
@@ -496,8 +513,8 @@ if (trainingPackageBlockItemsOffline) {
     trainingPackageBlockItemsOfflineSliders.forEach((items) => {
         new SliderWithoutFight(items).run();
     });
-    
-    if (document.querySelector(".training-package__content-back-btns")) {
+
+    if (document.querySelector(".training-package__content-back-btns").querySelector(".slider")) {
         new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
     };
 };
@@ -673,12 +690,12 @@ const opensTrainingPackageItems = () => {
 if (trainingPackageBtnsLine) {
     trainingPackageMenuContentRadioBtn_Offline.addEventListener("click", pressedMenuConten_TypeTraining)
     trainingPackageMenuContentRadioBtn_Online.addEventListener("click", pressedMenuConten_TypeTraining)
-    
+
     for (let index = 0; index < trainingPackageMenuContentRadioBtn_Rest.length - 2; index++) {
         const radioBtn_Rest = trainingPackageMenuContentRadioBtn_Rest[index];
         radioBtn_Rest.addEventListener("click", pressedMenuContent_TypeOccupation);
     };
-    
+
     trainingPackageMenuContentRadioBtn_Rest[5].addEventListener("click", pressedMenuContent_LessonDuration);
     trainingPackageMenuContentRadioBtn_Rest[6].addEventListener("click", pressedMenuContent_LessonDuration);
 
@@ -687,25 +704,10 @@ if (trainingPackageBtnsLine) {
     });
 
     if (innerWidth <= 720) {
-        new SliderWithoutFight(document.querySelector(".training-package__content-back-btns-line")).run();
-    };
-};
-
-// slider - block achieving-results
-const achievingResults = document.querySelector(".achieving-results");
-
-if (achievingResults) {
-    const achievingResultsSlider = achievingResults.querySelector('.slider');
-    const NewSlider = new SliderWithoutFight(achievingResultsSlider);
-
-    const checkResizeWindow = () => {
-        if (innerWidth <= 630) {  
-            NewSlider.run();
+        if (document.querySelector(".training-package__content-back-btns-line")) {
+            new SliderWithoutFight(document.querySelector(".training-package__content-back-btns-line")).run();
         };
     };
-    
-    checkResizeWindow();
-    window.addEventListener("resize", checkResizeWindow);
 };
 
 const paymentServicesBtn = document.querySelector(".footer__content-item-btn");

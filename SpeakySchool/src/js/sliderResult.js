@@ -6,11 +6,11 @@ if (achievingResults) {
     const NewSlider = new SliderWithoutFight(achievingResultsSlider);
 
     const checkResizeWindow = () => {
-        if (innerWidth <= 630) {  
+        if (innerWidth <= 630) {
             NewSlider.run();
         };
     };
-    
+
     checkResizeWindow();
     window.addEventListener("resize", checkResizeWindow);
 };

@@ -17,7 +17,7 @@ const add_delectActiveClass_trainingPackageItem = (arrayItems, indexBlock, activ
     );
 
     setTimeout(() => {
-        arrayItems[indexBlock].classList.add(activeClass); 
+        arrayItems[indexBlock].classList.add(activeClass);
     }, timeout);
 };
 
@@ -33,7 +33,7 @@ if (trainingPackageWrapperItems) {
     trainingPackageBlockItemsOnline = trainingPackageWrapperItems.querySelectorAll(".training-package-content-items-online");
 
     trainingPackageBlockItemsOnlineSliders = trainingPackageWrapperItems.querySelectorAll('.slider');
-    
+
     trainingPackageWrappersBtnsOnline = document.querySelectorAll(".training-package__content-back-btns-wrapper");
 };
 
@@ -93,7 +93,7 @@ if (trainingPackageWrapperItems && trainingPackageBlockItemsOnline.length) {
     trainingPackageBtnsOnline_1.forEach((btn) => {
         btn.addEventListener("click", pressedTrainingPackageBtnOnline_1);
     });
-    
+
     trainingPackageBtnsOnline_2.forEach((btn) => {
         btn.addEventListener("click", pressedTrainingPackageBtnOnline_2);
     });
@@ -151,8 +151,8 @@ if (trainingPackageBlockItemsOffline) {
     trainingPackageBlockItemsOfflineSliders.forEach((items) => {
         new SliderWithoutFight(items).run();
     });
-    
-    if (document.querySelector(".training-package__content-back-btns")) {
+
+    if (document.querySelector(".training-package__content-back-btns").querySelector(".slider")) {
         new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
     };
 };
@@ -328,12 +328,12 @@ const opensTrainingPackageItems = () => {
 if (trainingPackageBtnsLine) {
     trainingPackageMenuContentRadioBtn_Offline.addEventListener("click", pressedMenuConten_TypeTraining)
     trainingPackageMenuContentRadioBtn_Online.addEventListener("click", pressedMenuConten_TypeTraining)
-    
+
     for (let index = 0; index < trainingPackageMenuContentRadioBtn_Rest.length - 2; index++) {
         const radioBtn_Rest = trainingPackageMenuContentRadioBtn_Rest[index];
         radioBtn_Rest.addEventListener("click", pressedMenuContent_TypeOccupation);
     };
-    
+
     trainingPackageMenuContentRadioBtn_Rest[5].addEventListener("click", pressedMenuContent_LessonDuration);
     trainingPackageMenuContentRadioBtn_Rest[6].addEventListener("click", pressedMenuContent_LessonDuration);
 
@@ -342,6 +342,8 @@ if (trainingPackageBtnsLine) {
     });
 
     if (innerWidth <= 720) {
-        new SliderWithoutFight(document.querySelector(".training-package__content-back-btns-line")).run();
+        if (document.querySelector(".training-package__content-back-btns-line")) {
+            new SliderWithoutFight(document.querySelector(".training-package__content-back-btns-line")).run();
+        };
     };
 };

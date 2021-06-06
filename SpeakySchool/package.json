@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "gulp serve"
+    "dev": "gulp serve",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",

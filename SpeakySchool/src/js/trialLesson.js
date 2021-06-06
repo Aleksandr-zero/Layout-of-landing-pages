@@ -7,7 +7,7 @@ const changes_TrialForms = (indexForm, forms, backFormItems) => {
 
         if (form.classList.contains("trial-lesson-form-active")) {
             form.classList.remove("trial-lesson-form-active");
-            
+
             if (indexForm) {
                 backFormItems.classList.add("back-form-items-active");
             } else {
@@ -47,7 +47,7 @@ const pressedBtnForm = (formBtns, formBtnsArray, forms, backFormItems) => {
         if (btn.classList.contains("trial-lesson-btn-active")) {
             btn.classList.remove("trial-lesson-btn-active");
             event.currentTarget.classList.add("trial-lesson-btn-active");
-            
+
             changes_TrialForms(
                 indexForm = formBtnsArray.indexOf(event.currentTarget),
                 forms = forms,

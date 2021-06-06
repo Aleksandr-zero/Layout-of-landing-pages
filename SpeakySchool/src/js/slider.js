@@ -1,5 +1,5 @@
 class SliderWithoutFight {
-        
+
     constructor(slider) {
         this.slider = slider;
         this.sliderTrack = this.slider.querySelector(".slider-track");
@@ -52,7 +52,7 @@ class SliderWithoutFight {
 
 
     swipeStart() {
-        /* 
+        /*
         При касании слайдера, записыает прошлое значение позиции, на
         котором остановился пользователь.
         */
@@ -105,7 +105,7 @@ class SliderWithoutFight {
 
         // если мы будем тянуть слайдер, когда уже начало или конец слайдер,
         // то мы будем перезаписыать переменню "positionFinal" на максимальную
-        // или минималбную позицию. 
+        // или минималбную позицию.
         if (this.positionFinal > this.maximumSwipingAtSlider) {
             this.positionFinal = this.maximumSwipingAtSlider;
 

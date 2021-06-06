@@ -1,4 +1,4 @@
-const {src, dest, series, watch} = require('gulp');
+const {src, dest, series, watch, parallel} = require('gulp');
 
 const removeComments    = require('gulp-strip-css-comments');
 const autoprefixer      = require('gulp-autoprefixer');
@@ -28,7 +28,7 @@ function html() {
 };
 
 
-function images() {
+function imagesBuild() {
     return src("src/img/**/*")
         .pipe(imagemin([
                 imagemin.gifsicle({interlaced: true}),
@@ -42,6 +42,11 @@ function images() {
                 })
             ]
         ))
+        .pipe(dest("dist/img"));
+}
+
+function imagesDev() {
+    return src("src/img/**/*")
         .pipe(dest("dist/img"));
 };
 
@@ -57,8 +62,8 @@ function scripts() {
                 "src/js/header.js",
                 "src/js/trialLesson.js",
                 "src/js/slider.js",
-                "src/js/trainingPackages.js",
                 "src/js/sliderResult.js",
+                "src/js/trainingPackages.js",
                 "src/js/footer.js",
             ])
         .pipe(concat("js/script.js"))
@@ -72,16 +77,26 @@ function scripts() {
 };
 
 
-function scss() {
-     return src('src/scss/**.scss')
+function scssDev() {
+     return src('src/scss/style.scss')
+        .pipe(sass({
+            outputStyle:'expanded'
+        }))
+        .pipe(concat('css/style.min.css'))
+        .pipe(removeComments())
+        .pipe(dest('dist'))
+}
+
+function scssBuild() {
+     return src('src/scss/style.scss')
         .pipe(sass({
             outputStyle:'expanded'
             }))
         .pipe(concat('css/style.css'))
-        .pipe(autoprefixer())
         .pipe(removeComments())
-        .pipe(dest('dist'))
+        .pipe(autoprefixer())
         .pipe(cleanCSS())
+        .pipe(dest('dist'))
         .pipe(rename({
             suffix: ".min",
             extname: ".css"
@@ -100,9 +115,9 @@ function serve() {
 
     watch('src/**/**.html',         series(html)).on('change', sync.reload);
     watch("src/js/**.js",           series(scripts)).on('change', sync.reload);
-    watch('src/scss/**/**.scss',    series(scss)).on('change', sync.reload);
+    watch('src/scss/**/**.scss',    series(scssDev)).on('change', sync.reload);
 };
 
-exports.build = series(clear, scss, html, scripts, fonts, images);
-exports.serve = series(clear, scss, html, scripts, fonts, images, serve);
+exports.build = series(clear, parallel(scssBuild, html, scripts, fonts, imagesBuild));
+exports.serve = series(clear, scssDev, html, scripts, fonts, imagesDev, serve);
 exports.clear = clear;
