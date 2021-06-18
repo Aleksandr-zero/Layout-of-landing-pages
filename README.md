@@ -52,3 +52,9 @@ Genre - foreign language School
 
 ![alt text](SpeakySchool/examples/example-1.png)
 ![alt text](SpeakySchool/examples/example-2.png)
+
+### [Furniture Ekabu](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/FurnitureEkabu/dist/index.html)
+Genre - production of custom-made furniture
+
+<!-- ![alt text](SpeakySchool/examples/example-1.png)
+![alt text](SpeakySchool/examples/example-2.png) -->
