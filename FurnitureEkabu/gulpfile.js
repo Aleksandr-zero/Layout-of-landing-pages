@@ -97,7 +97,7 @@ function scriptsDev() {
 };
 
 function scriptsBuild() {
-    return src(["src/js/**.js"])
+    return src(["src/js/common.js", "src/js/**.js"])
         .pipe(concat('script.js'))
         .pipe(babel({
             presets: ['@babel/env']

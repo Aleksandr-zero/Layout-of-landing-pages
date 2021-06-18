@@ -6,6 +6,7 @@
 // COMMON
 @import "./common/common";
 @import "./common/header";
+@import "./common/introFeatures";
 @import "./common/company";
 @import "./common/designers";
 @import "./common/dreamInterior";
@@ -15,3 +16,8 @@
 @import "./common/specialistConsultation";
 @import "./common/visitShowroom";
 @import "./common/yourProject";
+
+// BLOCKS
+@import "./blocks/intro";
+@import "./blocks/bestMaterials";
+@import "./blocks/roomDimensions";

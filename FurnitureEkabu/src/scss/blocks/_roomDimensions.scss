@@ -1,0 +1,33 @@
+.room-dimensions {
+	margin-top: 120px;
+
+	&__content {
+
+		&-description {
+			max-width: 50%;
+			margin-right: 20px;
+
+			&-items {
+				margin-top: 56px;
+			}
+
+			&-item {
+				max-width: 45%;
+			}
+
+			&-back-button {
+				margin-top: 32px;
+			}
+
+			&-button {
+				width: auto;
+				padding: 18px 32px;
+			}
+		}
+
+		&-img {
+			width: 100%;
+			max-width: 560px;
+		}
+	}
+}

@@ -1,5 +1,10 @@
 .exact-dates {
-	background-color: $primary-color-1;
+
+	&__wrapper {
+		background-color: $primary-color-1;
+		max-width: $width-container + 40 + px;
+		padding: 0 20px;
+	}
 
 	&__container {
 		max-width: 900px;
@@ -46,8 +51,8 @@
 			}
 
 			&:hover {
-				color: $black-color;
-				background-color: darken($white-color, 6%);
+				color: $white-color;
+				background-color: $secondary-color-1;
 			}
 
 			span {

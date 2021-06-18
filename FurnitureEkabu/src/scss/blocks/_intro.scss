@@ -1,0 +1,66 @@
+.intro {
+	margin-top: 20px;
+
+	&__content {
+
+		&-slider {
+			touch-action: pan-y;
+			cursor: grab;
+
+			&.slider-active {
+				cursor: grabbing;
+			}
+
+			img {
+				pointer-events: none;
+			}
+
+			&-list {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+
+			&-track {
+				display: flex;
+			}
+
+			&-slide {
+				height: 100%;
+				width: 100%;
+				flex-shrink: 0;
+
+				&-container	{
+					max-width: 950px;
+					margin: 0 auto;
+				}
+
+				&-description {
+
+					&-title {
+
+						&.underline-text {
+							&::after {
+								width: 100%;
+								bottom: 0;
+							}
+						}
+					}
+
+					&-text {
+						margin-top: 30px;
+					}
+				}
+
+				&-back-img {
+
+				}
+
+				&-img {
+
+				}
+			}
+		}
+	}
+}

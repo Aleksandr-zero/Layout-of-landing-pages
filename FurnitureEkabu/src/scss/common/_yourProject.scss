@@ -1,3 +1,54 @@
 .your-project {
 
+	&__content {
+
+		&-title {
+			max-width: 670px;
+		}
+
+		&-items {
+			margin-top: 70px;
+		}
+
+		&-item {
+			margin-bottom: 70px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-back-video {
+
+			}
+
+			&-description {
+				flex-direction: column;
+				justify-content: center;
+
+				padding: 20px;
+
+				&-quote {
+					position: relative;
+					max-width: 360px;
+					padding-left: 40px;
+					margin: 0 auto;
+
+					&::before {
+						position: absolute;
+						content: "";
+						height: 1px;
+						width: 60px;
+						background-color: $secondary-color-1;
+						top: 12px;
+						left: -40px;
+					}
+
+				}
+
+				&-text {
+					margin-top: 60px;
+				}
+			}
+		}
+	}
 }

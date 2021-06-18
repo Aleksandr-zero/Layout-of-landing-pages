@@ -1,0 +1,29 @@
+.intro-features {
+	margin-top: 64px;
+
+	&__content {
+
+		&-items {
+			flex-wrap: wrap;
+		}
+
+		&-item {
+			max-width: 30%;
+
+			&-description {
+				margin-top: 10px;
+
+				.underline-text {
+					&::after {
+						width: 100%;
+						bottom: -24px;
+					}
+				}
+			}
+		}
+
+		&-item + &-item {
+			margin-bottom: 60px;
+		}
+	}
+}

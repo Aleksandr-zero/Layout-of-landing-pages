@@ -5,12 +5,19 @@
 })
 <body>
 	@@include("./templates/common/header.html")
+	@@include("./templates/blocks/intro.html")
+	@@include("./templates/common/introFeatures.html")
 
 	@@include("./templates/common/exactDates.html")
 	@@include("./templates/common/dreamInterior.html")
 
+	@@include("./templates/blocks/roomDimensions.html")
+
 	@@include("./templates/common/designers.html")
 	@@include("./templates/common/finishedProject.html")
+	@@include("./templates/blocks/bestMaterials.html")
+
+	@@include("./templates/common/yourProject.html")
 
 	@@include("./templates/common/company.html")
 
@@ -19,5 +26,7 @@
 	@@include("./templates/common/visitShowroom.html")
 
 	@@include("./templates/common/footer.html")
+
+	<script src="./js/script.js"></script>
 </body>
 </html>
