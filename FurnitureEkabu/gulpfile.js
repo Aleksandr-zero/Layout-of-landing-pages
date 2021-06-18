@@ -122,10 +122,12 @@ function scssBuild() {
         .pipe(sass({
             outputStyle:'compressed'
         }))
+        .pipe(cleanCSS({
+            level: 2
+        }))
         .pipe(concat('css/style.css'))
         .pipe(removeComments())
         .pipe(autoprefixer())
-        .pipe(cleanCSS())
         .pipe(dest('dist'))
 };
 

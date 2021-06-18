@@ -1,3 +1,60 @@
 .dream-interior {
 
+	&__content {
+
+		&-items {
+			margin-top: 50px;
+		}
+
+		&-item {
+			max-width: 17%;
+
+			&-number {
+				position: relative;
+				color: $white-color;
+				font-size: 26px;
+				line-height: 34px;
+				font-family: "Inter", sans-serif;
+
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background-color: $primary-color-1;
+
+				justify-content: center;
+
+				&::before {
+					position: absolute;
+					content: "";
+					height: 1px;
+					width: 200px;
+					background-color: $primary-color-1;
+					right: -200px;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: -1;
+				}
+			}
+
+			&:last-child {
+
+				.dream-interior__content-item-number {
+					&::before {
+						display: none;
+					}
+				}
+			}
+
+			&-description {
+
+				&-title {
+					margin-top: 20px;
+				}
+
+				&-text {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
 }

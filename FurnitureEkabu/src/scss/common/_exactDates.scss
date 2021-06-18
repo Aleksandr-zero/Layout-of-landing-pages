@@ -1,3 +1,58 @@
 .exact-dates {
+	background-color: $primary-color-1;
 
+	&__container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	&__content {
+		color: $white-color;
+		padding: 70px 0;
+
+		&-description {
+			position: relative;
+			max-width: 50%;
+
+			&::after {
+				position: absolute;
+				content: "";
+				background-image: url("../img/icons/arrow.svg");
+				width: 155px;
+				height: 23px;
+				right: -14%;
+				bottom: 2px;
+			}
+
+			&-text {
+				margin-top: 22px;
+				max-width: 65%;
+			}
+		}
+
+		&-link {
+			color: $primary-color-1;
+			text-transform: uppercase;
+			line-height: 1;
+
+			padding: 16px 32px;
+			background-color: $white-color;
+			margin-bottom: 26px;
+
+			transition: all $animate ease;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&:hover {
+				color: $black-color;
+				background-color: darken($white-color, 6%);
+			}
+
+			span {
+				margin-left: 12px;
+			}
+		}
+	}
 }

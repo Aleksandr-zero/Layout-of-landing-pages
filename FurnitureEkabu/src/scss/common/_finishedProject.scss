@@ -1,3 +1,146 @@
 .finished-project {
 
+	&__content {
+
+		&-description {
+			max-width: 43%;
+
+			&-text {
+				margin-top: 58px;
+				margin-bottom: 30px;
+			}
+		}
+
+		&-back-form {
+			background-color: $primary-color-1;
+			color: $white-color;
+
+			width: 40%;
+			padding: 65px 65px 75px 65px;
+		}
+
+		&-form {
+
+			&-title {
+				margin-bottom: 26px;
+			}
+
+			&-input {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+				margin-bottom: 16px;
+			}
+
+			&-button-file {
+				margin-top: 8px;
+			}
+
+			&-button {
+				margin-bottom: 30px;
+			}
+
+			&-description {
+
+				&-link {
+					color: $white-color;
+					text-decoration: underline;
+				}
+			}
+
+			&-checkbox {
+				position: relative;
+				top: 2px;
+				width: 20px;
+				height: 20px;
+				margin-right: 12px;
+				border: 1px solid $white-color;
+
+				&-label {
+					margin-top: 26px;
+					margin-bottom: 20px;
+					cursor: pointer;
+
+					span {
+						font-size: 12px;
+					}
+				}
+
+				&-input {
+					position: absolute;
+					width: 0;
+					height: 0;
+					opacity: 0;
+					z-index: -1;
+
+					&:checked {
+
+						&~.finished-project__content-form-checkbox {
+							svg {
+								polyline {
+									stroke-dashoffset: 0;
+								}
+							}
+						}
+					}
+				}
+
+				&-link {
+					color: $white-color;
+					text-decoration: underline;
+				}
+
+				svg {
+					position: absolute;
+					top: -2px;
+					left: -2px;
+
+					path {
+						fill: none;
+						stroke: $white-color;
+						stroke-width: 2;
+						stroke-linecap: round;
+						stroke-linejoin: round;
+						stroke-dasharray: 71px;
+						stroke-dashoffset: 71px;
+						transition: all 0.6s ease;
+					}
+
+					polyline {
+						fill: none;
+						stroke: $white-color;
+						stroke-width: 2;
+						stroke-linecap: round;
+						stroke-linejoin: round;
+						stroke-dasharray: 18px;
+						stroke-dashoffset: 18px;
+						transition: all 0.3s ease;
+					}
+				}
+			}
+		}
+
+		&-social {
+			margin-top: 14px;
+
+			&-item {
+				margin-right: 20%;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&-link {
+					color: $white-color;
+					font-size: 14px;
+					line-height: 18px;
+
+					span {
+						margin-left: 16px;
+						border-bottom: 1px solid $white-color;
+					}
+				}
+			}
+		}
+	}
 }

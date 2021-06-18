@@ -1,3 +1,55 @@
 .footer {
+	margin: 50px 0 45px 0;
 
+	&__content {
+
+		&-back-logo {
+			margin-right: 60px;
+		}
+
+		&-items {
+
+			&-wrapper {
+				&:first-child {
+					margin-right: 100px;
+				}
+			}
+		}
+
+		&-item {
+			margin-right: 40px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&-title {
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 20px;
+				margin-bottom: 16px;
+			}
+
+			&-links {
+				flex-direction: column;
+			}
+
+			&-link {
+				font-size: 14px;
+				color: $primary-color-1;
+
+				margin-bottom: 12px;
+
+				transition: color $animate;
+
+				&:hover {
+					color: $black-color;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }

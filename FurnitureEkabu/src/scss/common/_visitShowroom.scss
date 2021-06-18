@@ -1,3 +1,71 @@
 .visit-showroom {
+	background-color: $primary-color-1;
+	color: $white-color;
 
+	&__content {
+
+		&-description {
+
+			&-title {
+				text-transform: uppercase;
+			}
+
+			&-items {
+				margin-top: 30px;
+			}
+
+			&-item {
+
+				&-back-img {
+					margin-right: 20px;
+				}
+
+				&-link {
+					color: $white-color;
+					line-height: 24px;
+				}
+
+				&-text {
+
+					p {
+						flex-direction: column;
+
+						span {
+							line-height: 150%;
+						}
+					}
+				}
+			}
+
+			&-social {
+				margin-top: 38px;
+
+				&-items {
+					margin-top: 30px;
+				}
+
+				&-item {
+
+					&-link {
+						color: $white-color;
+
+						span {
+							margin-left: 15px;
+							position: relative;
+
+							&::after {
+								position: absolute;
+								content: "";
+								width: 100%;
+								height: 1px;
+								background-color: $white-color;
+								left: 0;
+								bottom: -4px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

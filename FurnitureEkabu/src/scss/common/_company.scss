@@ -1,3 +1,69 @@
 .company {
+	margin-top: 70px;
 
+	&__content {
+
+		&-item {
+			justify-content: center;
+			flex-direction: column;
+			width: 20%;
+
+			border: 1px solid $primary-color-1;
+			padding: 20px 0;
+
+			&-rating {
+				margin-top: 10px;
+
+				&-number {
+					font-size: 14px;
+					line-height: 18px;
+					font-weight: 400;
+				}
+			}
+
+			&-link {
+				color: $primary-color-1;
+				margin-top: 18px;
+
+				transition: color $animate;
+
+				span {
+					position: relative;
+
+					&::after {
+						position: absolute;
+						content: "";
+						width: 100%;
+						height: 1px;
+						background-color: $primary-color-1;
+						left: 0;
+						bottom: -4px;
+						transition: background-color $animate;
+					}
+				}
+
+				svg {
+					path {
+						transition: fill $animate;
+					}
+				}
+
+				&:hover {
+					color: $black-color;
+
+					span {
+						&::after {
+							background-color: $black-color;
+						}
+					}
+
+					svg {
+						path {
+							fill: $black-color;
+						}
+					}
+				}
+			}
+		}
+	}
 }

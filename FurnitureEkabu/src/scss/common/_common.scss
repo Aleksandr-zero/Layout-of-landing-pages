@@ -1,0 +1,50 @@
+.container {
+	max-width: $width-container + 40 + px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+
+.fl {
+	display: flex;
+}
+.al_it {
+	align-items: center;
+}
+.just_cont {
+	justify-content: space-between;
+}
+
+
+.button {
+	margin-top: 5px;
+	background-color: $secondary-color-1;
+	color: $white-color;
+	width: 100%;
+	padding: 18px 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: background-color $animate;
+
+	&:hover {
+		background-color: darken($secondary-color-1, 5%);
+	}
+}
+
+
+.form-input {
+	padding: 16px 25px;
+	max-width: 280px;
+	margin-bottom: 15px;
+
+	transition: background-color $animate;
+
+	&:focus {
+		background-color: darken($white-color, 2%);
+	}
+}
+
+
+.new-block {
+	margin-top: 130px;
+}
