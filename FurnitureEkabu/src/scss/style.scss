@@ -1,12 +1,25 @@
+@import "mixins/mixins";
+
 @import "./fonts/fonts";
 @import "./variables/variables";
 @import "./reset/reset";
 @import "./normalize/normalize";
 
+// HEADER
+@import "./common/header";
+@import "./blocks/header/nav";
+@import "./blocks/header/navMobile";
+
+// INTRO FEATURES
+@import "./common/introFeatures";
+
+// CUSTOM MADE FURNITURE
+@import "./blocks/customMadeFurniture";
+@import "./blocks/customMadeFurniture/customFurnitureCard";
+@import "./blocks/customMadeFurniture/navigation";
+
 // COMMON
 @import "./common/common";
-@import "./common/header";
-@import "./common/introFeatures";
 @import "./common/company";
 @import "./common/designers";
 @import "./common/dreamInterior";

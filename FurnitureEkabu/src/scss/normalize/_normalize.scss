@@ -30,3 +30,11 @@ p {
 	font-size: 16px;
 	line-height: 24px;
 }
+
+@media (max-width: 768px) {
+	@include adaptive-title(38, 30, 16);
+}
+
+@media (max-width: 360px) {
+	@include adaptive-title(32, 26, 16);
+}

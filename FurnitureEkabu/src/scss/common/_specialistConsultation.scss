@@ -2,8 +2,13 @@
 
 	&__content {
 
+		&-title {
+			max-width: 600px;
+		}
+
 		&-description {
-			max-width: 46%;
+			max-width: 47%;
+			margin-right: 60px;
 
 			&-text {
 				line-height: 24px;
@@ -38,7 +43,7 @@
 					}
 
 					&:hover {
-						color: $black-color;
+						color: $secondary-color-1;
 					}
 				}
 
@@ -71,11 +76,11 @@
 						}
 
 						&:hover {
-							color: $black-color;
+							color: $secondary-color-1;
 
 							span {
 								&::after {
-									background-color: $black-color;
+									background-color: $secondary-color-1;
 								}
 							}
 						}
@@ -85,14 +90,17 @@
 		}
 
 		&-back-form {
-			margin-left: 60px;
+			max-width: 400px;
 		}
 
 		&-form {
 			flex-direction: column;
-			max-width: 71%;
 			padding: 50px 60px;
 			background-color: $back-color-1;
+
+			&-input {
+				max-width: 100%;
+			}
 
 			&-description {
 				margin-top: 20px;
@@ -102,6 +110,91 @@
 					line-height: 16px;
 					font-size: 12px;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 1040px) {
+
+		&__content {
+
+			&-description {
+				max-width: 100%;
+				margin-right: 30px;
+			}
+		}
+	}
+
+	@media (max-width: 930px) {
+
+		&__content {
+
+			&-wrapper {
+				justify-content: space-between;
+			}
+
+			&-back-form {
+				// width: 50%;
+			}
+
+			&-form {
+				padding: 40px 30px;
+			}
+		}
+	}
+
+	@media (max-width: 890px) {
+
+		&__content {
+
+			&-wrapper {
+				margin-top: 50px;
+			}
+
+			&-description {
+
+				&-text {
+					margin-top: 0;
+				}
+
+				&-items {
+					flex-direction: column;
+				}
+
+				&-item {
+					margin-right: 0;
+					margin-bottom: 30px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			&-back-form {
+				max-width: 300px;
+			}
+		}
+	}
+
+	@media (max-width: 570px) {
+
+		&__content {
+
+			&-wrapper {
+				flex-direction: column;
+			}
+
+			&-description {
+
+				&-items {
+					flex-direction: row;
+					justify-content: space-between;
+				}
+			}
+
+			&-back-form {
+				max-width: 100%;
 			}
 		}
 	}

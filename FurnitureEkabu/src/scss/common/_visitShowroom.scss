@@ -2,6 +2,12 @@
 	background-color: $primary-color-1;
 	color: $white-color;
 
+	&__container {
+		max-width: $width-container + 40 + px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
 	&__content {
 
 		&-description {
@@ -23,6 +29,12 @@
 				&-link {
 					color: $white-color;
 					line-height: 24px;
+
+					transition: color $animate;
+
+					&:hover {
+						color: $secondary-color-1;
+					}
 				}
 
 				&-text {
@@ -49,6 +61,8 @@
 					&-link {
 						color: $white-color;
 
+						transition: color $animate;
+
 						span {
 							margin-left: 15px;
 							position: relative;
@@ -61,9 +75,100 @@
 								background-color: $white-color;
 								left: 0;
 								bottom: -4px;
+
+								transition: background-color $animate;
+							}
+						}
+
+						&:hover {
+							color: $secondary-color-1;
+
+							span {
+
+								&::after {
+									background-color: $secondary-color-1;
+								}
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1140px) {
+
+		&__content {
+
+			&-back-maps {
+
+				iframe {
+					width: 500px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1030px) {
+
+		&__content {
+
+			&-back-maps {
+
+				iframe {
+					width: 400px;
+					height: 330px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 930px) {
+
+		&__container {
+			padding: 0;
+		}
+
+		&__content {
+			align-items: normal;
+			flex-direction: column;
+
+			&-description {
+				padding: 50px 20px 50px 70px;
+
+				&-items {
+					justify-content: start;
+				}
+
+				&-item {
+					margin-right: 60px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				&-social {
+
+					&-items {
+						justify-content: start;
+					}
+
+				&-item {
+					margin-right: 70px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				}
+			}
+
+			&-back-maps {
+
+				iframe {
+					width: 100%;
+					height: 350px;
 				}
 			}
 		}

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
-@@include("./templates/blocks/head.html", {
+@@include("./templates/specific/head.html", {
 	"title": "Ekabu"
 })
 <body>
+	@@include("./templates/specific/svg.html")
+
 	@@include("./templates/common/header.html")
 	@@include("./templates/blocks/intro.html")
 	@@include("./templates/common/introFeatures.html")
@@ -22,9 +24,7 @@
 	@@include("./templates/common/company.html")
 
 	@@include("./templates/common/specialistConsultation.html")
-
 	@@include("./templates/common/visitShowroom.html")
-
 	@@include("./templates/common/footer.html")
 
 	<script src="./js/script.js"></script>

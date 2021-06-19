@@ -30,4 +30,24 @@
 			max-width: 560px;
 		}
 	}
+
+	@media (max-width: 800px) {
+
+		&__content {
+			flex-direction: column;
+
+			&-description {
+				max-width: 100%;
+				margin-right: 0;
+
+				&-items {
+					margin-top: 38px;
+				}
+			}
+
+			&-back-img {
+				margin-top: 48px;
+			}
+		}
+	}
 }

@@ -49,6 +49,10 @@
 
 .new-block {
 	margin-top: 130px;
+
+	@media (max-width: 768px) {
+		margin-top: 90px;
+	}
 }
 
 
@@ -63,5 +67,24 @@
 		background-color: $secondary-color-1;
 		left: 0;
 		bottom: -10px;
+	}
+}
+
+
+.back-img-demonstration {
+
+	@media (max-width: 800px) {
+		height: 200px;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 300px;
+			max-width: 100%;
+		}
 	}
 }

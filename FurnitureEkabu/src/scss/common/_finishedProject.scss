@@ -1,9 +1,14 @@
 .finished-project {
 
 	&__content {
+		overflow: hidden;
 
 		&-description {
-			max-width: 43%;
+			max-width: 58%;
+
+			&-wrapper {
+				max-width: 78%;
+			}
 
 			&-text {
 				margin-top: 58px;
@@ -34,6 +39,7 @@
 
 			&-button-file {
 				margin-top: 8px;
+				padding: 10px;
 			}
 
 			&-button {
@@ -45,6 +51,12 @@
 				&-link {
 					color: $white-color;
 					text-decoration: underline;
+
+					transition: color $animate;
+
+					&:hover {
+						color: $secondary-color-1;
+					}
 				}
 			}
 
@@ -88,6 +100,12 @@
 				&-link {
 					color: $white-color;
 					text-decoration: underline;
+
+					transition: color $animate;
+
+					&:hover {
+						color: $secondary-color-1;
+					}
 				}
 
 				svg {
@@ -135,11 +153,102 @@
 					font-size: 14px;
 					line-height: 18px;
 
+					transition: color $animate;
+
 					span {
 						margin-left: 16px;
 						border-bottom: 1px solid $white-color;
+
+						transition: border-bottom $animate;
+					}
+
+					&:hover {
+						color: $secondary-color-1;
+
+						span {
+							border-bottom: 1px solid $secondary-color-1;
+						}
 					}
 				}
+			}
+		}
+	}
+
+	@media (max-width: 1060px) {
+
+		&__content {
+
+			&-description {
+
+				&-wrapper {
+					max-width: 95%;
+				}
+			}
+
+			&-back-form {
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 980px) {
+
+		&__content {
+
+			&-description {
+				max-width: 50%;
+
+				&-img {
+					height: 350px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 870px) {
+
+		&__content {
+
+			&-back-form {
+				padding: 40px 40px 55px 40px;
+			}
+		}
+	}
+
+	@media (max-width: 730px) {
+
+		&__content {
+			flex-direction: column;
+
+			&-description {
+				max-width: 100%;
+
+				&-wrapper {
+					margin-right: 0;
+				}
+
+				&-text {
+					margin-top: 45px;
+				}
+
+				&-back-img {
+					display: none;
+				}
+			}
+
+			&-form {
+				max-width: 330px;
+				margin: 0 auto;
+			}
+
+			&-social-items {
+				max-width: 330px;
+				margin: 0 auto;
+				justify-content: space-between;
+			}
+
+			&-social-item {
+				margin-right: 0;
 			}
 		}
 	}

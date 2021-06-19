@@ -6,7 +6,7 @@
 		&-item {
 			justify-content: center;
 			flex-direction: column;
-			width: 20%;
+			width: 23%;
 
 			border: 1px solid $primary-color-1;
 			padding: 20px 0;
@@ -42,26 +42,34 @@
 					}
 				}
 
-				svg {
-					path {
-						transition: fill $animate;
-					}
-				}
-
 				&:hover {
-					color: $black-color;
+					color: $secondary-color-1;
 
 					span {
 						&::after {
-							background-color: $black-color;
+							background-color: $secondary-color-1;
 						}
 					}
+				}
+			}
+		}
+	}
 
-					svg {
-						path {
-							fill: $black-color;
-						}
-					}
+	@media (max-width: 740px) {
+
+		&__content {
+
+			&-items {
+				flex-wrap: wrap;
+			}
+
+			&-item {
+				width: 49%;
+				margin-bottom: 15px;
+
+				&:nth-child(3),
+				&:last-child {
+					margin-bottom: 0;
 				}
 			}
 		}

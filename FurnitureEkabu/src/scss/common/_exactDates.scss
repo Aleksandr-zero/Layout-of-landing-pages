@@ -60,4 +60,33 @@
 			}
 		}
 	}
+
+	@media (max-width: 870px) {
+
+		&__content {
+			flex-direction: column;
+
+			&-description {
+				max-width: 70%;
+
+				&::after {
+					background-image: url("../img/icons/arrow-2.svg");
+					width: 66px;
+					height: 100px;
+					right: 5px;
+					bottom: -10px;
+				}
+			}
+
+			&-links {
+				margin-top: 36px;
+				display: flex;
+				flex-direction: column;
+			}
+
+			&-link {
+				display: inline-flex;
+			}
+		}
+	}
 }
