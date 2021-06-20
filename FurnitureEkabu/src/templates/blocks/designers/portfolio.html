@@ -1,0 +1,47 @@
+<div class="portfolio-designers">
+	<div class="portfolio-designers__wrapper">
+		<div class="container">
+			<div class="portfolio-designers__content">
+				<div class="portfolio-designers__content-back-title">
+					<h4 class="portfolio-designers__content-overhead">
+						<a href="./index.html" class="portfolio-designers__content-overhead-link">Главная</a> / Дизайнеры
+					</h4>
+					<h1 class="portfolio-designers__content-title">РАБОТЫ НАШИХ ДИЗАЙНЕРОВ</h1>
+				</div>
+				<div class="portfolio-designers__content-items">
+					@@loop('./cardDesigner.html', [
+					{
+						"name": "Вера",
+						"description": "1-2 предложение об опыте, навыках. Может дизайнер специализируется только в определенных стилях или работает только с кухнями.",
+						"pathImg": "./img/designers/designer_1.png",
+						"numberOfWorks": 20
+					},
+					{
+						"name": "Марина",
+						"description": "1-2 предложение об опыте, навыках. Может дизайнер специализируется только в определенных стилях или работает только с кухнями.",
+						"pathImg": "./img/designers/designer_2.png",
+						"numberOfWorks": 7
+					},
+					{
+						"name": "Дарья",
+						"description": "1-2 предложение об опыте, навыках. Может дизайнер специализируется только в определенных стилях или работает только с кухнями.",
+						"pathImg": "./img/designers/designer_3.png",
+						"numberOfWorks": 5
+					},
+					{
+						"name": "Наталья",
+						"description": "1-2 предложение об опыте, навыках. Может дизайнер специализируется только в определенных стилях или работает только с кухнями.",
+						"pathImg": "./img/designers/designer_4.png",
+						"numberOfWorks": 4
+					}
+					])
+				</div>
+			</div>
+		</div>
+		@@include("../common/popup.html", {
+			"classPopup": "portfolio-designers__popup",
+			"title": "Связаться с дизайнером",
+			"classBtnClode": "portfolio-designers__popup-content-button-close"
+		})
+	</div>
+</div>

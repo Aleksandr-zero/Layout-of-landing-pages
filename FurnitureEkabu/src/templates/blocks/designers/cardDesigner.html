@@ -1,0 +1,26 @@
+<div class="portfolio-designers__content-item">
+	<div class="portfolio-designers__content-item-wrapper fl">
+		<div class="portfolio-designers__content-item-back-img fl">
+			<img src="@@pathImg" alt="designer" class="portfolio-designers__content-item-img">
+		</div>
+		<div class="portfolio-designers__content-item-description">
+			<h3 class="portfolio-designers__content-item-description-name">@@name</h3>
+			<div class="portfolio-designers__content-item-description-text">
+				<p>
+					@@description
+				</p>
+			</div>
+			<div class="portfolio-designers__content-item-description-back-btn">
+				<button class="portfolio-designers__content-item-description-btn button">Обсудить проект с дизайнером</button>
+			</div>
+		</div>
+	</div>
+	<div class="portfolio-designers__content-item-works fl">
+		@@for (let work = 0; work < numberOfWorks; work++) {
+			@@include("./exampleWork.html")
+		}
+	</div>
+	<div class="portfolio-designers__content-back-btn fl">
+		<button class="portfolio-designers__content-btn button">Показать еще</button>
+	</div>
+</div>

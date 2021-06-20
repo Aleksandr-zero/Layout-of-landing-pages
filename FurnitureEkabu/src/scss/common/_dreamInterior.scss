@@ -13,6 +13,7 @@
 				position: relative;
 				color: $white-color;
 				font-size: 26px;
+				line-height: 34/24 * 100%;
 				line-height: 34px;
 				font-family: "Inter", sans-serif;
 
@@ -114,6 +115,36 @@
 					&-text {
 						margin-top: 6px;
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		&__content {
+
+			&-item {
+
+				&-number {
+					width: 50px;
+					height: 50px;
+					font-size: 22px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 420px) {
+
+		&__content {
+
+			&-item {
+
+				&-number {
+					width: 44px;
+					height: 44px;
+					font-size: 18px;
 				}
 			}
 		}

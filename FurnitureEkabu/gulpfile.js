@@ -91,13 +91,21 @@ function ttf2() {
 
 
 function scriptsDev() {
-    return src(["src/js/**.js",])
+    return src([
+            "src/js/common.js",
+            "src/js/sliders.js",
+            "src/js/**.js"
+        ])
         .pipe(concat("js/script.js"))
         .pipe(dest("dist"))
 };
 
 function scriptsBuild() {
-    return src(["src/js/common.js", "src/js/**.js"])
+    return src([
+            "src/js/common.js",
+            "src/js/sliders.js",
+            "src/js/**.js"
+        ])
         .pipe(concat('script.js'))
         .pipe(babel({
             presets: ['@babel/env']
@@ -148,5 +156,5 @@ function serve() {
 
 
 exports.build = series(clear, parallel(scssBuild, htmlBuild, scriptsBuild, ttf, ttf2, imagesBuild));
-exports.serve = series(clear, scssDev, htmlDev, scriptsDev, ttf, ttf2, imagesDev, serve);
+exports.serve = series(clear, parallel(scssDev, htmlDev, scriptsDev, ttf, ttf2, imagesDev), serve);
 exports.clear = clear;

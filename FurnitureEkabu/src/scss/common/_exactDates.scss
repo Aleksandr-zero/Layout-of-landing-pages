@@ -44,7 +44,7 @@
 			background-color: $white-color;
 			margin-bottom: 26px;
 
-			transition: all $animate ease;
+			transition: background-color $animate ease, color $animate ease;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -64,7 +64,22 @@
 	@media (max-width: 870px) {
 
 		&__content {
+
+			&-description {
+				max-width: 54%;
+
+				&::after {
+					right: -7%;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 810px) {
+
+		&__content {
 			flex-direction: column;
+			padding: 50px 10px;
 
 			&-description {
 				max-width: 70%;
@@ -74,7 +89,7 @@
 					width: 66px;
 					height: 100px;
 					right: 5px;
-					bottom: -10px;
+					bottom: -30px;
 				}
 			}
 
@@ -85,7 +100,41 @@
 			}
 
 			&-link {
-				display: inline-flex;
+				max-width: 300px;
+			}
+		}
+	}
+
+	@media (max-width: 700px) {
+
+		&__content {
+
+			&-description {
+				max-width: 85%;
+			}
+		}
+	}
+
+	@media (max-width: 560px) {
+
+		&__content {
+
+			&-description {
+				max-width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+
+		&__content {
+
+			&-description {
+
+				&::after {
+					transform: rotate(-22deg) scale(0.75);
+					bottom: -25px;
+				}
 			}
 		}
 	}

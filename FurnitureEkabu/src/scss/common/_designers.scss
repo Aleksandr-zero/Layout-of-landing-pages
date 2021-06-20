@@ -132,8 +132,25 @@
 
 		&__content {
 
+			&-description {
+
+				&-item {
+					width: 100%;
+
+					.underline-text {
+						&::after {
+							width: 75%;
+						}
+					}
+				}
+			}
+
 			&-item {
-				padding: 25px;
+				padding: 25px 10px;
+				width: 49%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 
 				&-img {
 					width: 90px;

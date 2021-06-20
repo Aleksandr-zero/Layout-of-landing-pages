@@ -1,0 +1,128 @@
+.portfolio-designers {
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__content {
+
+		&-overhead {
+			font-size: 14px;
+			line-height: 18px;
+			color: $secondary-color-2;
+
+			&-link {
+				color: $primary-color-1;
+				transition: color $animate;
+
+				&:hover {
+					color: $secondary-color-1;
+				}
+			}
+		}
+
+		&-title {
+			margin-top: 18px;
+		}
+
+		&-items {
+			margin-top: 48px;
+		}
+
+		&-item {
+			margin-bottom: 130px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-wrapper {
+				align-items: flex-end;
+			}
+
+			&-back-img {
+				margin-right: 40px;
+			}
+
+			&-description {
+
+				&-text {
+					max-width: 420px;
+					margin-top: 10px;
+				}
+
+				&-back-btn {
+					margin-top: 52px;
+				}
+
+				button {
+					padding: 20px 32px;
+				}
+			}
+
+			&-works {
+				flex-wrap: wrap;
+				margin-top: 70px;
+			}
+
+			&-work {
+				margin: 0 15px 50px 15px;
+				flex-direction: column;
+				align-items: center;
+
+				&-link {
+					color: $primary-color-1;
+					text-align: center;
+					margin-top: 18px;
+
+					transition: color $animate;
+
+					&:hover {
+						color: $secondary-color-1;
+					}
+				}
+			}
+		}
+
+		&-back-btn {
+			justify-content: center;
+
+			button {
+				padding: 20px 32px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		&__content {
+
+			&-item {
+
+				&-back-img {
+					margin-right: 20px;
+				}
+
+				&-img {
+					width: 220px;
+					height: 220px;
+				}
+
+				&-description {
+
+					&-back-btn {
+						margin-top: 48px;
+					}
+				}
+
+				&-work {
+
+					&-img {
+						width: 190px;
+						height: 130px;
+					}
+				}
+			}
+		}
+	}
+}

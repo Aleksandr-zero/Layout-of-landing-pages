@@ -198,4 +198,22 @@
 			}
 		}
 	}
+
+	@media (max-width: 470px) {
+
+		&__content {
+
+			&-description {
+				margin-right: 0;
+
+				&-items {
+					flex-direction: column;
+				}
+			}
+
+			&-back-form {
+				margin-top: 40px;
+			}
+		}
+	}
 }

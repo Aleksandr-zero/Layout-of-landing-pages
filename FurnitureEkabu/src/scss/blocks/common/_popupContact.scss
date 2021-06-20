@@ -1,0 +1,171 @@
+.popup-contact {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($black-color, 0.6);
+	z-index: 50;
+
+	padding: 0 15px;
+
+	visibility: hidden;
+	opacity: 0;
+
+	transition: all $animate * 1.5;
+
+	&.popup-contact-active {
+		visibility: visible;
+		opacity: 1;
+
+		.popup-contact__wrapper {
+			transform: translateY(0%) ;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		transition: all $animate * 1.5;
+		transform: translateY(-100%);
+	}
+
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		background-color: $back-color-1;
+		max-width: 680px;
+		width: 100%;
+		padding: 10px;
+	}
+
+	&__content {
+		padding: 60px 40px 50px;
+		border: 1px solid $secondary-color-1;
+		position: relative;
+
+		&-back-button-close {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+		&-button-close {
+
+			span {
+				padding: 17px;
+				color: transparent;
+				font-size: 0;
+				display: block;
+				position: relative;
+
+				&::before,
+				&::after {
+					position: absolute;
+					content: "";
+					left: 0;
+					width: 35px;
+					height: 1px;
+					background-color: $secondary-color-1;
+				}
+
+				&::before {
+					transform: rotate(45deg);
+				}
+
+				&::after {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		&-title {
+			text-transform: uppercase;
+			font-size: 26px;
+			line-height: 34px;
+			font-weight: 400;
+			font-family: "Cormorant Garamond", sans-serif;
+			color: $black-color;
+			text-align: center;
+		}
+
+		&-back-form {
+			margin-top: 30px;
+		}
+
+		&-form {
+
+			&-input {
+				width: 48%;
+			}
+
+			&-textarea {
+				width: 100%;
+				resize: none;
+				margin-top: 10px;
+				padding: 15px 25px;
+
+				border: 1px solid transparent;
+				transition: border $animate;
+
+				&:focus {
+					border: 1px solid $secondary-color-1;
+				}
+			}
+
+			&-back-button {
+				margin-top: 30px;
+				justify-content: center;
+			}
+
+			&-button {
+				background-color: $secondary-color-1;
+				color: $white-color;
+				padding: 20px 90px;
+				border: 1px solid $secondary-color-1;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+
+				transition: background-color $animate ease, color $animate ease;
+
+				&:hover {
+					background-color: $white-color;
+					color: $secondary-color-1
+				}
+			}
+		}
+
+		&-description {
+			max-width: 280px;
+			margin: 14px auto 0;
+
+			p {
+				font-size: 12px;
+				line-height: 16px;
+				color: $secondary-color-2;
+			}
+
+			&-link {
+				text-decoration: underline;
+				color: $secondary-color-2;
+				transition: color $animate;
+
+				&:hover {
+					color: $secondary-color-1;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 570px) {
+
+		&__content {
+
+		}
+	}
+}

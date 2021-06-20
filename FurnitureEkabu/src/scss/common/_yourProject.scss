@@ -85,6 +85,16 @@
 
 			&-item {
 
+				&-description {
+
+					&-quote {
+
+						&::before {
+							left: -30px;
+						}
+					}
+				}
+
 				&-back-video {
 
 					iframe {
@@ -96,7 +106,7 @@
 		}
 	}
 
-	@media (max-width: 810px) {
+	@media (max-width: 800px) {
 
 		&__content {
 

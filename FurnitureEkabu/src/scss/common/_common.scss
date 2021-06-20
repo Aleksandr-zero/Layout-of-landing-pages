@@ -19,7 +19,6 @@
 .button {
 	background-color: $secondary-color-1;
 	color: $white-color;
-	width: 100%;
 	padding: 18px 10px;
 	border: 1px solid $secondary-color-1;
 	text-transform: uppercase;
@@ -38,11 +37,12 @@
 	padding: 16px 25px;
 	max-width: 280px;
 	margin-bottom: 15px;
+	border: 1px solid transparent;
 
-	transition: background-color $animate;
+	transition: border $animate;
 
 	&:focus {
-		background-color: darken($white-color, 2%);
+		border: 1px solid $secondary-color-1;
 	}
 }
 
