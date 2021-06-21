@@ -16,13 +16,17 @@
 // CUSTOM MADE FURNITURE
 @import "./blocks/customMadeFurniture";
 @import "./blocks/customMadeFurniture/customFurnitureCard";
-@import "./blocks/customMadeFurniture/navigation";
 
 // DESIGNERS
 @import "./blocks/designers/portfolio";
 
 // COMMON TEMPLATES
 @import "./blocks/common/popupContact";
+@import "./blocks/customMadeFurniture/navigation";
+
+// CATEGORY and SUBCATEGORY
+@import "./blocks/categoryCont.scss";
+@import "./blocks/subcategoryCont.scss";
 
 // COMMON
 @import "./common/common";

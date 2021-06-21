@@ -1,0 +1,39 @@
+<div class="category">
+	<div class="container">
+		<div class="category__content">
+			<div class="category__content-wrapper fl just_cont">
+				@@include("./common/navigation.html")
+				<ul class="category__content-items fl">
+					@@loop("./customMadeFurniture/customFurnitureCard.html", [
+						{ "pathImg": "./img/category/kitchen/kitchen-1.jpg", "link": "Прямые кухни" },
+						{ "pathImg": "./img/category/kitchen/kitchen-2.jpg", "link": "Угловые кухни" },
+						{ "pathImg": "./img/category/kitchen/kitchen-3.jpg", "link": "П-образные кухни" },
+						{ "pathImg": "./img/category/kitchen/kitchen-4.jpg", "link": "Кухни с островом" },
+						{ "pathImg": "./img/category/kitchen/kitchen-5.jpg", "link": "Маленькие кухни" },
+						{ "pathImg": "./img/category/kitchen/kitchen-6.jpg", "link": "Кухни премиум" },
+						{ "pathImg": "./img/category/kitchen/kitchen-7.jpg", "link": "Недорогие кухни" },
+						{ "pathImg": "./img/category/kitchen/kitchen-8.jpg", "link": "Кухни с барными стойками" },
+					])
+				</ul>
+			</div>
+			<div class="category__content-warning">
+				<div class="category__content-warning-container">
+					<div class="category__content-warning-content fl al_it">
+						<div class="category__content-warning-content-back-img">
+							<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M26 10.9375H24V32.9375H26V10.9375Z" fill="#B71C1C"/>
+								<path d="M26 35.9375H24V37.9375H26V35.9375Z" fill="#B71C1C"/>
+								<circle cx="25" cy="25" r="24" stroke="#B71C1C" stroke-width="2"/>
+							</svg>
+						</div>
+						<div class="category__content-warning-content-description">
+							<p>
+								Гарантируем 100% отсутствие проблем при монтаже, при проектировки кухонного гарнитура до момента начала ремонта. Благодаря тому, что мы сможем помочь в сопровождении электрики, учесть неровность стен и правильно расположить розетки.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

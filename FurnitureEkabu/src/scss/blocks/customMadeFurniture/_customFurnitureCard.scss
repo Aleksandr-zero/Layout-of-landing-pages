@@ -1,0 +1,17 @@
+.custom-furniture__content-item {
+	width: 30%;
+	margin-bottom: 28px;
+
+	&-back-img {
+		margin-bottom: 12px;
+	}
+
+	&-link {
+		color: $primary-color-1;
+		transition: color $animate;
+
+		&:hover {
+			color: $secondary-color-1;
+		}
+	}
+}

@@ -54,3 +54,6 @@ Genre - foreign language School
 
 ## [Furniture Ekabu](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/FurnitureEkabu/dist/index.html)
 Genre - production of custom-made furniture
+
+![alt text](FurnitureEkabu/examples/example-1.png)
+![alt text](FurnitureEkabu/examples/example-2.png)

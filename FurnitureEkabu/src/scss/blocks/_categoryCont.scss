@@ -1,0 +1,58 @@
+.category {
+	margin-top: 90px;
+
+	&__content {
+
+		&-back-title {
+			margin-top: 20px;
+		}
+
+		&-title {
+			margin-top: 12px;
+		}
+
+		&-link {
+			color: $primary-color-1;
+			transition: color $animate;
+
+			&:hover {
+				color: $secondary-color-1;
+			}
+		}
+
+		&-current-page {
+			color: $secondary-color-2;
+		}
+
+		&-title {
+
+		}
+
+		&-wrapper {
+
+		}
+
+		&-warning {
+			border: 1px solid $primary-color-1;
+			margin-top: 62px;
+
+			&-container {
+				max-width: 920px;
+				margin: 0 auto;
+			}
+
+			&-content {
+				padding: 32px 60px 20px;
+
+				&-back-img {
+					margin-right: 50px;
+				}
+			}
+		}
+
+		&-items {
+			column-gap: 5%;
+			flex-wrap: wrap;
+		}
+	}
+}

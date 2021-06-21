@@ -31,12 +31,59 @@
 				width: 100%;
 				flex-shrink: 0;
 
+				&:first-child {
+					background-color: $back-color-1;
+
+					.intro__content-slider-slide-container {
+						max-width: 100%;
+						margin-left: 80px;
+					}
+				}
+
+				&:nth-child(2) {
+					background-color: $back-color-3;
+					color: $white-color;
+					padding: 58px 0;
+					position: relative;
+
+					.intro__content-slider-slide-description {
+						margin-top: 40px;
+					}
+
+					.intro__content-slider-slide-description-good {
+						position: absolute;
+						bottom: 88px;
+						left: 28%;
+
+						span {
+							transform-origin:50% 100%;
+							position: relative;
+
+							&::after {
+								position: absolute;
+								content: "";
+								width: 274px;
+								height: 40px;
+								left: -35px;
+								background-image: url("../img/icons/underline.svg");
+							}
+						}
+					}
+				}
+
+				&:last-child {
+					img {
+						filter: drop-shadow(4px 20px 20px rgba($black-color, 0.9));
+					}
+				}
+
 				&-container	{
 					max-width: 950px;
 					margin: 0 auto;
 				}
 
 				&-description {
+					margin-right: 35px;
 
 					&-title {
 
@@ -45,6 +92,44 @@
 								width: 100%;
 								bottom: 0;
 							}
+						}
+					}
+
+					&-back-link {
+						margin-top: 52px;
+					}
+
+					&-link {
+						text-transform: uppercase;
+						color: $secondary-color-1;
+						font-size: 16px;
+						line-height: 1;
+
+						position: relative;
+
+						&::before,
+						&::after {
+							position: absolute;
+							content: "";
+							top: 50%;
+							transform: translateY(-50%);
+						}
+
+						&::before {
+							border: 1px solid $secondary-color-1;
+							width: 80px;
+							height: 80px;
+							border-radius: 50%;
+							right: -120px;
+						}
+
+						&::after {
+							right: -94px;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 12px 0 12px 20px;
+							border-color: transparent transparent transparent $secondary-color-1;
 						}
 					}
 

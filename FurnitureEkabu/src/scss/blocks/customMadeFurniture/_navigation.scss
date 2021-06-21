@@ -1,0 +1,91 @@
+.custom-furniture__content-nav {
+	width: 80%;
+
+	&-items {
+		margin-right: 60px;
+	}
+
+	&-item {
+		margin-bottom: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&-button {
+			font-size: 16px;
+			position: relative;
+			color: $primary-color-1;
+			transition: color $animate;
+
+			&::before {
+				position: absolute;
+				content: "";
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 8px 4px 0 4px;
+				border-color: $black-color transparent transparent transparent;
+				right: -18px;
+				top: 50%;
+				transform: translateY(-50%);
+
+				transition: border-color $animate;
+			}
+
+			&:hover {
+				color: $secondary-color-1;
+
+				&::before {
+					border-color: $secondary-color-1 transparent transparent transparent;
+				}
+			}
+		}
+
+		&-link {
+			color: $primary-color-1;
+			transition: color $animate;
+
+			&:hover {
+				color: $secondary-color-1;
+			}
+		}
+
+		&-menu {
+			height: 0;
+			visibility: hidden;
+			margin-left: 20px;
+
+			&.custom-furniture-nav-menu-active {
+				margin-top: 10px;
+				margin-bottom: 5px;
+				height: 100%;
+				visibility: visible;
+			}
+
+			&-content {
+
+				&-items {
+
+				}
+
+				&-item {
+					margin-bottom: 10px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&-link {
+						color: $primary-color-1;
+						transition: color $animate;
+
+						&:hover {
+							color: $secondary-color-1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

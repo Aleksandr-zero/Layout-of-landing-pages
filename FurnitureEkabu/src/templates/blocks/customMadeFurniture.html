@@ -1,7 +1,25 @@
 <div class="custom-furniture">
 	<div class="container">
 		<div class="custom-furniture__content">
-
+			<h2 class="custom-furniture__content-title">Мебель на заказ по индивидуальным размерам в Екатеринбурге</h2>
+			<div class="custom-furniture__content-wrapper fl just_cont">
+				@@include("./common/navigation.html")
+				<ul class="custom-furniture__content-items fl">
+					@@loop("./customMadeFurniture/customFurnitureCard.html", [
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_1.jpg", "link": "Прямые кухни" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_2.jpg", "link": "Угловые кухни" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_3.jpg", "link": "П-образные кухни" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_4.jpg", "link": "Кухни с островом" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_5.jpg", "link": "Встроенные шкаф-купе" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_6.jpg", "link": "Угловые шкафы-купе" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_7.jpg", "link": "Радиусные шкафы-купе" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_8.jpg", "link": "Корпусные шкаф-купе" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_9.jpg", "link": "Межкомнатные перегородки" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_10.jpg", "link": "Прихожие со шкафами-купе" },
+						{ "pathImg": "./img/customMadeFurniture/customFurniture_11.jpg", "link": "Прихожие открытые" },
+					])
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
