@@ -49,9 +49,16 @@ function htmlBuild() {
 function imagesBuild() {
     return src("src/img/**/*")
         .pipe(imagemin([
-                imagemin.gifsicle({interlaced: true}),
-                imagemin.mozjpeg({quality: 75, progressive: true}),
-                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.gifsicle({
+                    interlaced: true
+                }),
+                imagemin.mozjpeg({
+                    quality: 75,
+                    progressive: true
+                }),
+                imagemin.optipng({
+                    optimizationLevel: 5
+                }),
                 imagemin.svgo({
                     plugins: [
                         {removeViewBox: true},
@@ -130,12 +137,12 @@ function scssBuild() {
         .pipe(sass({
             outputStyle:'compressed'
         }))
+        .pipe(autoprefixer())
         .pipe(cleanCSS({
             level: 2
         }))
         .pipe(concat('css/style.css'))
         .pipe(removeComments())
-        .pipe(autoprefixer())
         .pipe(dest('dist'))
 };
 

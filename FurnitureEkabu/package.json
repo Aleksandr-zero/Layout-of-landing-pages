@@ -7,6 +7,7 @@
     "dev": "gulp serve",
     "build": "gulp build"
   },
+  "browserslist": "last 2 versions",
   "author": "",
   "license": "ISC",
   "devDependencies": {

@@ -1,0 +1,27 @@
+.appliances {
+
+	&__content {
+
+		&-description {
+			flex-direction: column;
+
+			&-title {
+				max-width: 500px;
+			}
+
+			&-back-btn {
+				a {
+					padding: 18px 32px;
+				}
+			}
+		}
+
+		&-back-imgs {
+			width: 560px;
+		}
+
+		&-back-img {
+
+		}
+	}
+}

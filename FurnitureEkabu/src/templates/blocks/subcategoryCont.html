@@ -1,9 +1,20 @@
 <div class="subcategory">
+	@@include("./common/popup.html", {
+		"classPopup": "subcategory__popup",
+		"classBtnClose": "subcategory__popup-close-btn",
+		"title": "Узнать стоимость изделия"
+	})
 	<div class="container">
 		<div class="subcategory__content">
-			<h1 class="subcategory__content-title">Угловые кухни на заказ</h1>
+			<div class="subcategory__content-back-title">
+				<h4 class="subcategory__content-overhead">
+					<a href="./index.html" class="subcategory__content-overhead-link">Главная /</a> Каталог / Кухни / <span>Угловые кухни</span>
+				</h4>
+				<h1 class="subcategory__content-title">Угловые кухни на заказ</h1>
+			</div>
 			<div class="subcategory__content-wrapper fl just_cont">
 				@@include("./common/navigation.html")
+				@@include("./subcategory/workOrder.html")
 			</div>
 		</div>
 	</div>

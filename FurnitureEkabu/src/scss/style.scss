@@ -24,9 +24,15 @@
 @import "./blocks/common/popupContact";
 @import "./blocks/customMadeFurniture/navigation";
 
-// CATEGORY and SUBCATEGORY
+// CATEGORY
 @import "./blocks/categoryCont.scss";
+@import "./blocks/category/appliances";
+@import "./blocks/category/contentGenre";
+@import "./blocks/category/categoryItems";
+
+// SUBCATEGORY
 @import "./blocks/subcategoryCont.scss";
+@import "./blocks/subcategory/description";
 
 // COMMON
 @import "./common/common";

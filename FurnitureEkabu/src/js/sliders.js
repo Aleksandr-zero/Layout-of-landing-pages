@@ -43,11 +43,11 @@ class Slider {
 			) {
 
 			this.swipeEnd();
-		};
-	}
+    }
+}
 
 
-	calculatesTouchCoordinates_SwipeStart(evt) {
+calculatesTouchCoordinates_SwipeStart(evt) {
 		/**
 		Вычисляет координаты при первом касании слайдера.
 		* @param evt -> fun "getEvent"
@@ -60,8 +60,9 @@ class Slider {
 		this.positionPressedY = evt.clientY;
         this.positionFingerPressSliderX = this.positionPressedX - this.slider.getBoundingClientRect().x;
         this.positionFingerPressSliderY = this.positionPressedY - this.slider.getBoundingClientRect().y;
-	}
+    }
 };
+
 
 class SliderWithFight extends Slider {
     /**
@@ -70,37 +71,37 @@ class SliderWithFight extends Slider {
     * @param options -> custom settings ( type -> Object )
     */
 
-	constructor(slider, options) {
+    constructor(slider, options) {
         super();
 
-		this.slider = slider;
-		this.options = options;
+        this.slider = slider;
+        this.options = options;
 
-		this.sliderWidth = Math.round(this.slider.getBoundingClientRect().width);
+        this.sliderWidth = Math.round(this.slider.getBoundingClientRect().width);
 
-		this.sliderTrack = this.slider.querySelector(".slider-track");
+        this.sliderTrack = this.slider.querySelector(".slider-track");
 
-		this.currentSlide = 0;
-		this.numberSlides = this.sliderTrack.querySelectorAll(".slide");
+        this.currentSlide = 0;
+        this.numberSlides = this.sliderTrack.querySelectorAll(".slide");
 
-		this.positionSlider = 0;
-		this.positionFinal = 0;
+        this.positionSlider = 0;
+        this.positionFinal = 0;
 
         this.positionPressedX;
         this.positionPressedY;
-		this.positionFingerPressSliderX;
-		this.positionFingerPressSliderY;
+        this.positionFingerPressSliderX;
+        this.positionFingerPressSliderY;
         this.positionX_FingetCurrentMoment_OnSlider;
         this.positionY_FingetCurrentMoment_OnSlider;
 
-		this.allowSwipe = true;
-		this.isScrollingSlider = false;
+        this.allowSwipe = true;
+        this.isScrollingSlider = false;
 
-		this.addOptions();
+        this.addOptions();
 
-		this._swipeStart = () =>  { this.swipeStart(); };
-		this._swipeAction = () => { this.swipeAction(); };
-		this._swipeEnd = () => 	  { this.swipeEnd(); };
+        this._swipeStart = () =>  { this.swipeStart(); };
+        this._swipeAction = () => { this.swipeAction(); };
+        this._swipeEnd = () => 	  { this.swipeEnd(); };
 
         this.percentForSuccessfulScrolling = Math.round((this.sliderWidth / 100) * this.percentageForSuccessfulScrolling);
 
@@ -110,12 +111,12 @@ class SliderWithFight extends Slider {
             this.swipeEnd();
             this.sliderTrack.removeEventListener("mouseout", this.goingOutBoundsSlider);
         };
-	}
+    }
 
-	addOptions() {
-		this.percentageForSuccessfulScrolling = (this.options.percentageForSuccessfulScrolling) ?
-												 this.options.percentageForSuccessfulScrolling : 35;
-	}
+    addOptions() {
+        this.percentageForSuccessfulScrolling = (this.options.percentageForSuccessfulScrolling) ?
+        this.options.percentageForSuccessfulScrolling : 35;
+    }
 
 
     // Вспомогательные методы.
@@ -184,41 +185,41 @@ class SliderWithFight extends Slider {
     pushingSlider() {
         this.singleSwipe = this.positionSliderTrack - this.positionFinal;
 
-    	this.sliderTrack.style.transform = `translate3d(${-this.positionSliderTrack}px, 0px, 0px)`;
+        this.sliderTrack.style.transform = `translate3d(${-this.positionSliderTrack}px, 0px, 0px)`;
 
         if (Math.abs(this.singleSwipe) >= 5) {
             this.isScrollingSlider = true;
         };
     }
 
-	swipeStart() {
+    swipeStart() {
         if (!this.allowSwipe) {
             return;
         };
 
-		const evt = super.getEvent();
+        const evt = super.getEvent();
 
         super.calculatesTouchCoordinates_SwipeStart(
             this.evt = evt
-        );
+            );
 
         this.sliderTrack.style.transform = `translate3d(-${this.positionFinal}px, 0px, 0px)`;
 
         this.addEventsSliderTrack();
-	}
+    }
 
     swipeAction() {
     	const evt = super.getEvent();
 
         super.checkSliderCanBeMoved(
             this.evt = evt
-        );
+            );
 
         if (!this.allowSwipe) {
             return
         };
 
-    	this.positionSliderTrack = this.positionPressedX - evt.clientX + this.positionFinal;
+        this.positionSliderTrack = this.positionPressedX - evt.clientX + this.positionFinal;
 
         if (event.type === "touchmove") {
             this.positionX_FingetCurrentMoment_OnSlider = Math.abs(this.positionPressedX - evt.clientX);
@@ -226,24 +227,115 @@ class SliderWithFight extends Slider {
             super.checksOutOfBounds();
         };
 
-    	this.pushingSlider();
+        this.pushingSlider();
     }
 
-	swipeEnd() {
-		this.removeEventsSliderTrack();
+    swipeEnd() {
+        this.removeEventsSliderTrack();
         this.isScrollingSlider = false;
 
-		if ((Math.abs(this.singleSwipe) <= this.percentForSuccessfulScrolling)) {
-			this.returnsSliderBack();
-			return;
-		};
+        if ((Math.abs(this.singleSwipe) <= this.percentForSuccessfulScrolling)) {
+            this.returnsSliderBack();
+            return;
+        };
 
-		this.checksIfSliderNeedsPromoted();
-	}
+        this.checksIfSliderNeedsPromoted();
+    }
 
 
-	run() {
-		this.sliderTrack.addEventListener("mousedown", this._swipeStart);
-		this.sliderTrack.addEventListener("touchstart", this._swipeStart, { passive: true });
-	}
+    run() {
+        this.sliderTrack.addEventListener("mousedown", this._swipeStart);
+        this.sliderTrack.addEventListener("touchstart", this._swipeStart, { passive: true });
+    }
 };
+
+
+class SliderSplit {
+    /**
+    * @param slider -> block "slider-split" ( type -> HTMLElement )
+    * @param options -> custom settings ( type -> Object )
+    Разделённый слайдер в одной плоскости.
+    */
+
+    constructor(slider, options) {
+        this.slider = slider;
+        this.options = options;
+
+        this.slides = this.slider.querySelectorAll(".slide");
+        this.slidesNumbers = this.slides.length;
+        this.sliderBtns = this.slider.querySelectorAll(".slider-split-btn");
+
+        this.currentSlide = 0;
+
+        this.sliderWidth = this.sliderWidth = Math.round(this.slider.getBoundingClientRect().width);
+
+        this.percentageForChangingSlides = Math.round(this.sliderWidth / this.slidesNumbers);
+
+        this._mouseMovement_On_Slider = () => { this.mouseMovement_On_Slider(); };
+
+        this.setsZIndex_For_Slides();
+    }
+
+
+    // Вспомогательные методы.
+    getEvent() {
+        return (event.type.search('touch') != -1) ? event.touches[0] : event;
+    }
+
+    findSlide_CurrentLocationsCursor(evt) {
+        /* Находит слайд в зависимости расположения курсора мыши.  */
+
+        const positionCurrentCursor = (evt.clientX - this.slider.getBoundingClientRect().x).toFixed(2);
+        const currentSlide = Math.floor(positionCurrentCursor / this.percentageForChangingSlides);
+
+        if ( this.currentSlide !== currentSlide ) {
+            this.currentSlide = currentSlide;
+
+            this.setsActiveSlide();
+            this.setsActiveBtn();
+        };
+    }
+
+    setsActiveSlide() {
+        this.slides.forEach((slide) => {
+            slide.classList.remove("slide-split-active");
+        });
+
+        this.slides[this.currentSlide].classList.add("slide-split-active");
+    }
+
+    setsActiveBtn() {
+        this.sliderBtns.forEach((btn) => {
+            btn.classList.remove("split-btn-active");
+        });
+
+        this.sliderBtns[this.currentSlide].classList.add("split-btn-active");
+    }
+
+    setsZIndex_For_Slides() {
+        let zIndex = 5 * this.slidesNumbers;
+
+        this.slides.forEach((slide) => {
+            slide.style.zIndex = `${zIndex}`;
+            zIndex -= 5;
+        });
+    }
+
+
+    // Отвечает за функционал.
+    mouseMovement_On_Slider() {
+        /* Движение курсора по области слайдера.  */
+
+        const evt = this.getEvent();
+
+        this.findSlide_CurrentLocationsCursor(
+            this.evt = evt
+            );
+    }
+
+
+    run() {
+        this.slider.addEventListener("mousemove", this._mouseMovement_On_Slider);
+    }
+};
+

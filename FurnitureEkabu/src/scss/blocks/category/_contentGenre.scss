@@ -1,0 +1,59 @@
+.content-genre {
+
+	&__content {
+
+		&-item {
+			margin-bottom: 130px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-title {
+				max-width: 510px;
+			}
+
+			&-wrapper {
+				margin-top: 60px;
+			}
+
+			&-back-img {
+				margin-right: 30px;
+				width: 50%;
+			}
+
+			&-img {
+				max-width: 560px;
+				width: 100%;
+			}
+
+			&-description {
+				flex-direction: column;
+
+				&-text {
+					margin-bottom: 26px;
+					max-width: 460px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&-technics {
+						margin-bottom: 10px;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&-back-btn {
+					a {
+						padding: 18px 32px;
+						max-width: 260px;
+					}
+				}
+			}
+		}
+	}
+}

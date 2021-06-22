@@ -1,0 +1,24 @@
+<li class="category-items__content-block">
+	<div class="category-items__content-block-slider-split">
+		<div class="category-items__content-block-slider-split-list">
+			@@for (let i = 0; i < imgs.length; i++) {
+				<div class="category-items__content-block-slider-split-slide slide">
+					<img src="`+imgs[i]+`" alt="kitchen">
+				</div>
+			}
+		</div>
+		<div class="category-items__content-block-slider-split-back-btns">
+			@@for (let i = 0; i < imgs.length; i++) {
+				<button type="button" class="category-items__content-block-slider-split-btn slider-split-btn">Btn slider 1</button>
+			}
+		</div>
+	</div>
+	<div class="category-items__content-block-back-price">
+		<p class="category-items__content-block-price">
+			@@price
+		</p>
+	</div>
+	<div class="category-items__content-block-back-button fl">
+		<button type="button" class="category-items__content-block-button button">Расчет цены</button>
+	</div>
+</li>
