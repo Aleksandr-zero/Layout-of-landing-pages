@@ -1,5 +1,6 @@
 .header {
 	padding: 35px 0;
+	position: relative;
 
 	&__content {
 
@@ -114,6 +115,8 @@
 				height: 2px;
 				background-color: $primary-color-1;
 
+				transition: background-color $animate;
+
 				position: relative;
 
 				&::before,
@@ -124,6 +127,7 @@
 					height: 2px;
 					background-color: $primary-color-1;
 					left: 0;
+					transition: all $animate;
 				}
 
 				&::before {
@@ -132,6 +136,23 @@
 
 				&::after {
 					bottom: -6px;
+				}
+			}
+
+			&.header-btn-menu-active {
+
+				span {
+					background-color: transparent;
+
+					&::before {
+						transform: rotate(45deg);
+						top: 0;
+					}
+
+					&::after {
+						transform: rotate(-45deg);
+						bottom: 0;
+					}
 				}
 			}
 		}
@@ -214,7 +235,44 @@
 
 			&-logo {
 				width: 90px;
-				height: 54px;
+			}
+
+			&-social {
+
+				&-items {
+					margin-right: 18px;
+				}
+
+				&-phone {
+
+					&-link {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 425px) {
+
+		&__content {
+
+			&-logo {
+				width: 70px;
+			}
+
+			&-social {
+
+				&-item {
+
+					&-link {
+
+						svg {
+							width: 22px;
+							height: 22px;
+						}
+					}
+				}
 			}
 		}
 	}

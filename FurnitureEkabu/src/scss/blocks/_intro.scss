@@ -27,9 +27,9 @@
 			}
 
 			&-slide {
-				height: 100%;
 				width: 100%;
 				flex-shrink: 0;
+				overflow: hidden;
 
 				&:first-child {
 					background-color: $back-color-1;
@@ -54,20 +54,6 @@
 						position: absolute;
 						bottom: 88px;
 						left: 28%;
-
-						span {
-							transform-origin:50% 100%;
-							position: relative;
-
-							&::after {
-								position: absolute;
-								content: "";
-								width: 274px;
-								height: 40px;
-								left: -35px;
-								background-image: url("../img/icons/underline.svg");
-							}
-						}
 					}
 				}
 
@@ -78,7 +64,8 @@
 				}
 
 				&-container	{
-					max-width: 950px;
+					max-width: 990px;
+					padding: 0 20px;
 					margin: 0 auto;
 				}
 
@@ -86,6 +73,7 @@
 					margin-right: 35px;
 
 					&-title {
+						display: inline;
 
 						&.underline-text {
 							&::after {
@@ -144,6 +132,123 @@
 
 				&-img {
 
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1120px) {
+
+		&__content {
+
+			&-slider {
+
+				&-slide {
+
+					&:nth-child(2) {
+
+						.intro__content-slider-slide-description-good {
+							left: 21%;
+							bottom: 80px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+
+		&__content {
+
+			&-slider {
+
+				&-slide {
+
+					&:last-child {
+						.intro__content-slider-slide-description {
+							max-width: 50%;
+						}
+					}
+
+					&-description {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		&__content {
+
+			&-slider {
+
+				&-slide {
+					display: flex;
+
+					&:first-child {
+
+						.intro__content-slider-slide-back-img {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 620px) {
+
+		&__content {
+
+			&-slider {
+
+				&-slide {
+
+					&:first-child {
+
+						.intro__content-slider-slide-container {
+							margin-left: 50px;
+						}
+					}
+
+					&-description {
+
+						&-link {
+
+							&:before {
+								width: 50px;
+								height: 50px;
+								right: -80px;
+							}
+
+							&:after {
+								border-width: 8px 0 8px 14px;
+								right: -63px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 550px) {
+
+		&__content {
+
+			&-slider {
+
+				&-slide {
+
+					&-description {
+
+						&-title {
+							font-size: 32px;
+						}
+					}
 				}
 			}
 		}

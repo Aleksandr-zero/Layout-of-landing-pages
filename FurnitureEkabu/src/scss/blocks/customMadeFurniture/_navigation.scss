@@ -88,4 +88,12 @@
 			}
 		}
 	}
+
+	@media (max-width: 1130px) {
+		width: 60%;
+	}
+
+	@media (max-width: 1020px) {
+		display: none;
+	}
 }

@@ -10,10 +10,6 @@
 			padding: 14px 10px;
 		}
 
-		&-items {
-
-		}
-
 		&-item {
 			position: relative;
 
@@ -76,7 +72,7 @@
 				visibility: hidden;
 				padding: 10px 20px 20px;
 
-				z-index: 20;
+				z-index: 100;
 
 				&.nav-item-menu-active {
 					visibility: visible;
@@ -122,7 +118,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1020px) {
 
 		&__nav {
 			display: none;

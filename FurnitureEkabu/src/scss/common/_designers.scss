@@ -159,4 +159,17 @@
 			}
 		}
 	}
+
+	@media (max-width: 425px) {
+
+		&__content {
+
+			&-item {
+
+				&-link {
+					font-size: 14px;
+				}
+			}
+		}
+	}
 }

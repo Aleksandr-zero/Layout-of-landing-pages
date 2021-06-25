@@ -1,9 +1,11 @@
-<div class="custom-furniture">
+<div class="custom-furniture new-block">
 	<div class="container">
 		<div class="custom-furniture__content">
 			<h2 class="custom-furniture__content-title">Мебель на заказ по индивидуальным размерам в Екатеринбурге</h2>
 			<div class="custom-furniture__content-wrapper fl just_cont">
-				@@include("./common/navigation.html")
+				@@include("./common/navigation.html", {
+					"classEl": "custom-furniture__content-nav-1"
+				})
 				<ul class="custom-furniture__content-items fl">
 					@@loop("./customMadeFurniture/customFurnitureCard.html", [
 						{ "pathImg": "./img/customMadeFurniture/customFurniture_1.jpg", "link": "Прямые кухни" },

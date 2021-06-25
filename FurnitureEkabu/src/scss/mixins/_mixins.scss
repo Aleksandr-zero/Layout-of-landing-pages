@@ -1,12 +1,12 @@
 @mixin include-fonts($font_family, $font_weight, $name_file) {
 
 	@font-face {
-	    font-family: $font_family;
-	    src: url('../fonts/#{$name_file}.woff') format('woff'),
-	        url('../fonts/#{$name_file}.woff2') format('woff2');
-	    font-weight: $font_weight;
-	    font-style: normal;
-	    font-display: swap;
+		font-family: $font_family;
+		src: url('../fonts/#{$name_file}.woff') format('woff'),
+		url('../fonts/#{$name_file}.woff2') format('woff2');
+		font-weight: $font_weight;
+		font-style: normal;
+		font-display: swap;
 	}
 }
 
@@ -22,5 +22,33 @@
 
 	h3 {
 		font-size: $size_h3 + px;
+	}
+}
+
+
+@mixin adaptive-category-items($width, $height) {
+
+	&__content {
+
+		&-block {
+
+			&-back-img {
+				width: $width;
+				height: $height;
+			}
+
+			&-slider-split {
+				width: $width;
+				height: $height;
+
+				&-slide {
+
+					img {
+						width: $width;
+						height: $height;
+					}
+				}
+			}
+		}
 	}
 }

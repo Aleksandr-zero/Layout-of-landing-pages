@@ -2,7 +2,9 @@
 	<div class="container">
 		<div class="category__content">
 			<div class="category__content-wrapper fl just_cont">
-				@@include("./common/navigation.html")
+				@@include("./common/navigation.html", {
+					"classEl": "custom-furniture__content-nav-1"
+				})
 				<ul class="category__content-items fl">
 					@@loop("./customMadeFurniture/customFurnitureCard.html", [
 						{ "pathImg": "./img/category/kitchen/kitchen-1.jpg", "link": "Прямые кухни" },

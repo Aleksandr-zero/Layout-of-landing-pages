@@ -78,11 +78,34 @@ const check_For_ChangeYourProject = () => {
 }
 
 
+// SUBCATEGORY APPLIANCES
+const blockAppliances = document.querySelector(".appliances__content");
+let isRearrangeBlockAppliances = false;
+
+const check_For_ChangeAppliances = () => {
+
+	if ( window.outerWidth <= 930 && !isRearrangeBlockAppliances ) {
+		const newPosition_Appliances = blockAppliances.querySelector(".appliances__content-description-back-btn");
+		const rearrangeBlock_Appliances = blockAppliances.querySelector(".appliances__content-back-imgs");
+
+		newPosition_Appliances.before(rearrangeBlock_Appliances);
+		isRearrangeBlockAppliances = true;
+
+	} else if ( window.outerWidth > 930 && isRearrangeBlockAppliances ) {
+		const rearrangeBlock_Appliances = blockAppliances.querySelector(".appliances__content-back-imgs");
+
+		blockAppliances.append(rearrangeBlock_Appliances);
+		isRearrangeBlockAppliances = false;
+	};
+}
+
+
 const checkResizeWindow = () => {
 
 	if ( blockBestMaterials ) check_For_ChangeBestMaterials();
 	if ( blockRoomDimensions ) check_For_ChangeRoomDimensions();
 	if ( blockYourProject ) check_For_ChangeYourProject();
+	if ( blockAppliances ) check_For_ChangeAppliances();
 };
 
 checkResizeWindow();
