@@ -1,0 +1,26 @@
+.back-title {
+	margin-top: 20px;
+
+	&-overhead {
+		font-size: 14px;
+		line-height: 18px;
+		font-weight: 400;
+
+		span {
+			color: $secondary-color-2;
+		}
+
+		&-link {
+			color: $primary-color-1;
+			transition: color $animate;
+
+			&:hover {
+				color: $secondary-color-1;
+			}
+		}
+	}
+
+	&-head {
+
+	}
+}

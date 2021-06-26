@@ -99,6 +99,21 @@
 				text-align: center;
 			}
 
+			&-back-link {
+				margin-top: 16px;
+				display: flex;
+				justify-content: center;
+			}
+
+			&-link {
+				color: $primary-color-1;
+				transition: color $animate;
+
+				&:hover {
+					color: $secondary-color-1;
+				}
+			}
+
 			&-back-button {
 				margin-top: 14px;
 

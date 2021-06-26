@@ -1,0 +1,63 @@
+.portfolio {
+
+	&__content {
+
+		&-wrapper {
+			margin-top: 50px;
+		}
+
+		&-category {
+
+			&-item {
+				margin-bottom: 120px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&-items {
+			margin-top: 48px;
+			column-gap: 3%;
+			flex-wrap: wrap;
+
+			.category-items__content-block {
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+
+		&__content {
+
+			&-items {
+				column-gap: 3%;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		&__content {
+
+			&-category {
+
+				&-item {
+					margin-bottom: 120px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 570px) {
+
+		&__content {
+
+			&-items {
+				justify-content: center;
+			}
+		}
+	}
+}

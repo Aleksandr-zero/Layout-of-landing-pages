@@ -55,5 +55,88 @@
 				margin-bottom: 10px;
 			}
 		}
+
+		&-description {
+			color: $white-color;
+			margin-top: 40px;
+
+			&-item {
+
+				&:last-child {
+					display: none;
+				}
+
+				&-title {
+					color: $secondary-color-2;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 620px) {
+
+		&-content {
+			padding: 30px;
+		}
+	}
+
+	@media (max-width: 560px) {
+
+		&-content {
+
+			.custom-furniture__content-nav-items {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+
+		&-content {
+			flex-direction: column;
+
+			.custom-furniture__content-nav-items {
+				margin-right: 0;
+			}
+
+			&-items {
+				margin-top: 40px;
+			}
+
+			&-description {
+
+				&-item {
+
+					&:last-child {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 425px) {
+		top: 65px;
+
+		&-content {
+
+			&-description {
+
+				&-item {
+
+					&-title,
+					&-link{
+						font-size: 12px;
+					}
+
+					&-text {
+						p {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
 	}
 }

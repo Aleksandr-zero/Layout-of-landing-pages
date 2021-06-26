@@ -41,4 +41,37 @@
 			margin-bottom: 28px;
 		}
 	}
+
+	@media (max-width: 570px) {
+
+		&__content {
+
+			.category-items__content-block-slider-split {
+				width: 230px;
+
+				img {
+					width: 230px;
+				}
+			}
+
+			.category-items__content-block {
+				width: 45%;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+
+			.category-items__content-block-slider-split {
+				width: 300px;
+
+				img {
+					width: 300px;
+				}
+			}
+
+		.category-items__content-block {
+			width: 100%;
+		}
+	}
 }

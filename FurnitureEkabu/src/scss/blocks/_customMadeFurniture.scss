@@ -15,4 +15,14 @@
 			flex-wrap: wrap;
 		}
 	}
+
+	@media (max-width: 570px) {
+
+		&__content {
+
+			&-items {
+				justify-content: space-between;
+			}
+		}
+	}
 }

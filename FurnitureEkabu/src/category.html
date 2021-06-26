@@ -8,7 +8,14 @@
 
 	@@include("./templates/common/header.html")
 
-	@@include("./templates/blocks/categoryCont/title.html")
+	<div class="wrapper-title">
+		<div class="container">
+			@@include("./templates/blocks/common/title.html", {
+				"overhead": "Каталог / <span>Кухни</span>",
+				"title": "Кухни на заказ"
+			})
+		</div>
+	</div>
 
 	@@include("./templates/common/introFeatures.html")
 

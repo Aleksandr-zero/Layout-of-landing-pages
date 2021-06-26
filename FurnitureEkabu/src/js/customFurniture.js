@@ -3,7 +3,7 @@ const navigationNav = document.querySelector(".custom-furniture__content-nav-1")
 
 const openMenuNavigationNav = (block) => {
 	const activeMenu = block.querySelector(".custom-furniture-nav-menu-active");
-	console.log(true);
+
 	const currentItem = event.currentTarget.closest(".custom-furniture__content-nav-item");
 	const currentMenu = currentItem.querySelector(".custom-furniture__content-nav-item-menu");
 

@@ -34,8 +34,12 @@
 @import "./blocks/subcategoryCont.scss";
 @import "./blocks/subcategory/description";
 
+// PORTFOLIO
+@import "./blocks/portfolioCont";
+
 // COMMON
 @import "./common/common";
+@import "./common/title";
 @import "./common/company";
 @import "./common/designers";
 @import "./common/dreamInterior";

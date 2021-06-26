@@ -7,10 +7,10 @@
 	<div class="container">
 		<div class="subcategory__content">
 			<div class="subcategory__content-back-title">
-				<h4 class="subcategory__content-overhead">
-					<a href="./index.html" class="subcategory__content-overhead-link">Главная /</a> Каталог / Кухни / <span>Угловые кухни</span>
-				</h4>
-				<h1 class="subcategory__content-title">Угловые кухни на заказ</h1>
+				@@include("./common/title.html", {
+					"overhead": "Каталог / Кухни / <span>Угловые кухни</span>",
+					"title": "Угловые кухни на заказ"
+				})
 			</div>
 			<div class="subcategory__content-wrapper fl just_cont">
 				@@include("./common/navigation.html", {
