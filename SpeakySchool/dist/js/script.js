@@ -514,9 +514,11 @@ if (trainingPackageBlockItemsOffline) {
         new SliderWithoutFight(items).run();
     });
 
-    if (document.querySelector(".training-package__content-back-btns").querySelector(".slider")) {
-        new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
-    };
+    if (document.querySelector(".training-package__content-back-btns-line")) {
+        if (document.querySelector(".training-package__content-back-btns-line").querySelector(".slider")) {
+            new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
+        };
+    }
 };
 
 
