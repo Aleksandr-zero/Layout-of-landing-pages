@@ -11,6 +11,118 @@
 				cursor: grabbing;
 			}
 
+			.slider-pagination {
+				position: absolute;
+				bottom: 16px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				display: flex;
+
+				.pagination-btn {
+					outline: none;
+					border: 0;
+
+					color: transparent;
+					font-size: 0;
+
+					display: block;
+					width: 12px;
+					height: 12px;
+
+					border-radius: 50%;
+					background-color: $secondary-color-2;
+
+					margin-right: 15px;
+
+					transition: background-color $animate;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					&:hover {
+						background-color: $primary-color-1;
+					}
+
+					&.pagination-btn-active {
+						background-color: $primary-color-1;
+					}
+				}
+			}
+
+			.back-btn-slider-push {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				display: flex;
+
+				&.back-btn-slider-push-left {
+					left: 30px;
+				}
+
+				&.back-btn-slider-push-right {
+					right: 30px;
+				}
+			}
+
+			.btn-slider-push {
+				font-size: 0;
+				color: transparent;
+				position: relative;
+				padding: 24px 14px;
+
+				border: 0;
+				outline: none;
+				background-color: transparent;
+				cursor: pointer;
+
+				&::before,
+				&::after {
+					position: absolute;
+					content: "";
+					background-color: $primary-color-1;
+					border-radius: 4px;
+
+					width: 30px;
+					height: 3px;
+				}
+
+				&.btn-slider-push-last {
+					&::before,
+					&::after {
+						right: 2px;
+					}
+
+					&::before {
+						transform: rotate(-45deg);
+						top: 12.5px;
+					}
+
+					&::after  {
+						transform: rotate(45deg);
+						bottom: 13.5px;
+					}
+				}
+
+				&.btn-slider-push-next {
+					&::before,
+					&::after {
+						left: 2px;
+					}
+
+					&::before {
+						transform: rotate(45deg);
+						top: 12.5px;
+					}
+
+					&::after  {
+						transform: rotate(-45deg);
+						bottom: 13.5px;
+					}
+				}
+			}
+
 			img {
 				pointer-events: none;
 			}

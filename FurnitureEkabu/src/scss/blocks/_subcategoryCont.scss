@@ -39,6 +39,22 @@
 		.category-items__content-block {
 			width: 28%;
 			margin-bottom: 28px;
+
+		}
+	}
+
+	@media (max-width: 670px) {
+
+		&__content {
+
+			&-items {
+				.category-items__content-block {
+
+					.category-items__content-block-button {
+						padding: 12px 0;
+					}
+				}
+			}
 		}
 	}
 
@@ -62,13 +78,13 @@
 
 	@media (max-width: 500px) {
 
-			.category-items__content-block-slider-split {
-				width: 300px;
+		.category-items__content-block-slider-split {
+			width: 300px;
 
-				img {
-					width: 300px;
-				}
+			img {
+				width: 300px;
 			}
+		}
 
 		.category-items__content-block {
 			width: 100%;

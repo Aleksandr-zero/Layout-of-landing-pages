@@ -1,0 +1,19 @@
+@import "./var/var";
+@import "./mixins/mixins";
+@import "./fonts/fonts";
+
+@import "./reset/reset";
+@import "./normalize/normalize";
+
+// COMMON
+@import "./common/header";
+@import "./common/subhead";
+@import "./common/advantages";
+@import "./common/reviews";
+@import "./common/contacts";
+@import "./common/footer";
+
+// BLOCKS
+@import "./blocks/about";
+@import "./blocks/brands";
+@import "./blocks/services";
