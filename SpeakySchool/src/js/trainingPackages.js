@@ -12,8 +12,8 @@ const iteratingOverAnArray_DeleteActiveClass = (array, activeClass) => {
 const add_delectActiveClass_trainingPackageItem = (arrayItems, indexBlock, activeClass) =>  {
 
     iteratingOverAnArray_DeleteActiveClass(
-        array = arrayItems,
-        activeClass = activeClass
+        arrayItems,
+        activeClass
     );
 
     setTimeout(() => {
@@ -58,16 +58,16 @@ const pressedTrainingPackageBtnOnline_1 = (event) => {
     positionBtnOnline_1 = trainingPackageBtnsOnline_Array_1.indexOf(event.currentTarget);
 
     iteratingOverAnArray_DeleteActiveClass(
-        array = trainingPackageBtnsOnline_1,
-        activeClass = "training-package-btn-active"
+        trainingPackageBtnsOnline_1,
+        "training-package-btn-active"
     );
 
     event.currentTarget.classList.add("training-package-btn-active");
 
     add_delectActiveClass_trainingPackageItem(
-        arrayItems = trainingPackageBlockItemsOnline,
-        indexBlock = positionBtnOnline_1 + positionBtnOnline_2,
-        activeClass = "training-package-content-items-active"
+        trainingPackageBlockItemsOnline,
+        positionBtnOnline_1 + positionBtnOnline_2,
+        "training-package-content-items-active"
     );
 };
 
@@ -82,9 +82,9 @@ const pressedTrainingPackageBtnOnline_2 = (event) => {
     event.currentTarget.classList.add("training-package-btn-active");
 
     add_delectActiveClass_trainingPackageItem(
-        arrayItems = trainingPackageBlockItemsOnline,
-        indexBlock = positionBtnOnline_1 + positionBtnOnline_2,
-        activeClass = "training-package-content-items-active"
+        trainingPackageBlockItemsOnline,
+        positionBtnOnline_1 + positionBtnOnline_2,
+        "training-package-content-items-active"
     )
 };
 
@@ -137,9 +137,9 @@ const pressedTrainingPackageBtnOffline = (event) => {
     };
 
     add_delectActiveClass_trainingPackageItem(
-        arrayItems = trainingPackageBlockItemsOffline,
-        indexBlock = indexTrainingPackageBlock,
-        activeClass = "training-package-content-items-active"
+        trainingPackageBlockItemsOffline,
+        indexTrainingPackageBlock,
+        "training-package-content-items-active"
     );
 };
 
@@ -152,10 +152,10 @@ if (trainingPackageBlockItemsOffline) {
         new SliderWithoutFight(items).run();
     });
 
-    if (document.querySelector(".training-package__content-back-btns-line")) {
-        if (document.querySelector(".training-package__content-back-btns-line").querySelector(".slider")) {
+    if (document.querySelector(".training-package__content-back-btns")) {
+        if (document.querySelector(".training-package__content-back-btns").classList.contains("slider")) {
             new SliderWithoutFight(document.querySelector(".training-package__content-back-btns")).run();
-        };
+        }
     }
 };
 
@@ -262,9 +262,7 @@ const pressedMenuContent_LessonDuration = () => {
 const opensTypeOccupationMenuContent = () => {
     deleteActiveClass_And_Checked();
 
-    addActiveCLassBtnLineMenu(
-        index = 0
-    );
+    addActiveCLassBtnLineMenu(0);
 
     if (typeTraining.split("-")[0] == "offline") {
         trainingPackageBtnsLineMenu[1].classList.remove("back-btns-line-menu-active-online");
@@ -277,9 +275,7 @@ const opensTypeOccupationMenuContent = () => {
 };
 
 const opensLessonDurationMenuContent = () => {
-    addActiveCLassBtnLineMenu(
-        index = 1
-    );
+    addActiveCLassBtnLineMenu(1);
 
     if (typeOccupation == "individual-lessons-online") {
         trainingPackageBtnsLineMenu[2].classList.remove("back-btns-line-menu-active-offline");

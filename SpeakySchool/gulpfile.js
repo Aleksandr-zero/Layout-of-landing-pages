@@ -7,6 +7,7 @@ const sass              = require('gulp-sass');
 const rename            = require("gulp-rename");
 const include           = require('gulp-file-include');
 const uglify            = require("gulp-uglify-es").default;
+const babel             = require('gulp-babel');
 const del               = require('del');
 const concat            = require('gulp-concat');
 const htmlmin           = require("gulp-htmlmin");
@@ -19,11 +20,18 @@ function html() {
         .pipe(include({
             prefix: '@@'
         }))
-        .pipe(htmlmin(
-            {
-                removeComments: true
-            }
-        ))
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            collapseInlineTagWhitespace: true,
+            collapseBooleanAttributes: true,
+            decodeEntities: true,
+            removeComments: true,
+            continueOnParseError: true,
+            removeEmptyAttributes: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true
+        }))
         .pipe(dest('dist'));
 };
 
@@ -68,7 +76,12 @@ function scripts() {
             ])
         .pipe(concat("js/script.js"))
         .pipe(dest("dist"))
-        .pipe(uglify())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify({
+            keep_fnames: true
+        }))
         .pipe(rename({
             suffix: ".min",
             extname: ".js"

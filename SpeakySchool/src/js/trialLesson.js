@@ -49,9 +49,9 @@ const pressedBtnForm = (formBtns, formBtnsArray, forms, backFormItems) => {
             event.currentTarget.classList.add("trial-lesson-btn-active");
 
             changes_TrialForms(
-                indexForm = formBtnsArray.indexOf(event.currentTarget),
-                forms = forms,
-                backFormItems = backFormItems
+                formBtnsArray.indexOf(event.currentTarget),
+                forms,
+                backFormItems
             );
 
             return;
