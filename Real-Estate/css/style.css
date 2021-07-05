@@ -1221,21 +1221,38 @@ a {
   margin-top: 60px;
 }
 
-.properties__content-items {
+.properties__content-slider {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.properties__content-slider.slider-active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.properties__content-slider img {
+  pointer-events: none;
+}
+
+.properties__content-slider .slider-list {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.properties__content-slider .slider-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  left: 0;
-  overflow: hidden;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
-  cursor: pointer;
-}
-
-.properties__content-items.properties__content-items-active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
 }
 
 .properties__content-item {

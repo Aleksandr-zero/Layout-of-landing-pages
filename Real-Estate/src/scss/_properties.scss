@@ -3,19 +3,29 @@
     &__content {
         margin-top: 60px;
 
-        &-items {
-            display: flex;
+        &-slider {
             position: relative;
-            left: 0;
-
-            overflow: hidden;
-
-            transition: all ease 0.2s;
-
-            cursor: pointer;
-
-            &.properties__content-items-active {
+            user-select: none;
+            touch-action: pan-y;
+            cursor: grab;
+        
+            &.slider-active {
                 cursor: grabbing;
+            }
+        
+            img {
+                pointer-events: none;
+            }
+        
+            .slider-list {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        
+            .slider-track {
+                display: flex;
             }
         }
 
