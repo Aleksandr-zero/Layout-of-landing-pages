@@ -1,0 +1,126 @@
+.container {
+	max-width: 1280px + 40px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+
+.input-form {
+
+}
+
+.textarea-form {
+
+}
+
+.input-form,
+.textarea-form {
+	padding: 14px 18px;
+	background-color: $color-back-input-form;
+	border: 1px solid transparent;
+
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 20px;
+	font-family: "Roboto";
+
+	transition: border $animate ease;
+
+	&::placeholder {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	&:focus {
+		border: 1px solid $color-back-input-form-focus;
+	}
+}
+
+.filled-btn-form {
+	border: 1px solid $color-btn-link-1;
+	background-color: $color-btn-link-1;
+
+	color: $white-color;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-family: "Roboto";
+	font-size: 14px;
+	line-height: 18px;
+
+	transition: color $animate ease,
+				background-color $animate ease;
+
+	&:hover {
+		color: $color-btn-link-1;
+		background-color: $white-color;
+	}
+}
+
+
+.fl {
+	display: flex;
+}
+
+.just_cont {
+	justify-content: space-between;
+}
+
+.al_it {
+	align-items: center;
+}
+
+
+.split-text {
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: $description-color-3;
+}
+
+
+.unfilled-btn {
+	border: 1px solid $color-btn-link-2;
+
+	color: $color-btn-link-2;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: "Inter";
+	font-size: 14px;
+	line-height: 16px;
+
+	transition: color $animate ease,
+				background-color $animate ease;
+
+	&:hover {
+		color: $white-color;
+		background-color: $color-btn-link-2;
+	}
+}
+
+.filled-btn {
+
+}
+
+
+.new-block {
+	margin-top: 140px;
+}
+
+
+p.description-text-1 {
+	font-size: 14px;
+	line-height: 22px;
+	font-family: "Inter";
+	font-weight: 300;
+}
+
+p.description-text-2 {
+	font-size: 18px;
+	line-height: 28px;
+	font-family: "Inter";
+	font-weight: 300;
+	color: $description-color-3;
+}

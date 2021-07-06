@@ -2,6 +2,14 @@ const blockCategoryItems = document.querySelector(".category-items");
 
 const open_hide_PopupCategoryItems = (popup) => {
 	popup.classList.toggle("popup-contact-active");
+
+	if ( event.currentTarget.classList.contains("popup-contact__content-button-close") ) {
+		setTimeout(() => {
+			hides_showVerticalScrolling(popup);
+		}, 300);
+	} else {
+		hides_showVerticalScrolling(popup);
+	};
 };
 
 if ( blockCategoryItems ) {

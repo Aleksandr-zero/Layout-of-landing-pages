@@ -1,3 +1,58 @@
 .subhead {
 
+	&__container {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	&__content {
+		flex-direction: column;
+
+		&-nav {
+			max-width: 63%;
+
+			&-item {
+
+				&:last-child {
+					width: 20%;
+				}
+
+				&-link {
+					padding: 6px;
+				}
+			}
+		}
+
+		&-back-search {
+			justify-content: flex-end;
+			position: relative;
+
+			&-img {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 24px;
+				width: 20px;
+			}
+		}
+
+		&-input-search {
+			background-color: $color-back-input-search;
+			padding: 18px 56px 18px 18px;
+			font-size: 16px;
+			line-height: 20px;
+			font-family: "Inter";
+
+			width: 375px;
+			max-width: 375px;
+
+			border: 1px solid transparent;
+
+			transition: border $animate ease;
+
+			&:focus {
+				border: 1px solid $color-back-input-search-focus;
+			}
+		}
+	}
 }

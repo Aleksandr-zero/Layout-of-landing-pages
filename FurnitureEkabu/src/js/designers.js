@@ -49,11 +49,19 @@ if (blockDesigners) {
 
 	const open_hide_PopupContactDesigner = () => {
 		popupDesigners.classList.toggle("popup-contact-active");
+
+		if ( event.currentTarget.classList.contains("popup-contact__content-button-close") ) {
+			setTimeout(() => {
+				hides_showVerticalScrolling(popupDesigners);
+			}, 300);
+		} else {
+			hides_showVerticalScrolling(popupDesigners);
+		};
 	};
 
 	btnClosePopupDesigners.addEventListener("click", open_hide_PopupContactDesigner);
 
 	btnsDesigners.forEach((btn) => {
-		btn.addEventListener("click", open_hide_PopupContactDesigner)
+		btn.addEventListener("click", open_hide_PopupContactDesigner);
 	});
 };

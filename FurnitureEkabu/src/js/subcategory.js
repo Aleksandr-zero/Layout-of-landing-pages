@@ -5,6 +5,14 @@ if ( blockSubcategory ) {
 
 	const open_hidePopupSubcategory = () => {
 		popupSubcategory.classList.toggle("popup-contact-active");
+
+		if ( event.currentTarget.classList.contains("popup-contact__content-button-close") ) {
+			setTimeout(() => {
+				hides_showVerticalScrolling(popupSubcategory);
+			}, 300);
+		} else {
+			hides_showVerticalScrolling(popupSubcategory);
+		};
 	};
 
 	const btnClosePopupSubcategory = popupSubcategory.querySelector(".subcategory__popup-close-btn");

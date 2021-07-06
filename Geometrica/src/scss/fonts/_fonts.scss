@@ -5,7 +5,7 @@
 @include include-fonts("Inter", 700, 'Inter-Bold', "Inter");
 @include include-fonts("Inter", 800, 'Inter-ExtraBold', "Inter");
 
-@include include-fonts("Roboto", 300, 'Inter-Light', "Roboto");
-@include include-fonts("Roboto", 400, 'Inter-Regular', "Roboto");
-@include include-fonts("Roboto", 500, 'Inter-Medium', "Roboto");
-@include include-fonts("Roboto", 700, 'Inter-Bold', "Roboto");
+@include include-fonts("Roboto", 300, 'Roboto-Light', "Roboto");
+@include include-fonts("Roboto", 400, 'Roboto-Regular', "Roboto");
+@include include-fonts("Roboto", 500, 'Roboto-Medium', "Roboto");
+@include include-fonts("Roboto", 700, 'Roboto-Bold', "Roboto");

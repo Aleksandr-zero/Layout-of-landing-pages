@@ -1,3 +1,77 @@
 .header {
+	padding: 56px 0 0;
 
+	&__container {
+
+	}
+
+	&__content {
+
+		&-nav {
+			flex-grow: 1;
+			margin-right: 76px;
+
+			&-item {
+
+				&-link {
+					font-family: "Inter";
+					font-size: 14px;
+					line-height: 16px;
+					font-weight: 700;
+					color: $description-color-7;
+
+					transition: color $animate ease;
+
+					&:hover {
+						color: $black-color;
+					}
+				}
+			}
+		}
+
+		&-back-contact {
+
+		}
+
+		&-contact {
+
+			&-link-phone {
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 24px;
+				color: $description-color-6;
+
+				transition: color $animate ease;
+
+				&:hover {
+					color: $black-color;
+				}
+
+				&-img {
+					margin-right: 10px;
+				}
+			}
+
+			&-back-location {
+				margin-top: 20px;
+			}
+
+			&-location-link {
+				font-size: 14px;
+				line-height: 16px;
+				font-weight: 300;
+				color: $description-color-6;
+
+				transition: color $animate ease;
+
+				&:hover {
+					color: $black-color;
+				}
+			}
+
+			&-back-instagram {
+				margin-left: 84px;
+			}
+		}
+	}
 }

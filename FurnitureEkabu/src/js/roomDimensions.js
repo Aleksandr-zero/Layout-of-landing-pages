@@ -8,6 +8,14 @@ if ( roomDimensions ) {
 
 	const open_hidePopupRoomDimensions = () => {
 		roomDimensionsPopup.classList.toggle("popup-contact-active");
+
+		if ( event.currentTarget.classList.contains("popup-contact__content-button-close") ) {
+			setTimeout(() => {
+				hides_showVerticalScrolling(roomDimensionsPopup);
+			}, 300);
+		} else {
+			hides_showVerticalScrolling(roomDimensionsPopup);
+		};
 	};
 
 	btnCloseRoomDimensionsPopup.addEventListener("click", open_hidePopupRoomDimensions)

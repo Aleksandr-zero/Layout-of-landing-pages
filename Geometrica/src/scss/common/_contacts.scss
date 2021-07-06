@@ -1,3 +1,74 @@
 .contacts {
 
+	&__container {
+		padding: 120px 0;
+		background: url("../img/contacts/map.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__content {
+
+		&-description {
+			background-color: $white-color;
+
+			&-content {
+				padding: 75px 80px;
+
+				&-description {
+					margin-top: 26px;
+
+					&-link {
+						font-family: "Inter";
+						line-height: 30px;
+						color: $black-color;
+
+						transition: color $animate ease;
+
+						&:hover {
+							color: $description-color-6;
+						}
+					}
+				}
+
+				&-description-time {
+					margin-top: 8px;
+				}
+
+				&-connection {
+					margin-top: 20px;
+
+					&-link {
+						font-size: 18px;
+						color: $black-color;
+						line-height: 26px;
+						margin-bottom: 12px;
+
+						transition: color $animate ease;
+
+						&:hover {
+							color: $description-color-6;
+						}
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						&-img {
+							margin-right: 16px;
+						}
+					}
+				}
+
+				&-back-link {
+					margin-top: 32px;
+				}
+
+				&-link {
+					padding: 24px 42px;
+				}
+			}
+		}
+	}
 }

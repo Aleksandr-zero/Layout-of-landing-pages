@@ -1,3 +1,43 @@
 .about {
 
+	&__content {
+
+		&-description {
+			margin-right: 80px;
+
+			&-back-text {
+				margin-top: 62px;
+			}
+
+			&-text {
+				margin-bottom: 36px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&-back-imgs {
+
+			&-wrapper {
+				flex-direction: column;
+
+				&:first-child {
+					margin-right: 40px;
+					margin-top: 100px;
+				}
+
+				&:last-child {
+					.about__content-img {
+						margin-bottom: 40px;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }

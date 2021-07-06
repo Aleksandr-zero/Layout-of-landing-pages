@@ -177,8 +177,8 @@ const serve = () => {
     });
 
     watch(`${PATHS.src.templates}/**/*.html`,    series(htmlDev)).on('change', sync.reload);
-    watch(`${PATHS.src.templates}/**/*.js`,      series(scriptsDev)).on('change', sync.reload);
-    watch(`${PATHS.src.templates}/**/*.scss`,    series(scssDev)).on('change', sync.reload);
+    watch(`${PATHS.src.js}/**/*.js`,      series(scriptsDev)).on('change', sync.reload);
+    watch(`${PATHS.src.scss}/**/*.scss`,    series(scssDev)).on('change', sync.reload);
 };
 
 
