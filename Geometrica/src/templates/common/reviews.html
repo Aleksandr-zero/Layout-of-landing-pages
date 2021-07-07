@@ -1,3 +1,76 @@
-<div class="reviews">
-
+<div class="reviews new-block">
+	<div class="container">
+		<h2 class="reviews-title">Отзывы наших клиентов</h2>
+	</div>
+	<div class="reviews__container">
+		<div class="container">
+			<div class="reviews__content">
+				<div class="reviews__content-slider slider-with-sections">
+					<div class="slider-list">
+						<div class="slider-track">
+							@@loop("./reviews/cardReviews.html", [
+								{
+									"pathImg": "./img/reviews/reviews-man-1.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "23 октября 2020",
+									"text": {
+										"p_1": "Очень интересное место. Ассортимент богаче и разнообразнее, чем в других местах!!!",
+										"p_2": "Нашли для себя плитку, которую не видели нигде больше!"
+									}
+								}, {
+									"pathImg": "./img/reviews/reviews-man-2.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "24 октября 2020",
+									"text": {
+										"p_1": "В каталоге нашего интернет-магазина более 570 коллекций керамической плитки и керамогранита от лучших производителей России и Европ ы.",
+										"p_2": "В наличии имеются эксклюзивные бренды, которые вы не найдете в других магазинах Иркутска. "
+									}
+								}, {
+									"pathImg": "./img/reviews/reviews-man-3.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "25 октября 2020",
+									"text": {
+										"p_1": "Очень интересное место. Ассортимент богаче и разнообразнее, чем в других местах!!!",
+										"p_2": "Нашли для себя плитку, которую не видели нигде больше!"
+									}
+								},{
+									"pathImg": "./img/reviews/reviews-man-1.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "23 октября 2020",
+									"text": {
+										"p_1": "Очень интересное место. Ассортимент богаче и разнообразнее, чем в других местах!!!",
+										"p_2": "Нашли для себя плитку, которую не видели нигде больше!"
+									}
+								}, {
+									"pathImg": "./img/reviews/reviews-man-2.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "24 октября 2020",
+									"text": {
+										"p_1": "В каталоге нашего интернет-магазина более 570 коллекций керамической плитки и керамогранита от лучших производителей России и Европ ы.",
+										"p_2": "В наличии имеются эксклюзивные бренды, которые вы не найдете в других магазинах Иркутска. "
+									}
+								}, {
+									"pathImg": "./img/reviews/reviews-man-3.jpg",
+									"name": "Екатерина Петрова",
+									"timePub": "25 октября 2020",
+									"text": {
+										"p_1": "Очень интересное место. Ассортимент богаче и разнообразнее, чем в других местах!!!",
+										"p_2": "Нашли для себя плитку, которую не видели нигде больше!"
+									}
+								}
+							])
+						</div>
+					</div>
+					<div class="slider-with-sections-navigation">
+						<div class="back-btn-slider-push back-btn-slider-push-left">
+							<button data-direction="last" type="button" class="btn-slider-push btn-slider-push-last">Button</button>
+						</div>
+						<div class="back-btn-slider-push back-btn-slider-push-right">
+							<button data-direction="next" type="button" class="btn-slider-push btn-slider-push-next">Button</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

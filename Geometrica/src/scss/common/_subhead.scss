@@ -39,9 +39,8 @@
 		&-input-search {
 			background-color: $color-back-input-search;
 			padding: 18px 56px 18px 18px;
-			font-size: 16px;
-			line-height: 20px;
-			font-family: "Inter";
+
+			font: 16px/20px "Inter";
 
 			width: 375px;
 			max-width: 375px;
@@ -52,6 +51,101 @@
 
 			&:focus {
 				border: 1px solid $color-back-input-search-focus;
+			}
+		}
+
+		&-catalog {
+			position: relative;
+
+			&-btn {
+				padding: 24px 26px;
+
+				&-img {
+					margin-left: 28px;
+
+					path,
+					rect {
+						transition: fill $animate ease;
+					}
+				}
+
+				&:hover {
+
+					.subhead__content-catalog-btn-img {
+						path,
+						rect {
+							fill: $color-btn-link-2;
+						}
+					}
+				}
+			}
+
+			&-menu {
+				position: absolute;
+				left: 0;
+				z-index: 20;
+				top: 66px;
+				background-color: $color-back-catalog;
+
+				visibility: hidden;
+				opacity: 0;
+
+				transition: visibility $animate ease,
+							opacity $animate ease;
+
+				&.subhead-catalog-menu-active {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				&-content {
+					padding: 48px 36px;
+					position: relative;
+
+					&::before {
+						position: absolute;
+						content: "";
+						top: -10px;
+						left: 222px;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 5px 10px 5px;
+						border-color: transparent transparent $color-back-catalog transparent;
+					}
+
+					&-items {
+						flex-wrap: wrap;
+
+						&-wrapper {
+							margin-right: 60px;
+
+							&:last-child {
+								margin-right: 0;
+							}
+						}
+					}
+
+					&-item {
+						margin-bottom: 16px;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						&-link {
+							font: 600 18px/22px "Inter";
+							text-transform: uppercase;
+							color: $color-back-catalog-link;
+
+							transition: color $animate ease;
+
+							&:hover {
+								color: $color-btn-link-1;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

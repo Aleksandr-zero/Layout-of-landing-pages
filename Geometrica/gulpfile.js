@@ -122,6 +122,7 @@ const ttf2 = () => {
 const scriptsDev = () => {
     return src([
             "src/js/common.js",
+            "src/js/sliders.js",
             "src/js/**.js"
         ])
         .pipe(concat("script.js"))
@@ -131,6 +132,7 @@ const scriptsDev = () => {
 const scriptsBuild = () => {
     return src([
             "src/js/common.js",
+            "src/js/sliders.js",
             "src/js/**.js"
         ])
         .pipe(concat('script.js'))
@@ -178,7 +180,9 @@ const serve = () => {
 
     watch(`${PATHS.src.templates}/**/*.html`,    series(htmlDev)).on('change', sync.reload);
     watch(`${PATHS.src.js}/**/*.js`,      series(scriptsDev)).on('change', sync.reload);
-    watch(`${PATHS.src.scss}/**/*.scss`,    series(scssDev)).on('change', sync.reload);
+    watch([`${PATHS.src.scss}/blocks/*.scss`,
+           `${PATHS.src.scss}/common/*.scss`,
+           `${PATHS.src.scss}/*.scss`], { usePolling: true }, series(scssDev)).on('change', sync.reload);
 };
 
 

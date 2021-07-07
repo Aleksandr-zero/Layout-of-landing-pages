@@ -19,10 +19,7 @@
 	background-color: $color-back-input-form;
 	border: 1px solid transparent;
 
-	font-weight: 300;
-	font-size: 18px;
-	line-height: 20px;
-	font-family: "Roboto";
+	font: 300 18px/20px "Roboto";
 
 	transition: border $animate ease;
 
@@ -41,12 +38,9 @@
 	border: 1px solid $color-btn-link-1;
 	background-color: $color-btn-link-1;
 
+	font: 500 14px/18px "Roboto";
 	color: $white-color;
 	text-transform: uppercase;
-	font-weight: 500;
-	font-family: "Roboto";
-	font-size: 14px;
-	line-height: 18px;
 
 	transition: color $animate ease,
 				background-color $animate ease;
@@ -84,12 +78,9 @@
 .unfilled-btn {
 	border: 1px solid $color-btn-link-2;
 
+	font: 700 14px/16px "Inter";
 	color: $color-btn-link-2;
 	text-transform: uppercase;
-	font-weight: 700;
-	font-family: "Inter";
-	font-size: 14px;
-	line-height: 16px;
 
 	transition: color $animate ease,
 				background-color $animate ease;
@@ -101,7 +92,20 @@
 }
 
 .filled-btn {
+	border: 1px solid $color-btn-link-2;
+	background-color: $color-btn-link-2;
 
+	font: 700 14px/16px "Inter";
+	color: $white-color;
+	text-transform: uppercase;
+
+	transition: color $animate ease,
+				background-color $animate ease;
+
+	&:hover {
+		color: $color-btn-link-2;
+		background-color: $white-color;
+	}
 }
 
 
@@ -111,16 +115,10 @@
 
 
 p.description-text-1 {
-	font-size: 14px;
-	line-height: 22px;
-	font-family: "Inter";
-	font-weight: 300;
+	font: 300 14px/22px "Inter";
 }
 
 p.description-text-2 {
-	font-size: 18px;
-	line-height: 28px;
-	font-family: "Inter";
-	font-weight: 300;
+	font: 300 18px/28px "Inter";
 	color: $description-color-3;
 }

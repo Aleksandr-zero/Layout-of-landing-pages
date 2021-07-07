@@ -1,0 +1,80 @@
+.reviews__content-slider-slide {
+	flex-direction: column;
+
+	&.slide {
+		margin-right: 45px;
+	}
+
+	&-info {
+
+		&-back-img {
+			margin-right: 40px;
+		}
+
+		&-description {
+			flex-direction: column;
+
+			&-title {
+				font: 500 22px/26px "Inter";
+				color: $black-color;
+			}
+
+			&-time {
+				text-transform: uppercase;
+				font: 700 10px/12px "Inter";
+				color: $description-color-1;
+				letter-spacing: 4px;
+
+				margin-top: 10px;
+			}
+
+			&-stars {
+				margin-top: 18px;
+
+				svg {
+					margin-right: 5px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&-description {
+		margin: 36px 0;
+
+		&-back-img {
+			margin-right: 16px;
+			margin-top: 4px;
+		}
+
+		&-text {
+			font: 300 14px/20px "Inter";
+			color: $color-text-reviews;
+
+			p {
+				margin-bottom: 16px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&-source {
+		margin-top: auto;
+		margin-left: 28px;
+
+		&-title {
+			font: 300 14px/16px "Inter";
+			color: $description-reviews-color;
+		}
+
+		&-back-img {
+			margin-left: 12px;
+		}
+	}
+}

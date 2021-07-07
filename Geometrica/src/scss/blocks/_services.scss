@@ -1,3 +1,65 @@
 .services {
 
+	&__content {
+
+		&-back-imgs {
+			margin-top: 72px;
+
+			&-wrapper {
+				position: relative;
+
+				&:last-child {
+					flex-direction: column;
+					margin-left: 20px;
+				}
+
+				&-for-description {
+					position: relative;
+				}
+			}
+		}
+
+		&-img {
+
+			&:first-child {
+				max-width: 100%;
+			}
+		}
+
+		&-description {
+			position: absolute;
+			top: 60px;
+
+			&-content {
+				padding: 0 56px;
+
+				&-title-main{
+					color: $white-color;
+					font-size: 56px;
+					line-height: 60px;
+					letter-spacing: -2px;
+				}
+
+				&-title-secondary {
+					color: $white-color;
+					font-size: 30px;
+					line-height: 34px;
+					letter-spacing: -2px;
+				}
+
+				&-subhead {
+					margin-top: 24px;
+
+					color: $description-color-8;
+					font-weight: 700;
+					font-family: "Inter";
+					font-size: 10px;
+					line-height: 12px;
+					text-transform: uppercase;
+
+					letter-spacing: 4px;
+				}
+			}
+		}
+	}
 }

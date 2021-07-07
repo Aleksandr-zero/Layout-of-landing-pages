@@ -1,10 +1,6 @@
 .header {
 	padding: 56px 0 0;
 
-	&__container {
-
-	}
-
 	&__content {
 
 		&-nav {
@@ -12,12 +8,47 @@
 			margin-right: 76px;
 
 			&-item {
+				position: relative;
 
-				&-link {
-					font-family: "Inter";
-					font-size: 14px;
-					line-height: 16px;
-					font-weight: 700;
+				&-btn {
+					position: relative;
+
+					&.header-nav-item-btn-active {
+						color: $black-color;
+
+						.header__content-nav-item-btn-img {
+							path {
+								stroke: $black-color;
+							}
+						}
+					}
+
+					&-img {
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						right: -18px;
+						top: 4px;
+
+						path {
+							transition: stroke $animate ease;
+						}
+					}
+
+					&:hover {
+
+						.header__content-nav-item-btn-img {
+							path {
+								stroke: $black-color;
+							}
+						}
+					}
+				}
+
+				&-link,
+				&-btn,
+				&-menu-content-link {
+					font: 700 14px/16px "Inter";
 					color: $description-color-7;
 
 					transition: color $animate ease;
@@ -26,11 +57,44 @@
 						color: $black-color;
 					}
 				}
+
+				&-menu {
+					position: absolute;
+					left: -10px;
+					top: 28px;
+					width: 200px;
+					background-color: $white-color;
+					box-shadow: 0px 16px 18px 2px rgba($black-color, 0.2);
+					z-index: 50;
+
+					visibility: hidden;
+					opacity: 0;
+
+					transition: visibility $animate ease,
+								opacity $animate ease;
+
+					&.header-nav-item-menu-active {
+						visibility: visible;
+						opacity: 1;
+					}
+
+					&-content {
+						padding: 12px 10px;
+
+						&-back-links {
+							flex-direction: column;
+						}
+
+						&-link {
+							margin-bottom: 12px;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
 			}
-		}
-
-		&-back-contact {
-
 		}
 
 		&-contact {
