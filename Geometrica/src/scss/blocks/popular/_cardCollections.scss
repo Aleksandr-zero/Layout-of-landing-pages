@@ -1,0 +1,100 @@
+.popular__content-item-slider-slide {
+	flex-direction: column;
+
+	&-country {
+
+		&-back-img {
+			margin-right: 10px;
+		}
+
+		&-title {
+			font: 400 12px/14px "Inter";
+			color: $description-color-1;
+		}
+	}
+
+	&-btn-like {
+		padding: 4px;
+
+		path, svg {
+			transition: all $animate ease;
+		}
+
+		&:hover {
+			path, svg {
+				fill: $color-btn-link-1;
+				stroke: $color-btn-link-1;
+			}
+		}
+	}
+
+	&-back-img {
+		margin-top: 20px;
+		position: relative;
+
+		&-back-title {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: $white-color;
+			padding: 24px 27px 0;
+		}
+
+		&-title {
+			font: 700 10px "Inter";
+			letter-spacing: 3px;
+			color: $color-company-popular-collections;
+			text-transform: uppercase;
+		}
+	}
+
+	&-img {
+		max-width: 100%;
+	}
+
+	&-title {
+		font: 700 40px/48px Inter;
+		letter-spacing: -1px;
+		margin-top: 16px;
+		margin-left: 24px;
+
+		&-link {
+			color: $color-title-popular-collections;
+
+			transition: color $animate ease;
+
+			&:hover {
+				color: $black-color;
+			}
+		}
+	}
+
+	&-back-link {
+		margin-top: 32px;
+	}
+
+	&-link {
+		background-color: $color-back-link-popular-collections;
+		color: $color-link-popular-collections;
+
+		font: 400 22px/26px "Inter";
+
+		padding: 22px 28px;
+
+		transition: color $animate ease,
+		background-color $animate ease;
+
+		path {
+			transition: fill $animate ease;
+		}
+
+		&:hover {
+			color: $black-color;
+			background-color: darken($color-back-link-popular-collections, 10%);
+
+			path {
+				fill: $black-color;
+			}
+		}
+	}
+}

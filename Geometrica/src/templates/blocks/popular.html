@@ -1,3 +1,108 @@
-<div class="popular">
-
+<div class="popular new-block">
+	<div class="container">
+		<div class="popular__content">
+			<div class="popular__content-back-title fl al_it just_cont">
+				<div class="popular__content-back-btns fl al_it just_cont">
+					<div class="popular__content-back-btn">
+						<button data-change-block="collections" class="popular__content-btn popular-content-btn-active">
+							<span>Популярные коллекции</span>
+						</button>
+					</div>
+					<div class="popular__content-back-btn">
+						<button data-change-block="product" class="popular__content-btn">
+							<span>Популярные товары</span>
+						</button>
+					</div>
+				</div>
+				<div class="popular__content-back-link">
+					<a href="#" class="popular__content-link link-back-title fl al_it">
+						<p>Все коллекции</p>
+						<span class="fl al_it">
+							<svg width="12" height="16" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M16.3994 27L30 13.5L16.3994 0L13.7755 2.59003L22.8863 11.619H0V15.381H22.8863L13.7755 24.4244L16.3994 27Z" fill="#ffffff"/>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="popular__content-items">
+				<div class="popular__content-item popular-collections popular-content-item-active">
+					<div class="popular__content-item-slider slider-with-sections">
+						<div class="slider-with-sections-navigation">
+							<div class="back-btn-slider-push back-btn-slider-push-left">
+								<button data-direction="last" type="button" class="btn-slider-push btn-slider-push-last">Button</button>
+							</div>
+							<div class="back-btn-slider-push back-btn-slider-push-right">
+								<button data-direction="next" type="button" class="btn-slider-push btn-slider-push-next">Button</button>
+							</div>
+						</div>
+						<div class="slider-list">
+							<div class="slider-track">
+								@@loop("./popular/cardCollections.html", [
+									{
+										country: {
+											iconPath: "./img/icons/countries/Russia.svg",
+											title: "Россия"
+										},
+										pathImg: "./img/popular/collections/popular-collections-1.jpg",
+										company: "Laranet",
+										title: "МоноТиберио",
+										countElement: "4"
+									},{
+										country: {
+											iconPath: "./img/icons/countries/Spain.svg",
+											title: "Испания"
+										},
+										pathImg: "./img/popular/collections/popular-collections-2.jpg",
+										company: "Чупакабро",
+										title: "Альтус",
+										countElement: "12"
+									},{
+										country: {
+											iconPath: "./img/icons/countries/Italy.svg",
+											title: "Италия"
+										},
+										pathImg: "./img/popular/collections/popular-collections-3.jpg",
+										company: "Casabella",
+										title: "Бизарро",
+										countElement: "4"
+									},{
+										country: {
+											iconPath: "./img/icons/countries/Russia.svg",
+											title: "Россия"
+										},
+										pathImg: "./img/popular/collections/popular-collections-1.jpg",
+										company: "Laranet",
+										title: "МоноТиберио",
+										countElement: "4"
+									},{
+										country: {
+											iconPath: "./img/icons/countries/Spain.svg",
+											title: "Испания"
+										},
+										pathImg: "./img/popular/collections/popular-collections-2.jpg",
+										company: "Чупакабро",
+										title: "Альтус",
+										countElement: "12"
+									},{
+										country: {
+											iconPath: "./img/icons/countries/Italy.svg",
+											title: "Италия"
+										},
+										pathImg: "./img/popular/collections/popular-collections-3.jpg",
+										company: "Casabella",
+										title: "Бизарро",
+										countElement: "4"
+									}
+								])
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popular__content-item popular-product">
+					Example
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -5,7 +5,7 @@ const autoprefixer      = require('gulp-autoprefixer');
 const cleanCSS          = require('gulp-clean-css');
 const sass              = require('gulp-sass')(require('sass'));
 const include           = require('gulp-file-include');
-const uglify            = require("gulp-uglify-es").default;
+const terser            = require("gulp-terser");
 const babel             = require('gulp-babel');
 const del               = require('del');
 const concat            = require('gulp-concat');
@@ -37,6 +37,15 @@ const PATHS = {
 		fonts: `${DIST}/fonts`,
 	}
 };
+
+const OPTIONS_TERSER = {
+    compress: {
+        booleans_as_integers: true,
+        arguments: true,
+        drop_console: true,
+        toplevel: true
+    }
+}
 
 
 const htmlDev = () => {
@@ -139,7 +148,7 @@ const scriptsBuild = () => {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(uglify())
+        .pipe(terser(OPTIONS_TERSER))
         .pipe(dest(PATHS.dist.js))
 }
 

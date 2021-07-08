@@ -2,5 +2,71 @@
 
 	&__content {
 
+		&-back-link {
+
+		}
+
+		&-back-imgs {
+			margin-top: 72px;
+
+			&-wrapper {
+
+				&:first-child {
+					flex-direction: column;
+					margin-right: 20px;
+				}
+			}
+		}
+
+		&-back-img {
+			position: relative;
+
+			&-description {
+				position: absolute;
+				top: 70px;
+				padding: 0 36px 0 52px;
+
+				color: $white-color;
+
+				&-overhead {
+					font: 700 10px/12px "Inter";
+					color: $description-color-8;
+					letter-spacing: 3px;
+					text-transform: uppercase;
+				}
+
+				&-title {
+					margin-top: 12px;
+					text-transform: none;
+					font: 700 40px/48px "Inter";
+
+					&-link {
+						color: $white-color;
+						transition: opacity $animate ease;
+
+						&:hover {
+							opacity: 0.75;
+						}
+					}
+				}
+
+				&-back-country {
+					margin-top: 12px;
+				}
+
+				&-country {
+					margin-right: 16px;
+
+					&-title {
+						font: 300 18px/22px "Inter";
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+
+		&-img {
+			max-width: 100%;
+		}
 	}
 }
