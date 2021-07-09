@@ -58,7 +58,7 @@ Genre - production of custom-made furniture
 ![alt text](FurnitureEkabu/examples/example-1.png)
 ![alt text](FurnitureEkabu/examples/example-2.png)
 
-## [Furniture Ekabu](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/Geometrica/dist/)
+## [Geometrica](https://aleksandr-zero.github.io/Layout-landing_corporate-sites/Geometrica/dist/)
 Genre - production of custom-made furniture
 
 ![alt text](Geometrica/examples/example-1.png)

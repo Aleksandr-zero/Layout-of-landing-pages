@@ -6,6 +6,10 @@ const setsHeightForChangeBlock = (changeBlock) => {
 };
 
 const changeCategoryPopular = (block, btns) => {
+	if ( event.currentTarget.classList.contains("popular-content-btn-active") ) {
+		return;
+	};
+
 	const changeBlockName = event.currentTarget.dataset.changeBlock;
 	const changeBlock = block.querySelector(`.popular-${changeBlockName}`);
 
@@ -14,9 +18,16 @@ const changeCategoryPopular = (block, btns) => {
 	});
 	event.currentTarget.classList.add("popular-content-btn-active");
 
-	block.querySelector(".popular-content-item-active").classList.remove("popular-content-item-active");
-	// setsHeightForChangeBlock(changeBlock);
-	changeBlock.classList.add("popular-content-item-active");
+	const currentBlock = block.querySelector(".popular-content-item-active")
+	currentBlock.classList.remove("popular-content-item-active");
+	currentBlock.classList.add("popular-content-item-change");
+
+	setTimeout(() => {
+		setsHeightForChangeBlock(changeBlock);
+
+		changeBlock.classList.add("popular-content-item-active");
+		currentBlock.classList.remove("popular-content-item-change");
+	}, 400);
 };
 
 const blockPopular = document.querySelector(".popular");
@@ -32,7 +43,7 @@ if ( blockPopular ) {
 	const newSliderWithSections = new SliderWithSections(slider, {
 		speed: 300,
 		scrollSlidesAtTime: 1,
-		visibleSlides: 3
+		slidesPerView: 3
 	});
 	newSliderWithSections.run();
 };

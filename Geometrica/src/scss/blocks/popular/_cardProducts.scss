@@ -1,0 +1,70 @@
+.popular__content-item-product {
+	margin-bottom: 36px;
+	flex-direction: column;
+	max-width: 22%;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&-country {
+
+		&-title {
+			font: 400 12px/14px "Inter";
+			color: $color-description-popular-product;
+		}
+	}
+
+	&-btn-like {
+		padding: 4px;
+
+		path, svg {
+			transition: all $animate ease;
+		}
+
+		&:hover {
+			path, svg {
+				fill: $color-btn-link-1;
+				stroke: $color-btn-link-1;
+			}
+		}
+	}
+
+	&-content {
+		padding: 0 28px;
+		margin-top: 32px;
+	}
+
+	&-title {
+		margin-top: 40px;
+		font: 500 25px/30px "Inter";
+
+		&-link {
+			color: $color-title-popular-product;
+			transition: color $animate ease;
+
+			&:hover {
+				color: $black-color;
+			}
+		}
+	}
+
+	&-back-link {
+		margin-top: 20px;
+	}
+
+	&-link {
+		background-color: $color-back-link-popular-product;
+		color: $color-description-popular-product;
+
+		padding: 22px 28px;
+
+		transition: background-color $animate ease,
+					color $animate ease;
+
+		&:hover {
+			color: $black-color;
+			background-color: darken($color-back-link-popular-product, 10%);
+		}
+	}
+}

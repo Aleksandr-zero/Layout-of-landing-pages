@@ -21,7 +21,7 @@
 			border-bottom: 2px dashed $color-btn-popular;
 
 			transition: color $animate ease,
-						border-bottom $animate ease;
+			border-bottom $animate ease;
 
 			span {
 				position: relative;
@@ -56,6 +56,8 @@
 			margin-top: 80px;
 			position: relative;
 			height: 500px;
+
+			transition: height $animate * 2 ease;
 		}
 
 		&-item {
@@ -65,13 +67,22 @@
 			z-index: 25;
 			max-width: 100%;
 
-			transition: transform $animate * 2 ease,
-						opacity $animate * 2 ease;
+			transition: transform $animate * 1.5 ease,
+						opacity $animate * 1.5 ease;
 
 			&.popular-content-item-active {
 				transform: scale(1);
 				opacity: 1;
 				z-index: 50;
+			}
+
+			&.popular-content-item-change {
+				transform: scale(0.8);
+				opacity: 0;
+			}
+
+			&-products {
+				flex-wrap: wrap;
 			}
 		}
 	}

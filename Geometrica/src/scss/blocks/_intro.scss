@@ -1,0 +1,117 @@
+.intro {
+	position: relative;
+	top: -95px;
+
+	&__container {
+		height: 790px;
+
+		&-slider {
+			height: 100%;
+			position: relative;
+
+			&-list {
+				position: relative;
+				height: 100%;
+			}
+
+			&-slide {
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				opacity: 0;
+				visibility: hidden;
+
+				transition: opacity $animate * 1.5 ease,
+							visibility $animate * 1.5 ease;
+
+				&.intro-slide-active {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				&-wrapper {
+					position: relative;
+				}
+
+				&-back-img {
+					justify-content: center;
+				}
+
+				&-img {
+					max-width: 100%;
+				}
+
+				&-description {
+					flex-direction: column;
+					position: absolute;
+					bottom: 220px;
+					z-index: 50;
+
+					&-overhead {
+						color: $color-intro-overhead;
+						font: 700 16px/20px "Inter";
+						text-transform: uppercase;
+						letter-spacing: 7px;
+					}
+
+					&-wrapper {
+						align-items: flex-end;
+					}
+
+					&-title {
+						font: 700 100px/100% "Inter";
+						text-transform: uppercase;
+						letter-spacing: -1px;
+						color: rgba($white-color, 0.5);
+
+						margin-top: 20px;
+					}
+
+					&-back-link {
+						margin-left: 24px;
+					}
+
+					&-link {
+						font: 400 26px/40px "Inter";
+						color: rgba($white-color, 0.9);
+					}
+				}
+			}
+
+			&-back-btns {
+				position: absolute;
+				bottom: 160px;
+			}
+
+			&-btn {
+				font-size: 0;
+				color: transparent;
+				width: 40px;
+				height: 6px;
+				background-color: $white-color;
+				margin-right: 20px;
+
+				transition: background-color $animate ease;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:hover {
+					background-color: $color-btn-link-2;
+				}
+
+				&.intro-slider-btn-active {
+					background-color: $color-btn-link-2;
+				}
+			}
+		}
+	}
+
+
+	&__content {
+
+	}
+}

@@ -1,39 +1,46 @@
 class SliderWithSections {
-    /**
+	/**
 	* @param slider - block "slider-with-sections" ( type -> HTMLElement )
 	* @param options -> custom settings ( type -> Object )
 	Слайдер с секциями
-    */
+	*/
 
 	constructor(slider, options) {
 		this.slider = slider;
 		this.options = options;
 
-		this.sliderTrack = this.slider.querySelector(".slider-track");
+		if ( this.slider ) {
+			this.sliderTrack = this.slider.querySelector(".slider-track");
 
-		this.btnPrev = this.slider.querySelector(".btn-slider-push-last");
-		this.btnNext = this.slider.querySelector(".btn-slider-push-next");
+			this.btnPrev = this.slider.querySelector(".btn-slider-push-last");
+			this.btnNext = this.slider.querySelector(".btn-slider-push-next");
+
+			this.slides = this.slider.querySelectorAll(".slide");
+		}
 
 		this.allowSwipe = true;
 
 		this.positionSliderTrack = 0;
-		this.slides = this.slider.querySelectorAll(".slide");
 
 		this.addOptions();
-
-		this.lastVisibleSlide = this.visibleSlides;
+		this.createBreakpoints();
 	}
 
 	addOptions() {
-		this.scrollSlidesAtTime = (this.options.scrollSlidesAtTime) ? this.options.scrollSlidesAtTime : 1;
-		this.visibleSlides = this.options.visibleSlides;
-		this.speed = (this.options.speed) ? this.options.speed : 250;
+		this.options = this.options;
 
-		if ( !this.visibleSlides ) {
-			throw "You did not specify a parameter <visibleSlides>"
+		this.scrollSlidesAtTime = (this.options.scrollSlidesAtTime) ? this.options.scrollSlidesAtTime : 1;
+		this.slidesPerView = this.options.slidesPerView;
+		this.lastVisibleSlide = this.slidesPerView;
+
+		this.speed = (this.options.speed) ? this.options.speed : 250;
+		this.breakpoints = (this.options.breakpoints) ? this.options.breakpoints : {};
+
+
+		if ( !this.slidesPerView ) {
+			throw "You did not specify a parameter <slidesPerView>"
 		};
 	}
-
 
 	// Вспомогательные методы
 	getNewPositionSliderTrack(numberSlide) {
@@ -46,19 +53,40 @@ class SliderWithSections {
 		};
 
 		newPosition = (this.lastVisibleSlide !== this.slides.length) ?
-						newPosition - ( this.slider.offsetWidth + parseFloat(getComputedStyle(this.slides[0]).marginRight)) :
-						newPosition - this.slider.offsetWidth;
+					   newPosition - ( this.slider.offsetWidth + parseFloat(getComputedStyle(this.slides[0]).marginRight)) :
+					   newPosition - this.slider.offsetWidth;
 		return newPosition;
 	}
 
 	checksIfLimitIsExceeded() {
 		if ( this.lastVisibleSlide > this.slides.length ) {
 			this.lastVisibleSlide = this.slides.length;
-		} else if ( this.lastVisibleSlide < this.visibleSlides ) {
-			this.lastVisibleSlide = this.visibleSlides;
+		} else if ( this.lastVisibleSlide < this.slidesPerView ) {
+			this.lastVisibleSlide = this.slidesPerView;
 		};
 	}
 
+	updateApplicationBreakpoints() {
+		const keys = Object.keys(this.breakpoints).map(Number);
+		keys.forEach((key) => {
+			this.applicationBreakpoints[key] = false;
+		});
+	}
+
+
+	// Создание брейкпоинтов
+	getBreakpoints() {
+		return Object.entries(this.breakpoints).length === 0 && this.breakpoints.constructor === Object ? false : true;
+	}
+
+	createBreakpoints() {
+		if ( !this.getBreakpoints() ) {
+			return;
+		};
+
+		this.createBreakpoint();
+		this.checkResizeWindow_FisrtStart();
+	}
 
 	// Добавление событий
 	addEventClickBtnPushSlider() {
@@ -66,12 +94,13 @@ class SliderWithSections {
 		this.btnNext.addEventListener("click", () => { this.pushSliderOnClickBtn(); });
 	}
 
+	// Функционал передвижения
 	pushSliderOnClickBtn() {
 		/* Передвигает слайдер при клике на кнопку.  */
 
 		const direction = event.currentTarget.dataset.direction;
 
-		if ( ( this.lastVisibleSlide === this.visibleSlides && direction === "last") || !this.allowSwipe ) {
+		if ( ( this.lastVisibleSlide === this.slidesPerView && direction === "last") || !this.allowSwipe ) {
 			return;
 		};
 
@@ -95,7 +124,134 @@ class SliderWithSections {
 	}
 
 
+	// брейкпоинты
+	checkResizeMaxWidthBreakpoint() {
+		window.addEventListener("resize", () => {
+			if ( window.innerWidth > this.maxWidth && this.applicationBreakpoints[this.maxWidth] ) {
+				this.updateApplicationBreakpoints();
+
+				this.setsNewDataBreakpoints(false);
+			};
+		});
+	}
+
+	updateApplication_ForBreakpoints(currentWidth) {
+		const keys = Object.keys(this.applicationBreakpoints).map(Number);
+
+		keys.forEach((key) => {
+			if ( key !== currentWidth ) {
+				this.applicationBreakpoints[key] = false;
+			};
+		});
+	};
+
+	addEventResizeWindow(width, data, secondaryWidth) {
+		/* Создаёт для каждого брейкпоинта отдельный обработчик.  */
+
+		const checkResizeWindow = () => {
+			return ( secondaryWidth ) ?
+				window.innerWidth <= width && window.innerWidth > secondaryWidth :
+				window.innerWidth <= width;
+		};
+
+		window.addEventListener("resize", () => {
+			if ( checkResizeWindow() && !this.applicationBreakpoints[width] ) {
+				this.applicationBreakpoints[width] = true;
+				this.setsNewDataBreakpoints(data);
+
+				this.updateApplication_ForBreakpoints(width);
+			};
+			this.checkResizeMaxWidthBreakpoint();
+		});
+	}
+
+	createBreakpoint() {
+		/* Создаёт данные для прослушки изменения ширины экрана.  */
+
+		this.applicationBreakpoints = {};
+
+		this.updateApplicationBreakpoints();
+
+		const keys = Object.keys(this.breakpoints).map(Number);
+		this.maxWidth = Math.max(...keys);
+
+		Object.entries(this.breakpoints).forEach((breakpoint, index) => {
+			let secondaryWidth = keys[index - 1];
+			const width = parseInt(breakpoint[0]);
+			const data = breakpoint[1];
+
+			this.addEventResizeWindow(width, data, secondaryWidth);
+		});
+	}
+
+	checkResizeWindow_FisrtStart() {
+		/* Проверяет ширину экрана при первом запуске слайдера.  */
+
+		const checkResizeWindow = (width, secondaryWidth) => {
+			return ( secondaryWidth ) ?
+				window.innerWidth <= width && window.innerWidth > secondaryWidth :
+				window.innerWidth <= width;
+		};
+
+		const keys = Object.keys(this.breakpoints).map(Number);
+
+		keys.forEach((key, index) => {
+			if ( checkResizeWindow(key, keys[index - 1]) ) {
+				this.applicationBreakpoints[key] = true;
+
+				const newData = this.breakpoints[key];
+				this.setsNewDataBreakpoints(newData);
+			};
+		});
+	}
+
+	setsNewDataBreakpoints(newData) {
+		this.slidesPerView = (newData.slidesPerView) ? newData.slidesPerView : this.options.slidesPerView;
+		this.scrollSlidesAtTime = (newData.scrollSlidesAtTime) ? newData.scrollSlidesAtTime : this.options.scrollSlidesAtTime;
+		this.lastVisibleSlide = (newData.slidesPerView) ? newData.slidesPerView : this.options.slidesPerView;
+	}
+
+
 	run() {
 		this.addEventClickBtnPushSlider();
+	}
+};
+
+
+class SliderSplit {
+	/**
+	* @param slider - block "slider-split" ( type -> HTMLElement )
+	Слайдер с секциями
+	*/
+
+	constructor(slider) {
+		this.slider = slider;
+
+		this.slides = this.slider.querySelectorAll(".slide");
+		this.btns = this.slider.querySelectorAll(".intro__container-slider-btn")
+	}
+
+	addEventClickBtns() {
+		this.btns.forEach((btn) => {
+			btn.addEventListener("click", () => { this.changeSlides(); });
+		});
+	}
+
+	changeActiveBtn(pressedBtn) {
+		this.slider.querySelector(".intro-slider-btn-active").classList.remove("intro-slider-btn-active");
+		pressedBtn.classList.add("intro-slider-btn-active");
+	}
+
+	changeSlides() {
+		const numberSlide = event.currentTarget.dataset.positionSlide - 1;
+
+		this.slider.querySelector(".intro-slide-active").classList.remove("intro-slide-active");
+		this.slides[numberSlide].classList.add("intro-slide-active");
+
+		this.changeActiveBtn(event.currentTarget)
+	}
+
+	run() {
+		this.addEventClickBtns();
 	}
 };
