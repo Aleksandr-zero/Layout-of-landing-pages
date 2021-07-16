@@ -2,10 +2,6 @@
 
 	&__content {
 
-		&-items {
-
-		}
-
 		&-item {
 			max-width: 20%;
 
@@ -35,6 +31,8 @@
 			margin-top: 124px;
 
 			&-slide {
+				width: 400px;
+				display: block;
 
 				&-back-img {
 					position: relative;

@@ -255,3 +255,515 @@ class SliderSplit {
 		this.addEventClickBtns();
 	}
 };
+
+
+
+class Navigation {
+	/**
+	* @param slider -> block "slider" ( type -> HTMLElement )
+	Создаёт навигацию для слайдера.
+	*/
+
+	constructor(slider, speed) {
+		this.slider = slider;
+		this.sliderTrack = this.slider.querySelector(".slider-track");
+
+		this.speed = speed;
+
+		this.slides = this.slider.querySelectorAll(".slide");
+
+		this.maximumSwipingAtSlider = 0;
+
+		this.measuresMaximumSwipeOfSlider();
+	}
+
+	measuresMaximumSwipeOfSlider() {
+		/* Измеряет максимальную длину прокрутки слайдера.  */
+
+		this.sliderTrack.querySelectorAll(".slide").forEach((slide) => {
+			this.maximumSwipingAtSlider += slide.offsetWidth;
+		});
+
+		this.maximumSwipingAtSlider -= this.slider.clientWidth;
+	}
+
+	getNewPositionSliderTrack(currentSlide) {
+		let newPosition = 0;
+
+		for (let indexSlide = 0; indexSlide < currentSlide; indexSlide++) {
+			newPosition +=  Math.round(this.slides[indexSlide].getBoundingClientRect().width);
+		};
+
+		const checkNewPosition = this.checkNewPosition(newPosition);
+		newPosition = checkNewPosition;
+
+		return newPosition;
+	}
+
+	addTransitionSliderTrack(newPosition) {
+		this.sliderTrack.style.transition = `transform 0.${this.speed}s ease`;
+
+		setTimeout(() => {
+			this.sliderTrack.style.transform = `translate3d(${-newPosition}px, 0px, 0px)`;
+		}, 0);
+
+		setTimeout(() => {
+			this.sliderTrack.style.transition = `transform 0s ease`;
+		},  this.speed);
+	}
+
+	checkNewPosition(newPosition) {
+		if ( newPosition > this.maximumSwipingAtSlider ) {
+			newPosition = this.maximumSwipingAtSlider;
+		} else if ( newPosition < 0 ) {
+			newPosition = 0;
+		};
+
+		return newPosition
+	}
+
+	pushingSliderTrack(direction, currentSlide) {
+		if ( ( currentSlide === this.slides.length - 1 && direction !== "last" ) ||
+			 ( currentSlide === 0 && direction !== "next" ) ) {
+			return;
+		};
+
+		const newCurrentSlide = (direction === "next") ? currentSlide + 1 : currentSlide - 1;
+
+		const newPosition = this.getNewPositionSliderTrack(newCurrentSlide);
+
+		const widthCurrentSlide = Math.round(this.slides[currentSlide].getBoundingClientRect().width);
+		const positionSliderTrack = Math.abs(getComputedStyle(this.sliderTrack).transform.split(",")[4]);
+
+		this.addTransitionSliderTrack(newPosition);
+
+		return {
+			"position": newPosition,
+			"current_slide": newCurrentSlide
+		};
+	}
+};
+
+
+class Slider {
+	/**
+	Является посредником между классами: Navigation и Pagination, для нового вида слайдера
+	При наследовании класса должны быть методы:
+	* @method -> swipeEnd
+	* @method -> removeEventsSliderTrack
+	Свойства:
+	* @property slider -> type( HTMLElement )
+	* @property sliderTrack -> type( HTMLElement )
+	* @property maximumSwipingAtSlider -> type( int )
+	* @property positionPressedX -> type( int )
+	* @property positionPressedY -> type( int )
+	* @property positionFingerPressSliderX -> type( int )
+	* @property positionFingerPressSliderY -> type( int )
+	* @property positionX_FingetCurrentMoment_OnSlider -> type( int )
+	* @property positionY_FingetCurrentMoment_OnSlider -> type( int )
+	* @property allowSwipe -> type( boolean )
+	* @property isScrollingSlider -> type( boolean )
+	*
+	* @property _swipeStart = () => { this.swipeStart(); };
+    * @property _swipeAction = () => { this.swipeAction(); };
+    * @property _swipeEnd = () => { this.swipeEnd(); };
+	*/
+
+	getEvent() {
+		return (event.type.search('touch') != -1) ? event.touches[0] : event;
+	}
+
+	measuresMaximumSwipeOfSlider() {
+		/* Измеряет максимальную длину прокрутки слайдера.  */
+
+		this.sliderTrack.querySelectorAll(".slide").forEach((slide) => {
+			this.maximumSwipingAtSlider += slide.offsetWidth;
+		});
+
+		this.maximumSwipingAtSlider -= this.sliderWidth;
+	}
+
+
+	// Навешивание событий
+	removeEventsSliderTrack() {
+		/* Удаляет события у блока - sliderTrack и у самого слайдер  */
+
+		this.sliderTrack.removeEventListener("touchmove", this._swipeAction);
+		this.sliderTrack.removeEventListener("touchend", this._swipeEnd);
+
+		this.sliderTrack.removeEventListener("mousemove", this._swipeAction);
+		this.sliderTrack.removeEventListener("mouseout", this.goingOutBoundsSlider);
+		this.sliderTrack.removeEventListener("mouseup", this._swipeEnd);
+
+		this.slider.classList.remove("slider-active");
+	}
+
+	addEventsSliderTrack() {
+		this.sliderTrack.addEventListener("mouseup", this._swipeEnd);
+		this.sliderTrack.addEventListener("touchend", this._swipeEnd, { passive: true });
+
+		this.sliderTrack.addEventListener("mousemove", this._swipeAction);
+		this.sliderTrack.addEventListener("touchmove", this._swipeAction, { passive: true });
+
+		this.sliderTrack.addEventListener("mouseout", this.goingOutBoundsSlider);
+		this.slider.classList.add("slider-active");
+	}
+
+
+	// Вспомогательные методы.
+	getPaginationSlider() {
+		return this.slider.querySelector(".slider-pagination");
+	}
+
+	checkIsPaginationSlider() {
+		/* Проверяет есть ли у слайдера пагинация.  */
+
+		const pagination = this.getPaginationSlider();
+
+		if ( pagination ) {
+			this.addPagination();
+		};
+	}
+
+	watchSwipeSliderTrack_Pagination() {
+		this.newPagination.changeBtnPagination(this.currentSlide)
+	}
+
+	addPagination() {
+		this.isPagination = true;
+		this.newPagination = new Pagination(this.slider);
+	}
+
+	addNavigation() {
+		this.isNavigation = true;
+		this.newNavigation = new Navigation(this.slider, this.speed);
+
+        const btnPrev = this.slider.querySelector(".btn-slider-push-last");
+        const btnNext = this.slider.querySelector(".btn-slider-push-next");
+
+        btnPrev.addEventListener("click", () => {this.pressedBtnPushSlider(); });
+        btnNext.addEventListener("click", () => { this.pressedBtnPushSlider(); });
+	}
+
+	pressedBtnPushSlider() {
+		if ( !this.allowSwipe ) {
+			return;
+		};
+
+		const direction = event.currentTarget.dataset.direction;
+
+		const dataset = this.newNavigation.pushingSliderTrack(direction, this.currentSlide);
+
+		if ( dataset ) {
+			this.currentSlide = dataset.current_slide;
+			this.positionFinal = dataset.position;
+			this.positionSliderTrack = dataset.position;
+
+			if ( this.className == "SliderWithPreviews" ) {
+				this.changeDataForSLiderPreviews();
+				this.pushingSliderPreviews();
+			};
+
+			if ( this.isPagination ) {
+				this.watchSwipeSliderTrack_Pagination();
+			};
+		};
+
+		this.allowSwipe = false;
+
+		setTimeout(() => {
+			this.allowSwipe = true;
+		}, 500);
+	}
+
+	checkSliderCanBeMoved(evt) {
+		/**
+		* @param evt -> fun "getEvent"
+		Проверяет: если мы будем одновременно скролить страницу и сам слайдер, то блокируем слайдер.
+		*/
+
+		if ( Math.abs(evt.clientY - this.positionPressedY) >= 5 && event.type === "touchmove" ) {
+			// Если пользователь будет  скроллить страницу.
+
+			if ( !this.isScrollingSlider ) {
+				this.allowSwipe = false;
+				this.removeEventsSliderTrack();
+
+			} else if ( this.isScrollingSlider ) {
+				this.allowSwipe = true;
+			};
+		};
+	}
+
+	checksOutOfBounds() {
+		/* Если палец будет заходить за границы слайдера то запрещаем его двигать.  */
+
+		if (
+			(this.positionX_FingetCurrentMoment_OnSlider >= this.positionFingerPressSliderX && this.positionSliderTrack - this.positionFinal > 0) ||
+			(this.positionX_FingetCurrentMoment_OnSlider >= (this.sliderWidth - this.positionFingerPressSliderX)) && this.positionSliderTrack - this.positionFinal < 0
+			) {
+
+			this.swipeEnd();
+		};
+	}
+
+	calculatesTouchCoordinates_SwipeStart(evt) {
+		/**
+		Вычисляет координаты при первом касании слайдера.
+		* @param evt -> fun "getEvent"
+		* @slider -> SliderWithFight
+		* @slider -> SliderWithoutFight
+		* @slider -> SliderWithAutomaticAdjustment
+		* @slider -> SliderWithPreviews
+		*/
+
+		this.positionPressedX = evt.clientX;
+		this.positionPressedY = evt.clientY;
+		this.positionFingerPressSliderX = this.positionPressedX - this.slider.getBoundingClientRect().x;
+		this.positionFingerPressSliderY = this.positionPressedY - this.slider.getBoundingClientRect().y;
+	}
+
+	checkNavigation() {
+		const navigation = this.slider.querySelector(".slider-navigation");
+
+		if ( navigation ) {
+			this.addNavigation();
+		};
+	}
+};
+
+
+class SliderWithPreviews extends Slider {
+    /**
+	* @param slider - block "slider-with-previews" ( type -> HTMLElement )
+	* @param options -> custom settings ( type -> Object )
+	Слайдер с превьюхами
+	*/
+
+	constructor(slider, options) {
+		super();
+
+		this.slider = slider;
+		this.options = options;
+		this.className = "SliderWithPreviews";
+
+		this.currentSlide = 0;
+		this.currentSlidePreview = 0;
+
+		this.sliderWidth = Math.round(this.slider.getBoundingClientRect().width);
+
+		this.sliderTrack = this.slider.querySelector(".slider-track");
+		this.slides = this.slider.querySelectorAll(".slide");
+		this.sliderTrackPreviews = this.slider.querySelector(".slider-track-previews");
+		this.slidesPreviews = this.slider.querySelectorAll(".slide-preview");
+
+		this.slidePreviewsMarRight = parseInt(getComputedStyle(this.slidesPreviews[this.currentSlidePreview]).marginRight);
+
+    	this.positionPressedX;
+    	this.positionPressedY;
+    	this.positionFingerPressSliderX;
+    	this.positionFingerPressSliderY;
+    	this.positionX_FingetCurrentMoment_OnSlider;
+    	this.positionY_FingetCurrentMoment_OnSlider;
+
+    	this.positionSliderTrack = 0;
+    	this.positionFinal = 0;
+
+    	this.positionSliderTrackPreview = 0;
+
+		this.allowSwipe = true;
+
+		this.allowSwipe = true;
+		this.isScrollingSlider = false;
+
+    	this._swipeStart = () => { this.swipeStart(); };
+    	this._swipeAction = () => { this.swipeAction(); };
+    	this._swipeEnd = () => { this.swipeEnd(); };
+
+		this.addOptions();
+		this.addNavigation();
+
+		this.lastVisibleSlidePreviews = this.slidesPreviewPerView;
+
+		this.goingOutBoundsSlider = () => {
+			/* Выход за границы слайдера мышкой. */
+
+			this.swipeEnd();
+			this.sliderTrack.removeEventListener("mouseout", this.goingOutBoundsSlider);
+		};
+	}
+
+	addOptions() {
+		this.speed = (this.options.speed) ? this.options.speed : 200;
+		this.movementClickingOnPreview = (this.options.movementClickingOnPreview) ? this.options.movementClickingOnPreview : false;
+		this.slidesPreviewPerView = this.options.slidesPreviewPerView;
+
+		if ( !this.slidesPreviewPerView ) {
+			throw "You did not specify a parameter <slidesPreviewPerView>"
+		};
+	}
+
+	// Вспомогательные методы
+	checkDataForMovement() {
+		if ( this.currentSlide < 0 ) {
+			this.currentSlide = 0;
+		} else if ( this.currentSlide > this.slides.length - 1 ) {
+			this.currentSlide = this.slides.length - 1;
+		};
+	}
+
+	addNavigation() {
+		const navigation = this.slider.querySelector(".slider-navigation");
+
+		if ( navigation ) {
+			super.addNavigation();
+		};
+	}
+
+	findClassContains(classes) {
+		let isClass = false;
+
+		for (let index = 0; index < classes.length; index++) {
+			isClass = (classes[index].includes("slide-preview")) ? true : false;
+		};
+
+		return isClass;
+	}
+
+	// Навешивание событий
+	addEvent_SliderPreviews() {
+		/* Добавляет прослушку на слайдер с превьюхами.  */
+
+		this.slidesPreviewsArr = Array.prototype.slice.call(this.slidesPreviews);
+
+		this.sliderTrackPreviews.addEventListener("click", () => {
+
+			if ( !this.allowSwipe ) {
+				return;
+			};
+
+			if ( this.findClassContains(event.target.classList) ) {
+				const pressedSlidePreview = this.slidesPreviewsArr.indexOf(event.target) + 1;
+
+				this.lastVisibleSlidePreviews = pressedSlidePreview;
+				this.currentSlidePreview = pressedSlidePreview - 1;
+				this.currentSlide = pressedSlidePreview;
+
+				this.addTransitionSliderTrack();
+			};
+		});
+	}
+
+
+	// Передвижение слайдера с превьюхами.
+	pushingSliderPreviews() {
+		/* Передвижение слайдера с превьюхами.  */
+
+		if ( this.lastVisibleSlidePreviews > this.slidesPreviews.length ) {
+			this.lastVisibleSlidePreviews = this.slidesPreviews.length;
+			this.currentSlidePreview = this.slidesPreviews.length - this.slidesPreviewPerView;
+		};
+
+		this.sliderTrackPreviews.style.transition = `transform 0.${this.speed}s ease`;
+
+		this.positionSliderTrackPreview = this.currentSlidePreview * this.slidesPreviews[0].offsetWidth;
+		this.positionSliderTrackPreview += ( this.currentSlidePreview === 1 ) ?
+			this.slidePreviewsMarRight : this.slidePreviewsMarRight * this.currentSlidePreview;
+
+		setTimeout(() => {
+			this.sliderTrackPreviews.style.transform = `translate3d(${-this.positionSliderTrackPreview}px, 0px, 0px)`;
+		}, 0);
+	}
+
+
+	// Передвижение обычного слайдера.
+	pushingSlider() {
+		this.singleSwipe = this.positionSliderTrack - this.positionFinal;
+
+		this.sliderTrack.style.transform = `translate3d(${-this.positionSliderTrack}px, 0px, 0px)`;
+
+		if (Math.abs(this.singleSwipe) >= 5) {
+			this.isScrollingSlider = true;
+		};
+	}
+
+	swipeStart() {
+		super.addEventsSliderTrack();
+
+		const evt = super.getEvent();
+		super.calculatesTouchCoordinates_SwipeStart(evt);
+
+		this.sliderTrack.style.transform = `translate3d(${-this.positionFinal}px, 0px, 0px)`;
+	}
+
+	swipeAction() {
+		const evt = super.getEvent();
+		super.checkSliderCanBeMoved(evt);
+
+		if (!this.allowSwipe) {
+			return
+		};
+
+		this.positionSliderTrack = this.positionPressedX - evt.clientX + this.positionFinal;
+
+		if (event.type === "touchmove") {
+			this.positionX_FingetCurrentMoment_OnSlider = Math.abs(this.positionPressedX - evt.clientX);
+			this.positionY_FingetCurrentMoment_OnSlider = Math.abs(this.positionPressedY - evt.clientY);
+
+			super.checksOutOfBounds();
+		};
+
+		this.pushingSlider();
+	}
+
+	changeDataForSLiderPreviews() {
+		this.currentSlidePreview = this.currentSlide;
+		this.lastVisibleSlidePreviews = this.currentSlidePreview + this.slidesPreviewPerView;
+
+		if ( this.currentSlidePreview !== 0 ) {
+			this.currentSlidePreview--;
+			this.lastVisibleSlidePreviews--;
+		};
+		this.pushingSliderPreviews();
+	}
+
+	addTransitionSliderTrack() {
+		this.currentSlide += ( this.singleSwipe > 0 ) ? 1 : -1;
+
+		this.checkDataForMovement();
+		this.changeDataForSLiderPreviews();
+
+		this.sliderTrack.style.transition = `transform 0.${this.speed}s ease`;
+		this.positionSliderTrack = this.currentSlide * this.sliderWidth;
+		this.positionFinal = this.positionSliderTrack;
+		this.allowSwipe = false;
+
+		setTimeout(() => {
+			this.sliderTrack.style.transform = `translate3d(${-this.positionSliderTrack}px, 0px, 0px)`;
+		}, 0)
+
+		setTimeout(() => {
+			this.sliderTrack.style.transition = "none";
+			this.allowSwipe = true;
+		}, this.speed);
+	}
+
+	swipeEnd() {
+		super.removeEventsSliderTrack();
+		this.addTransitionSliderTrack();
+
+		this.isScrollingSlider = false;
+		this.allowSwipe = true;
+		this.singleSwipe = 0;
+	}
+
+
+	run() {
+		this.sliderTrack.addEventListener("touchstart", this._swipeStart, { passive: true });
+		this.sliderTrack.addEventListener("mousedown", this._swipeStart);
+
+		if ( this.movementClickingOnPreview ) {
+			this.addEvent_SliderPreviews();
+		};
+	}
+};

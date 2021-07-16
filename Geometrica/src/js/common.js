@@ -3,7 +3,7 @@ const hides_showVerticalScrolling = (popup) => {
 
 	const body = document.querySelector("body");
 
-	const widthScroll = window.innerWidth - popup.querySelector(".popup__container").offsetWidth;
+	const widthScroll = window.innerWidth - popup.querySelector(".popup-temp__container").offsetWidth;
 
 	if (widthScroll) {
 		body.style.cssText = `

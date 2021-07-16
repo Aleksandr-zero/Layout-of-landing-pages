@@ -42,6 +42,7 @@
 
 					&-link {
 						color: $white-color;
+						cursor: pointer;
 						transition: opacity $animate ease;
 
 						&:hover {

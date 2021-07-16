@@ -1,0 +1,91 @@
+.popup-add-cart {
+
+	&__content {
+		background-color: $white-color;
+		max-width: 400px;
+
+		&-wrapper {
+			padding: 50px 36px;
+		}
+
+		&-description {
+
+			&-title {
+				font: 700 22px/26px "Inter";
+				text-transform: uppercase;
+				letter-spacing: -1px;
+			}
+
+			&-subtitle {
+				font: 500 22px/26px "Inter";
+				color: $color-text-popular-product-popup;
+				margin-top: 24px;
+			}
+		}
+
+		&-choice {
+			margin-top: 24px;
+
+			&-quantity {
+				flex-direction: row;
+				padding: 5px;
+				background-color: $color-back-popular-product-choice;
+				border-radius: 2px;
+
+				&-add,
+				&-subtract {
+					justify-content: center;
+					width: 36px;
+					height: 36px;
+					background-color: $white-color;
+				}
+
+				&-num {
+					font: 400 18px/24px "Inter";
+					text-align: center;
+
+					background-color: transparent;
+					max-width: 50px;
+
+					&::-webkit-inner-spin-button,
+					&::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						margin: 0;
+					}
+				}
+
+				&-subtract {
+
+				}
+			}
+		}
+
+		&-price {
+			margin-top: 24px;
+
+			font: 500 22px/26px "Inter";
+			color: $color-text-popular-product-popup;
+
+			span {
+				color: $black-color;
+			}
+		}
+
+		&-back-btn {
+			margin-top: 36px;
+
+			button {
+				border: 1px solid $color-btn-link-1;
+				background-color: $color-btn-link-1;
+			}
+		}
+
+		&-btn {
+			max-width: 100%;
+			width: 100%;
+			padding: 20px 10px;
+		}
+	}
+}

@@ -6,7 +6,13 @@
 @import "./normalize/normalize";
 
 // POPUP TEMPLATES
+@import "./popup/common";
+@import "./popup/popupAddCart";
 @import "./popup/popupTemp";
+@import "./popup/popupCollection";
+
+// SLIDERS
+@import "./sliders/sliderWithPreviews";
 
 // COMMON
 @import "./common/sliders";
@@ -31,6 +37,7 @@
 // BLOCKS
 @import "./blocks/about";
 @import "./blocks/intro";
+@import "./blocks/completedProjects";
 @import "./blocks/brands";
 @import "./blocks/services";
 @import "./blocks/newItems";

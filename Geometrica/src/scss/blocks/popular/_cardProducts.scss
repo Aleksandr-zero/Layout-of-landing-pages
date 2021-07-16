@@ -49,15 +49,18 @@
 		}
 	}
 
-	&-back-link {
+	&-back-btn {
 		margin-top: 20px;
 	}
 
-	&-link {
+	&-btn {
 		background-color: $color-back-link-popular-product;
 		color: $color-description-popular-product;
 
 		padding: 22px 28px;
+		width: 100%;
+
+		font: 400 22px/26px "Inter";
 
 		transition: background-color $animate ease,
 					color $animate ease;

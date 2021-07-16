@@ -1,0 +1,177 @@
+.popup-collection {
+
+	&__wrapper {
+		padding: 60px 40px;
+	}
+
+	&__content {
+		background-color: $white-color;
+		max-width: 100%;
+		width: 75%;
+
+		&-slider-with-previews {
+			margin-right: 38px;
+			width: 520px;
+
+			&-slide {
+
+				&-img {
+					max-width: 520px;
+				}
+			}
+
+			.slider-list-previews {
+				margin-top: 20px;
+			}
+
+			&-slide-preview {
+				flex: 0 0 25%;
+				margin-right: 17px;
+
+				&:first-child {
+					margin-left: 48px;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&-back-img,
+				&-img {
+					max-width: 100%;
+				}
+			}
+		}
+
+		&-description {
+
+			&-title {
+				font: 700 28px/34px "Inter";
+			}
+
+			&-subtitle {
+				font: 400 22px/28px "Inter";
+				margin-top: 16px;
+				color: $color-description-popup-collection;
+			}
+
+			&-info {
+				margin-top: 32px;
+				padding: 32px 32px 52px 32px;
+				background-color: $color-back-description-info-popup-collection;
+
+				&-items {
+					flex-wrap: wrap;
+				}
+
+				&-item {
+					width: 45%;
+					margin-bottom: 20px;
+
+					&-overhead {
+						font: 400 12px/16px "Roboto";
+						color: $color-overhead-overhead-popup-collection;
+					}
+
+					&-title {
+						font: 400 20px/24px "Roboto";
+						color: $black-color;
+						margin-top: 6px;
+					}
+				}
+			}
+
+			&-back-price {
+				margin-top: 28px;
+			}
+
+			&-price {
+				font: 500 22px/26px "Inter";
+
+				span {
+					color: $color-description-popup-collection;
+				}
+
+				strike {
+					color: $color-description-popup-collection;
+					font: 500 18px/22px "Inter";
+					margin-left: 12px;
+					letter-spacing: -1px;
+				}
+			}
+
+			&-discount {
+				font: 400 12px/20px "Inter";
+				color: $color-btn-link-1;
+				margin-left: 24px;
+			}
+
+			&-back-btns {
+				margin-top: 28px;
+			}
+
+			&-btn {
+
+				&-like,
+				&-info {
+					padding: 18px 16px;
+					max-width: 48%;
+					width: 48%;
+					justify-content: center;
+
+					font: 700 14px/16px "Inter";
+					text-transform: uppercase;
+
+					transition: color $animate ease,
+					background-color $animate ease;
+
+					svg {
+						path {
+							transition: all $animate ease;
+						}
+					}
+				}
+
+				&-like {
+					color: $color-btn-like-popup-collection;
+					border: 2px solid $color-btn-like-popup-collection;
+
+					svg {
+						margin-right: 12px;
+					}
+
+					&:hover {
+						color: $white-color;
+						background-color: $color-btn-like-popup-collection;
+
+						svg {
+							path {
+								stroke: $white-color;
+							}
+						}
+					}
+				}
+
+				&-info {
+					color: $color-btn-link-1;
+					border: 2px solid $color-btn-link-1;
+
+					svg {
+						margin-left: 4px;
+					}
+
+					&:hover {
+						color: $white-color;
+						background-color: $color-btn-link-1;
+
+						svg {
+							path {
+								fill: $white-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

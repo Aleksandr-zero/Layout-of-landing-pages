@@ -60,6 +60,7 @@
 
 		&-link {
 			color: $color-title-popular-collections;
+			cursor: pointer;
 
 			transition: color $animate ease;
 
@@ -76,6 +77,7 @@
 	&-link {
 		background-color: $color-back-link-popular-collections;
 		color: $color-link-popular-collections;
+		cursor: pointer;
 
 		font: 400 22px/26px "Inter";
 
