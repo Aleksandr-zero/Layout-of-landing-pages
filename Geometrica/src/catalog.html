@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+@@include("./templates/specific/head.html", {
+	"title": "Geometrica - catalog"
+})
+<body>
+	@@include("./templates/specific/svg.html")
+
+	<div class="wrapper-header">
+		@@include("./templates/common/header.html")
+		@@include("./templates/common/subhead.html")
+	</div>
+
+	@@include("./templates/common/crackers.html", {
+		title: "Керамическая плитка"
+	})
+	@@include("./templates/blocks/popularQueries.html")
+	@@include("./templates/blocks/characteristics.html")
+
+	@@include("./templates/common/advantages.html")
+
+	@@include("./templates/common/reviews.html")
+	@@include("./templates/common/contacts.html")
+	@@include("./templates/common/footer.html")
+
+	<script src="./js/script.js"></script>
+
+</body>
+</html>

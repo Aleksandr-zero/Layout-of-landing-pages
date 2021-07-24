@@ -23,14 +23,17 @@ const openPopup = (popup) => {
 
 // POPUP block products
 const blockPopularProducts = document.querySelector(".popular__content-item-products");
-const itemsPopularProducts = blockPopularProducts.querySelectorAll(".popular__content-item-product");
 
 const popupPopularProducts = document.querySelector(".popup-add-cart");
 
-itemsPopularProducts.forEach((product) => {
-	const btn = product.querySelector(".popular__content-item-product-btn");
-	btn.addEventListener("click", () => { openPopup(popupPopularProducts); });
-});
+if ( blockPopularProducts ) {
+	const itemsPopularProducts = blockPopularProducts.querySelectorAll(".popular__content-item-product");
+
+	itemsPopularProducts.forEach((product) => {
+		const btn = product.querySelector(".popular__content-item-product-btn");
+		btn.addEventListener("click", () => { openPopup(popupPopularProducts); });
+	});
+};
 
 // POPUP block contact
 const btnOpenPopupContact = document.querySelector(".contacts__content-description-content-link");
