@@ -40,7 +40,7 @@
 				}
 			}
 
-			&.popular-content-btn-active {
+			&.catalog-content-btn-active {
 				border-bottom: 2px dashed transparent;
 				color: $black-color;
 
@@ -70,13 +70,13 @@
 			transition: transform $animate * 1.5 ease,
 						opacity $animate * 1.5 ease;
 
-			&.popular-content-item-active {
+			&.catalog-content-item-active {
 				transform: scale(1);
 				opacity: 1;
 				z-index: 50;
 			}
 
-			&.popular-content-item-change {
+			&.catalog-content-item-change {
 				transform: scale(0.8);
 				opacity: 0;
 			}

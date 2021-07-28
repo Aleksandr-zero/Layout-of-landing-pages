@@ -1,0 +1,235 @@
+<div class="catalog">
+	<div class="container">
+		<div class="catalog__content">
+			<nav class="catalog__content-nav fl just_cont al_it">
+				<div class="catalog__content-nav-wrapper fl al_it">
+					<h4 class="catalog__content-nav-title">Показать:</h4>
+					<ul class="catalog__content-nav-items fl al_it">
+						<li class="catalog__content-nav-item">
+							<button data-change-block="collections" class="catalog__content-nav-item-btn catalog-content-btn-active">
+								<span>Коллекции</span>
+							</button>
+						</li>
+						<li class="catalog__content-nav-item">
+							<button data-change-block="product" class="catalog__content-nav-item-btn">
+								<span>Товары</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div class="catalog__content-nav-back-link">
+					<a href="#" class="catalog__content-nav-link fl al_it">
+						сначала популярные
+						<span>
+							<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 9L6.49999 1L12 9" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</nav>
+			<ul class="catalog__content-items catalog-content-items">
+				<li class="catalog__content-item fl catalog-collections catalog-content-item-active">
+					@@loop("../common/catalog/cardCollections.html", [
+					{
+						country: {
+							iconPath: "./img/icons/countries/Russia.svg",
+							title: "Россия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-1.jpg",
+						company: "Laranet",
+						title: "МоноТиберио",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Spain.svg",
+							title: "Испания"
+						},
+						pathImg: "./img/popular/collections/popular-collections-2.jpg",
+						company: "Чупакабро",
+						title: "Альтус",
+						countElement: "12"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Italy.svg",
+							title: "Италия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-3.jpg",
+						company: "Casabella",
+						title: "Бизарро",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Russia.svg",
+							title: "Россия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-1.jpg",
+						company: "Laranet",
+						title: "МоноТиберио",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Spain.svg",
+							title: "Испания"
+						},
+						pathImg: "./img/popular/collections/popular-collections-2.jpg",
+						company: "Чупакабро",
+						title: "Альтус",
+						countElement: "12"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Italy.svg",
+							title: "Италия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-3.jpg",
+						company: "Casabella",
+						title: "Бизарро",
+						countElement: "4"
+					},					{
+						country: {
+							iconPath: "./img/icons/countries/Russia.svg",
+							title: "Россия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-1.jpg",
+						company: "Laranet",
+						title: "МоноТиберио",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Spain.svg",
+							title: "Испания"
+						},
+						pathImg: "./img/popular/collections/popular-collections-2.jpg",
+						company: "Чупакабро",
+						title: "Альтус",
+						countElement: "12"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Italy.svg",
+							title: "Италия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-3.jpg",
+						company: "Casabella",
+						title: "Бизарро",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Russia.svg",
+							title: "Россия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-1.jpg",
+						company: "Laranet",
+						title: "МоноТиберио",
+						countElement: "4"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Spain.svg",
+							title: "Испания"
+						},
+						pathImg: "./img/popular/collections/popular-collections-2.jpg",
+						company: "Чупакабро",
+						title: "Альтус",
+						countElement: "12"
+					},{
+						country: {
+							iconPath: "./img/icons/countries/Italy.svg",
+							title: "Италия"
+						},
+						pathImg: "./img/popular/collections/popular-collections-3.jpg",
+						company: "Casabella",
+						title: "Бизарро",
+						countElement: "4"
+					}
+					])
+				</li>
+				<li class="catalog__content-item catalog-product">
+					<ul class="catalog__content-item-products fl just_cont">
+						@@loop("../common/catalog/cardProducts.html", [
+							{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-1.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-2.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-3.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-4.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-2.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-3.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-4.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-1.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},							{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-1.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-2.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-3.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-4.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-2.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-3.jpg",
+								title: "Керамогранит «Жаклин» 20x80 см 1.6 м² цвет белый",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-4.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							},{
+								countryTitle: "Italon, Россия",
+								pathImg: "./img/popular/products/popular-products-1.jpg",
+								title: "Керамогранит Creto Forza Calacatta white PG 01 45х45",
+								price: "3 564 P"
+							}
+						])
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

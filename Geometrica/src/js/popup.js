@@ -27,10 +27,10 @@ const blockPopularProducts = document.querySelector(".popular__content-item-prod
 const popupPopularProducts = document.querySelector(".popup-add-cart");
 
 if ( blockPopularProducts ) {
-	const itemsPopularProducts = blockPopularProducts.querySelectorAll(".popular__content-item-product");
+	const itemsPopularProducts = blockPopularProducts.querySelectorAll(".content-item-product");
 
 	itemsPopularProducts.forEach((product) => {
-		const btn = product.querySelector(".popular__content-item-product-btn");
+		const btn = product.querySelector(".content-item-product-btn");
 		btn.addEventListener("click", () => { openPopup(popupPopularProducts); });
 	});
 };

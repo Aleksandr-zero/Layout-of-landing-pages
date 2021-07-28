@@ -2,11 +2,13 @@
 	margin-top: 48px;
 
 	&__content {
+		background-color: $color-back-content;
+		padding: 12px 18px;
 
 		&-items {
 			flex-wrap: wrap;
 			max-width: 50%;
-			column-gap: 10px;
+			column-gap: 8px;
 		}
 
 		&-item {
@@ -90,6 +92,168 @@
 						&-text {
 
 						}
+					}
+				}
+			}
+		}
+
+		&-secondary {
+			width: 47%;
+			max-width: 47%;
+
+			&-wrapper {
+				margin-top: 16px;
+			}
+
+			&-company {
+				width: 92%;
+				max-width: 92%;
+				margin: 0 auto;
+
+				&-slider {
+
+					&.slider-with-sections .back-btn-slider-push-left {
+						left: -36px;
+					}
+
+					&.slider-with-sections .back-btn-slider-push-right {
+						right: -36px;
+					}
+
+					&.slider-with-sections .btn-slider-push  {
+						padding: 24px 10px;
+
+						&::before,
+						&::after {
+							width: 16px;
+							background-color: $color-btn-slider;
+						}
+
+						&::before {
+							top: 17.5px;
+						}
+
+						&::after {
+							bottom: 18.5px;
+						}
+
+						&.btn-slider-push-last {
+
+							&::before {
+								transform: rotate(-35deg);
+							}
+
+							&::after {
+								transform: rotate(35deg);
+							}
+						}
+
+						&.btn-slider-push-next {
+
+							&::before {
+								transform: rotate(35deg);
+							}
+
+							&::after {
+								transform: rotate(-35deg);
+							}
+						}
+					}
+
+					&-slide {
+						justify-content: center;
+						background-color: $white-color;
+						padding: 12px 0;
+						cursor: pointer;
+
+						&.slide {
+							flex: 0 0 24%;
+							margin-right: 9px;
+						}
+					}
+				}
+			}
+
+			&-filter {
+				width: 100%;
+				max-width: 330px;
+
+				.filter-range-wrapper {
+					margin-bottom: 10px;
+					padding: 10px 0;
+					border-radius: 3px;
+				}
+
+				.filter-range {
+					position: relative;
+				}
+
+				.filter-range-scale {
+					height: 10px;
+					background-color: $color-back-range;
+
+					position: relative;
+				}
+
+				.filter-range-bar {
+					height: 8px;
+					background-color: $white-color;
+
+					position: absolute;
+					width: 100%;
+					z-index: 10;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				.filter-range-handle {
+
+				}
+
+				.filter-interval {
+					flex-wrap: wrap;
+
+					label {
+						font: 300 16px 20px "Inter";
+						color: #6A6A6A;
+					}
+
+					input {
+						margin-left: 8px;
+						width: 80px;
+						height: 38px;
+						border-radius: 2px;
+						border: none;
+						font: inherit;
+						color: inherit;
+						text-align: center;
+						background-color: #E9E9E9;
+					}
+				}
+			}
+
+			&-back-btn {
+
+				&:hover {
+					path {
+						fill: $white-color;
+					}
+				}
+
+				.unfilled-btn {
+					color: $color-btn-link-1;
+					border: 2px solid $color-btn-link-1;
+					padding: 18px 0;
+					width: 210px;
+					max-width: 100%;
+
+					&:hover {
+						background-color: $color-btn-link-1;
+						color: $white-color;
+					}
+
+					path {
+						transition: fill $animate ease;
 					}
 				}
 			}

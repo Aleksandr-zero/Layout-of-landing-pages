@@ -5,7 +5,7 @@
 			<div class="popular__content-back-title fl al_it just_cont">
 				<div class="popular__content-back-btns fl al_it just_cont">
 					<div class="popular__content-back-btn">
-						<button data-change-block="collections" class="popular__content-btn popular-content-btn-active">
+						<button data-change-block="collections" class="popular__content-btn catalog-content-btn-active">
 							<span>Популярные коллекции</span>
 						</button>
 					</div>
@@ -26,8 +26,8 @@
 					</a>
 				</div>
 			</div>
-			<div class="popular__content-items">
-				<div class="popular__content-item popular-collections popular-content-item-active">
+			<div class="popular__content-items catalog-content-items">
+				<div class="popular__content-item catalog-collections catalog-content-item-active">
 					<div class="popular__content-item-slider slider-with-sections">
 						<div class="slider-with-sections-navigation">
 							<div class="back-btn-slider-push back-btn-slider-push-left">
@@ -39,7 +39,7 @@
 						</div>
 						<div class="slider-list">
 							<div class="slider-track">
-								@@loop("./popular/cardCollections.html", [
+								@@loop("../common/catalog/cardCollections.html", [
 									{
 										country: {
 											iconPath: "./img/icons/countries/Russia.svg",
@@ -100,9 +100,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="popular__content-item popular-product">
+				<div class="popular__content-item catalog-product">
 					<ul class="popular__content-item-products fl just_cont">
-						@@loop("./popular/cardProducts.html", [
+						@@loop("../common/catalog/cardProducts.html", [
 							{
 								countryTitle: "Italon, Россия",
 								pathImg: "./img/popular/products/popular-products-1.jpg",

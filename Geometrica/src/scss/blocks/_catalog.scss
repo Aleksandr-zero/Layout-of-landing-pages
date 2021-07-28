@@ -1,0 +1,135 @@
+.catalog {
+	margin-top: 80px;
+
+	&__content {
+
+		&-nav {
+
+			&-title {
+				font: 300 18px/22px "Inter";
+				color: $color-title-catalog-nav;
+				margin-right: 56px;
+			}
+
+			&-item {
+
+				&-btn {
+					font: 700 25px/30px "Inter";
+					letter-spacing: -1px;
+					text-transform: uppercase;
+
+					margin-right: 60px;
+					color: $color-btn-popular;
+
+					border-bottom: 2px dashed $color-btn-popular;
+
+					transition: color $animate ease,
+					border-bottom $animate ease;
+
+					span {
+						position: relative;
+
+						&::after {
+							position: absolute;
+							content: "";
+							width: 100%;
+							height: 1px;
+							left: 0;
+							bottom: -10px;
+							background-color: $color-btn-link-1;
+							opacity: 0;
+
+							transition: opacity $animate ease;
+						}
+					}
+
+					&.catalog-content-btn-active {
+						border-bottom: 2px dashed transparent;
+						color: $black-color;
+
+						span {
+							&::after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+
+			&-link {
+				font: 400 18px/22px "Inter";
+				color: $color-link-catalog-nav;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+
+				transition: color $animate ease;
+
+				&:hover {
+					color: $black-color;
+
+					span {
+						background-color: $black-color;
+					}
+				}
+
+				span {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 26px;
+					height: 26px;
+					border-radius: 50%;
+					background-color: $color-link-catalog-nav;
+					margin-left: 20px;
+
+					transition: background-color $animate ease;
+
+					svg {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+
+		&-items {
+			position: relative;
+			transition: height $animate * 2 ease;
+		}
+
+		&-item {
+			transform: scale(0.8);
+			opacity: 0;
+			position: absolute;
+			z-index: -1;
+			max-width: 100%;
+			margin-top: 60px;
+
+			transition: transform $animate * 1.5 ease,
+						opacity $animate * 1.5 ease;
+
+			&.catalog-collections {
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				.content-item-collection {
+					margin-bottom: 40px;
+				}
+			}
+
+			&.catalog-content-item-active {
+				transform: scale(1);
+				opacity: 1;
+				z-index: 50;
+			}
+
+			&.catalog-content-item-change {
+				transform: scale(0.8);
+				opacity: 0;
+			}
+
+			&-products {
+				flex-wrap: wrap;
+			}
+		}
+	}
+}

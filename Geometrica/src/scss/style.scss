@@ -16,6 +16,8 @@
 
 // COMMON
 @import "./common/sliders";
+@import "./common/catalog/product";
+@import "./common/catalog/collections";
 
 // REVIEWS
 @import "./common/reviews";
@@ -30,17 +32,14 @@
 @import "./common/contacts";
 @import "./common/footer";
 
-// POPULAR
-@import "./blocks/popular";
-@import "./blocks/popular/cardCollections";
-@import "./blocks/popular/cardProducts";
-
 // BLOCKS
 @import "./blocks/about";
 @import "./blocks/intro";
 @import "./blocks/popularQueries";
 @import "./blocks/characteristics";
 @import "./blocks/completedProjects";
+@import "./blocks/popular";
+@import "./blocks/catalog";
 @import "./blocks/brands";
 @import "./blocks/services";
 @import "./blocks/newItems";

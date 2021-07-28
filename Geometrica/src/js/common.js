@@ -16,4 +16,38 @@ const hides_showVerticalScrolling = (popup) => {
 			overflow: auto;
 		`;
 	}
-}
+};
+
+
+// CATALOG
+const setsHeightForChangeBlock = (changeBlock) => {
+	const height = changeBlock.clientHeight;
+	const blockItems = changeBlock.closest(".catalog-content-items");
+
+	blockItems.style.height = `${height}px`;
+};
+
+const changeCategoryPopular = (block, btns) => {
+	if ( event.currentTarget.classList.contains("catalog-content-btn-active") ) {
+		return;
+	};
+
+	const changeBlockName = event.currentTarget.dataset.changeBlock;
+	const changeBlock = block.querySelector(`.catalog-${changeBlockName}`);
+
+	btns.forEach((btn) => {
+		btn.classList.remove("catalog-content-btn-active");
+	});
+	event.currentTarget.classList.add("catalog-content-btn-active");
+
+	const currentBlock = block.querySelector(".catalog-content-item-active")
+	currentBlock.classList.remove("catalog-content-item-active");
+	currentBlock.classList.add("catalog-content-item-change");
+
+	setTimeout(() => {
+		setsHeightForChangeBlock(changeBlock);
+
+		changeBlock.classList.add("catalog-content-item-active");
+		currentBlock.classList.remove("catalog-content-item-change");
+	}, 400);
+};
